@@ -1,0 +1,33 @@
+app:
+  android:
+    flavorDimensions: "flavor-type"
+
+flavors:
+  dev:
+    app:
+      name: "Intopic dev"
+
+    android:
+      applicationId: "com.intopic.mobile.dev"
+    ios:
+      bundleId: "com.intopic.mobile.dev"
+
+  stg:
+    app:
+      name: "Intopic stg"
+
+    android:
+      applicationId: "com.intopic.mobile.stg"
+    ios:
+      bundleId: "com.intopic.mobile.stg"
+
+  prod:
+    app:
+      name: "Intopic"
+
+    android:
+        applicationId: "com.intopic.mobile"
+    ios:
+        bundleId: "com.intopic.mobile"
+
+ide: idea
