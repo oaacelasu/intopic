@@ -23,9 +23,6 @@ final router = GoRouter(
     observers: [
       routeObserver,
     ],
-    redirect: (state) {
-      return null;
-    },
     debugLogDiagnostics: true);
 
 /// Route observer to use with RouteAware

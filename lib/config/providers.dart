@@ -1,18 +1,17 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-///
-/// Infrastructure dependencies
-///
+part 'providers.g.dart';
 
 /// Exposes [SharedPreferences] instance
-final sharedPreferencesProvider = FutureProvider((ref) => SharedPreferences.getInstance());
+@Riverpod(keepAlive: true)
+Future<SharedPreferences> sharedPreferences(SharedPreferencesRef ref) async {
+  return SharedPreferences.getInstance();
+}
 
 /// Triggered from bootstrap() to complete futures
 Future<void> initializeProviders(ProviderContainer container) async {
-  GoRouter.setUrlPathStrategy(UrlPathStrategy.path);
-
   /// Core
   await container.read(sharedPreferencesProvider.future);
 }
