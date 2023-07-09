@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:validators/validators.dart';
 
 /// Shorthand type for validator function
 typedef ValidatorFunction = String? Function(String?);

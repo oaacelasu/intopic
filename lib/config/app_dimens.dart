@@ -31,6 +31,9 @@ abstract class AppDimens {
   /// xxlg spacing value (40pt)
   static const double xxlg = 2.5 * spaceUnit;
 
+  /// xxlg spacing value (48pt)
+  static const double xxslg = 3 * spaceUnit;
+
   /// xxxlg pacing value (64pt)
   static const double xxxlg = 4 * spaceUnit;
 }

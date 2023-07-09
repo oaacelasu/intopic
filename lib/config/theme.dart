@@ -1,6 +1,8 @@
 import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/material.dart';
 import 'package:intopic/config/app_colors.dart';
+import 'package:intopic/config/typography/app_text_styles.dart';
+import 'package:intopic/features/common/presentation/utils/extensions/build_context_extension.dart';
 
 /// Default [ThemeData] for Example
 class AppTheme {
@@ -10,9 +12,20 @@ class AppTheme {
   final Brightness _brightness;
 
   /// Exposes theme data to MaterialApp
-  ThemeData get themeData {
+  ThemeData getThemeData(BuildContext context) {
     return ThemeData(brightness: _brightness).copyWith(
       colorScheme: _colorScheme,
+      inputDecorationTheme: InputDecorationTheme(
+        labelStyle: AppTextStyle.labelMedium,
+        isDense: true,
+        alignLabelWithHint: true,
+        border: OutlineInputBorder(
+          borderSide: BorderSide(color: context.outlineColor),
+        ),
+        errorMaxLines: 3,
+        fillColor: Colors.white,
+        filled: true,
+      ),
       useMaterial3: true,
     );
   }
@@ -90,18 +103,15 @@ class CustomColors extends ThemeExtension<CustomColors> {
       yellow: Color.lerp(yellow, other.yellow, t)!,
       onYellow: Color.lerp(onYellow, other.onYellow, t)!,
       yellowContainer: Color.lerp(yellowContainer, other.yellowContainer, t)!,
-      onYellowContainer:
-      Color.lerp(onYellowContainer, other.onYellowContainer, t)!,
+      onYellowContainer: Color.lerp(onYellowContainer, other.onYellowContainer, t)!,
       green: Color.lerp(green, other.green, t)!,
       onGreen: Color.lerp(onGreen, other.onGreen, t)!,
       greenContainer: Color.lerp(greenContainer, other.greenContainer, t)!,
-      onGreenContainer:
-      Color.lerp(onGreenContainer, other.onGreenContainer, t)!,
+      onGreenContainer: Color.lerp(onGreenContainer, other.onGreenContainer, t)!,
       orange: Color.lerp(orange, other.orange, t)!,
       onOrange: Color.lerp(onOrange, other.onOrange, t)!,
       orangeContainer: Color.lerp(orangeContainer, other.orangeContainer, t)!,
-      onOrangeContainer:
-      Color.lerp(onOrangeContainer, other.onOrangeContainer, t)!,
+      onOrangeContainer: Color.lerp(onOrangeContainer, other.onOrangeContainer, t)!,
     );
   }
 
@@ -114,23 +124,19 @@ class CustomColors extends ThemeExtension<CustomColors> {
       blue: blue.harmonizeWith(dynamic.primary),
       onBlue: onBlue.harmonizeWith(dynamic.onPrimary),
       blueContainer: blueContainer.harmonizeWith(dynamic.primaryContainer),
-      onBlueContainer:
-      onBlueContainer.harmonizeWith(dynamic.onPrimaryContainer),
+      onBlueContainer: onBlueContainer.harmonizeWith(dynamic.onPrimaryContainer),
       yellow: yellow.harmonizeWith(dynamic.primary),
       onYellow: onYellow.harmonizeWith(dynamic.onPrimary),
       yellowContainer: yellowContainer.harmonizeWith(dynamic.primaryContainer),
-      onYellowContainer:
-      onYellowContainer.harmonizeWith(dynamic.onPrimaryContainer),
+      onYellowContainer: onYellowContainer.harmonizeWith(dynamic.onPrimaryContainer),
       green: green.harmonizeWith(dynamic.primary),
       onGreen: onGreen.harmonizeWith(dynamic.onPrimary),
       greenContainer: greenContainer.harmonizeWith(dynamic.primaryContainer),
-      onGreenContainer:
-      onGreenContainer.harmonizeWith(dynamic.onPrimaryContainer),
+      onGreenContainer: onGreenContainer.harmonizeWith(dynamic.onPrimaryContainer),
       orange: orange.harmonizeWith(dynamic.primary),
       onOrange: onOrange.harmonizeWith(dynamic.onPrimary),
       orangeContainer: orangeContainer.harmonizeWith(dynamic.primaryContainer),
-      onOrangeContainer:
-      onOrangeContainer.harmonizeWith(dynamic.onPrimaryContainer),
+      onOrangeContainer: onOrangeContainer.harmonizeWith(dynamic.onPrimaryContainer),
     );
   }
 

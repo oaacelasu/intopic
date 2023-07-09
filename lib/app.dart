@@ -1,40 +1,33 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:get/get.dart';
+import 'package:intopic/config/navigation.dart';
+import 'package:intopic/config/router.dart';
+import 'package:intopic/config/theme.dart';
+import 'package:intopic/flavors.dart';
+import 'package:intopic/l10n/app_localizations.dart';
 
-import 'features/my_home_page.dart';
-import 'flavors.dart';
-
-class App extends StatelessWidget {
-  const App({Key? key}) : super(key: key);
+class App extends ConsumerWidget {
+  const App({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+  Widget build(BuildContext context, WidgetRef ref) {
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       title: F.title,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: _flavorBanner(
-        child: MyHomePage(),
-        show: kDebugMode,
-      ),
+      locale: Get.deviceLocale,
+      fallbackLocale: const Locale("en", "CA"),
+      theme: AppTheme(Brightness.light).getThemeData(context),
+      darkTheme: AppTheme(Brightness.dark).getThemeData(context),
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      initialRoute: AppRoutes.splash,
+      getPages: AppPages.pages,
     );
   }
-
-  Widget _flavorBanner({
-    required Widget child,
-    bool show = true,
-  }) =>
-      show
-          ? Banner(
-              child: child,
-              location: BannerLocation.topStart,
-              message: F.name,
-              color: Colors.green.withOpacity(0.6),
-              textStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 12.0, letterSpacing: 1.0),
-              textDirection: TextDirection.ltr,
-            )
-          : Container(
-              child: child,
-            );
 }

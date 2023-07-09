@@ -3,7 +3,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'failure.freezed.dart';
 
 @freezed
-
 /// Represents all app failures
 class Failure implements Exception {
 
@@ -14,7 +13,7 @@ class Failure implements Exception {
 
   ///  Expected value has invalid format
   const factory Failure.unprocessableEntity({required String message}) =
-      _UnprocessableEntityFailure;
+  _UnprocessableEntityFailure;
 
   /// Represent 401 error
   const factory Failure.unauthorized() = _UnauthorizedFailure;
@@ -23,7 +22,8 @@ class Failure implements Exception {
   const factory Failure.badRequest() = _BadRequestFailure;
 
   /// Get the error message for specified failure
-  String get error => this is _UnprocessableEntityFailure
-      ? (this as _UnprocessableEntityFailure).message
-      : '$this';
+  String get error =>
+      this is _UnprocessableEntityFailure
+          ? (this as _UnprocessableEntityFailure).message
+          : '$this';
 }

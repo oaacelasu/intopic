@@ -20,10 +20,10 @@ abstract class AppColors {
   static const Color transparent = Color(0x00000000);
 
   static Color randomColor(String seed) => <int, Color>{
-    0: blue,
-    1: green,
-    2: red,
-    3: yellow,
-    4: orange,
-  }[(seed.hashCode + seed.length) % 5]!;
+        0: blue,
+        1: green,
+        2: red,
+        3: yellow,
+        4: orange,
+      }[(seed.hashCode + seed.length) % 5]!;
 }
