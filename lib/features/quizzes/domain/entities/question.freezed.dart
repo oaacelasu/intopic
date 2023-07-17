@@ -20,6 +20,7 @@ mixin _$Question {
   String get quizId => throw _privateConstructorUsedError;
   String get topicId => throw _privateConstructorUsedError;
   QuestionType get questionType => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
   String get question => throw _privateConstructorUsedError;
   List<String> get options => throw _privateConstructorUsedError;
   String get correctAnswer => throw _privateConstructorUsedError;
@@ -30,6 +31,7 @@ mixin _$Question {
             String quizId,
             String topicId,
             QuestionType questionType,
+            String title,
             String question,
             List<String> options,
             String correctAnswer)
@@ -39,6 +41,7 @@ mixin _$Question {
             String quizId,
             String topicId,
             QuestionType questionType,
+            String title,
             String question,
             List<String> options,
             String correctAnswer)
@@ -52,6 +55,7 @@ mixin _$Question {
             String quizId,
             String topicId,
             QuestionType questionType,
+            String title,
             String question,
             List<String> options,
             String correctAnswer)?
@@ -61,6 +65,7 @@ mixin _$Question {
             String quizId,
             String topicId,
             QuestionType questionType,
+            String title,
             String question,
             List<String> options,
             String correctAnswer)?
@@ -74,6 +79,7 @@ mixin _$Question {
             String quizId,
             String topicId,
             QuestionType questionType,
+            String title,
             String question,
             List<String> options,
             String correctAnswer)?
@@ -83,6 +89,7 @@ mixin _$Question {
             String quizId,
             String topicId,
             QuestionType questionType,
+            String title,
             String question,
             List<String> options,
             String correctAnswer)?
@@ -125,6 +132,7 @@ abstract class $QuestionCopyWith<$Res> {
       String quizId,
       String topicId,
       QuestionType questionType,
+      String title,
       String question,
       List<String> options,
       String correctAnswer});
@@ -149,6 +157,7 @@ class _$QuestionCopyWithImpl<$Res, $Val extends Question>
     Object? quizId = null,
     Object? topicId = null,
     Object? questionType = null,
+    Object? title = null,
     Object? question = null,
     Object? options = null,
     Object? correctAnswer = null,
@@ -170,6 +179,10 @@ class _$QuestionCopyWithImpl<$Res, $Val extends Question>
           ? _value.questionType
           : questionType // ignore: cast_nullable_to_non_nullable
               as QuestionType,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
       question: null == question
           ? _value.question
           : question // ignore: cast_nullable_to_non_nullable
@@ -206,6 +219,7 @@ abstract class _$$_QuestionCopyWith<$Res> implements $QuestionCopyWith<$Res> {
       String quizId,
       String topicId,
       QuestionType questionType,
+      String title,
       String question,
       List<String> options,
       String correctAnswer});
@@ -229,6 +243,7 @@ class __$$_QuestionCopyWithImpl<$Res>
     Object? quizId = null,
     Object? topicId = null,
     Object? questionType = null,
+    Object? title = null,
     Object? question = null,
     Object? options = null,
     Object? correctAnswer = null,
@@ -250,6 +265,10 @@ class __$$_QuestionCopyWithImpl<$Res>
           ? _value.questionType
           : questionType // ignore: cast_nullable_to_non_nullable
               as QuestionType,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
       question: null == question
           ? _value.question
           : question // ignore: cast_nullable_to_non_nullable
@@ -274,6 +293,7 @@ class _$_Question extends _Question {
       required this.quizId,
       required this.topicId,
       required this.questionType,
+      required this.title,
       required this.question,
       required final List<String> options,
       required this.correctAnswer})
@@ -289,6 +309,8 @@ class _$_Question extends _Question {
   @override
   final QuestionType questionType;
   @override
+  final String title;
+  @override
   final String question;
   final List<String> _options;
   @override
@@ -303,7 +325,7 @@ class _$_Question extends _Question {
 
   @override
   String toString() {
-    return 'Question(id: $id, quizId: $quizId, topicId: $topicId, questionType: $questionType, question: $question, options: $options, correctAnswer: $correctAnswer)';
+    return 'Question(id: $id, quizId: $quizId, topicId: $topicId, questionType: $questionType, title: $title, question: $question, options: $options, correctAnswer: $correctAnswer)';
   }
 
   @override
@@ -316,6 +338,7 @@ class _$_Question extends _Question {
             (identical(other.topicId, topicId) || other.topicId == topicId) &&
             (identical(other.questionType, questionType) ||
                 other.questionType == questionType) &&
+            (identical(other.title, title) || other.title == title) &&
             (identical(other.question, question) ||
                 other.question == question) &&
             const DeepCollectionEquality().equals(other._options, _options) &&
@@ -330,6 +353,7 @@ class _$_Question extends _Question {
       quizId,
       topicId,
       questionType,
+      title,
       question,
       const DeepCollectionEquality().hash(_options),
       correctAnswer);
@@ -348,6 +372,7 @@ class _$_Question extends _Question {
             String quizId,
             String topicId,
             QuestionType questionType,
+            String title,
             String question,
             List<String> options,
             String correctAnswer)
@@ -357,13 +382,14 @@ class _$_Question extends _Question {
             String quizId,
             String topicId,
             QuestionType questionType,
+            String title,
             String question,
             List<String> options,
             String correctAnswer)
         empty,
   }) {
-    return $default(
-        id, quizId, topicId, questionType, question, options, correctAnswer);
+    return $default(id, quizId, topicId, questionType, title, question, options,
+        correctAnswer);
   }
 
   @override
@@ -374,6 +400,7 @@ class _$_Question extends _Question {
             String quizId,
             String topicId,
             QuestionType questionType,
+            String title,
             String question,
             List<String> options,
             String correctAnswer)?
@@ -383,13 +410,14 @@ class _$_Question extends _Question {
             String quizId,
             String topicId,
             QuestionType questionType,
+            String title,
             String question,
             List<String> options,
             String correctAnswer)?
         empty,
   }) {
-    return $default?.call(
-        id, quizId, topicId, questionType, question, options, correctAnswer);
+    return $default?.call(id, quizId, topicId, questionType, title, question,
+        options, correctAnswer);
   }
 
   @override
@@ -400,6 +428,7 @@ class _$_Question extends _Question {
             String quizId,
             String topicId,
             QuestionType questionType,
+            String title,
             String question,
             List<String> options,
             String correctAnswer)?
@@ -409,6 +438,7 @@ class _$_Question extends _Question {
             String quizId,
             String topicId,
             QuestionType questionType,
+            String title,
             String question,
             List<String> options,
             String correctAnswer)?
@@ -416,8 +446,8 @@ class _$_Question extends _Question {
     required TResult orElse(),
   }) {
     if ($default != null) {
-      return $default(
-          id, quizId, topicId, questionType, question, options, correctAnswer);
+      return $default(id, quizId, topicId, questionType, title, question,
+          options, correctAnswer);
     }
     return orElse();
   }
@@ -460,6 +490,7 @@ abstract class _Question extends Question {
       required final String quizId,
       required final String topicId,
       required final QuestionType questionType,
+      required final String title,
       required final String question,
       required final List<String> options,
       required final String correctAnswer}) = _$_Question;
@@ -473,6 +504,8 @@ abstract class _Question extends Question {
   String get topicId;
   @override
   QuestionType get questionType;
+  @override
+  String get title;
   @override
   String get question;
   @override
@@ -498,6 +531,7 @@ abstract class _$$_QuestionEmptyCopyWith<$Res>
       String quizId,
       String topicId,
       QuestionType questionType,
+      String title,
       String question,
       List<String> options,
       String correctAnswer});
@@ -521,6 +555,7 @@ class __$$_QuestionEmptyCopyWithImpl<$Res>
     Object? quizId = null,
     Object? topicId = null,
     Object? questionType = null,
+    Object? title = null,
     Object? question = null,
     Object? options = null,
     Object? correctAnswer = null,
@@ -542,6 +577,10 @@ class __$$_QuestionEmptyCopyWithImpl<$Res>
           ? _value.questionType
           : questionType // ignore: cast_nullable_to_non_nullable
               as QuestionType,
+      title: null == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
       question: null == question
           ? _value.question
           : question // ignore: cast_nullable_to_non_nullable
@@ -566,6 +605,7 @@ class _$_QuestionEmpty extends _QuestionEmpty {
       this.quizId = '',
       this.topicId = '',
       this.questionType = const QuestionType.singleChoice(),
+      this.title = '',
       this.question = '',
       final List<String> options = const [],
       this.correctAnswer = ''})
@@ -586,6 +626,9 @@ class _$_QuestionEmpty extends _QuestionEmpty {
   final QuestionType questionType;
   @override
   @JsonKey()
+  final String title;
+  @override
+  @JsonKey()
   final String question;
   final List<String> _options;
   @override
@@ -602,7 +645,7 @@ class _$_QuestionEmpty extends _QuestionEmpty {
 
   @override
   String toString() {
-    return 'Question.empty(id: $id, quizId: $quizId, topicId: $topicId, questionType: $questionType, question: $question, options: $options, correctAnswer: $correctAnswer)';
+    return 'Question.empty(id: $id, quizId: $quizId, topicId: $topicId, questionType: $questionType, title: $title, question: $question, options: $options, correctAnswer: $correctAnswer)';
   }
 
   @override
@@ -615,6 +658,7 @@ class _$_QuestionEmpty extends _QuestionEmpty {
             (identical(other.topicId, topicId) || other.topicId == topicId) &&
             (identical(other.questionType, questionType) ||
                 other.questionType == questionType) &&
+            (identical(other.title, title) || other.title == title) &&
             (identical(other.question, question) ||
                 other.question == question) &&
             const DeepCollectionEquality().equals(other._options, _options) &&
@@ -629,6 +673,7 @@ class _$_QuestionEmpty extends _QuestionEmpty {
       quizId,
       topicId,
       questionType,
+      title,
       question,
       const DeepCollectionEquality().hash(_options),
       correctAnswer);
@@ -647,6 +692,7 @@ class _$_QuestionEmpty extends _QuestionEmpty {
             String quizId,
             String topicId,
             QuestionType questionType,
+            String title,
             String question,
             List<String> options,
             String correctAnswer)
@@ -656,13 +702,14 @@ class _$_QuestionEmpty extends _QuestionEmpty {
             String quizId,
             String topicId,
             QuestionType questionType,
+            String title,
             String question,
             List<String> options,
             String correctAnswer)
         empty,
   }) {
-    return empty(
-        id, quizId, topicId, questionType, question, options, correctAnswer);
+    return empty(id, quizId, topicId, questionType, title, question, options,
+        correctAnswer);
   }
 
   @override
@@ -673,6 +720,7 @@ class _$_QuestionEmpty extends _QuestionEmpty {
             String quizId,
             String topicId,
             QuestionType questionType,
+            String title,
             String question,
             List<String> options,
             String correctAnswer)?
@@ -682,13 +730,14 @@ class _$_QuestionEmpty extends _QuestionEmpty {
             String quizId,
             String topicId,
             QuestionType questionType,
+            String title,
             String question,
             List<String> options,
             String correctAnswer)?
         empty,
   }) {
-    return empty?.call(
-        id, quizId, topicId, questionType, question, options, correctAnswer);
+    return empty?.call(id, quizId, topicId, questionType, title, question,
+        options, correctAnswer);
   }
 
   @override
@@ -699,6 +748,7 @@ class _$_QuestionEmpty extends _QuestionEmpty {
             String quizId,
             String topicId,
             QuestionType questionType,
+            String title,
             String question,
             List<String> options,
             String correctAnswer)?
@@ -708,6 +758,7 @@ class _$_QuestionEmpty extends _QuestionEmpty {
             String quizId,
             String topicId,
             QuestionType questionType,
+            String title,
             String question,
             List<String> options,
             String correctAnswer)?
@@ -715,8 +766,8 @@ class _$_QuestionEmpty extends _QuestionEmpty {
     required TResult orElse(),
   }) {
     if (empty != null) {
-      return empty(
-          id, quizId, topicId, questionType, question, options, correctAnswer);
+      return empty(id, quizId, topicId, questionType, title, question, options,
+          correctAnswer);
     }
     return orElse();
   }
@@ -759,6 +810,7 @@ abstract class _QuestionEmpty extends Question {
       final String quizId,
       final String topicId,
       final QuestionType questionType,
+      final String title,
       final String question,
       final List<String> options,
       final String correctAnswer}) = _$_QuestionEmpty;
@@ -772,6 +824,8 @@ abstract class _QuestionEmpty extends Question {
   String get topicId;
   @override
   QuestionType get questionType;
+  @override
+  String get title;
   @override
   String get question;
   @override

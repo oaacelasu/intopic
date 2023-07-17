@@ -7,17 +7,19 @@ import 'package:intopic/features/auth/application/auth_state_notifier.dart';
 import 'package:intopic/features/common/presentation/utils/extensions/extensions.dart';
 
 class AuthThirdPartyButtons extends ConsumerWidget {
-  const AuthThirdPartyButtons({Key? key, this.isLogin = true}) : super(key: key);
+  const AuthThirdPartyButtons({super.key, this.isLogin = true});
 
   final bool isLogin;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final googleAction = isLogin ? () {
-      ref.read(authStateNotifierProvider.notifier).signInWithGoogle();
-    } : () {
-      ref.read(authStateNotifierProvider.notifier).signUpWithGoogle();
-    };
+    final googleAction = isLogin
+        ? () {
+            ref.read(authStateNotifierProvider.notifier).signInWithGoogle();
+          }
+        : () {
+            ref.read(authStateNotifierProvider.notifier).signUpWithGoogle();
+          };
     final facebookAction = isLogin ? () {} : () {};
     final dividerText = isLogin ? context.tr.orLoginWith : context.tr.orSignupWith;
 
@@ -31,7 +33,7 @@ class AuthThirdPartyButtons extends ConsumerWidget {
                 color: context.backgroundColor,
                 child: Text(
                   dividerText,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.grey,
                     fontWeight: FontWeight.bold,
                   ),
@@ -47,13 +49,13 @@ class AuthThirdPartyButtons extends ConsumerWidget {
                 child: OutlinedButton.icon(
                     icon: FaIcon(FontAwesomeIcons.google, color: context.primaryColor, size: AppDimens.xlg),
                     onPressed: googleAction,
-                    label: Text(context.tr.google))),
+                    label: Text(context.tr.google),),),
             const SizedBox(width: AppDimens.lg),
             Expanded(
                 child: OutlinedButton.icon(
                     icon: FaIcon(FontAwesomeIcons.facebook, color: context.primaryColor, size: AppDimens.xlg),
                     onPressed: facebookAction,
-                    label: Text(context.tr.facebook))),
+                    label: Text(context.tr.facebook),),),
           ],
         ),
       ],

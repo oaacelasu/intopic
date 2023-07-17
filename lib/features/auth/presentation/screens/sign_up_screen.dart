@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import "package:flutter_hooks/flutter_hooks.dart";
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:get/get.dart';
-import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intopic/config/app_dimens.dart';
 import 'package:intopic/config/navigation.dart';
 import 'package:intopic/features/auth/application/auth_state_notifier.dart';
-import 'package:intopic/features/auth/presentation/screens/login_screen.dart';
 import 'package:intopic/features/auth/presentation/widgets/auth_third_party_buttons.dart';
 import 'package:intopic/features/auth/presentation/widgets/confirm_password_field.dart';
 import 'package:intopic/features/auth/presentation/widgets/email_field.dart';
@@ -36,24 +34,21 @@ class SignUpScreen extends HookConsumerWidget {
           '',
           Validators.required,
         ],
-      },
-    [
-    Validators.mustMatch('password', 'confirmPassword', markAsDirty: false)
-    ]
-
-  );
+      }, [
+        Validators.mustMatch('password', 'confirmPassword', markAsDirty: false)
+      ]);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final confirmPasswordEnabled = useState(false);
 
-    void _onSignUp(FormGroup form) {
+    void onSignUp(FormGroup form) {
       if (form.valid) {
         ref.read(authStateNotifierProvider.notifier).signUp(
-          name: Name(form.control('name').value as String),
-          email: EmailAddress(form.control('email').value as String),
-          password: Password(form.control('password').value as String),
-        );
+              name: Name(form.control('name').value as String),
+              email: EmailAddress(form.control('email').value as String),
+              password: Password(form.control('password').value as String),
+            );
       } else {
         form.markAllAsTouched();
       }
@@ -66,7 +61,7 @@ class SignUpScreen extends HookConsumerWidget {
           children: [
             Column(
               children: [
-                AppLogo().marginOnly(bottom: AppDimens.lg),
+                const AppLogo().marginOnly(bottom: AppDimens.lg),
                 Text(context.tr.signUpWelcome),
               ],
             ).marginSymmetric(vertical: Get.height * 0.1),
@@ -75,19 +70,20 @@ class SignUpScreen extends HookConsumerWidget {
               builder: (context, form, child) {
                 return Column(
                   children: [
-                    NameField().marginOnly(bottom: AppDimens.xlg),
-                    EmailField(),
+                    const NameField().marginOnly(bottom: AppDimens.xlg),
+                    const EmailField(),
                     PasswordField(
                       onChanged: (value) {
                         confirmPasswordEnabled.value = value.valid;
                       },
                     ).marginSymmetric(vertical: AppDimens.xlg),
-                    ConfirmPasswordField(enabled: confirmPasswordEnabled.value,
-                    onSubmitted: () => _onSignUp(form),
+                    ConfirmPasswordField(
+                      enabled: confirmPasswordEnabled.value,
+                      onSubmitted: () => onSignUp(form),
                     ).marginOnly(bottom: AppDimens.xlg),
                     PrimaryBtn(
-                        label: context.tr.signup,
-                        onPressed: () => _onSignUp(form),
+                      label: context.tr.signup,
+                      onPressed: () => onSignUp(form),
                     ).marginSymmetric(vertical: AppDimens.xlg),
                   ],
                 );
@@ -95,7 +91,7 @@ class SignUpScreen extends HookConsumerWidget {
             ),
             Column(
               children: [
-                AuthThirdPartyButtons(isLogin: false),
+                const AuthThirdPartyButtons(isLogin: false),
                 TextWithLink(
                   text: context.tr.alreadyHaveAccount,
                   link: context.tr.login,

@@ -5,7 +5,7 @@ import 'package:intopic/config/app_dimens.dart';
 import 'package:intopic/features/common/presentation/utils/extensions/extensions.dart';
 
 class PrimaryBtn extends StatelessWidget {
-  const PrimaryBtn({super.key, required this.label, required this.onPressed, this.enabled = true});
+  const PrimaryBtn({required this.label, required this.onPressed, super.key, this.enabled = true});
 
   final String label;
   final VoidCallback onPressed;
@@ -13,12 +13,12 @@ class PrimaryBtn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final debounder = Debouncer(delay: const Duration(milliseconds: 200));
-    handleOnPressed() => debounder(onPressed);
+    final debouncer = Debouncer(delay: const Duration(milliseconds: 200));
+    void handleOnPressed() => debouncer(onPressed);
 
     return FilledButton(
       style: OutlinedButton.styleFrom(
-        minimumSize: Size(Get.width - AppDimens.xxlg, AppDimens.xxslg),
+        minimumSize: Size(Get.width - AppDimens.xlg, AppDimens.xxslg),
         side: BorderSide(color: context.primaryContainerColor),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppDimens.md),
@@ -31,7 +31,7 @@ class PrimaryBtn extends StatelessWidget {
 }
 
 class SecondaryBtn extends StatelessWidget {
-  const SecondaryBtn({super.key, required this.label, required this.onPressed, this.enabled = true});
+  const SecondaryBtn({required this.label, required this.onPressed, super.key, this.enabled = true});
 
   final String label;
   final VoidCallback onPressed;
@@ -39,8 +39,8 @@ class SecondaryBtn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final debounder = Debouncer(delay: const Duration(milliseconds: 200));
-    void handleOnPressed() => debounder(onPressed);
+    final debouncer = Debouncer(delay: const Duration(milliseconds: 200));
+    void handleOnPressed() => debouncer(onPressed);
 
     return OutlinedButton(
       style: OutlinedButton.styleFrom(

@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 class AppError extends StatelessWidget {
   ///
   const AppError({
-    super.key,
-    required this.title,
+    required this.title, super.key,
     this.description,
   });
 

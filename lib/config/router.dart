@@ -84,7 +84,6 @@ final routerProvider = Provider<GoRouter>((ref) {
 final RouteObserver<ModalRoute<void>> routeObserver = RouteObserver<ModalRoute<void>>();
 
 class RouterNotifier extends ChangeNotifier {
-  final Ref _ref;
 
   RouterNotifier(this._ref) {
     _ref.listen<AuthState?>(
@@ -92,4 +91,5 @@ class RouterNotifier extends ChangeNotifier {
       (_, __) => notifyListeners(),
     );
   }
+  final Ref _ref;
 }

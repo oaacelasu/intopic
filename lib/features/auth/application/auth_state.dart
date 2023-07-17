@@ -9,5 +9,5 @@ class AuthState with _$AuthState {
   const factory AuthState.authenticated(User user, String token) = _Authenticated;
 
   /// State of the auth state notifier when the user is not authenticated
-  const factory AuthState.unauthenticated(bool isFirstLaunch) = _Unauthenticated;
+  const factory AuthState.unauthenticated({required bool isFirstLaunch}) = _Unauthenticated;
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'app_font_weight.dart';
+import 'package:intopic/config/typography/app_font_weight.dart';
 
 abstract class AppTextStyle {
   static const _baseTextStyle = TextStyle(

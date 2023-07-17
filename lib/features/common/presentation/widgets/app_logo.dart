@@ -7,12 +7,12 @@ class AppLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final logoAsset = Image.asset("assets/images/books.png", height: AppDimens.xxlg);
+    final logoAsset = Image.asset('assets/images/books.png', height: AppDimens.xxlg);
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         logoAsset,
-        SizedBox(width: AppDimens.sm),
+        const SizedBox(width: AppDimens.sm),
         Text(
           context.tr.appName,
           style: context.headlineLarge.extraBold.withColor(context.primaryColor),

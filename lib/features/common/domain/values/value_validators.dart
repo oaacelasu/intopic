@@ -1,6 +1,6 @@
-import "package:fpdart/fpdart.dart";
-import "package:intopic/features/common/domain/failures/failure.dart";
-import "package:intopic/features/common/domain/values/email_validator.dart";
+import 'package:fpdart/fpdart.dart';
+import 'package:intopic/features/common/domain/failures/failure.dart';
+import 'package:intopic/features/common/domain/values/email_validator.dart';
 
 Either<Failure, String> validateStringLength(
   String input,
@@ -10,7 +10,7 @@ Either<Failure, String> validateStringLength(
     return right(input);
   } else {
     return left(
-      Failure.unprocessableEntity(message: "Field must contain $length characters."),
+      Failure.unprocessableEntity(message: 'Field must contain $length characters.'),
     );
   }
 }
@@ -23,7 +23,7 @@ Either<Failure, String> validateMaxStringLength(
     return right(input);
   } else {
     return left(
-      Failure.unprocessableEntity(message: "Field must not exceed $maxLength characters."),
+      Failure.unprocessableEntity(message: 'Field must not exceed $maxLength characters.'),
     );
   }
 }
@@ -36,33 +36,33 @@ Either<Failure, String> validateMinStringLength(
     return right(input);
   } else {
     return left(
-      Failure.unprocessableEntity(message: "Field must contain at least $minLength characters."),
+      Failure.unprocessableEntity(message: 'Field must contain at least $minLength characters.'),
     );
   }
 }
 
 Either<Failure, String> validateStringNotEmpty(String input) {
   if (input.isEmpty) {
-    return left(Failure.unprocessableEntity(message: "Field must not be empty."));
+    return left(const Failure.unprocessableEntity(message: 'Field must not be empty.'));
   } else {
     return right(input);
   }
 }
 
 Either<Failure, String> validateSingleLine(String input) {
-  if (input.contains("\n")) {
-    return left(Failure.unprocessableEntity(message: "Field must not contain new lines."));
+  if (input.contains('\n')) {
+    return left(const Failure.unprocessableEntity(message: 'Field must not contain new lines.'));
   } else {
     return right(input);
   }
 }
 
 Either<Failure, String> validateNumber(String input) {
-  const String numberRegex = r"^[0-9]+$";
+  const numberRegex = r'^[0-9]+$';
   if (RegExp(numberRegex).hasMatch(input)) {
     return right(input);
   } else {
-    return left(Failure.unprocessableEntity(message: "Field must contain only numbers."));
+    return left(const Failure.unprocessableEntity(message: 'Field must contain only numbers.'));
   }
 }
 
@@ -70,7 +70,7 @@ Either<Failure, int> validatePositiveNumber(int input) {
   if (input >= 0) {
     return right(input);
   } else {
-    return left(Failure.unprocessableEntity(message: "Field must contain only positive numbers."));
+    return left(const Failure.unprocessableEntity(message: 'Field must contain only positive numbers.'));
   }
 }
 
@@ -90,6 +90,6 @@ Either<Failure, String> validateEmailAddress(String input) {
   if (isEmail(input)) {
     return right(input);
   } else {
-    return left(Failure.unprocessableEntity(message: "Field must contain a valid email address."));
+    return left(const Failure.unprocessableEntity(message: 'Field must contain a valid email address.'));
   }
 }

@@ -4,7 +4,7 @@ import 'package:intopic/features/common/presentation/utils/extensions/extensions
 import 'package:reactive_forms/reactive_forms.dart';
 
 class PasswordField extends HookWidget {
-  const PasswordField({Key? key, this.onChanged, this.onSubmitted}) : super(key: key);
+  const PasswordField({super.key, this.onChanged, this.onSubmitted});
 
   final ValueChanged<FormControl<String>>? onChanged;
   final VoidCallback? onSubmitted;
@@ -23,12 +23,12 @@ class PasswordField extends HookWidget {
       onChanged: onChanged,
       textInputAction: onChanged != null ? TextInputAction.next : TextInputAction.done,
       keyboardType: TextInputType.visiblePassword,
-      onSubmitted: (_)=>onSubmitted?.call(),
+      onSubmitted: (_) => onSubmitted?.call(),
       decoration: InputDecoration(
         labelText: context.tr.password,
         hintText: context.tr.enterPassword,
-        helperStyle: TextStyle(height: 0.7),
-        errorStyle: TextStyle(height: 0.7),
+        helperStyle: const TextStyle(height: 0.7),
+        errorStyle: const TextStyle(height: 0.7),
         suffixIcon: IconButton(
           icon: Icon(obscureText.value ? Icons.visibility : Icons.visibility_off),
           onPressed: () => obscureText.value = !obscureText.value,

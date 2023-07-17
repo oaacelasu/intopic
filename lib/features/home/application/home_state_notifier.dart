@@ -1,7 +1,6 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:intopic/config/providers.dart';
 import 'package:intopic/features/quizzes/domain/entities/quiz.dart';
-
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:intopic/features/topics/domain/entities/topic.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -13,10 +12,10 @@ part 'home_state_notifier.g.dart';
 class HomeStateNotifier extends _$HomeStateNotifier {
   @override
   Future<HomeState> build() async {
-    final List<Topic> topics = await _getTopics();
-    final List<Quiz> topQuizzes = await _getTopQuizzes();
+    final topics = await _getTopics();
+    final topQuizzes = await _getTopQuizzes();
 
-    return HomeState.initial().copyWith(
+    return const HomeState.initial().copyWith(
       topics: topics,
       topQuizzes: topQuizzes,
     );

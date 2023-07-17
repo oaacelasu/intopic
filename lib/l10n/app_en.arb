@@ -33,15 +33,18 @@
   "signUpWelcome": "Enhance your learning today!",
   "acceptTermsAndConditions": "Accept Terms and Conditions",
   "homeSearch": "Find a topic or a quiz",
-    "homeSearchPlaceholder": "Search for a topic or a quiz",
+  "homeSearchPlaceholder": "Search for a topic or a quiz",
   "topQuizzes": "Top Quizzes",
   "seeAll": "See All",
   "topics": "Topics",
   "logout": "Logout",
   "userName": "User Name",
-    "enterUserName": "Enter User Name",
-    "userNameRequired": "User Name is required",
-    "enterValidUserName": "Enter Valid User Name",
+  "enterUserName": "Enter User Name",
+  "userNameRequired": "User Name is required",
+  "enterValidUserName": "Enter Valid User Name",
   "settings": "Settings",
-    "profile": "Profile"
+  "profile": "Profile",
+  "quiz": "Quiz",
+  "quizzes": "Quizzes",
+  "allTopics": "All Topics"
 }

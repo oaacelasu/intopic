@@ -46,9 +46,9 @@ class Name extends ValueAbstract<String> {
 
   const Name.empty()
       : value = emptyStringValue,
-        dflt = "";
+        dflt = '';
 
-  const Name._(this.value, {this.dflt = ""});
+  const Name._(this.value): dflt = '';
 
   @override
   final Either<Failure, String> value;
@@ -58,7 +58,7 @@ class Name extends ValueAbstract<String> {
   static const int maxLength = 300;
 
   bool matches(String regex) {
-    return value.getOrElse((_) => "").toLowerCase().contains(regex.toLowerCase());
+    return value.getOrElse((_) => '').toLowerCase().contains(regex.toLowerCase());
   }
 }
 
@@ -73,9 +73,9 @@ class EmailAddress extends ValueAbstract<String> {
 
   const EmailAddress.empty()
       : value = emptyStringValue,
-        dflt = "";
+        dflt = '';
 
-  const EmailAddress._(this.value, {this.dflt = ""});
+  const EmailAddress._(this.value): dflt = '';
 
   @override
   final Either<Failure, String> value;
@@ -96,9 +96,9 @@ class Password extends ValueAbstract<String> {
 
   const Password.empty()
       : value = emptyStringValue,
-        dflt = "";
+        dflt = '';
 
-  const Password._(this.value, {this.dflt = ""});
+  const Password._(this.value): dflt = '';
 
   @override
   final Either<Failure, String> value;

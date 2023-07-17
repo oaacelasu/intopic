@@ -24,6 +24,7 @@ mixin _$QuestionDto {
   String? get quizId => throw _privateConstructorUsedError;
   String? get topicId => throw _privateConstructorUsedError;
   String? get questionType => throw _privateConstructorUsedError;
+  String? get title => throw _privateConstructorUsedError;
   String? get question => throw _privateConstructorUsedError;
   List<String>? get options => throw _privateConstructorUsedError;
   String? get correctAnswer => throw _privateConstructorUsedError;
@@ -45,6 +46,7 @@ abstract class $QuestionDtoCopyWith<$Res> {
       String? quizId,
       String? topicId,
       String? questionType,
+      String? title,
       String? question,
       List<String>? options,
       String? correctAnswer});
@@ -67,6 +69,7 @@ class _$QuestionDtoCopyWithImpl<$Res, $Val extends QuestionDto>
     Object? quizId = freezed,
     Object? topicId = freezed,
     Object? questionType = freezed,
+    Object? title = freezed,
     Object? question = freezed,
     Object? options = freezed,
     Object? correctAnswer = freezed,
@@ -87,6 +90,10 @@ class _$QuestionDtoCopyWithImpl<$Res, $Val extends QuestionDto>
       questionType: freezed == questionType
           ? _value.questionType
           : questionType // ignore: cast_nullable_to_non_nullable
+              as String?,
+      title: freezed == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
               as String?,
       question: freezed == question
           ? _value.question
@@ -117,6 +124,7 @@ abstract class _$$_QuestionDtoCopyWith<$Res>
       String? quizId,
       String? topicId,
       String? questionType,
+      String? title,
       String? question,
       List<String>? options,
       String? correctAnswer});
@@ -137,6 +145,7 @@ class __$$_QuestionDtoCopyWithImpl<$Res>
     Object? quizId = freezed,
     Object? topicId = freezed,
     Object? questionType = freezed,
+    Object? title = freezed,
     Object? question = freezed,
     Object? options = freezed,
     Object? correctAnswer = freezed,
@@ -157,6 +166,10 @@ class __$$_QuestionDtoCopyWithImpl<$Res>
       questionType: freezed == questionType
           ? _value.questionType
           : questionType // ignore: cast_nullable_to_non_nullable
+              as String?,
+      title: freezed == title
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
               as String?,
       question: freezed == question
           ? _value.question
@@ -182,6 +195,7 @@ class _$_QuestionDto implements _QuestionDto {
       required this.quizId,
       required this.topicId,
       required this.questionType,
+      required this.title,
       required this.question,
       required final List<String>? options,
       required this.correctAnswer})
@@ -199,6 +213,8 @@ class _$_QuestionDto implements _QuestionDto {
   @override
   final String? questionType;
   @override
+  final String? title;
+  @override
   final String? question;
   final List<String>? _options;
   @override
@@ -215,7 +231,7 @@ class _$_QuestionDto implements _QuestionDto {
 
   @override
   String toString() {
-    return 'QuestionDto(id: $id, quizId: $quizId, topicId: $topicId, questionType: $questionType, question: $question, options: $options, correctAnswer: $correctAnswer)';
+    return 'QuestionDto(id: $id, quizId: $quizId, topicId: $topicId, questionType: $questionType, title: $title, question: $question, options: $options, correctAnswer: $correctAnswer)';
   }
 
   @override
@@ -228,6 +244,7 @@ class _$_QuestionDto implements _QuestionDto {
             (identical(other.topicId, topicId) || other.topicId == topicId) &&
             (identical(other.questionType, questionType) ||
                 other.questionType == questionType) &&
+            (identical(other.title, title) || other.title == title) &&
             (identical(other.question, question) ||
                 other.question == question) &&
             const DeepCollectionEquality().equals(other._options, _options) &&
@@ -243,6 +260,7 @@ class _$_QuestionDto implements _QuestionDto {
       quizId,
       topicId,
       questionType,
+      title,
       question,
       const DeepCollectionEquality().hash(_options),
       correctAnswer);
@@ -267,6 +285,7 @@ abstract class _QuestionDto implements QuestionDto {
       required final String? quizId,
       required final String? topicId,
       required final String? questionType,
+      required final String? title,
       required final String? question,
       required final List<String>? options,
       required final String? correctAnswer}) = _$_QuestionDto;
@@ -282,6 +301,8 @@ abstract class _QuestionDto implements QuestionDto {
   String? get topicId;
   @override
   String? get questionType;
+  @override
+  String? get title;
   @override
   String? get question;
   @override

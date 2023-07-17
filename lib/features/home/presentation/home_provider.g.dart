@@ -66,7 +66,7 @@ final filteredTopicsProvider = AutoDisposeFutureProvider<List<Topic>>.internal(
 );
 
 typedef FilteredTopicsRef = AutoDisposeFutureProviderRef<List<Topic>>;
-String _$userHash() => r'271c14e438ec6827ffde0de641b72d00e1a0ff91';
+String _$userHash() => r'54e1da18f39591508d7e91493d12d10cff883089';
 
 /// See also [user].
 @ProviderFor(user)
@@ -80,7 +80,22 @@ final userProvider = AutoDisposeProvider<Option<User>>.internal(
 );
 
 typedef UserRef = AutoDisposeProviderRef<Option<User>>;
-String _$homeFilterHash() => r'fa3802a605d4d65daf22802a5df0fce6e8656f18';
+String _$currentTopQuizHash() => r'37764cfff000147bb6a1fa4ea6979115392b8db0';
+
+/// See also [currentTopQuiz].
+@ProviderFor(currentTopQuiz)
+final currentTopQuizProvider = AutoDisposeProvider<Quiz>.internal(
+  currentTopQuiz,
+  name: r'currentTopQuizProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$currentTopQuizHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef CurrentTopQuizRef = AutoDisposeProviderRef<Quiz>;
+String _$homeFilterHash() => r'b86c37f575248a2c2209c0e202149cdae423139c';
 
 /// See also [HomeFilter].
 @ProviderFor(HomeFilter)

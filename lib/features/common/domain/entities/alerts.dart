@@ -1,9 +1,9 @@
-import "package:flutter/material.dart";
-import "package:get/get.dart";
-import "package:intopic/config/app_colors.dart";
-import "package:intopic/config/app_constants.dart";
-import "package:intopic/config/app_dimens.dart";
-import "package:intopic/features/common/presentation/utils/extensions/build_context_extension.dart";
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:intopic/config/app_colors.dart';
+import 'package:intopic/config/app_constants.dart';
+import 'package:intopic/config/app_dimens.dart';
+import 'package:intopic/features/common/presentation/utils/extensions/build_context_extension.dart';
 
 enum AlertType { error, info, success }
 
@@ -13,19 +13,16 @@ abstract class Alert {
   final String message;
   final AlertType type;
 
-  void show() async {
+  Future<void> show() async {
     if (message.isNotEmpty) {
       await Get.closeCurrentSnackbar();
       switch (type) {
         case AlertType.error:
           _showError();
-          break;
         case AlertType.info:
           _showInfo();
-          break;
         case AlertType.success:
           _showSuccess();
-          break;
       }
     }
   }
@@ -40,10 +37,10 @@ abstract class Alert {
             borderRadius: AppDimens.md,
             duration: AppConstants.toastDuration,
             margin: const EdgeInsets.symmetric(horizontal: AppDimens.sm),
-            barBlur: 7.0,
+            barBlur: 7,
             backgroundColor: AppColors.green.withOpacity(0.92),
             icon: const Icon(Icons.check_circle, color: AppColors.green),
-            dismissDirection: DismissDirection.endToStart),
+            dismissDirection: DismissDirection.endToStart,),
       );
 
   void _showInfo() => Get.showSnackbar(
@@ -56,10 +53,10 @@ abstract class Alert {
             borderRadius: AppDimens.md,
             duration: AppConstants.toastDuration,
             margin: const EdgeInsets.symmetric(horizontal: AppDimens.sm),
-            barBlur: 7.0,
+            barBlur: 7,
             backgroundColor: AppColors.blue.withOpacity(0.92),
             icon: const Icon(Icons.info, color: AppColors.blue),
-            dismissDirection: DismissDirection.endToStart),
+            dismissDirection: DismissDirection.endToStart,),
       );
 
   void _showError() => Get.showSnackbar(
@@ -72,22 +69,21 @@ abstract class Alert {
             borderRadius: AppDimens.md,
             duration: AppConstants.toastDuration,
             margin: const EdgeInsets.symmetric(horizontal: AppDimens.sm),
-            barBlur: 7.0,
-
+            barBlur: 7,
             backgroundColor: AppColors.red.withOpacity(0.92),
             icon: const Icon(Icons.error, color: Colors.white),
-            dismissDirection: DismissDirection.endToStart),
+            dismissDirection: DismissDirection.endToStart,),
       );
 }
 
 class AlertError extends Alert {
-  const AlertError(String message) : super(message, type: AlertType.error);
+  const AlertError(super.message) : super(type: AlertType.error);
 }
 
 class AlertInfo extends Alert {
-  const AlertInfo(String message) : super(message, type: AlertType.info);
+  const AlertInfo(super.message) : super(type: AlertType.info);
 }
 
 class AlertSuccess extends Alert {
-  const AlertSuccess(String message) : super(message, type: AlertType.success);
+  const AlertSuccess(super.message) : super(type: AlertType.success);
 }

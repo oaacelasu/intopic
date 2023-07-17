@@ -1,4 +1,3 @@
-
 part of 'home_state_notifier.dart';
 
 @freezed

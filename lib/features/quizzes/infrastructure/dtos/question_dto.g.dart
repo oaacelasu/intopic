@@ -12,6 +12,7 @@ _$_QuestionDto _$$_QuestionDtoFromJson(Map<String, dynamic> json) =>
       quizId: json['quizId'] as String?,
       topicId: json['topicId'] as String?,
       questionType: json['questionType'] as String?,
+      title: json['title'] as String?,
       question: json['question'] as String?,
       options:
           (json['options'] as List<dynamic>?)?.map((e) => e as String).toList(),
@@ -24,6 +25,7 @@ Map<String, dynamic> _$$_QuestionDtoToJson(_$_QuestionDto instance) =>
       'quizId': instance.quizId,
       'topicId': instance.topicId,
       'questionType': instance.questionType,
+      'title': instance.title,
       'question': instance.question,
       'options': instance.options,
       'correctAnswer': instance.correctAnswer,

@@ -48,7 +48,6 @@ IQuizRepository quizRepository(QuizRepositoryRef ref) {
   return QuizRepository(ref);
 }
 
-
 /// Provides a [ValueNotifier] to the app router to redirect on auth state change
 final authStateListenable = ValueNotifier<bool>(false);
 
@@ -56,5 +55,6 @@ final authStateListenable = ValueNotifier<bool>(false);
 Future<void> initializeProviders(ProviderContainer container) async {
   /// Core
   await container.read(sharedPreferencesProvider.future);
-  container.read(authStateNotifierProvider);
+  container..read(authStateNotifierProvider)
+  ..read(localRepositoryProvider);
 }

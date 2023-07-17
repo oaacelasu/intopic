@@ -1,4 +1,3 @@
-
 /// Flavor enum
 enum Flavor {
   /// Development
@@ -11,10 +10,8 @@ enum Flavor {
   prod,
 }
 
-
 /// Flavor class
 class F {
-
   /// Flavor
   static Flavor? appFlavor;
 
@@ -28,7 +25,9 @@ class F {
         return 'Intopic Dev';
       case Flavor.stg:
         return 'Intopic Stg';
-      default:
+      case Flavor.prod:
+        return 'Intopic';
+      case null:
         return 'Intopic';
     }
   }
@@ -40,8 +39,10 @@ class F {
         return 'http://10.0.2.2:3001';
       case Flavor.stg:
         return 'https://stg.intopic.it';
-      default:
+      case Flavor.prod:
         return 'https://www.intopic.it';
+      case null:
+        return 'Intopic';
     }
   }
 }

@@ -1,0 +1,155 @@
+{
+  "id": "quiz-1",
+  "topicId": "javascript",
+  "userId": "user-1",
+  "title": "JavaScript Quiz",
+  "description": "Test your knowledge of JavaScript",
+  "imageURL": "https://example.com/quiz-image.jpg",
+  "quizAccessFromTime": "2023-07-17T09:00:00Z",
+  "quizAccessToTime": "2023-07-17T10:00:00Z",
+  "isQuizActive": true,
+  "questions": [
+    {
+      "id": "question-1",
+      "quizId": "quiz-1",
+      "topicId": "javascript",
+      "questionType": "singleChoice",
+      "title": "What is the result of the expression '2' + 2?",
+      "question": "Choose the correct answer.",
+      "options": [
+        "22",
+        "4",
+        "NaN",
+        "TypeError"
+      ],
+      "correctAnswer": "22"
+    },
+    {
+      "id": "question-2",
+      "quizId": "quiz-1",
+      "topicId": "javascript",
+      "questionType": "multipleChoice",
+      "title": "Which of the following are JavaScript data types?",
+      "question": "Select all that apply.",
+      "options": [
+        "String",
+        "Number",
+        "Boolean",
+        "Array",
+        "Object"
+      ],
+      "correctAnswer": "String,Number,Boolean,Array,Object"
+    },
+    {
+      "id": "question-3",
+      "quizId": "quiz-1",
+      "topicId": "javascript",
+      "questionType": "trueFalse",
+      "title": "JavaScript is a compiled language.",
+      "question": "Choose true or false.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correctAnswer": "False"
+    },
+    {
+      "id": "question-4",
+      "quizId": "quiz-1",
+      "topicId": "javascript",
+      "questionType": "singleChoice",
+      "title": "What is the output of the following code?\n\n```javascript\nconsole.log(2 + '2' - 1);\n```",
+      "question": "Choose the correct answer.",
+      "options": [
+        "21",
+        "22",
+        "NaN",
+        "TypeError"
+      ],
+      "correctAnswer": "21"
+    },
+    {
+      "id": "question-5",
+      "quizId": "quiz-1",
+      "topicId": "javascript",
+      "questionType": "multipleChoice",
+      "title": "Which of the following is not a JavaScript framework?",
+      "question": "Select one option.",
+      "options": [
+        "React",
+        "Angular",
+        "Vue",
+        "Express"
+      ],
+      "correctAnswer": "Express"
+    },
+    {
+      "id": "question-6",
+      "quizId": "quiz-1",
+      "topicId": "javascript",
+      "questionType": "trueFalse",
+      "title": "JavaScript is a case-sensitive language.",
+      "question": "Choose true or false.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correctAnswer": "True"
+    },
+    {
+      "id": "question-7",
+      "quizId": "quiz-1",
+      "topicId": "javascript",
+      "questionType": "singleChoice",
+      "title": "What will be logged to the console?\n\n```javascript\nconsole.log(typeof null);\n```",
+      "question": "Choose the correct answer.",
+      "options": [
+        "undefined",
+        "object",
+        "null",
+        "TypeError"
+      ],
+      "correctAnswer": "object"
+    },
+    {
+      "id": "question-8",
+      "quizId": "quiz-1",
+      "topicId": "javascript",
+      "questionType": "multipleChoice",
+      "title": "Which of the following is a valid way to comment in JavaScript?",
+      "question": "Select all that apply.",
+      "options": [
+        "// This is a comment",
+        "/* This is a comment */",
+        "<!-- This is a comment -->",
+        "# This is a comment"
+      ],
+      "correctAnswer": "// This is a comment,/* This is a comment */"
+    },
+    {
+      "id": "question-9",
+      "quizId": "quiz-1",
+      "topicId": "javascript",
+      "questionType": "singleChoice",
+      "title": "What is the output of the following code?\n\n```javascript\nconsole.log(5 > 4 > 3);\n```",
+      "question": "Choose the correct answer.",
+      "options": [
+        "true",
+        "false",
+        "TypeError",
+        "undefined"
+      ],
+      "correctAnswer": "false"
+    },
+    {
+      "id": "question-10",
+      "quizId": "quiz-1",
+      "topicId": "javascript",
+      "questionType": "multipleChoice",
+      "title": "Which of the following is a valid way to comment in JavaScript?",
+      "question": "Select all that apply.",
+      "options": ["// This is a comment", "/* This is a comment */", "<!-- This is a comment -->", "# This is a comment"],
+      "correctAnswer": "// This is a comment,/* This is a comment */"
+    }
+    ]
+}

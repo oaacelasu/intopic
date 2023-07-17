@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import "package:flutter_hooks/flutter_hooks.dart";
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:intopic/features/common/presentation/utils/extensions/extensions.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
 class ConfirmPasswordField extends HookWidget {
-  const ConfirmPasswordField({Key? key, required this.enabled, this.onSubmitted}) : super(key: key);
+  const ConfirmPasswordField({required this.enabled, super.key, this.onSubmitted});
 
   final bool enabled;
   final VoidCallback? onSubmitted;
@@ -23,7 +23,7 @@ class ConfirmPasswordField extends HookWidget {
           ValidationMessage.equals: (_) => context.tr.passwordNotMatch,
           ValidationMessage.mustMatch: (_) => context.tr.passwordNotMatch,
         },
-        onSubmitted: (_)=>onSubmitted?.call(),
+        onSubmitted: (_) => onSubmitted?.call(),
         textInputAction: TextInputAction.done,
         showErrors: (control) => control.invalid && control.dirty,
         keyboardType: TextInputType.visiblePassword,

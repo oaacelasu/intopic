@@ -20,6 +20,7 @@ mixin _$Quiz {
   String get topicId => throw _privateConstructorUsedError;
   String get userId => throw _privateConstructorUsedError;
   Name get title => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
   String get imageURL => throw _privateConstructorUsedError;
   DateTime? get quizAccessFromTime => throw _privateConstructorUsedError;
   DateTime? get quizAccessToTime => throw _privateConstructorUsedError;
@@ -32,6 +33,7 @@ mixin _$Quiz {
             String topicId,
             String userId,
             Name title,
+            String description,
             String imageURL,
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
@@ -43,6 +45,7 @@ mixin _$Quiz {
             String topicId,
             String userId,
             Name title,
+            String description,
             String imageURL,
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
@@ -58,6 +61,7 @@ mixin _$Quiz {
             String topicId,
             String userId,
             Name title,
+            String description,
             String imageURL,
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
@@ -69,6 +73,7 @@ mixin _$Quiz {
             String topicId,
             String userId,
             Name title,
+            String description,
             String imageURL,
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
@@ -84,6 +89,7 @@ mixin _$Quiz {
             String topicId,
             String userId,
             Name title,
+            String description,
             String imageURL,
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
@@ -95,6 +101,7 @@ mixin _$Quiz {
             String topicId,
             String userId,
             Name title,
+            String description,
             String imageURL,
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
@@ -138,6 +145,7 @@ abstract class $QuizCopyWith<$Res> {
       String topicId,
       String userId,
       Name title,
+      String description,
       String imageURL,
       DateTime? quizAccessFromTime,
       DateTime? quizAccessToTime,
@@ -162,6 +170,7 @@ class _$QuizCopyWithImpl<$Res, $Val extends Quiz>
     Object? topicId = null,
     Object? userId = null,
     Object? title = null,
+    Object? description = null,
     Object? imageURL = null,
     Object? quizAccessFromTime = freezed,
     Object? quizAccessToTime = freezed,
@@ -185,6 +194,10 @@ class _$QuizCopyWithImpl<$Res, $Val extends Quiz>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as Name,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
       imageURL: null == imageURL
           ? _value.imageURL
           : imageURL // ignore: cast_nullable_to_non_nullable
@@ -220,6 +233,7 @@ abstract class _$$_QuizCopyWith<$Res> implements $QuizCopyWith<$Res> {
       String topicId,
       String userId,
       Name title,
+      String description,
       String imageURL,
       DateTime? quizAccessFromTime,
       DateTime? quizAccessToTime,
@@ -240,6 +254,7 @@ class __$$_QuizCopyWithImpl<$Res> extends _$QuizCopyWithImpl<$Res, _$_Quiz>
     Object? topicId = null,
     Object? userId = null,
     Object? title = null,
+    Object? description = null,
     Object? imageURL = null,
     Object? quizAccessFromTime = freezed,
     Object? quizAccessToTime = freezed,
@@ -263,6 +278,10 @@ class __$$_QuizCopyWithImpl<$Res> extends _$QuizCopyWithImpl<$Res, _$_Quiz>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as Name,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
       imageURL: null == imageURL
           ? _value.imageURL
           : imageURL // ignore: cast_nullable_to_non_nullable
@@ -295,6 +314,7 @@ class _$_Quiz extends _Quiz {
       required this.topicId,
       required this.userId,
       required this.title,
+      required this.description,
       required this.imageURL,
       required this.quizAccessFromTime,
       required this.quizAccessToTime,
@@ -311,6 +331,8 @@ class _$_Quiz extends _Quiz {
   final String userId;
   @override
   final Name title;
+  @override
+  final String description;
   @override
   final String imageURL;
   @override
@@ -329,7 +351,7 @@ class _$_Quiz extends _Quiz {
 
   @override
   String toString() {
-    return 'Quiz(id: $id, topicId: $topicId, userId: $userId, title: $title, imageURL: $imageURL, quizAccessFromTime: $quizAccessFromTime, quizAccessToTime: $quizAccessToTime, isQuizActive: $isQuizActive, questions: $questions)';
+    return 'Quiz(id: $id, topicId: $topicId, userId: $userId, title: $title, description: $description, imageURL: $imageURL, quizAccessFromTime: $quizAccessFromTime, quizAccessToTime: $quizAccessToTime, isQuizActive: $isQuizActive, questions: $questions)';
   }
 
   @override
@@ -341,6 +363,8 @@ class _$_Quiz extends _Quiz {
             (identical(other.topicId, topicId) || other.topicId == topicId) &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.title, title) || other.title == title) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
             (identical(other.imageURL, imageURL) ||
                 other.imageURL == imageURL) &&
             (identical(other.quizAccessFromTime, quizAccessFromTime) ||
@@ -360,6 +384,7 @@ class _$_Quiz extends _Quiz {
       topicId,
       userId,
       title,
+      description,
       imageURL,
       quizAccessFromTime,
       quizAccessToTime,
@@ -380,6 +405,7 @@ class _$_Quiz extends _Quiz {
             String topicId,
             String userId,
             Name title,
+            String description,
             String imageURL,
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
@@ -391,6 +417,7 @@ class _$_Quiz extends _Quiz {
             String topicId,
             String userId,
             Name title,
+            String description,
             String imageURL,
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
@@ -398,8 +425,8 @@ class _$_Quiz extends _Quiz {
             List<Question> questions)
         empty,
   }) {
-    return $default(id, topicId, userId, title, imageURL, quizAccessFromTime,
-        quizAccessToTime, isQuizActive, questions);
+    return $default(id, topicId, userId, title, description, imageURL,
+        quizAccessFromTime, quizAccessToTime, isQuizActive, questions);
   }
 
   @override
@@ -410,6 +437,7 @@ class _$_Quiz extends _Quiz {
             String topicId,
             String userId,
             Name title,
+            String description,
             String imageURL,
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
@@ -421,6 +449,7 @@ class _$_Quiz extends _Quiz {
             String topicId,
             String userId,
             Name title,
+            String description,
             String imageURL,
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
@@ -428,7 +457,7 @@ class _$_Quiz extends _Quiz {
             List<Question> questions)?
         empty,
   }) {
-    return $default?.call(id, topicId, userId, title, imageURL,
+    return $default?.call(id, topicId, userId, title, description, imageURL,
         quizAccessFromTime, quizAccessToTime, isQuizActive, questions);
   }
 
@@ -440,6 +469,7 @@ class _$_Quiz extends _Quiz {
             String topicId,
             String userId,
             Name title,
+            String description,
             String imageURL,
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
@@ -451,6 +481,7 @@ class _$_Quiz extends _Quiz {
             String topicId,
             String userId,
             Name title,
+            String description,
             String imageURL,
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
@@ -460,8 +491,8 @@ class _$_Quiz extends _Quiz {
     required TResult orElse(),
   }) {
     if ($default != null) {
-      return $default(id, topicId, userId, title, imageURL, quizAccessFromTime,
-          quizAccessToTime, isQuizActive, questions);
+      return $default(id, topicId, userId, title, description, imageURL,
+          quizAccessFromTime, quizAccessToTime, isQuizActive, questions);
     }
     return orElse();
   }
@@ -504,6 +535,7 @@ abstract class _Quiz extends Quiz {
       required final String topicId,
       required final String userId,
       required final Name title,
+      required final String description,
       required final String imageURL,
       required final DateTime? quizAccessFromTime,
       required final DateTime? quizAccessToTime,
@@ -519,6 +551,8 @@ abstract class _Quiz extends Quiz {
   String get userId;
   @override
   Name get title;
+  @override
+  String get description;
   @override
   String get imageURL;
   @override
@@ -546,6 +580,7 @@ abstract class _$$_QuizEmptyCopyWith<$Res> implements $QuizCopyWith<$Res> {
       String topicId,
       String userId,
       Name title,
+      String description,
       String imageURL,
       DateTime? quizAccessFromTime,
       DateTime? quizAccessToTime,
@@ -568,6 +603,7 @@ class __$$_QuizEmptyCopyWithImpl<$Res>
     Object? topicId = null,
     Object? userId = null,
     Object? title = null,
+    Object? description = null,
     Object? imageURL = null,
     Object? quizAccessFromTime = freezed,
     Object? quizAccessToTime = freezed,
@@ -591,6 +627,10 @@ class __$$_QuizEmptyCopyWithImpl<$Res>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as Name,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
       imageURL: null == imageURL
           ? _value.imageURL
           : imageURL // ignore: cast_nullable_to_non_nullable
@@ -623,6 +663,7 @@ class _$_QuizEmpty extends _QuizEmpty {
       this.topicId = '',
       this.userId = '',
       this.title = const Name.empty(),
+      this.description = '',
       this.imageURL = '',
       this.quizAccessFromTime = null,
       this.quizAccessToTime = null,
@@ -643,6 +684,9 @@ class _$_QuizEmpty extends _QuizEmpty {
   @override
   @JsonKey()
   final Name title;
+  @override
+  @JsonKey()
+  final String description;
   @override
   @JsonKey()
   final String imageURL;
@@ -666,7 +710,7 @@ class _$_QuizEmpty extends _QuizEmpty {
 
   @override
   String toString() {
-    return 'Quiz.empty(id: $id, topicId: $topicId, userId: $userId, title: $title, imageURL: $imageURL, quizAccessFromTime: $quizAccessFromTime, quizAccessToTime: $quizAccessToTime, isQuizActive: $isQuizActive, questions: $questions)';
+    return 'Quiz.empty(id: $id, topicId: $topicId, userId: $userId, title: $title, description: $description, imageURL: $imageURL, quizAccessFromTime: $quizAccessFromTime, quizAccessToTime: $quizAccessToTime, isQuizActive: $isQuizActive, questions: $questions)';
   }
 
   @override
@@ -678,6 +722,8 @@ class _$_QuizEmpty extends _QuizEmpty {
             (identical(other.topicId, topicId) || other.topicId == topicId) &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.title, title) || other.title == title) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
             (identical(other.imageURL, imageURL) ||
                 other.imageURL == imageURL) &&
             (identical(other.quizAccessFromTime, quizAccessFromTime) ||
@@ -697,6 +743,7 @@ class _$_QuizEmpty extends _QuizEmpty {
       topicId,
       userId,
       title,
+      description,
       imageURL,
       quizAccessFromTime,
       quizAccessToTime,
@@ -717,6 +764,7 @@ class _$_QuizEmpty extends _QuizEmpty {
             String topicId,
             String userId,
             Name title,
+            String description,
             String imageURL,
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
@@ -728,6 +776,7 @@ class _$_QuizEmpty extends _QuizEmpty {
             String topicId,
             String userId,
             Name title,
+            String description,
             String imageURL,
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
@@ -735,8 +784,8 @@ class _$_QuizEmpty extends _QuizEmpty {
             List<Question> questions)
         empty,
   }) {
-    return empty(id, topicId, userId, title, imageURL, quizAccessFromTime,
-        quizAccessToTime, isQuizActive, questions);
+    return empty(id, topicId, userId, title, description, imageURL,
+        quizAccessFromTime, quizAccessToTime, isQuizActive, questions);
   }
 
   @override
@@ -747,6 +796,7 @@ class _$_QuizEmpty extends _QuizEmpty {
             String topicId,
             String userId,
             Name title,
+            String description,
             String imageURL,
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
@@ -758,6 +808,7 @@ class _$_QuizEmpty extends _QuizEmpty {
             String topicId,
             String userId,
             Name title,
+            String description,
             String imageURL,
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
@@ -765,8 +816,8 @@ class _$_QuizEmpty extends _QuizEmpty {
             List<Question> questions)?
         empty,
   }) {
-    return empty?.call(id, topicId, userId, title, imageURL, quizAccessFromTime,
-        quizAccessToTime, isQuizActive, questions);
+    return empty?.call(id, topicId, userId, title, description, imageURL,
+        quizAccessFromTime, quizAccessToTime, isQuizActive, questions);
   }
 
   @override
@@ -777,6 +828,7 @@ class _$_QuizEmpty extends _QuizEmpty {
             String topicId,
             String userId,
             Name title,
+            String description,
             String imageURL,
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
@@ -788,6 +840,7 @@ class _$_QuizEmpty extends _QuizEmpty {
             String topicId,
             String userId,
             Name title,
+            String description,
             String imageURL,
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
@@ -797,8 +850,8 @@ class _$_QuizEmpty extends _QuizEmpty {
     required TResult orElse(),
   }) {
     if (empty != null) {
-      return empty(id, topicId, userId, title, imageURL, quizAccessFromTime,
-          quizAccessToTime, isQuizActive, questions);
+      return empty(id, topicId, userId, title, description, imageURL,
+          quizAccessFromTime, quizAccessToTime, isQuizActive, questions);
     }
     return orElse();
   }
@@ -841,6 +894,7 @@ abstract class _QuizEmpty extends Quiz {
       final String topicId,
       final String userId,
       final Name title,
+      final String description,
       final String imageURL,
       final DateTime? quizAccessFromTime,
       final DateTime? quizAccessToTime,
@@ -856,6 +910,8 @@ abstract class _QuizEmpty extends Quiz {
   String get userId;
   @override
   Name get title;
+  @override
+  String get description;
   @override
   String get imageURL;
   @override

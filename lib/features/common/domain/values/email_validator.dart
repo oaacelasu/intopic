@@ -1,11 +1,9 @@
-library email_validator;
-
 import 'dart:core';
 
 /// The Type enum
 ///
-/// The domain type is either None, Alphabetic, Numeric or AlphaNumeric
-enum SubdomainType { None, Alphabetic, Numeric, AlphaNumeric }
+/// The domain type is either none, alphabetic, numeric or Alphanumeric
+enum SubdomainType { none, alphabetic, numeric, alphanumeric }
 
 ///The EmailValidator entry point
 ///
@@ -15,10 +13,10 @@ class EmailValidator {
   static int _index = 0;
 
   // A string character set containing all special characters
-  static const String _atomCharacters = "!#\$%&'*+-/=?^_`{|}~";
+  static const String _atomCharacters = r"!#$%&'*+-/=?^_`{|}~";
 
   // Sets default domainType to null on initialization
-  static SubdomainType _domainType = SubdomainType.None;
+  static SubdomainType _domainType = SubdomainType.none;
 
   // Returns true if the first letter in string c has a 16-bit UTF-16 code unit
   // greater than or equal to 48 and less than or equal to 57
@@ -53,25 +51,25 @@ class EmailValidator {
   // First checks whether the first letter in string c is a letter, number or special
   // character
   // If calling isLetter returns true or c is '-',
-  // domainType is set to Alphabetic and the function returns true
+  // domainType is set to alphabetic and the function returns true
   // If calling isDigit returns true
-  // domainType is set to Numeric and the function returns true
+  // domainType is set to numeric and the function returns true
   // Otherwise the function returns false
   //
   // If the first if statement for string c being a letter, number or special character
   // fails
   // The value of allowInternational is checked where, if true,
-  // domainType is set to Alphabetic and the function returns true
+  // domainType is set to alphabetic and the function returns true
   // Otherwise, the function returns false
   static bool _isDomain(String c, bool allowInternational) {
     if (c.codeUnitAt(0) < 128) {
       if (_isLetter(c) || c == '-') {
-        _domainType = SubdomainType.Alphabetic;
+        _domainType = SubdomainType.alphabetic;
         return true;
       }
 
       if (_isDigit(c)) {
-        _domainType = SubdomainType.Numeric;
+        _domainType = SubdomainType.numeric;
         return true;
       }
 
@@ -79,43 +77,43 @@ class EmailValidator {
     }
 
     if (allowInternational) {
-      _domainType = SubdomainType.Alphabetic;
+      _domainType = SubdomainType.alphabetic;
       return true;
     }
 
     return false;
   }
 
-  // Returns true if domainType is not None
+  // Returns true if domainType is not none
   // Otherwise returns false
   static bool _isDomainStart(String c, bool allowInternational) {
     if (c.codeUnitAt(0) < 128) {
       if (_isLetter(c)) {
-        _domainType = SubdomainType.Alphabetic;
+        _domainType = SubdomainType.alphabetic;
         return true;
       }
 
       if (_isDigit(c)) {
-        _domainType = SubdomainType.Numeric;
+        _domainType = SubdomainType.numeric;
         return true;
       }
 
-      _domainType = SubdomainType.None;
+      _domainType = SubdomainType.none;
 
       return false;
     }
 
     if (allowInternational) {
-      _domainType = SubdomainType.Alphabetic;
+      _domainType = SubdomainType.alphabetic;
       return true;
     }
 
-    _domainType = SubdomainType.None;
+    _domainType = SubdomainType.none;
 
     return false;
   }
 
-  // TODO: Documentation for this function is required
+  // TODO(oscar): Documentation for this function is required
   static bool _skipAtom(String text, bool allowInternational) {
     final startIndex = _index;
 
@@ -126,7 +124,7 @@ class EmailValidator {
     return _index > startIndex;
   }
 
-  // Skips checking of subdomain and returns false if domainType is None
+  // Skips checking of subdomain and returns false if domainType is none
   // Otherwise returns true
   static bool _skipSubDomain(String text, bool allowInternational) {
     final startIndex = _index;
@@ -167,9 +165,9 @@ class EmailValidator {
       return false;
     }
 
-    // Note: by allowing AlphaNumeric,
+    // Note: by allowing Alphanumeric,
     // we get away with not having to support punycode.
-    if (_domainType == SubdomainType.Numeric) {
+    if (_domainType == SubdomainType.numeric) {
       return false;
     }
 
@@ -190,7 +188,7 @@ class EmailValidator {
         return false;
       }
 
-      if (text[_index] == '\\') {
+      if (text[_index] == r'\') {
         escaped = !escaped;
       } else if (!escaped) {
         if (text[_index] == '"') {
@@ -212,7 +210,7 @@ class EmailValidator {
     return true;
   }
 
-  // TODO: Documentation for this function is required
+  // TODO(oscar): Documentation for this function is required
   static bool _skipIPv4Literal(String text) {
     var groups = 0;
 
@@ -334,7 +332,7 @@ class EmailValidator {
   /// If [allowInternational] is `true`, then the validator
   /// will use the newer International Email standards for validating
   /// the email address.
-  static bool validate(String email, [bool allowTopLevelDomains = false, bool allowInternational = true]) {
+  static bool validate(String email, {bool allowTopLevelDomains = false, bool allowInternational = true}) {
     _index = 0;
 
     if (email.isEmpty || email.length >= 255) {

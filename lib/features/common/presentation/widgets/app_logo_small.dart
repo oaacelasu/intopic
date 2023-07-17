@@ -10,8 +10,8 @@ class AppLogoSmall extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image.asset("assets/images/books.png", height: AppDimens.xlg),
-        SizedBox(width: AppDimens.sm),
+        Image.asset('assets/images/books.png', height: AppDimens.xlg),
+        const SizedBox(width: AppDimens.sm),
         Text(
           context.tr.appName,
           style: context.headlineSmall.bold.withColor(context.primaryColor),

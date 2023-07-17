@@ -368,7 +368,7 @@ class __$$_UnauthenticatedCopyWithImpl<$Res>
     Object? isFirstLaunch = null,
   }) {
     return _then(_$_Unauthenticated(
-      null == isFirstLaunch
+      isFirstLaunch: null == isFirstLaunch
           ? _value.isFirstLaunch
           : isFirstLaunch // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -379,7 +379,7 @@ class __$$_UnauthenticatedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Unauthenticated implements _Unauthenticated {
-  const _$_Unauthenticated(this.isFirstLaunch);
+  const _$_Unauthenticated({required this.isFirstLaunch});
 
   @override
   final bool isFirstLaunch;
@@ -477,7 +477,8 @@ class _$_Unauthenticated implements _Unauthenticated {
 }
 
 abstract class _Unauthenticated implements AuthState {
-  const factory _Unauthenticated(final bool isFirstLaunch) = _$_Unauthenticated;
+  const factory _Unauthenticated({required final bool isFirstLaunch}) =
+      _$_Unauthenticated;
 
   bool get isFirstLaunch;
   @JsonKey(ignore: true)

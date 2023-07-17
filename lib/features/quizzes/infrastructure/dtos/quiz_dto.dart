@@ -4,11 +4,13 @@ import 'package:intopic/features/quizzes/domain/entities/quiz.dart';
 import 'package:intopic/features/quizzes/infrastructure/dtos/question_dto.dart';
 
 part 'quiz_dto.freezed.dart';
+
 part 'quiz_dto.g.dart';
 
 @freezed
 
 /// QuizDto class is the data transfer object for [Quiz] entity
+
 class QuizDto with _$QuizDto {
 
   /// Default constructor for the [QuizDto] class
@@ -17,6 +19,7 @@ class QuizDto with _$QuizDto {
     required String? topicId,
     required String? userId,
     required String? title,
+    required String? description,
     required String? imageURL,
     required String? quizAccessFromTime,
     required String? quizAccessToTime,
@@ -32,11 +35,12 @@ class QuizDto with _$QuizDto {
       topicId: _.topicId,
       userId: _.userId,
       title: _.title.getOrEmpty(),
+      description: _.description,
       imageURL: _.imageURL,
       quizAccessFromTime: _.quizAccessFromTime?.toIso8601String(),
       quizAccessToTime: _.quizAccessToTime?.toIso8601String(),
       isQuizActive: _.isQuizActive,
-      questions: _.questions.map((e) => QuestionDto.fromDomain(e)).toList(),
+      questions: _.questions.map(QuestionDto.fromDomain).toList(),
     );
   }
 
@@ -56,6 +60,7 @@ extension QuizDtoX on QuizDto {
       topicId: topicId ?? '',
       userId: userId ?? '',
       title: Name(title),
+      description: description ?? '',
       imageURL: imageURL ?? '',
       quizAccessFromTime: DateTime.tryParse(quizAccessFromTime ?? ''),
       quizAccessToTime: DateTime.tryParse(quizAccessToTime ?? ''),

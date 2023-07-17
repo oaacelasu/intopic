@@ -20,12 +20,14 @@ TopicDto _$TopicDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$TopicDto {
+  @JsonKey(name: '_id')
   String? get id => throw _privateConstructorUsedError;
   String? get userId => throw _privateConstructorUsedError;
   String? get title => throw _privateConstructorUsedError;
   String? get imageURL => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
   int? get noOfQuizzesAvailable => throw _privateConstructorUsedError;
+  List<QuizDto>? get quizzes => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -39,12 +41,13 @@ abstract class $TopicDtoCopyWith<$Res> {
       _$TopicDtoCopyWithImpl<$Res, TopicDto>;
   @useResult
   $Res call(
-      {String? id,
+      {@JsonKey(name: '_id') String? id,
       String? userId,
       String? title,
       String? imageURL,
       String? description,
-      int? noOfQuizzesAvailable});
+      int? noOfQuizzesAvailable,
+      List<QuizDto>? quizzes});
 }
 
 /// @nodoc
@@ -66,6 +69,7 @@ class _$TopicDtoCopyWithImpl<$Res, $Val extends TopicDto>
     Object? imageURL = freezed,
     Object? description = freezed,
     Object? noOfQuizzesAvailable = freezed,
+    Object? quizzes = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -92,6 +96,10 @@ class _$TopicDtoCopyWithImpl<$Res, $Val extends TopicDto>
           ? _value.noOfQuizzesAvailable
           : noOfQuizzesAvailable // ignore: cast_nullable_to_non_nullable
               as int?,
+      quizzes: freezed == quizzes
+          ? _value.quizzes
+          : quizzes // ignore: cast_nullable_to_non_nullable
+              as List<QuizDto>?,
     ) as $Val);
   }
 }
@@ -104,12 +112,13 @@ abstract class _$$_TopicDtoCopyWith<$Res> implements $TopicDtoCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String? id,
+      {@JsonKey(name: '_id') String? id,
       String? userId,
       String? title,
       String? imageURL,
       String? description,
-      int? noOfQuizzesAvailable});
+      int? noOfQuizzesAvailable,
+      List<QuizDto>? quizzes});
 }
 
 /// @nodoc
@@ -129,6 +138,7 @@ class __$$_TopicDtoCopyWithImpl<$Res>
     Object? imageURL = freezed,
     Object? description = freezed,
     Object? noOfQuizzesAvailable = freezed,
+    Object? quizzes = freezed,
   }) {
     return _then(_$_TopicDto(
       id: freezed == id
@@ -155,6 +165,10 @@ class __$$_TopicDtoCopyWithImpl<$Res>
           ? _value.noOfQuizzesAvailable
           : noOfQuizzesAvailable // ignore: cast_nullable_to_non_nullable
               as int?,
+      quizzes: freezed == quizzes
+          ? _value._quizzes
+          : quizzes // ignore: cast_nullable_to_non_nullable
+              as List<QuizDto>?,
     ));
   }
 }
@@ -163,17 +177,20 @@ class __$$_TopicDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_TopicDto implements _TopicDto {
   _$_TopicDto(
-      {required this.id,
+      {@JsonKey(name: '_id') required this.id,
       required this.userId,
       required this.title,
       required this.imageURL,
       required this.description,
-      required this.noOfQuizzesAvailable});
+      required this.noOfQuizzesAvailable,
+      required final List<QuizDto>? quizzes})
+      : _quizzes = quizzes;
 
   factory _$_TopicDto.fromJson(Map<String, dynamic> json) =>
       _$$_TopicDtoFromJson(json);
 
   @override
+  @JsonKey(name: '_id')
   final String? id;
   @override
   final String? userId;
@@ -185,10 +202,19 @@ class _$_TopicDto implements _TopicDto {
   final String? description;
   @override
   final int? noOfQuizzesAvailable;
+  final List<QuizDto>? _quizzes;
+  @override
+  List<QuizDto>? get quizzes {
+    final value = _quizzes;
+    if (value == null) return null;
+    if (_quizzes is EqualUnmodifiableListView) return _quizzes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
-    return 'TopicDto(id: $id, userId: $userId, title: $title, imageURL: $imageURL, description: $description, noOfQuizzesAvailable: $noOfQuizzesAvailable)';
+    return 'TopicDto(id: $id, userId: $userId, title: $title, imageURL: $imageURL, description: $description, noOfQuizzesAvailable: $noOfQuizzesAvailable, quizzes: $quizzes)';
   }
 
   @override
@@ -204,13 +230,21 @@ class _$_TopicDto implements _TopicDto {
             (identical(other.description, description) ||
                 other.description == description) &&
             (identical(other.noOfQuizzesAvailable, noOfQuizzesAvailable) ||
-                other.noOfQuizzesAvailable == noOfQuizzesAvailable));
+                other.noOfQuizzesAvailable == noOfQuizzesAvailable) &&
+            const DeepCollectionEquality().equals(other._quizzes, _quizzes));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, userId, title, imageURL,
-      description, noOfQuizzesAvailable);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      userId,
+      title,
+      imageURL,
+      description,
+      noOfQuizzesAvailable,
+      const DeepCollectionEquality().hash(_quizzes));
 
   @JsonKey(ignore: true)
   @override
@@ -228,16 +262,18 @@ class _$_TopicDto implements _TopicDto {
 
 abstract class _TopicDto implements TopicDto {
   factory _TopicDto(
-      {required final String? id,
+      {@JsonKey(name: '_id') required final String? id,
       required final String? userId,
       required final String? title,
       required final String? imageURL,
       required final String? description,
-      required final int? noOfQuizzesAvailable}) = _$_TopicDto;
+      required final int? noOfQuizzesAvailable,
+      required final List<QuizDto>? quizzes}) = _$_TopicDto;
 
   factory _TopicDto.fromJson(Map<String, dynamic> json) = _$_TopicDto.fromJson;
 
   @override
+  @JsonKey(name: '_id')
   String? get id;
   @override
   String? get userId;
@@ -249,6 +285,8 @@ abstract class _TopicDto implements TopicDto {
   String? get description;
   @override
   int? get noOfQuizzesAvailable;
+  @override
+  List<QuizDto>? get quizzes;
   @override
   @JsonKey(ignore: true)
   _$$_TopicDtoCopyWith<_$_TopicDto> get copyWith =>

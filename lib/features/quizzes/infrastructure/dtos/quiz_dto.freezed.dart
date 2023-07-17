@@ -24,6 +24,7 @@ mixin _$QuizDto {
   String? get topicId => throw _privateConstructorUsedError;
   String? get userId => throw _privateConstructorUsedError;
   String? get title => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
   String? get imageURL => throw _privateConstructorUsedError;
   String? get quizAccessFromTime => throw _privateConstructorUsedError;
   String? get quizAccessToTime => throw _privateConstructorUsedError;
@@ -45,6 +46,7 @@ abstract class $QuizDtoCopyWith<$Res> {
       String? topicId,
       String? userId,
       String? title,
+      String? description,
       String? imageURL,
       String? quizAccessFromTime,
       String? quizAccessToTime,
@@ -69,6 +71,7 @@ class _$QuizDtoCopyWithImpl<$Res, $Val extends QuizDto>
     Object? topicId = freezed,
     Object? userId = freezed,
     Object? title = freezed,
+    Object? description = freezed,
     Object? imageURL = freezed,
     Object? quizAccessFromTime = freezed,
     Object? quizAccessToTime = freezed,
@@ -91,6 +94,10 @@ class _$QuizDtoCopyWithImpl<$Res, $Val extends QuizDto>
       title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
+              as String?,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String?,
       imageURL: freezed == imageURL
           ? _value.imageURL
@@ -128,6 +135,7 @@ abstract class _$$_QuizDtoCopyWith<$Res> implements $QuizDtoCopyWith<$Res> {
       String? topicId,
       String? userId,
       String? title,
+      String? description,
       String? imageURL,
       String? quizAccessFromTime,
       String? quizAccessToTime,
@@ -149,6 +157,7 @@ class __$$_QuizDtoCopyWithImpl<$Res>
     Object? topicId = freezed,
     Object? userId = freezed,
     Object? title = freezed,
+    Object? description = freezed,
     Object? imageURL = freezed,
     Object? quizAccessFromTime = freezed,
     Object? quizAccessToTime = freezed,
@@ -171,6 +180,10 @@ class __$$_QuizDtoCopyWithImpl<$Res>
       title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
+              as String?,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
               as String?,
       imageURL: freezed == imageURL
           ? _value.imageURL
@@ -204,6 +217,7 @@ class _$_QuizDto implements _QuizDto {
       required this.topicId,
       required this.userId,
       required this.title,
+      required this.description,
       required this.imageURL,
       required this.quizAccessFromTime,
       required this.quizAccessToTime,
@@ -222,6 +236,8 @@ class _$_QuizDto implements _QuizDto {
   final String? userId;
   @override
   final String? title;
+  @override
+  final String? description;
   @override
   final String? imageURL;
   @override
@@ -242,7 +258,7 @@ class _$_QuizDto implements _QuizDto {
 
   @override
   String toString() {
-    return 'QuizDto(id: $id, topicId: $topicId, userId: $userId, title: $title, imageURL: $imageURL, quizAccessFromTime: $quizAccessFromTime, quizAccessToTime: $quizAccessToTime, isQuizActive: $isQuizActive, questions: $questions)';
+    return 'QuizDto(id: $id, topicId: $topicId, userId: $userId, title: $title, description: $description, imageURL: $imageURL, quizAccessFromTime: $quizAccessFromTime, quizAccessToTime: $quizAccessToTime, isQuizActive: $isQuizActive, questions: $questions)';
   }
 
   @override
@@ -254,6 +270,8 @@ class _$_QuizDto implements _QuizDto {
             (identical(other.topicId, topicId) || other.topicId == topicId) &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.title, title) || other.title == title) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
             (identical(other.imageURL, imageURL) ||
                 other.imageURL == imageURL) &&
             (identical(other.quizAccessFromTime, quizAccessFromTime) ||
@@ -274,6 +292,7 @@ class _$_QuizDto implements _QuizDto {
       topicId,
       userId,
       title,
+      description,
       imageURL,
       quizAccessFromTime,
       quizAccessToTime,
@@ -300,6 +319,7 @@ abstract class _QuizDto implements QuizDto {
       required final String? topicId,
       required final String? userId,
       required final String? title,
+      required final String? description,
       required final String? imageURL,
       required final String? quizAccessFromTime,
       required final String? quizAccessToTime,
@@ -316,6 +336,8 @@ abstract class _QuizDto implements QuizDto {
   String? get userId;
   @override
   String? get title;
+  @override
+  String? get description;
   @override
   String? get imageURL;
   @override

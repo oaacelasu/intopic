@@ -1,14 +1,16 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:intopic/features/quizzes/domain/entities/question.dart';
 import 'package:intopic/features/quizzes/domain/entities/question_type.dart';
 import 'package:intopic/features/quizzes/domain/entities/quiz.dart';
 
 part 'question_dto.freezed.dart';
+
 part 'question_dto.g.dart';
 
 @freezed
+
 /// QuestionDto class is the data transfer object for [Quiz] entity
+
 class QuestionDto with _$QuestionDto {
 
   /// Default constructor for the [QuestionDto] class
@@ -17,6 +19,7 @@ class QuestionDto with _$QuestionDto {
     required String? quizId,
     required String? topicId,
     required String? questionType,
+    required String? title,
     required String? question,
     required List<String>? options,
     required String? correctAnswer,
@@ -30,6 +33,7 @@ class QuestionDto with _$QuestionDto {
       quizId: _.quizId,
       topicId: _.topicId,
       questionType: _.questionType.toString(),
+      title: _.title,
       question: _.question,
       options: _.options,
       correctAnswer: _.correctAnswer,
@@ -52,6 +56,7 @@ extension QuestionDtoX on QuestionDto {
       quizId: quizId ?? '',
       topicId: topicId ?? '',
       questionType: QuestionType.parse(questionType ?? ''),
+      title: title ?? '',
       question: question ?? '',
       options: options ?? [],
       correctAnswer: correctAnswer ?? '',

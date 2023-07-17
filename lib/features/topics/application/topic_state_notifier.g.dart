@@ -7,7 +7,7 @@ part of 'topic_state_notifier.dart';
 // **************************************************************************
 
 String _$topicStateNotifierHash() =>
-    r'2e28cb2dc679fed6d1944676139f322b87c3702b';
+    r'58c6e90c051aced292a73673ee61fa61e91986b8';
 
 /// See also [TopicStateNotifier].
 @ProviderFor(TopicStateNotifier)

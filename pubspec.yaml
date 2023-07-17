@@ -41,6 +41,10 @@ dependencies:
   google_sign_in: ^6.1.4
   firebase_core: ^2.14.0
   firebase_auth: ^4.6.3
+  freezed_annotation: ^2.4.1
+  flutter_hooks: ^0.18.6
+  uuid: ^3.0.7
+  stack_trace: ^1.11.0
 
 dev_dependencies:
   flutter_test:
@@ -53,6 +57,7 @@ dev_dependencies:
   very_good_analysis: ^5.0.0+1
   build_runner:
   mockito: ^5.2.0
+  patrol: ^2.0.7
 
 # The following section is specific to Flutter packages.
 flutter:
@@ -61,3 +66,10 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/mocks/
+patrol:
+  app_name: Intopic dev
+  android:
+    package_name: com.intopic.mobile.dev
+  ios:
+    bundle_id: com.intopic.mobile.dev

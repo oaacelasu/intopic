@@ -1,15 +1,14 @@
 import 'dart:convert' as convert;
 
-import 'package:fpdart/src/either.dart';
-import 'package:fpdart/src/unit.dart';
+import 'package:fpdart/fpdart.dart';
+import 'package:http/http.dart' as http;
 import 'package:intopic/config/providers.dart';
 import 'package:intopic/features/auth/domain/entities/user.dart';
 import 'package:intopic/features/auth/domain/repositories/i_auth_repository.dart';
 import 'package:intopic/features/auth/infrastructure/dtos/user_dto.dart';
 import 'package:intopic/features/common/domain/entities/alerts.dart';
-import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:http/http.dart' as http;
 import 'package:intopic/flavors.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 class AuthRepository implements IAuthRepository {
   AuthRepository(this.ref);
@@ -19,11 +18,11 @@ class AuthRepository implements IAuthRepository {
   @override
   Future<Either<AlertError, User>> restoreSession() async {
     final userOption = await ref.read(localRepositoryProvider).getUser();
-    return userOption.fold(() => left(AlertError("No user found")), (user) {
+    return userOption.fold(() => left(const AlertError('No user found')), (user) {
       if (user.isValid()) {
         return right(user);
       } else {
-        return left(AlertError("No user found"));
+        return left(const AlertError('No user found'));
       }
     });
   }
@@ -34,7 +33,7 @@ class AuthRepository implements IAuthRepository {
   }
 
   @override
-  Future<Either<AlertError, User>> signIn(String email, String password, bool rememberMe) async {
+  Future<Either<AlertError, User>> signIn(String email, String password, {bool rememberMe = false}) async {
     // Make an HTTP POST request to sign in the user
     await ref.read(localRepositoryProvider).saveEmail(email);
     final url = Uri.parse('${F.baseUrl}/auth/login');
@@ -48,11 +47,10 @@ class AuthRepository implements IAuthRepository {
       if (response.statusCode == 200) {
         // If the server did return a 200 OK response,
         // then parse the JSON.
-        final jsonResponse =
-        convert.jsonDecode(response.body) as Map<String, dynamic>;
-        final user = UserDto.fromJson(jsonResponse["userObj"] as Map<String, dynamic>).toDomain();
-        if(!user.isValid()) {
-          return left(const AlertError("Generic error"));
+        final jsonResponse = convert.jsonDecode(response.body) as Map<String, dynamic>;
+        final user = UserDto.fromJson(jsonResponse['userObj'] as Map<String, dynamic>).toDomain();
+        if (!user.isValid()) {
+          return left(const AlertError('Generic error'));
         }
 
         await ref.read(localRepositoryProvider).saveUser(user);
@@ -67,7 +65,7 @@ class AuthRepository implements IAuthRepository {
         return left(AlertError(jsonResponse['message'].toString()));
       }
     } catch (e) {
-      return left(const AlertError("Generic error"));
+      return left(const AlertError('Generic error'));
     }
   }
 
@@ -79,23 +77,22 @@ class AuthRepository implements IAuthRepository {
     try {
       final response = await http.post(
         url,
-        body: {'userName':name, 'email': email, 'password': password, 'reEnterPassword': password},
+        body: {'userName': name, 'email': email, 'password': password, 'reEnterPassword': password},
       );
 
       if (response.statusCode == 200) {
         // If the server did return a 200 OK response,
         // then parse the JSON.
-        return right(User.empty());
+        return right(const User.empty());
       } else {
         // If the server did not return a 200 OK response,
         // then throw an exception.
         final jsonResponse = convert.jsonDecode(response.body) as Map<String, dynamic>;
-        print(jsonResponse);
 
         return left(AlertError(jsonResponse['message'].toString()));
       }
     } catch (e) {
-      return left(const AlertError("Generic error"));
+      return left(const AlertError('Generic error'));
     }
   }
 }

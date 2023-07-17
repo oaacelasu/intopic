@@ -17,8 +17,8 @@ class NameField extends StatelessWidget {
       decoration: InputDecoration(
         labelText: context.tr.userName,
         hintText: context.tr.enterUserName,
-        helperStyle: TextStyle(height: 0.7),
-        errorStyle: TextStyle(height: 0.7),
+        helperStyle: const TextStyle(height: 0.7),
+        errorStyle: const TextStyle(height: 0.7),
       ),
     );
   }

@@ -5,7 +5,7 @@ abstract class AppDimens {
   static const double spaceUnit = 16;
 
   /// zero spacing value (0pt)
-  static const double zero = 0.0;
+  static const double zero = 0;
 
   /// xxxs spacing value (1pt)
   static const double xxxs = 0.0625 * spaceUnit;

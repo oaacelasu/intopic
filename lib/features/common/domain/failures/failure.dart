@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'failure.freezed.dart';
 
 @freezed
+
 /// Represents all app failures
 class Failure implements Exception {
 
