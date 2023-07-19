@@ -1,37 +1,26 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:intopic/features/quizzes/domain/entities/question.dart';
 import 'package:intopic/features/quizzes/domain/entities/question_response.dart';
-import 'package:intopic/features/quizzes/domain/entities/quiz.dart';
-import 'package:uuid/uuid.dart';
 
 part 'quiz_response.freezed.dart';
 
 @freezed
 class QuizResponse with _$QuizResponse {
   const factory QuizResponse({
-    required String id,
+    required int id,
     required String quizId,
     required List<QuestionResponse> responses,
+    required int quizCurrentQuestionIndex,
   }) = _QuizResponse;
 
   const QuizResponse._();
 
   const factory QuizResponse.empty({
-    @Default('') String id,
+    @Default(0) int id,
     @Default('') String quizId,
     @Default([]) List<QuestionResponse> responses,
+    @Default(0) int quizCurrentQuestionIndex,
   }) = _QuizResponseEmpty;
-
-  factory QuizResponse.fromQuiz({
-    required Quiz quiz,
-  }) {
-    const uuid = Uuid();
-    return QuizResponse(
-      id: uuid.v1(),
-      quizId: quiz.id,
-      responses: quiz.questions.map((e) => QuestionResponse.fromQuestion(question: e, selected: [])).toList(),
-    );
-  }
 
   double getScore() {
     return responses.fold<double>(0, (previousValue, element) => previousValue + element.score);
@@ -57,6 +46,18 @@ extension QuizResponseX on QuizResponse {
       trueFalse: () => _answerSingleChoiceQuestion(question: question, selected: selected),
       multipleChoice: () => _answerMultipleChoiceQuestion(question: question, selected: selected),
       orElse: () => this,
+    );
+  }
+
+  QuizResponse moveForward() {
+    return copyWith(
+      quizCurrentQuestionIndex: quizCurrentQuestionIndex + 1,
+    );
+  }
+
+  QuizResponse moveBackward() {
+    return copyWith(
+      quizCurrentQuestionIndex: quizCurrentQuestionIndex - 1,
     );
   }
 
@@ -87,7 +88,7 @@ extension QuizResponseX on QuizResponse {
     return copyWith(
       responses: responses.map((e) {
         if(e.questionId == question.id) {
-          return QuestionResponse.fromQuestion(question: question, selected: [selected]);
+          return e.updateSelected(question, [selected]);
         }
         return e;
       }).toList(),
@@ -113,7 +114,8 @@ extension QuizResponseX on QuizResponse {
       responses: responses.map((e) {
         if(e.questionId == question.id) {
           final isAlreadySelected = e.selected.contains(selected);
-          return QuestionResponse.fromQuestion(question: question, selected: isAlreadySelected ? e.selected : [...e.selected, selected]);
+          final newSelected = isAlreadySelected ? e.selected.where((element) => element != selected).toList() : [...e.selected, selected];
+          return QuestionResponse.fromQuestion(question: question, selected: newSelected);
         }
         return e;
       }).toList(),

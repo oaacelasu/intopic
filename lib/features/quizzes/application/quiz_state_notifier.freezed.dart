@@ -18,35 +18,22 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$QuizState {
   Quiz get quiz => throw _privateConstructorUsedError;
   QuizResponse get quizResponse => throw _privateConstructorUsedError;
-  int get currentQuestionIndex => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(
-            Quiz quiz, QuizResponse quizResponse, int currentQuestionIndex)
-        $default, {
-    required TResult Function(
-            Quiz quiz, QuizResponse quizResponse, int currentQuestionIndex)
-        initial,
+    TResult Function(Quiz quiz, QuizResponse quizResponse) $default, {
+    required TResult Function(Quiz quiz, QuizResponse quizResponse) initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            Quiz quiz, QuizResponse quizResponse, int currentQuestionIndex)?
-        $default, {
-    TResult? Function(
-            Quiz quiz, QuizResponse quizResponse, int currentQuestionIndex)?
-        initial,
+    TResult? Function(Quiz quiz, QuizResponse quizResponse)? $default, {
+    TResult? Function(Quiz quiz, QuizResponse quizResponse)? initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            Quiz quiz, QuizResponse quizResponse, int currentQuestionIndex)?
-        $default, {
-    TResult Function(
-            Quiz quiz, QuizResponse quizResponse, int currentQuestionIndex)?
-        initial,
+    TResult Function(Quiz quiz, QuizResponse quizResponse)? $default, {
+    TResult Function(Quiz quiz, QuizResponse quizResponse)? initial,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -80,7 +67,7 @@ abstract class $QuizStateCopyWith<$Res> {
   factory $QuizStateCopyWith(QuizState value, $Res Function(QuizState) then) =
       _$QuizStateCopyWithImpl<$Res, QuizState>;
   @useResult
-  $Res call({Quiz quiz, QuizResponse quizResponse, int currentQuestionIndex});
+  $Res call({Quiz quiz, QuizResponse quizResponse});
 
   $QuizCopyWith<$Res> get quiz;
   $QuizResponseCopyWith<$Res> get quizResponse;
@@ -101,7 +88,6 @@ class _$QuizStateCopyWithImpl<$Res, $Val extends QuizState>
   $Res call({
     Object? quiz = null,
     Object? quizResponse = null,
-    Object? currentQuestionIndex = null,
   }) {
     return _then(_value.copyWith(
       quiz: null == quiz
@@ -112,10 +98,6 @@ class _$QuizStateCopyWithImpl<$Res, $Val extends QuizState>
           ? _value.quizResponse
           : quizResponse // ignore: cast_nullable_to_non_nullable
               as QuizResponse,
-      currentQuestionIndex: null == currentQuestionIndex
-          ? _value.currentQuestionIndex
-          : currentQuestionIndex // ignore: cast_nullable_to_non_nullable
-              as int,
     ) as $Val);
   }
 
@@ -143,7 +125,7 @@ abstract class _$$_QuizStateCopyWith<$Res> implements $QuizStateCopyWith<$Res> {
       __$$_QuizStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Quiz quiz, QuizResponse quizResponse, int currentQuestionIndex});
+  $Res call({Quiz quiz, QuizResponse quizResponse});
 
   @override
   $QuizCopyWith<$Res> get quiz;
@@ -164,7 +146,6 @@ class __$$_QuizStateCopyWithImpl<$Res>
   $Res call({
     Object? quiz = null,
     Object? quizResponse = null,
-    Object? currentQuestionIndex = null,
   }) {
     return _then(_$_QuizState(
       quiz: null == quiz
@@ -175,10 +156,6 @@ class __$$_QuizStateCopyWithImpl<$Res>
           ? _value.quizResponse
           : quizResponse // ignore: cast_nullable_to_non_nullable
               as QuizResponse,
-      currentQuestionIndex: null == currentQuestionIndex
-          ? _value.currentQuestionIndex
-          : currentQuestionIndex // ignore: cast_nullable_to_non_nullable
-              as int,
     ));
   }
 }
@@ -186,21 +163,16 @@ class __$$_QuizStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_QuizState implements _QuizState {
-  const _$_QuizState(
-      {required this.quiz,
-      required this.quizResponse,
-      required this.currentQuestionIndex});
+  const _$_QuizState({required this.quiz, required this.quizResponse});
 
   @override
   final Quiz quiz;
   @override
   final QuizResponse quizResponse;
-  @override
-  final int currentQuestionIndex;
 
   @override
   String toString() {
-    return 'QuizState(quiz: $quiz, quizResponse: $quizResponse, currentQuestionIndex: $currentQuestionIndex)';
+    return 'QuizState(quiz: $quiz, quizResponse: $quizResponse)';
   }
 
   @override
@@ -210,14 +182,11 @@ class _$_QuizState implements _QuizState {
             other is _$_QuizState &&
             (identical(other.quiz, quiz) || other.quiz == quiz) &&
             (identical(other.quizResponse, quizResponse) ||
-                other.quizResponse == quizResponse) &&
-            (identical(other.currentQuestionIndex, currentQuestionIndex) ||
-                other.currentQuestionIndex == currentQuestionIndex));
+                other.quizResponse == quizResponse));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, quiz, quizResponse, currentQuestionIndex);
+  int get hashCode => Object.hash(runtimeType, quiz, quizResponse);
 
   @JsonKey(ignore: true)
   @override
@@ -228,42 +197,30 @@ class _$_QuizState implements _QuizState {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(
-            Quiz quiz, QuizResponse quizResponse, int currentQuestionIndex)
-        $default, {
-    required TResult Function(
-            Quiz quiz, QuizResponse quizResponse, int currentQuestionIndex)
-        initial,
+    TResult Function(Quiz quiz, QuizResponse quizResponse) $default, {
+    required TResult Function(Quiz quiz, QuizResponse quizResponse) initial,
   }) {
-    return $default(quiz, quizResponse, currentQuestionIndex);
+    return $default(quiz, quizResponse);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            Quiz quiz, QuizResponse quizResponse, int currentQuestionIndex)?
-        $default, {
-    TResult? Function(
-            Quiz quiz, QuizResponse quizResponse, int currentQuestionIndex)?
-        initial,
+    TResult? Function(Quiz quiz, QuizResponse quizResponse)? $default, {
+    TResult? Function(Quiz quiz, QuizResponse quizResponse)? initial,
   }) {
-    return $default?.call(quiz, quizResponse, currentQuestionIndex);
+    return $default?.call(quiz, quizResponse);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            Quiz quiz, QuizResponse quizResponse, int currentQuestionIndex)?
-        $default, {
-    TResult Function(
-            Quiz quiz, QuizResponse quizResponse, int currentQuestionIndex)?
-        initial,
+    TResult Function(Quiz quiz, QuizResponse quizResponse)? $default, {
+    TResult Function(Quiz quiz, QuizResponse quizResponse)? initial,
     required TResult orElse(),
   }) {
     if ($default != null) {
-      return $default(quiz, quizResponse, currentQuestionIndex);
+      return $default(quiz, quizResponse);
     }
     return orElse();
   }
@@ -303,15 +260,12 @@ class _$_QuizState implements _QuizState {
 abstract class _QuizState implements QuizState {
   const factory _QuizState(
       {required final Quiz quiz,
-      required final QuizResponse quizResponse,
-      required final int currentQuestionIndex}) = _$_QuizState;
+      required final QuizResponse quizResponse}) = _$_QuizState;
 
   @override
   Quiz get quiz;
   @override
   QuizResponse get quizResponse;
-  @override
-  int get currentQuestionIndex;
   @override
   @JsonKey(ignore: true)
   _$$_QuizStateCopyWith<_$_QuizState> get copyWith =>
@@ -326,7 +280,7 @@ abstract class _$$_QuizStateEmptyCopyWith<$Res>
       __$$_QuizStateEmptyCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Quiz quiz, QuizResponse quizResponse, int currentQuestionIndex});
+  $Res call({Quiz quiz, QuizResponse quizResponse});
 
   @override
   $QuizCopyWith<$Res> get quiz;
@@ -347,7 +301,6 @@ class __$$_QuizStateEmptyCopyWithImpl<$Res>
   $Res call({
     Object? quiz = null,
     Object? quizResponse = null,
-    Object? currentQuestionIndex = null,
   }) {
     return _then(_$_QuizStateEmpty(
       quiz: null == quiz
@@ -358,10 +311,6 @@ class __$$_QuizStateEmptyCopyWithImpl<$Res>
           ? _value.quizResponse
           : quizResponse // ignore: cast_nullable_to_non_nullable
               as QuizResponse,
-      currentQuestionIndex: null == currentQuestionIndex
-          ? _value.currentQuestionIndex
-          : currentQuestionIndex // ignore: cast_nullable_to_non_nullable
-              as int,
     ));
   }
 }
@@ -371,8 +320,7 @@ class __$$_QuizStateEmptyCopyWithImpl<$Res>
 class _$_QuizStateEmpty implements _QuizStateEmpty {
   const _$_QuizStateEmpty(
       {this.quiz = const Quiz.empty(),
-      this.quizResponse = const QuizResponse.empty(),
-      this.currentQuestionIndex = 0});
+      this.quizResponse = const QuizResponse.empty()});
 
   @override
   @JsonKey()
@@ -380,13 +328,10 @@ class _$_QuizStateEmpty implements _QuizStateEmpty {
   @override
   @JsonKey()
   final QuizResponse quizResponse;
-  @override
-  @JsonKey()
-  final int currentQuestionIndex;
 
   @override
   String toString() {
-    return 'QuizState.initial(quiz: $quiz, quizResponse: $quizResponse, currentQuestionIndex: $currentQuestionIndex)';
+    return 'QuizState.initial(quiz: $quiz, quizResponse: $quizResponse)';
   }
 
   @override
@@ -396,14 +341,11 @@ class _$_QuizStateEmpty implements _QuizStateEmpty {
             other is _$_QuizStateEmpty &&
             (identical(other.quiz, quiz) || other.quiz == quiz) &&
             (identical(other.quizResponse, quizResponse) ||
-                other.quizResponse == quizResponse) &&
-            (identical(other.currentQuestionIndex, currentQuestionIndex) ||
-                other.currentQuestionIndex == currentQuestionIndex));
+                other.quizResponse == quizResponse));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, quiz, quizResponse, currentQuestionIndex);
+  int get hashCode => Object.hash(runtimeType, quiz, quizResponse);
 
   @JsonKey(ignore: true)
   @override
@@ -414,42 +356,30 @@ class _$_QuizStateEmpty implements _QuizStateEmpty {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(
-            Quiz quiz, QuizResponse quizResponse, int currentQuestionIndex)
-        $default, {
-    required TResult Function(
-            Quiz quiz, QuizResponse quizResponse, int currentQuestionIndex)
-        initial,
+    TResult Function(Quiz quiz, QuizResponse quizResponse) $default, {
+    required TResult Function(Quiz quiz, QuizResponse quizResponse) initial,
   }) {
-    return initial(quiz, quizResponse, currentQuestionIndex);
+    return initial(quiz, quizResponse);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            Quiz quiz, QuizResponse quizResponse, int currentQuestionIndex)?
-        $default, {
-    TResult? Function(
-            Quiz quiz, QuizResponse quizResponse, int currentQuestionIndex)?
-        initial,
+    TResult? Function(Quiz quiz, QuizResponse quizResponse)? $default, {
+    TResult? Function(Quiz quiz, QuizResponse quizResponse)? initial,
   }) {
-    return initial?.call(quiz, quizResponse, currentQuestionIndex);
+    return initial?.call(quiz, quizResponse);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            Quiz quiz, QuizResponse quizResponse, int currentQuestionIndex)?
-        $default, {
-    TResult Function(
-            Quiz quiz, QuizResponse quizResponse, int currentQuestionIndex)?
-        initial,
+    TResult Function(Quiz quiz, QuizResponse quizResponse)? $default, {
+    TResult Function(Quiz quiz, QuizResponse quizResponse)? initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(quiz, quizResponse, currentQuestionIndex);
+      return initial(quiz, quizResponse);
     }
     return orElse();
   }
@@ -488,16 +418,12 @@ class _$_QuizStateEmpty implements _QuizStateEmpty {
 
 abstract class _QuizStateEmpty implements QuizState {
   const factory _QuizStateEmpty(
-      {final Quiz quiz,
-      final QuizResponse quizResponse,
-      final int currentQuestionIndex}) = _$_QuizStateEmpty;
+      {final Quiz quiz, final QuizResponse quizResponse}) = _$_QuizStateEmpty;
 
   @override
   Quiz get quiz;
   @override
   QuizResponse get quizResponse;
-  @override
-  int get currentQuestionIndex;
   @override
   @JsonKey(ignore: true)
   _$$_QuizStateEmptyCopyWith<_$_QuizStateEmpty> get copyWith =>

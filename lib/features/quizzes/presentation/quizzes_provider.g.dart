@@ -36,7 +36,7 @@ final currentQuizProvider = AutoDisposeProvider<Quiz>.internal(
 );
 
 typedef CurrentQuizRef = AutoDisposeProviderRef<Quiz>;
-String _$currentQuestionHash() => r'c4aa1938b306306a33f0af65775f66dc62798532';
+String _$currentQuestionHash() => r'954a72d65b120520f296939c0843b970956f506b';
 
 /// See also [currentQuestion].
 @ProviderFor(currentQuestion)
@@ -248,7 +248,7 @@ final quizLengthProvider = AutoDisposeProvider<int>.internal(
 
 typedef QuizLengthRef = AutoDisposeProviderRef<int>;
 String _$currentQuestionIndexHash() =>
-    r'd29525946c0151bee3c488a320a5dc5e734d0ce7';
+    r'cfcde6893898730c17774e5805529f0c8674645c';
 
 /// See also [currentQuestionIndex].
 @ProviderFor(currentQuestionIndex)
@@ -271,4 +271,112 @@ final currentQuestionIndexProvider = AutoDisposeProvider<int>.internal(
 );
 
 typedef CurrentQuestionIndexRef = AutoDisposeProviderRef<int>;
+String _$quizResponseByIdHash() => r'7db9eb00e3fe6e24a5535108836f258b21c27f44';
+typedef QuizResponseByIdRef = AutoDisposeFutureProviderRef<QuizResponse>;
+
+/// See also [quizResponseById].
+@ProviderFor(quizResponseById)
+const quizResponseByIdProvider = QuizResponseByIdFamily();
+
+/// See also [quizResponseById].
+class QuizResponseByIdFamily extends Family<AsyncValue<QuizResponse>> {
+  /// See also [quizResponseById].
+  const QuizResponseByIdFamily();
+
+  /// See also [quizResponseById].
+  QuizResponseByIdProvider call({
+    required String quizId,
+  }) {
+    return QuizResponseByIdProvider(
+      quizId: quizId,
+    );
+  }
+
+  @override
+  QuizResponseByIdProvider getProviderOverride(
+    covariant QuizResponseByIdProvider provider,
+  ) {
+    return call(
+      quizId: provider.quizId,
+    );
+  }
+
+  static final Iterable<ProviderOrFamily> _dependencies = <ProviderOrFamily>[
+    currentQuizProvider,
+    quizStateNotifierProvider
+  ];
+
+  @override
+  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
+
+  static final Iterable<ProviderOrFamily> _allTransitiveDependencies =
+      <ProviderOrFamily>{
+    currentQuizProvider,
+    ...?currentQuizProvider.allTransitiveDependencies,
+    quizStateNotifierProvider,
+    ...?quizStateNotifierProvider.allTransitiveDependencies
+  };
+
+  @override
+  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
+      _allTransitiveDependencies;
+
+  @override
+  String? get name => r'quizResponseByIdProvider';
+}
+
+/// See also [quizResponseById].
+class QuizResponseByIdProvider extends AutoDisposeFutureProvider<QuizResponse> {
+  /// See also [quizResponseById].
+  QuizResponseByIdProvider({
+    required this.quizId,
+  }) : super.internal(
+          (ref) => quizResponseById(
+            ref,
+            quizId: quizId,
+          ),
+          from: quizResponseByIdProvider,
+          name: r'quizResponseByIdProvider',
+          debugGetCreateSourceHash:
+              const bool.fromEnvironment('dart.vm.product')
+                  ? null
+                  : _$quizResponseByIdHash,
+          dependencies: QuizResponseByIdFamily._dependencies,
+          allTransitiveDependencies:
+              QuizResponseByIdFamily._allTransitiveDependencies,
+        );
+
+  final String quizId;
+
+  @override
+  bool operator ==(Object other) {
+    return other is QuizResponseByIdProvider && other.quizId == quizId;
+  }
+
+  @override
+  int get hashCode {
+    var hash = _SystemHash.combine(0, runtimeType.hashCode);
+    hash = _SystemHash.combine(hash, quizId.hashCode);
+
+    return _SystemHash.finish(hash);
+  }
+}
+
+String _$currentQuizSubmissionHash() =>
+    r'f0de8d974b5c61ed9793aad9fd1622fd03f5b3f0';
+
+/// See also [currentQuizSubmission].
+@ProviderFor(currentQuizSubmission)
+final currentQuizSubmissionProvider =
+    AutoDisposeProvider<QuizSubmission>.internal(
+  currentQuizSubmission,
+  name: r'currentQuizSubmissionProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$currentQuizSubmissionHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef CurrentQuizSubmissionRef = AutoDisposeProviderRef<QuizSubmission>;
 // ignore_for_file: unnecessary_raw_strings, subtype_of_sealed_class, invalid_use_of_internal_member, do_not_use_environment, prefer_const_constructors, public_member_api_docs, avoid_private_typedef_functions

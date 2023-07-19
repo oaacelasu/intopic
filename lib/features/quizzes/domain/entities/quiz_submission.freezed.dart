@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'quiz_response.dart';
+part of 'quiz_submission.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,84 +15,90 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$QuizResponse {
+mixin _$QuizSubmission {
   int get id => throw _privateConstructorUsedError;
   String get quizId => throw _privateConstructorUsedError;
   List<QuestionResponse> get responses => throw _privateConstructorUsedError;
-  int get quizCurrentQuestionIndex => throw _privateConstructorUsedError;
+  List<Question> get questions => throw _privateConstructorUsedError;
+  int get submittedAt => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(int id, String quizId, List<QuestionResponse> responses,
-            int quizCurrentQuestionIndex)
+            List<Question> questions, int submittedAt)
         $default, {
-    required TResult Function(int id, String quizId,
-            List<QuestionResponse> responses, int quizCurrentQuestionIndex)
+    required TResult Function(
+            int id,
+            String quizId,
+            List<QuestionResponse> responses,
+            List<Question> questions,
+            int submittedAt)
         empty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(int id, String quizId, List<QuestionResponse> responses,
-            int quizCurrentQuestionIndex)?
+            List<Question> questions, int submittedAt)?
         $default, {
     TResult? Function(int id, String quizId, List<QuestionResponse> responses,
-            int quizCurrentQuestionIndex)?
+            List<Question> questions, int submittedAt)?
         empty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(int id, String quizId, List<QuestionResponse> responses,
-            int quizCurrentQuestionIndex)?
+            List<Question> questions, int submittedAt)?
         $default, {
     TResult Function(int id, String quizId, List<QuestionResponse> responses,
-            int quizCurrentQuestionIndex)?
+            List<Question> questions, int submittedAt)?
         empty,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
-    TResult Function(_QuizResponse value) $default, {
-    required TResult Function(_QuizResponseEmpty value) empty,
+    TResult Function(_QuizSubmission value) $default, {
+    required TResult Function(_QuizSubmissionEmpty value) empty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_QuizResponse value)? $default, {
-    TResult? Function(_QuizResponseEmpty value)? empty,
+    TResult? Function(_QuizSubmission value)? $default, {
+    TResult? Function(_QuizSubmissionEmpty value)? empty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
-    TResult Function(_QuizResponse value)? $default, {
-    TResult Function(_QuizResponseEmpty value)? empty,
+    TResult Function(_QuizSubmission value)? $default, {
+    TResult Function(_QuizSubmissionEmpty value)? empty,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $QuizResponseCopyWith<QuizResponse> get copyWith =>
+  $QuizSubmissionCopyWith<QuizSubmission> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $QuizResponseCopyWith<$Res> {
-  factory $QuizResponseCopyWith(
-          QuizResponse value, $Res Function(QuizResponse) then) =
-      _$QuizResponseCopyWithImpl<$Res, QuizResponse>;
+abstract class $QuizSubmissionCopyWith<$Res> {
+  factory $QuizSubmissionCopyWith(
+          QuizSubmission value, $Res Function(QuizSubmission) then) =
+      _$QuizSubmissionCopyWithImpl<$Res, QuizSubmission>;
   @useResult
   $Res call(
       {int id,
       String quizId,
       List<QuestionResponse> responses,
-      int quizCurrentQuestionIndex});
+      List<Question> questions,
+      int submittedAt});
 }
 
 /// @nodoc
-class _$QuizResponseCopyWithImpl<$Res, $Val extends QuizResponse>
-    implements $QuizResponseCopyWith<$Res> {
-  _$QuizResponseCopyWithImpl(this._value, this._then);
+class _$QuizSubmissionCopyWithImpl<$Res, $Val extends QuizSubmission>
+    implements $QuizSubmissionCopyWith<$Res> {
+  _$QuizSubmissionCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -105,7 +111,8 @@ class _$QuizResponseCopyWithImpl<$Res, $Val extends QuizResponse>
     Object? id = null,
     Object? quizId = null,
     Object? responses = null,
-    Object? quizCurrentQuestionIndex = null,
+    Object? questions = null,
+    Object? submittedAt = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -120,35 +127,40 @@ class _$QuizResponseCopyWithImpl<$Res, $Val extends QuizResponse>
           ? _value.responses
           : responses // ignore: cast_nullable_to_non_nullable
               as List<QuestionResponse>,
-      quizCurrentQuestionIndex: null == quizCurrentQuestionIndex
-          ? _value.quizCurrentQuestionIndex
-          : quizCurrentQuestionIndex // ignore: cast_nullable_to_non_nullable
+      questions: null == questions
+          ? _value.questions
+          : questions // ignore: cast_nullable_to_non_nullable
+              as List<Question>,
+      submittedAt: null == submittedAt
+          ? _value.submittedAt
+          : submittedAt // ignore: cast_nullable_to_non_nullable
               as int,
     ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$$_QuizResponseCopyWith<$Res>
-    implements $QuizResponseCopyWith<$Res> {
-  factory _$$_QuizResponseCopyWith(
-          _$_QuizResponse value, $Res Function(_$_QuizResponse) then) =
-      __$$_QuizResponseCopyWithImpl<$Res>;
+abstract class _$$_QuizSubmissionCopyWith<$Res>
+    implements $QuizSubmissionCopyWith<$Res> {
+  factory _$$_QuizSubmissionCopyWith(
+          _$_QuizSubmission value, $Res Function(_$_QuizSubmission) then) =
+      __$$_QuizSubmissionCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {int id,
       String quizId,
       List<QuestionResponse> responses,
-      int quizCurrentQuestionIndex});
+      List<Question> questions,
+      int submittedAt});
 }
 
 /// @nodoc
-class __$$_QuizResponseCopyWithImpl<$Res>
-    extends _$QuizResponseCopyWithImpl<$Res, _$_QuizResponse>
-    implements _$$_QuizResponseCopyWith<$Res> {
-  __$$_QuizResponseCopyWithImpl(
-      _$_QuizResponse _value, $Res Function(_$_QuizResponse) _then)
+class __$$_QuizSubmissionCopyWithImpl<$Res>
+    extends _$QuizSubmissionCopyWithImpl<$Res, _$_QuizSubmission>
+    implements _$$_QuizSubmissionCopyWith<$Res> {
+  __$$_QuizSubmissionCopyWithImpl(
+      _$_QuizSubmission _value, $Res Function(_$_QuizSubmission) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -157,9 +169,10 @@ class __$$_QuizResponseCopyWithImpl<$Res>
     Object? id = null,
     Object? quizId = null,
     Object? responses = null,
-    Object? quizCurrentQuestionIndex = null,
+    Object? questions = null,
+    Object? submittedAt = null,
   }) {
-    return _then(_$_QuizResponse(
+    return _then(_$_QuizSubmission(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -172,9 +185,13 @@ class __$$_QuizResponseCopyWithImpl<$Res>
           ? _value._responses
           : responses // ignore: cast_nullable_to_non_nullable
               as List<QuestionResponse>,
-      quizCurrentQuestionIndex: null == quizCurrentQuestionIndex
-          ? _value.quizCurrentQuestionIndex
-          : quizCurrentQuestionIndex // ignore: cast_nullable_to_non_nullable
+      questions: null == questions
+          ? _value._questions
+          : questions // ignore: cast_nullable_to_non_nullable
+              as List<Question>,
+      submittedAt: null == submittedAt
+          ? _value.submittedAt
+          : submittedAt // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -182,13 +199,15 @@ class __$$_QuizResponseCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_QuizResponse extends _QuizResponse {
-  const _$_QuizResponse(
+class _$_QuizSubmission extends _QuizSubmission {
+  const _$_QuizSubmission(
       {required this.id,
       required this.quizId,
       required final List<QuestionResponse> responses,
-      required this.quizCurrentQuestionIndex})
+      required final List<Question> questions,
+      required this.submittedAt})
       : _responses = responses,
+        _questions = questions,
         super._();
 
   @override
@@ -203,26 +222,35 @@ class _$_QuizResponse extends _QuizResponse {
     return EqualUnmodifiableListView(_responses);
   }
 
+  final List<Question> _questions;
   @override
-  final int quizCurrentQuestionIndex;
+  List<Question> get questions {
+    if (_questions is EqualUnmodifiableListView) return _questions;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_questions);
+  }
+
+  @override
+  final int submittedAt;
 
   @override
   String toString() {
-    return 'QuizResponse(id: $id, quizId: $quizId, responses: $responses, quizCurrentQuestionIndex: $quizCurrentQuestionIndex)';
+    return 'QuizSubmission(id: $id, quizId: $quizId, responses: $responses, questions: $questions, submittedAt: $submittedAt)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_QuizResponse &&
+            other is _$_QuizSubmission &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.quizId, quizId) || other.quizId == quizId) &&
             const DeepCollectionEquality()
                 .equals(other._responses, _responses) &&
-            (identical(
-                    other.quizCurrentQuestionIndex, quizCurrentQuestionIndex) ||
-                other.quizCurrentQuestionIndex == quizCurrentQuestionIndex));
+            const DeepCollectionEquality()
+                .equals(other._questions, _questions) &&
+            (identical(other.submittedAt, submittedAt) ||
+                other.submittedAt == submittedAt));
   }
 
   @override
@@ -231,53 +259,58 @@ class _$_QuizResponse extends _QuizResponse {
       id,
       quizId,
       const DeepCollectionEquality().hash(_responses),
-      quizCurrentQuestionIndex);
+      const DeepCollectionEquality().hash(_questions),
+      submittedAt);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_QuizResponseCopyWith<_$_QuizResponse> get copyWith =>
-      __$$_QuizResponseCopyWithImpl<_$_QuizResponse>(this, _$identity);
+  _$$_QuizSubmissionCopyWith<_$_QuizSubmission> get copyWith =>
+      __$$_QuizSubmissionCopyWithImpl<_$_QuizSubmission>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(int id, String quizId, List<QuestionResponse> responses,
-            int quizCurrentQuestionIndex)
+            List<Question> questions, int submittedAt)
         $default, {
-    required TResult Function(int id, String quizId,
-            List<QuestionResponse> responses, int quizCurrentQuestionIndex)
+    required TResult Function(
+            int id,
+            String quizId,
+            List<QuestionResponse> responses,
+            List<Question> questions,
+            int submittedAt)
         empty,
   }) {
-    return $default(id, quizId, responses, quizCurrentQuestionIndex);
+    return $default(id, quizId, responses, questions, submittedAt);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(int id, String quizId, List<QuestionResponse> responses,
-            int quizCurrentQuestionIndex)?
+            List<Question> questions, int submittedAt)?
         $default, {
     TResult? Function(int id, String quizId, List<QuestionResponse> responses,
-            int quizCurrentQuestionIndex)?
+            List<Question> questions, int submittedAt)?
         empty,
   }) {
-    return $default?.call(id, quizId, responses, quizCurrentQuestionIndex);
+    return $default?.call(id, quizId, responses, questions, submittedAt);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(int id, String quizId, List<QuestionResponse> responses,
-            int quizCurrentQuestionIndex)?
+            List<Question> questions, int submittedAt)?
         $default, {
     TResult Function(int id, String quizId, List<QuestionResponse> responses,
-            int quizCurrentQuestionIndex)?
+            List<Question> questions, int submittedAt)?
         empty,
     required TResult orElse(),
   }) {
     if ($default != null) {
-      return $default(id, quizId, responses, quizCurrentQuestionIndex);
+      return $default(id, quizId, responses, questions, submittedAt);
     }
     return orElse();
   }
@@ -285,8 +318,8 @@ class _$_QuizResponse extends _QuizResponse {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
-    TResult Function(_QuizResponse value) $default, {
-    required TResult Function(_QuizResponseEmpty value) empty,
+    TResult Function(_QuizSubmission value) $default, {
+    required TResult Function(_QuizSubmissionEmpty value) empty,
   }) {
     return $default(this);
   }
@@ -294,8 +327,8 @@ class _$_QuizResponse extends _QuizResponse {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_QuizResponse value)? $default, {
-    TResult? Function(_QuizResponseEmpty value)? empty,
+    TResult? Function(_QuizSubmission value)? $default, {
+    TResult? Function(_QuizSubmissionEmpty value)? empty,
   }) {
     return $default?.call(this);
   }
@@ -303,8 +336,8 @@ class _$_QuizResponse extends _QuizResponse {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
-    TResult Function(_QuizResponse value)? $default, {
-    TResult Function(_QuizResponseEmpty value)? empty,
+    TResult Function(_QuizSubmission value)? $default, {
+    TResult Function(_QuizSubmissionEmpty value)? empty,
     required TResult orElse(),
   }) {
     if ($default != null) {
@@ -314,13 +347,14 @@ class _$_QuizResponse extends _QuizResponse {
   }
 }
 
-abstract class _QuizResponse extends QuizResponse {
-  const factory _QuizResponse(
+abstract class _QuizSubmission extends QuizSubmission {
+  const factory _QuizSubmission(
       {required final int id,
       required final String quizId,
       required final List<QuestionResponse> responses,
-      required final int quizCurrentQuestionIndex}) = _$_QuizResponse;
-  const _QuizResponse._() : super._();
+      required final List<Question> questions,
+      required final int submittedAt}) = _$_QuizSubmission;
+  const _QuizSubmission._() : super._();
 
   @override
   int get id;
@@ -329,34 +363,37 @@ abstract class _QuizResponse extends QuizResponse {
   @override
   List<QuestionResponse> get responses;
   @override
-  int get quizCurrentQuestionIndex;
+  List<Question> get questions;
+  @override
+  int get submittedAt;
   @override
   @JsonKey(ignore: true)
-  _$$_QuizResponseCopyWith<_$_QuizResponse> get copyWith =>
+  _$$_QuizSubmissionCopyWith<_$_QuizSubmission> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_QuizResponseEmptyCopyWith<$Res>
-    implements $QuizResponseCopyWith<$Res> {
-  factory _$$_QuizResponseEmptyCopyWith(_$_QuizResponseEmpty value,
-          $Res Function(_$_QuizResponseEmpty) then) =
-      __$$_QuizResponseEmptyCopyWithImpl<$Res>;
+abstract class _$$_QuizSubmissionEmptyCopyWith<$Res>
+    implements $QuizSubmissionCopyWith<$Res> {
+  factory _$$_QuizSubmissionEmptyCopyWith(_$_QuizSubmissionEmpty value,
+          $Res Function(_$_QuizSubmissionEmpty) then) =
+      __$$_QuizSubmissionEmptyCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
       {int id,
       String quizId,
       List<QuestionResponse> responses,
-      int quizCurrentQuestionIndex});
+      List<Question> questions,
+      int submittedAt});
 }
 
 /// @nodoc
-class __$$_QuizResponseEmptyCopyWithImpl<$Res>
-    extends _$QuizResponseCopyWithImpl<$Res, _$_QuizResponseEmpty>
-    implements _$$_QuizResponseEmptyCopyWith<$Res> {
-  __$$_QuizResponseEmptyCopyWithImpl(
-      _$_QuizResponseEmpty _value, $Res Function(_$_QuizResponseEmpty) _then)
+class __$$_QuizSubmissionEmptyCopyWithImpl<$Res>
+    extends _$QuizSubmissionCopyWithImpl<$Res, _$_QuizSubmissionEmpty>
+    implements _$$_QuizSubmissionEmptyCopyWith<$Res> {
+  __$$_QuizSubmissionEmptyCopyWithImpl(_$_QuizSubmissionEmpty _value,
+      $Res Function(_$_QuizSubmissionEmpty) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -365,9 +402,10 @@ class __$$_QuizResponseEmptyCopyWithImpl<$Res>
     Object? id = null,
     Object? quizId = null,
     Object? responses = null,
-    Object? quizCurrentQuestionIndex = null,
+    Object? questions = null,
+    Object? submittedAt = null,
   }) {
-    return _then(_$_QuizResponseEmpty(
+    return _then(_$_QuizSubmissionEmpty(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -380,9 +418,13 @@ class __$$_QuizResponseEmptyCopyWithImpl<$Res>
           ? _value._responses
           : responses // ignore: cast_nullable_to_non_nullable
               as List<QuestionResponse>,
-      quizCurrentQuestionIndex: null == quizCurrentQuestionIndex
-          ? _value.quizCurrentQuestionIndex
-          : quizCurrentQuestionIndex // ignore: cast_nullable_to_non_nullable
+      questions: null == questions
+          ? _value._questions
+          : questions // ignore: cast_nullable_to_non_nullable
+              as List<Question>,
+      submittedAt: null == submittedAt
+          ? _value.submittedAt
+          : submittedAt // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -390,13 +432,15 @@ class __$$_QuizResponseEmptyCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_QuizResponseEmpty extends _QuizResponseEmpty {
-  const _$_QuizResponseEmpty(
+class _$_QuizSubmissionEmpty extends _QuizSubmissionEmpty {
+  const _$_QuizSubmissionEmpty(
       {this.id = 0,
       this.quizId = '',
       final List<QuestionResponse> responses = const [],
-      this.quizCurrentQuestionIndex = 0})
+      final List<Question> questions = const [],
+      this.submittedAt = 0})
       : _responses = responses,
+        _questions = questions,
         super._();
 
   @override
@@ -414,27 +458,37 @@ class _$_QuizResponseEmpty extends _QuizResponseEmpty {
     return EqualUnmodifiableListView(_responses);
   }
 
+  final List<Question> _questions;
   @override
   @JsonKey()
-  final int quizCurrentQuestionIndex;
+  List<Question> get questions {
+    if (_questions is EqualUnmodifiableListView) return _questions;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_questions);
+  }
+
+  @override
+  @JsonKey()
+  final int submittedAt;
 
   @override
   String toString() {
-    return 'QuizResponse.empty(id: $id, quizId: $quizId, responses: $responses, quizCurrentQuestionIndex: $quizCurrentQuestionIndex)';
+    return 'QuizSubmission.empty(id: $id, quizId: $quizId, responses: $responses, questions: $questions, submittedAt: $submittedAt)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_QuizResponseEmpty &&
+            other is _$_QuizSubmissionEmpty &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.quizId, quizId) || other.quizId == quizId) &&
             const DeepCollectionEquality()
                 .equals(other._responses, _responses) &&
-            (identical(
-                    other.quizCurrentQuestionIndex, quizCurrentQuestionIndex) ||
-                other.quizCurrentQuestionIndex == quizCurrentQuestionIndex));
+            const DeepCollectionEquality()
+                .equals(other._questions, _questions) &&
+            (identical(other.submittedAt, submittedAt) ||
+                other.submittedAt == submittedAt));
   }
 
   @override
@@ -443,54 +497,59 @@ class _$_QuizResponseEmpty extends _QuizResponseEmpty {
       id,
       quizId,
       const DeepCollectionEquality().hash(_responses),
-      quizCurrentQuestionIndex);
+      const DeepCollectionEquality().hash(_questions),
+      submittedAt);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_QuizResponseEmptyCopyWith<_$_QuizResponseEmpty> get copyWith =>
-      __$$_QuizResponseEmptyCopyWithImpl<_$_QuizResponseEmpty>(
+  _$$_QuizSubmissionEmptyCopyWith<_$_QuizSubmissionEmpty> get copyWith =>
+      __$$_QuizSubmissionEmptyCopyWithImpl<_$_QuizSubmissionEmpty>(
           this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(int id, String quizId, List<QuestionResponse> responses,
-            int quizCurrentQuestionIndex)
+            List<Question> questions, int submittedAt)
         $default, {
-    required TResult Function(int id, String quizId,
-            List<QuestionResponse> responses, int quizCurrentQuestionIndex)
+    required TResult Function(
+            int id,
+            String quizId,
+            List<QuestionResponse> responses,
+            List<Question> questions,
+            int submittedAt)
         empty,
   }) {
-    return empty(id, quizId, responses, quizCurrentQuestionIndex);
+    return empty(id, quizId, responses, questions, submittedAt);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(int id, String quizId, List<QuestionResponse> responses,
-            int quizCurrentQuestionIndex)?
+            List<Question> questions, int submittedAt)?
         $default, {
     TResult? Function(int id, String quizId, List<QuestionResponse> responses,
-            int quizCurrentQuestionIndex)?
+            List<Question> questions, int submittedAt)?
         empty,
   }) {
-    return empty?.call(id, quizId, responses, quizCurrentQuestionIndex);
+    return empty?.call(id, quizId, responses, questions, submittedAt);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(int id, String quizId, List<QuestionResponse> responses,
-            int quizCurrentQuestionIndex)?
+            List<Question> questions, int submittedAt)?
         $default, {
     TResult Function(int id, String quizId, List<QuestionResponse> responses,
-            int quizCurrentQuestionIndex)?
+            List<Question> questions, int submittedAt)?
         empty,
     required TResult orElse(),
   }) {
     if (empty != null) {
-      return empty(id, quizId, responses, quizCurrentQuestionIndex);
+      return empty(id, quizId, responses, questions, submittedAt);
     }
     return orElse();
   }
@@ -498,8 +557,8 @@ class _$_QuizResponseEmpty extends _QuizResponseEmpty {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
-    TResult Function(_QuizResponse value) $default, {
-    required TResult Function(_QuizResponseEmpty value) empty,
+    TResult Function(_QuizSubmission value) $default, {
+    required TResult Function(_QuizSubmissionEmpty value) empty,
   }) {
     return empty(this);
   }
@@ -507,8 +566,8 @@ class _$_QuizResponseEmpty extends _QuizResponseEmpty {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_QuizResponse value)? $default, {
-    TResult? Function(_QuizResponseEmpty value)? empty,
+    TResult? Function(_QuizSubmission value)? $default, {
+    TResult? Function(_QuizSubmissionEmpty value)? empty,
   }) {
     return empty?.call(this);
   }
@@ -516,8 +575,8 @@ class _$_QuizResponseEmpty extends _QuizResponseEmpty {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
-    TResult Function(_QuizResponse value)? $default, {
-    TResult Function(_QuizResponseEmpty value)? empty,
+    TResult Function(_QuizSubmission value)? $default, {
+    TResult Function(_QuizSubmissionEmpty value)? empty,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -527,13 +586,14 @@ class _$_QuizResponseEmpty extends _QuizResponseEmpty {
   }
 }
 
-abstract class _QuizResponseEmpty extends QuizResponse {
-  const factory _QuizResponseEmpty(
+abstract class _QuizSubmissionEmpty extends QuizSubmission {
+  const factory _QuizSubmissionEmpty(
       {final int id,
       final String quizId,
       final List<QuestionResponse> responses,
-      final int quizCurrentQuestionIndex}) = _$_QuizResponseEmpty;
-  const _QuizResponseEmpty._() : super._();
+      final List<Question> questions,
+      final int submittedAt}) = _$_QuizSubmissionEmpty;
+  const _QuizSubmissionEmpty._() : super._();
 
   @override
   int get id;
@@ -542,9 +602,11 @@ abstract class _QuizResponseEmpty extends QuizResponse {
   @override
   List<QuestionResponse> get responses;
   @override
-  int get quizCurrentQuestionIndex;
+  List<Question> get questions;
+  @override
+  int get submittedAt;
   @override
   @JsonKey(ignore: true)
-  _$$_QuizResponseEmptyCopyWith<_$_QuizResponseEmpty> get copyWith =>
+  _$$_QuizSubmissionEmptyCopyWith<_$_QuizSubmissionEmpty> get copyWith =>
       throw _privateConstructorUsedError;
 }

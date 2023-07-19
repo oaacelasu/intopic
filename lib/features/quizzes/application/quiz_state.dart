@@ -5,13 +5,11 @@ class QuizState with _$QuizState {
   const factory QuizState({
     required Quiz quiz,
     required QuizResponse quizResponse,
-    required int currentQuestionIndex,
   }) = _QuizState;
 
   const factory QuizState.initial({
     @Default(Quiz.empty()) Quiz quiz,
     @Default(QuizResponse.empty()) QuizResponse quizResponse,
-    @Default(0) int currentQuestionIndex,
   }) = _QuizStateEmpty;
 }
 
@@ -27,12 +25,20 @@ extension QuizStateX on QuizState {
   }
 
   QuizStateStatus get status {
-    if (this.currentQuestionIndex == 0) {
+    if (quizResponse.quizCurrentQuestionIndex == 0) {
       return QuizStateStatus.initial;
-    } else if (this.currentQuestionIndex + 1 < quiz.questions.length) {
+    } else if (quizResponse.quizCurrentQuestionIndex + 1 < quiz.questions.length) {
       return QuizStateStatus.onProgress;
     } else {
       return QuizStateStatus.completed;
     }
+  }
+
+  bool hasNextQuestion() {
+    return quizResponse.quizCurrentQuestionIndex + 1 < quiz.questions.length;
+  }
+
+  bool hasPreviousQuestion() {
+    return quizResponse.quizCurrentQuestionIndex > 0;
   }
 }

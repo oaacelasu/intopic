@@ -7,9 +7,11 @@ import 'package:intopic/features/auth/presentation/screens/welcome_screen.dart';
 import 'package:intopic/features/common/presentation/screens/splash_screen.dart';
 import 'package:intopic/features/home/presentation/screens/home_screen.dart';
 import 'package:intopic/features/quizzes/domain/entities/quiz.dart';
+import 'package:intopic/features/quizzes/domain/entities/quiz_submission.dart';
 import 'package:intopic/features/quizzes/presentation/quizzes_provider.dart';
 import 'package:intopic/features/quizzes/presentation/screens/quiz_list_screen.dart';
 import 'package:intopic/features/quizzes/presentation/screens/quiz_screen.dart';
+import 'package:intopic/features/quizzes/presentation/screens/quiz_submission_confirmation.dart';
 import 'package:intopic/features/topics/presentation/screens/topic_detail_screen.dart';
 import 'package:intopic/features/topics/presentation/screens/topics_list_screen.dart';
 
@@ -24,6 +26,7 @@ class AppRoutes {
   static const String topicDetail = '/topicDetail';
   static const String quiz = '/quiz';
   static const String quizList = '/quizList';
+  static const String confirmation = '/confirmation';
 }
 
 class AppPages {
@@ -63,10 +66,23 @@ class AppPages {
     GetPage(name: AppRoutes.topics, page: () => const TopicsScreen()),
     GetPage(name: AppRoutes.topicDetail, page: () => const TopicDetailScreen()),
     GetPage(name: AppRoutes.quizList, page: () => const QuizListScreen()),
-    GetPage(name: AppRoutes.quiz, page: () => ProviderScope(
+    GetPage(
+      name: AppRoutes.quiz,
+      page: () => ProviderScope(
         overrides: [
           currentQuizProvider.overrideWithValue(Get.arguments as Quiz),
         ],
-        child: const QuizScreen(),),),
+        child: const QuizScreen(),
+      ),
+    ),
+    GetPage(
+      name: AppRoutes.confirmation,
+      page: () => ProviderScope(
+        overrides: [
+          currentQuizSubmissionProvider.overrideWithValue(Get.arguments as QuizSubmission),
+        ],
+        child: const QuizSubmissionConfirmation(),
+      ),
+    ),
   ];
 }

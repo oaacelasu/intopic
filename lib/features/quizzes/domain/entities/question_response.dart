@@ -35,12 +35,19 @@ class QuestionResponse with _$QuestionResponse {
     );
   }
 
+  QuestionResponse updateSelected(Question question, List<String> selected) {
+    return copyWith(
+      score: _getScore(question, selected),
+      selected: selected,
+    );
+  }
+
   static double _getScore(Question question, List<String> selected) {
-    return selected.fold<double>(100, (previousValue, element) {
-      if(!question.validateAnswer(element)) {
-        return previousValue - (100 / question.correctAnswerValues.length);
+    return selected.fold<double>(0, (previousValue, element) {
+      if(question.validateAnswer(element)) {
+        return previousValue + (100 / question.correctAnswerValues.length);
       }
-      return previousValue;
+      return 0;
     });
   }
 }

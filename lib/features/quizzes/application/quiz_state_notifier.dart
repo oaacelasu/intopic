@@ -1,7 +1,11 @@
-import 'package:fpdart/fpdart.dart';
+import 'dart:async';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:get/get.dart';
+import 'package:intopic/config/navigation.dart';
 import 'package:intopic/config/providers.dart';
-import 'package:intopic/features/common/domain/failures/failure.dart';
+import 'package:intopic/features/common/domain/entities/alerts.dart';
+import 'package:intopic/features/common/presentation/utils/extensions/extensions.dart';
 import 'package:intopic/features/quizzes/domain/entities/quiz.dart';
 import 'package:intopic/features/quizzes/domain/entities/quiz_response.dart';
 import 'package:intopic/features/quizzes/presentation/quizzes_provider.dart';
@@ -22,19 +26,20 @@ class QuizStateNotifier extends _$QuizStateNotifier {
 
   Future<QuizState> _loadQuiz(String id) async {
     final failureOrSuccess = await ref.read(quizRepositoryProvider).getQuizDetail(id);
-     return failureOrSuccess.fold((l) => const QuizState.initial(), (r) => QuizState(quiz: r, currentQuestionIndex: 0, quizResponse: const QuizResponse.empty()));
+    final quizResponse = await ref.read(quizResponseByIdProvider(quizId: id).future);
+    return failureOrSuccess.fold((l) => const QuizState.initial(), (r) => QuizState(quiz: r, quizResponse: quizResponse));
   }
 
   Future<void> nextQuestion() async {
     state.whenData((value) async {
       state = const AsyncValue.loading();
       state = await AsyncValue.guard(() async {
-        if(value.currentQuestionIndex == value.quiz.questions.length - 1) {
+        if(!value.hasNextQuestion()) {
           return value;
         }
-        return value.copyWith(
-          currentQuestionIndex: value.currentQuestionIndex + 1,
-        );
+        final quizResponse = value.quizResponse.moveForward();
+        unawaited(_saveQuizResponse(quizResponse));
+        return value.copyWith(quizResponse: quizResponse);
       });
     });
   }
@@ -43,12 +48,12 @@ class QuizStateNotifier extends _$QuizStateNotifier {
     state.whenData((value) async {
       state = const AsyncValue.loading();
       state = await AsyncValue.guard(() async {
-        if(value.currentQuestionIndex == 0) {
+        if(!value.hasPreviousQuestion()) {
           return value;
         }
-        return value.copyWith(
-          currentQuestionIndex: value.currentQuestionIndex - 1,
-        );
+        final quizResponse = value.quizResponse.moveBackward();
+        unawaited(_saveQuizResponse(quizResponse));
+        return value.copyWith(quizResponse: quizResponse);
       });
     });
   }
@@ -57,20 +62,32 @@ class QuizStateNotifier extends _$QuizStateNotifier {
     state.whenData((value) async {
       state = const AsyncValue.loading();
       state = await AsyncValue.guard(() async {
-        final question = value.quiz.questions[value.currentQuestionIndex];
-        return value.copyWith(
-          quizResponse: value.quizResponse.answerQuestion(question: question, selected: option),
-        );
+        final question = value.quiz.questions[value.quizResponse.quizCurrentQuestionIndex];
+        final quizResponse = value.quizResponse.answerQuestion(question: question, selected: option);
+        unawaited(_saveQuizResponse(quizResponse));
+        return value.copyWith(quizResponse: quizResponse);
       });
     });
   }
 
-  Future<void> submitQuiz() async {
-    final failureOrSuccess = await Future.delayed(const Duration(seconds: 1), () {
-      return right<Failure, Unit>(unit);
-    });
+  Future<void> _saveQuizResponse(QuizResponse quizResponse) async {
+    await ref.read(quizRepositoryProvider).saveQuizResponse(quizResponse);
+  }
 
-    //final failureOrSuccess = await ref.read(topicRepositoryProvider).getTopicDetail(id);
-    return failureOrSuccess.fold((l) => const QuizState.initial(), (r) => const QuizState.initial());
+  Future<void> submitQuiz() async {
+    state.whenData((value) async {
+      if(!value.isComplete()) {
+        unawaited(AlertError(Get.context?.tr.pleaseAnswerAllQuestions ?? '').show());
+      }
+
+      state = const AsyncValue.loading();
+      state = await AsyncValue.guard(() async {
+        final submission = await ref.read(quizRepositoryProvider).saveQuizSubmission(value);
+        submission.fold((l) {}, (r) {
+          unawaited(Get.toNamed<void>(AppRoutes.confirmation,arguments: r));
+        });
+        return value;
+      });
+    });
   }
 }

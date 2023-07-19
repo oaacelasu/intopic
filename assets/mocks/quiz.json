@@ -14,8 +14,7 @@
       "quizId": "quiz-1",
       "topicId": "javascript",
       "questionType": "singleChoice",
-      "title": "What is the result of the expression '2' + 2?",
-      "question": "Choose the correct answer.",
+      "question": "<p><strong>What is the result of the expression '2' + 2?</strong></p><p>Choose the correct answer.</p>",
       "options": [
         "22",
         "4",
@@ -29,8 +28,7 @@
       "quizId": "quiz-1",
       "topicId": "javascript",
       "questionType": "multipleChoice",
-      "title": "Which of the following are JavaScript data types?",
-      "question": "Select all that apply.",
+      "question": "<p><strong>Which of the following are JavaScript data types?</strong></p><p>Select all that apply.</p>",
       "options": [
         "String",
         "Number",
@@ -45,8 +43,7 @@
       "quizId": "quiz-1",
       "topicId": "javascript",
       "questionType": "trueFalse",
-      "title": "JavaScript is a compiled language.",
-      "question": "Choose true or false.",
+      "question": "<p><strong>JavaScript is a compiled language.</strong></p><p>Choose true or false.</p>",
       "options": [
         "True",
         "False"
@@ -58,8 +55,7 @@
       "quizId": "quiz-1",
       "topicId": "javascript",
       "questionType": "singleChoice",
-      "title": "What is the output of the following code?\n\n```javascript\nconsole.log(2 + '2' - 1);\n```",
-      "question": "Choose the correct answer.",
+      "question": "<p><strong>What is the output of the following code?</strong></p><pre><code>console.log(2 + '2' - 1);\n</code></pre><p>Choose the correct answer.</p>",
       "options": [
         "21",
         "22",
@@ -73,8 +69,7 @@
       "quizId": "quiz-1",
       "topicId": "javascript",
       "questionType": "multipleChoice",
-      "title": "Which of the following is not a JavaScript framework?",
-      "question": "Select one option.",
+      "question": "<p><strong>Which of the following is not a JavaScript framework?</strong></p><p>Select one option.</p>",
       "options": [
         "React",
         "Angular",
@@ -88,8 +83,7 @@
       "quizId": "quiz-1",
       "topicId": "javascript",
       "questionType": "trueFalse",
-      "title": "JavaScript is a case-sensitive language.",
-      "question": "Choose true or false.",
+      "question": "<p><strong>JavaScript is a case-sensitive language.</strong></p><p>Choose true or false.</p>",
       "options": [
         "True",
         "False"
@@ -101,8 +95,7 @@
       "quizId": "quiz-1",
       "topicId": "javascript",
       "questionType": "singleChoice",
-      "title": "What will be logged to the console?\n\n```javascript\nconsole.log(typeof null);\n```",
-      "question": "Choose the correct answer.",
+      "question": "<p><strong>What will be logged to the console?</strong></p><pre><code>console.log(typeof null);\n</code></pre><p>Choose the correct answer.</p>",
       "options": [
         "undefined",
         "object",
@@ -116,12 +109,11 @@
       "quizId": "quiz-1",
       "topicId": "javascript",
       "questionType": "multipleChoice",
-      "title": "Which of the following is a valid way to comment in JavaScript?",
-      "question": "Select all that apply.",
+      "question": "<p><strong>Which of the following is a valid way to comment in JavaScript?</strong></p><p>Select all that apply.</p>",
       "options": [
         "// This is a comment",
         "/* This is a comment */",
-        "<!-- This is a comment -->",
+        "&lt;!-- This is a comment --&gt;",
         "# This is a comment"
       ],
       "correctAnswer": "// This is a comment,/* This is a comment */"
@@ -131,8 +123,7 @@
       "quizId": "quiz-1",
       "topicId": "javascript",
       "questionType": "singleChoice",
-      "title": "What is the output of the following code?\n\n```javascript\nconsole.log(5 > 4 > 3);\n```",
-      "question": "Choose the correct answer.",
+      "question": "<p><strong>What is the output of the following code?</strong></p><pre><code>console.log(5 &gt; 4 &gt; 3);\n</code></pre><p>Choose the correct answer.</p>",
       "options": [
         "true",
         "false",
@@ -146,10 +137,14 @@
       "quizId": "quiz-1",
       "topicId": "javascript",
       "questionType": "multipleChoice",
-      "title": "Which of the following is a valid way to comment in JavaScript?",
-      "question": "Select all that apply.",
-      "options": ["// This is a comment", "/* This is a comment */", "<!-- This is a comment -->", "# This is a comment"],
+      "question": "<p><strong>Which of the following is a valid way to comment in JavaScript?</strong></p><p>Select all that apply.</p>",
+      "options": [
+        "// This is a comment",
+        "/* This is a comment */",
+        "&lt;!-- This is a comment --&gt;",
+        "# This is a comment"
+      ],
       "correctAnswer": "// This is a comment,/* This is a comment */"
     }
-    ]
+  ]
 }

@@ -1,6 +1,11 @@
+import 'package:intopic/config/providers.dart';
 import 'package:intopic/features/quizzes/application/quiz_state_notifier.dart';
 import 'package:intopic/features/quizzes/domain/entities/question.dart';
 import 'package:intopic/features/quizzes/domain/entities/quiz.dart';
+import 'package:intopic/features/quizzes/domain/entities/quiz_response.dart';
+import 'package:intopic/features/quizzes/domain/entities/quiz_submission.dart';
+import 'package:intopic/features/quizzes/infrastructure/dtos/quiz_response_dto.dart';
+import 'package:isar/isar.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'quizzes_provider.g.dart';
@@ -17,11 +22,11 @@ Question currentQuestion(CurrentQuestionRef ref) {
 
   return asyncState.maybeWhen(
     data: (state) {
-      if (state.currentQuestionIndex >= state.quiz.questions.length) {
+      if (state.quizResponse.quizCurrentQuestionIndex >= state.quiz.questions.length) {
         return const Question.empty();
       }
 
-      return state.quiz.questions[state.currentQuestionIndex];
+      return state.quiz.questions[state.quizResponse.quizCurrentQuestionIndex];
     },
     orElse: () => const Question.empty(),
   );
@@ -80,8 +85,33 @@ int currentQuestionIndex(CurrentQuestionIndexRef ref) {
   final asyncState = ref.watch(quizStateNotifierProvider);
   return asyncState.maybeWhen(
     data: (state) {
-      return state.currentQuestionIndex;
+      return state.quizResponse.quizCurrentQuestionIndex;
     },
     orElse: () => 0,
   );
 }
+
+@Riverpod(dependencies: [currentQuiz, QuizStateNotifier])
+Future<QuizResponse> quizResponseById(QuizResponseByIdRef ref, {required String quizId}) async {
+  final isar = await ref.watch(isarPod.future);
+
+  final quizResponse = await isar.quizResponseDtos.where().filter().quizIdEqualTo(quizId).findFirst();
+
+  if (quizResponse == null) {
+    return _createNewQuizResponse(quizId, isar);
+  }
+
+  return quizResponse.toDomain();
+}
+
+Future<QuizResponse> _createNewQuizResponse(String quizId, Isar isar) async {
+  final newQuizResponse =  QuizResponse(id: Isar.autoIncrement, quizId: quizId, responses: [], quizCurrentQuestionIndex: 0);
+  var isarQuizId = 0;
+  await isar.writeTxn(() async {
+    isarQuizId = await isar.quizResponseDtos.put(QuizResponseDto.fromDomain(newQuizResponse));
+  });
+  return newQuizResponse.copyWith(id: isarQuizId);
+}
+
+@riverpod
+QuizSubmission currentQuizSubmission(CurrentQuizSubmissionRef ref) => const QuizSubmission.empty();

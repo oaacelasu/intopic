@@ -8,9 +8,13 @@ import 'package:intopic/features/common/infrastructure/repositories/local_reposi
 import 'package:intopic/features/home/domain/repositories/i_home_repository.dart';
 import 'package:intopic/features/home/infrastructure/repositories/home_repository.dart';
 import 'package:intopic/features/quizzes/domain/repositories/i_quiz_repository.dart';
+import 'package:intopic/features/quizzes/infrastructure/dtos/quiz_response_dto.dart';
+import 'package:intopic/features/quizzes/infrastructure/dtos/quiz_submission_dto.dart';
 import 'package:intopic/features/quizzes/infrastructure/repositories/quiz_repository.dart';
 import 'package:intopic/features/topics/domain/repositories/i_topic_repository.dart';
 import 'package:intopic/features/topics/infrastructure/repositories/topic_repository.dart';
+import 'package:isar/isar.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -50,6 +54,11 @@ IQuizRepository quizRepository(QuizRepositoryRef ref) {
 
 /// Provides a [ValueNotifier] to the app router to redirect on auth state change
 final authStateListenable = ValueNotifier<bool>(false);
+
+final isarPod = FutureProvider((ref) async {
+  final dir = await getApplicationDocumentsDirectory();
+  return Isar.open([QuizResponseDtoSchema, QuizSubmissionDtoSchema], directory: dir.path);
+});
 
 /// Triggered from bootstrap() to complete futures
 Future<void> initializeProviders(ProviderContainer container) async {
