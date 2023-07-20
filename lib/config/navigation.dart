@@ -6,6 +6,7 @@ import 'package:intopic/features/auth/presentation/screens/sign_up_screen.dart';
 import 'package:intopic/features/auth/presentation/screens/welcome_screen.dart';
 import 'package:intopic/features/common/presentation/screens/splash_screen.dart';
 import 'package:intopic/features/home/presentation/screens/home_screen.dart';
+import 'package:intopic/features/home/presentation/screens/settings_screen.dart';
 import 'package:intopic/features/quizzes/domain/entities/quiz.dart';
 import 'package:intopic/features/quizzes/domain/entities/quiz_submission.dart';
 import 'package:intopic/features/quizzes/presentation/quizzes_provider.dart';
@@ -27,6 +28,7 @@ class AppRoutes {
   static const String quiz = '/quiz';
   static const String quizList = '/quizList';
   static const String confirmation = '/confirmation';
+  static const String settings = '/settings';
 }
 
 class AppPages {
@@ -34,6 +36,8 @@ class AppPages {
     GetPage<SplashScreen>(
       name: AppRoutes.splash,
       page: () => const SplashScreen(),
+      transition: Transition.fadeIn,
+      transitionDuration: const Duration(milliseconds: 500),
     ),
     GetPage<OnBoardingScreen>(
       name: AppRoutes.onboarding,
@@ -62,9 +66,22 @@ class AppPages {
     GetPage<HomeScreen>(
       name: AppRoutes.home,
       page: () => const HomeScreen(),
+      preventDuplicates: false,
+      transition: Transition.circularReveal,
+      transitionDuration: const Duration(milliseconds: 500),
     ),
-    GetPage(name: AppRoutes.topics, page: () => const TopicsScreen()),
-    GetPage(name: AppRoutes.topicDetail, page: () => const TopicDetailScreen()),
+    GetPage(
+      name: AppRoutes.topics,
+      page: () => const TopicsScreen(),
+      showCupertinoParallax: false,
+      transition: Transition.rightToLeft,
+    ),
+    GetPage(
+      name: AppRoutes.topicDetail,
+      page: () => const TopicDetailScreen(),
+      showCupertinoParallax: false,
+      transition: Transition.rightToLeft,
+    ),
     GetPage(name: AppRoutes.quizList, page: () => const QuizListScreen()),
     GetPage(
       name: AppRoutes.quiz,
@@ -74,6 +91,8 @@ class AppPages {
         ],
         child: const QuizScreen(),
       ),
+      showCupertinoParallax: false,
+      transition: Transition.rightToLeft,
     ),
     GetPage(
       name: AppRoutes.confirmation,
@@ -83,6 +102,14 @@ class AppPages {
         ],
         child: const QuizSubmissionConfirmation(),
       ),
+      showCupertinoParallax: false,
+      transition: Transition.downToUp,
+    ),
+    GetPage(
+      name: AppRoutes.settings,
+      page: () => const SettingsScreen(),
+      showCupertinoParallax: false,
+      transition: Transition.leftToRight,
     ),
   ];
 }

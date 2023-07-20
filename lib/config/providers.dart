@@ -8,6 +8,7 @@ import 'package:intopic/features/common/infrastructure/repositories/local_reposi
 import 'package:intopic/features/home/domain/repositories/i_home_repository.dart';
 import 'package:intopic/features/home/infrastructure/repositories/home_repository.dart';
 import 'package:intopic/features/quizzes/domain/repositories/i_quiz_repository.dart';
+import 'package:intopic/features/quizzes/infrastructure/dtos/quiz_dto.dart';
 import 'package:intopic/features/quizzes/infrastructure/dtos/quiz_response_dto.dart';
 import 'package:intopic/features/quizzes/infrastructure/dtos/quiz_submission_dto.dart';
 import 'package:intopic/features/quizzes/infrastructure/repositories/quiz_repository.dart';
@@ -57,7 +58,7 @@ final authStateListenable = ValueNotifier<bool>(false);
 
 final isarPod = FutureProvider((ref) async {
   final dir = await getApplicationDocumentsDirectory();
-  return Isar.open([QuizResponseDtoSchema, QuizSubmissionDtoSchema], directory: dir.path);
+  return Isar.open([QuizResponseDtoSchema, QuizSubmissionDtoSchema, QuizDtoIsarSchema], directory: dir.path);
 });
 
 /// Triggered from bootstrap() to complete futures

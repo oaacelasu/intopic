@@ -34,6 +34,13 @@ class App extends ConsumerWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
+      supportedLocales: const [
+        Locale('en'), // English
+        Locale('es'), // Spanish
+        Locale('fr'), // French
+        Locale('de'), // German
+        Locale('ko'), // Korean
+      ],
       initialRoute: AppRoutes.splash,
       getPages: AppPages.pages,
     );

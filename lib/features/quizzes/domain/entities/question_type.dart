@@ -32,4 +32,13 @@ extension QuestionTypeX on QuestionType {
   bool get isSingleChoice => this is _SingleChoiceQuestionType;
   bool get isMultipleChoice => this is _MultipleChoiceQuestionType;
   bool get isTrueFalse => this is _TrueFalseQuestionType;
+
+  String toRaw() {
+    return when(
+      none: () => 'none',
+      singleChoice: () => 'singleChoice',
+      multipleChoice: () => 'multipleChoice',
+      trueFalse: () => 'trueFalse',
+    );
+  }
 }

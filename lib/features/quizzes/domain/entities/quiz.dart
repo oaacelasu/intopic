@@ -16,6 +16,7 @@ class Quiz with _$Quiz {
     required DateTime? quizAccessFromTime,
     required DateTime? quizAccessToTime,
     required bool isQuizActive,
+    required int totalQuestions,
     required List<Question> questions,
   }) = _Quiz;
 
@@ -29,6 +30,7 @@ class Quiz with _$Quiz {
     @Default(null) DateTime? quizAccessFromTime,
     @Default(null) DateTime? quizAccessToTime,
     @Default(false) bool isQuizActive,
+    @Default(0) int totalQuestions,
     @Default([]) List<Question> questions,
   }) = _QuizEmpty;
 
@@ -36,5 +38,12 @@ class Quiz with _$Quiz {
 
   bool isValid() {
     return true;
+  }
+
+  Quiz shuffleAndTakeLimitedQuestions() {
+    final shuffled = List<Question>.from(questions)..shuffle();
+    return copyWith(
+      questions: shuffled.take(totalQuestions).toList(),
+    );
   }
 }

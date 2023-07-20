@@ -25,6 +25,7 @@ mixin _$Quiz {
   DateTime? get quizAccessFromTime => throw _privateConstructorUsedError;
   DateTime? get quizAccessToTime => throw _privateConstructorUsedError;
   bool get isQuizActive => throw _privateConstructorUsedError;
+  int get totalQuestions => throw _privateConstructorUsedError;
   List<Question> get questions => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
@@ -38,6 +39,7 @@ mixin _$Quiz {
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
             bool isQuizActive,
+            int totalQuestions,
             List<Question> questions)
         $default, {
     required TResult Function(
@@ -50,6 +52,7 @@ mixin _$Quiz {
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
             bool isQuizActive,
+            int totalQuestions,
             List<Question> questions)
         empty,
   }) =>
@@ -66,6 +69,7 @@ mixin _$Quiz {
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
             bool isQuizActive,
+            int totalQuestions,
             List<Question> questions)?
         $default, {
     TResult? Function(
@@ -78,6 +82,7 @@ mixin _$Quiz {
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
             bool isQuizActive,
+            int totalQuestions,
             List<Question> questions)?
         empty,
   }) =>
@@ -94,6 +99,7 @@ mixin _$Quiz {
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
             bool isQuizActive,
+            int totalQuestions,
             List<Question> questions)?
         $default, {
     TResult Function(
@@ -106,6 +112,7 @@ mixin _$Quiz {
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
             bool isQuizActive,
+            int totalQuestions,
             List<Question> questions)?
         empty,
     required TResult orElse(),
@@ -150,6 +157,7 @@ abstract class $QuizCopyWith<$Res> {
       DateTime? quizAccessFromTime,
       DateTime? quizAccessToTime,
       bool isQuizActive,
+      int totalQuestions,
       List<Question> questions});
 }
 
@@ -175,6 +183,7 @@ class _$QuizCopyWithImpl<$Res, $Val extends Quiz>
     Object? quizAccessFromTime = freezed,
     Object? quizAccessToTime = freezed,
     Object? isQuizActive = null,
+    Object? totalQuestions = null,
     Object? questions = null,
   }) {
     return _then(_value.copyWith(
@@ -214,6 +223,10 @@ class _$QuizCopyWithImpl<$Res, $Val extends Quiz>
           ? _value.isQuizActive
           : isQuizActive // ignore: cast_nullable_to_non_nullable
               as bool,
+      totalQuestions: null == totalQuestions
+          ? _value.totalQuestions
+          : totalQuestions // ignore: cast_nullable_to_non_nullable
+              as int,
       questions: null == questions
           ? _value.questions
           : questions // ignore: cast_nullable_to_non_nullable
@@ -238,6 +251,7 @@ abstract class _$$_QuizCopyWith<$Res> implements $QuizCopyWith<$Res> {
       DateTime? quizAccessFromTime,
       DateTime? quizAccessToTime,
       bool isQuizActive,
+      int totalQuestions,
       List<Question> questions});
 }
 
@@ -259,6 +273,7 @@ class __$$_QuizCopyWithImpl<$Res> extends _$QuizCopyWithImpl<$Res, _$_Quiz>
     Object? quizAccessFromTime = freezed,
     Object? quizAccessToTime = freezed,
     Object? isQuizActive = null,
+    Object? totalQuestions = null,
     Object? questions = null,
   }) {
     return _then(_$_Quiz(
@@ -298,6 +313,10 @@ class __$$_QuizCopyWithImpl<$Res> extends _$QuizCopyWithImpl<$Res, _$_Quiz>
           ? _value.isQuizActive
           : isQuizActive // ignore: cast_nullable_to_non_nullable
               as bool,
+      totalQuestions: null == totalQuestions
+          ? _value.totalQuestions
+          : totalQuestions // ignore: cast_nullable_to_non_nullable
+              as int,
       questions: null == questions
           ? _value._questions
           : questions // ignore: cast_nullable_to_non_nullable
@@ -319,6 +338,7 @@ class _$_Quiz extends _Quiz {
       required this.quizAccessFromTime,
       required this.quizAccessToTime,
       required this.isQuizActive,
+      required this.totalQuestions,
       required final List<Question> questions})
       : _questions = questions,
         super._();
@@ -341,6 +361,8 @@ class _$_Quiz extends _Quiz {
   final DateTime? quizAccessToTime;
   @override
   final bool isQuizActive;
+  @override
+  final int totalQuestions;
   final List<Question> _questions;
   @override
   List<Question> get questions {
@@ -351,7 +373,7 @@ class _$_Quiz extends _Quiz {
 
   @override
   String toString() {
-    return 'Quiz(id: $id, topicId: $topicId, userId: $userId, title: $title, description: $description, imageURL: $imageURL, quizAccessFromTime: $quizAccessFromTime, quizAccessToTime: $quizAccessToTime, isQuizActive: $isQuizActive, questions: $questions)';
+    return 'Quiz(id: $id, topicId: $topicId, userId: $userId, title: $title, description: $description, imageURL: $imageURL, quizAccessFromTime: $quizAccessFromTime, quizAccessToTime: $quizAccessToTime, isQuizActive: $isQuizActive, totalQuestions: $totalQuestions, questions: $questions)';
   }
 
   @override
@@ -373,6 +395,8 @@ class _$_Quiz extends _Quiz {
                 other.quizAccessToTime == quizAccessToTime) &&
             (identical(other.isQuizActive, isQuizActive) ||
                 other.isQuizActive == isQuizActive) &&
+            (identical(other.totalQuestions, totalQuestions) ||
+                other.totalQuestions == totalQuestions) &&
             const DeepCollectionEquality()
                 .equals(other._questions, _questions));
   }
@@ -389,6 +413,7 @@ class _$_Quiz extends _Quiz {
       quizAccessFromTime,
       quizAccessToTime,
       isQuizActive,
+      totalQuestions,
       const DeepCollectionEquality().hash(_questions));
 
   @JsonKey(ignore: true)
@@ -410,6 +435,7 @@ class _$_Quiz extends _Quiz {
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
             bool isQuizActive,
+            int totalQuestions,
             List<Question> questions)
         $default, {
     required TResult Function(
@@ -422,11 +448,22 @@ class _$_Quiz extends _Quiz {
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
             bool isQuizActive,
+            int totalQuestions,
             List<Question> questions)
         empty,
   }) {
-    return $default(id, topicId, userId, title, description, imageURL,
-        quizAccessFromTime, quizAccessToTime, isQuizActive, questions);
+    return $default(
+        id,
+        topicId,
+        userId,
+        title,
+        description,
+        imageURL,
+        quizAccessFromTime,
+        quizAccessToTime,
+        isQuizActive,
+        totalQuestions,
+        questions);
   }
 
   @override
@@ -442,6 +479,7 @@ class _$_Quiz extends _Quiz {
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
             bool isQuizActive,
+            int totalQuestions,
             List<Question> questions)?
         $default, {
     TResult? Function(
@@ -454,11 +492,22 @@ class _$_Quiz extends _Quiz {
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
             bool isQuizActive,
+            int totalQuestions,
             List<Question> questions)?
         empty,
   }) {
-    return $default?.call(id, topicId, userId, title, description, imageURL,
-        quizAccessFromTime, quizAccessToTime, isQuizActive, questions);
+    return $default?.call(
+        id,
+        topicId,
+        userId,
+        title,
+        description,
+        imageURL,
+        quizAccessFromTime,
+        quizAccessToTime,
+        isQuizActive,
+        totalQuestions,
+        questions);
   }
 
   @override
@@ -474,6 +523,7 @@ class _$_Quiz extends _Quiz {
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
             bool isQuizActive,
+            int totalQuestions,
             List<Question> questions)?
         $default, {
     TResult Function(
@@ -486,13 +536,24 @@ class _$_Quiz extends _Quiz {
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
             bool isQuizActive,
+            int totalQuestions,
             List<Question> questions)?
         empty,
     required TResult orElse(),
   }) {
     if ($default != null) {
-      return $default(id, topicId, userId, title, description, imageURL,
-          quizAccessFromTime, quizAccessToTime, isQuizActive, questions);
+      return $default(
+          id,
+          topicId,
+          userId,
+          title,
+          description,
+          imageURL,
+          quizAccessFromTime,
+          quizAccessToTime,
+          isQuizActive,
+          totalQuestions,
+          questions);
     }
     return orElse();
   }
@@ -540,6 +601,7 @@ abstract class _Quiz extends Quiz {
       required final DateTime? quizAccessFromTime,
       required final DateTime? quizAccessToTime,
       required final bool isQuizActive,
+      required final int totalQuestions,
       required final List<Question> questions}) = _$_Quiz;
   const _Quiz._() : super._();
 
@@ -561,6 +623,8 @@ abstract class _Quiz extends Quiz {
   DateTime? get quizAccessToTime;
   @override
   bool get isQuizActive;
+  @override
+  int get totalQuestions;
   @override
   List<Question> get questions;
   @override
@@ -585,6 +649,7 @@ abstract class _$$_QuizEmptyCopyWith<$Res> implements $QuizCopyWith<$Res> {
       DateTime? quizAccessFromTime,
       DateTime? quizAccessToTime,
       bool isQuizActive,
+      int totalQuestions,
       List<Question> questions});
 }
 
@@ -608,6 +673,7 @@ class __$$_QuizEmptyCopyWithImpl<$Res>
     Object? quizAccessFromTime = freezed,
     Object? quizAccessToTime = freezed,
     Object? isQuizActive = null,
+    Object? totalQuestions = null,
     Object? questions = null,
   }) {
     return _then(_$_QuizEmpty(
@@ -647,6 +713,10 @@ class __$$_QuizEmptyCopyWithImpl<$Res>
           ? _value.isQuizActive
           : isQuizActive // ignore: cast_nullable_to_non_nullable
               as bool,
+      totalQuestions: null == totalQuestions
+          ? _value.totalQuestions
+          : totalQuestions // ignore: cast_nullable_to_non_nullable
+              as int,
       questions: null == questions
           ? _value._questions
           : questions // ignore: cast_nullable_to_non_nullable
@@ -668,6 +738,7 @@ class _$_QuizEmpty extends _QuizEmpty {
       this.quizAccessFromTime = null,
       this.quizAccessToTime = null,
       this.isQuizActive = false,
+      this.totalQuestions = 0,
       final List<Question> questions = const []})
       : _questions = questions,
         super._();
@@ -699,6 +770,9 @@ class _$_QuizEmpty extends _QuizEmpty {
   @override
   @JsonKey()
   final bool isQuizActive;
+  @override
+  @JsonKey()
+  final int totalQuestions;
   final List<Question> _questions;
   @override
   @JsonKey()
@@ -710,7 +784,7 @@ class _$_QuizEmpty extends _QuizEmpty {
 
   @override
   String toString() {
-    return 'Quiz.empty(id: $id, topicId: $topicId, userId: $userId, title: $title, description: $description, imageURL: $imageURL, quizAccessFromTime: $quizAccessFromTime, quizAccessToTime: $quizAccessToTime, isQuizActive: $isQuizActive, questions: $questions)';
+    return 'Quiz.empty(id: $id, topicId: $topicId, userId: $userId, title: $title, description: $description, imageURL: $imageURL, quizAccessFromTime: $quizAccessFromTime, quizAccessToTime: $quizAccessToTime, isQuizActive: $isQuizActive, totalQuestions: $totalQuestions, questions: $questions)';
   }
 
   @override
@@ -732,6 +806,8 @@ class _$_QuizEmpty extends _QuizEmpty {
                 other.quizAccessToTime == quizAccessToTime) &&
             (identical(other.isQuizActive, isQuizActive) ||
                 other.isQuizActive == isQuizActive) &&
+            (identical(other.totalQuestions, totalQuestions) ||
+                other.totalQuestions == totalQuestions) &&
             const DeepCollectionEquality()
                 .equals(other._questions, _questions));
   }
@@ -748,6 +824,7 @@ class _$_QuizEmpty extends _QuizEmpty {
       quizAccessFromTime,
       quizAccessToTime,
       isQuizActive,
+      totalQuestions,
       const DeepCollectionEquality().hash(_questions));
 
   @JsonKey(ignore: true)
@@ -769,6 +846,7 @@ class _$_QuizEmpty extends _QuizEmpty {
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
             bool isQuizActive,
+            int totalQuestions,
             List<Question> questions)
         $default, {
     required TResult Function(
@@ -781,11 +859,22 @@ class _$_QuizEmpty extends _QuizEmpty {
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
             bool isQuizActive,
+            int totalQuestions,
             List<Question> questions)
         empty,
   }) {
-    return empty(id, topicId, userId, title, description, imageURL,
-        quizAccessFromTime, quizAccessToTime, isQuizActive, questions);
+    return empty(
+        id,
+        topicId,
+        userId,
+        title,
+        description,
+        imageURL,
+        quizAccessFromTime,
+        quizAccessToTime,
+        isQuizActive,
+        totalQuestions,
+        questions);
   }
 
   @override
@@ -801,6 +890,7 @@ class _$_QuizEmpty extends _QuizEmpty {
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
             bool isQuizActive,
+            int totalQuestions,
             List<Question> questions)?
         $default, {
     TResult? Function(
@@ -813,11 +903,22 @@ class _$_QuizEmpty extends _QuizEmpty {
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
             bool isQuizActive,
+            int totalQuestions,
             List<Question> questions)?
         empty,
   }) {
-    return empty?.call(id, topicId, userId, title, description, imageURL,
-        quizAccessFromTime, quizAccessToTime, isQuizActive, questions);
+    return empty?.call(
+        id,
+        topicId,
+        userId,
+        title,
+        description,
+        imageURL,
+        quizAccessFromTime,
+        quizAccessToTime,
+        isQuizActive,
+        totalQuestions,
+        questions);
   }
 
   @override
@@ -833,6 +934,7 @@ class _$_QuizEmpty extends _QuizEmpty {
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
             bool isQuizActive,
+            int totalQuestions,
             List<Question> questions)?
         $default, {
     TResult Function(
@@ -845,13 +947,24 @@ class _$_QuizEmpty extends _QuizEmpty {
             DateTime? quizAccessFromTime,
             DateTime? quizAccessToTime,
             bool isQuizActive,
+            int totalQuestions,
             List<Question> questions)?
         empty,
     required TResult orElse(),
   }) {
     if (empty != null) {
-      return empty(id, topicId, userId, title, description, imageURL,
-          quizAccessFromTime, quizAccessToTime, isQuizActive, questions);
+      return empty(
+          id,
+          topicId,
+          userId,
+          title,
+          description,
+          imageURL,
+          quizAccessFromTime,
+          quizAccessToTime,
+          isQuizActive,
+          totalQuestions,
+          questions);
     }
     return orElse();
   }
@@ -899,6 +1012,7 @@ abstract class _QuizEmpty extends Quiz {
       final DateTime? quizAccessFromTime,
       final DateTime? quizAccessToTime,
       final bool isQuizActive,
+      final int totalQuestions,
       final List<Question> questions}) = _$_QuizEmpty;
   const _QuizEmpty._() : super._();
 
@@ -920,6 +1034,8 @@ abstract class _QuizEmpty extends Quiz {
   DateTime? get quizAccessToTime;
   @override
   bool get isQuizActive;
+  @override
+  int get totalQuestions;
   @override
   List<Question> get questions;
   @override

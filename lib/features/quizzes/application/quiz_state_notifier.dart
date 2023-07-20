@@ -86,8 +86,9 @@ class QuizStateNotifier extends _$QuizStateNotifier {
         submission.fold((l) {}, (r) {
           unawaited(Get.toNamed<void>(AppRoutes.confirmation,arguments: r));
         });
-        return value;
+        return const QuizState.initial();
       });
     });
+
   }
 }

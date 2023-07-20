@@ -5,6 +5,7 @@ import 'package:intopic/features/quizzes/domain/entities/quiz.dart';
 import 'package:intopic/features/quizzes/domain/entities/quiz_response.dart';
 import 'package:intopic/features/quizzes/domain/entities/quiz_submission.dart';
 import 'package:intopic/features/quizzes/infrastructure/dtos/quiz_response_dto.dart';
+import 'package:intopic/features/quizzes/infrastructure/dtos/quiz_submission_dto.dart';
 import 'package:isar/isar.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -115,3 +116,15 @@ Future<QuizResponse> _createNewQuizResponse(String quizId, Isar isar) async {
 
 @riverpod
 QuizSubmission currentQuizSubmission(CurrentQuizSubmissionRef ref) => const QuizSubmission.empty();
+
+@riverpod
+Future<double?> overallQuizScore(OverallQuizScoreRef ref, {required String quizId}) async {
+  final isar = await ref.watch(isarPod.future);
+
+  final submission = await isar.quizSubmissionDtos.where().filter().quizIdEqualTo(quizId).sortBySubmittedAtDesc().findFirst();
+
+  if(submission == null) {
+    return null;
+  }
+  return submission.toDomain().getScore();
+}

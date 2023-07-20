@@ -6,6 +6,7 @@ import 'package:intopic/config/app_dimens.dart';
 import 'package:intopic/config/navigation.dart';
 import 'package:intopic/features/common/presentation/utils/extensions/extensions.dart';
 import 'package:intopic/features/home/presentation/home_provider.dart';
+import 'package:intopic/features/quizzes/presentation/quizzes_provider.dart';
 
 class HomeTopQuizzes extends HookConsumerWidget {
   const HomeTopQuizzes({super.key});
@@ -78,6 +79,8 @@ class _TopQuizCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final item = ref.watch(currentTopQuizProvider);
+    final score = ref.watch(overallQuizScoreProvider(quizId: item.id));
+
     return Container(
       width: 150,
       margin: const EdgeInsets.symmetric(horizontal: AppDimens.sm),
@@ -111,6 +114,16 @@ class _TopQuizCard extends ConsumerWidget {
               item.title.getOrEmpty(),
               style: context.titleLarge.bold,
             ),
+            score.whenOrNull(
+              data: (value) {
+                if(value == null) return const SizedBox();
+
+                return Text(
+                  '${context.tr.score}: ${value.toStringAsFixed(2)}',
+                  style: context.bodyMedium,
+                );
+              },
+            ) ?? const SizedBox(),
           ],
         ),
       ),

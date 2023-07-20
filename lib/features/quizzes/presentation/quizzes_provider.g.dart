@@ -379,4 +379,85 @@ final currentQuizSubmissionProvider =
 );
 
 typedef CurrentQuizSubmissionRef = AutoDisposeProviderRef<QuizSubmission>;
+String _$overallQuizScoreHash() => r'3898095f86b70bc2f60b15336aa6f1b2135971bd';
+typedef OverallQuizScoreRef = AutoDisposeFutureProviderRef<double?>;
+
+/// See also [overallQuizScore].
+@ProviderFor(overallQuizScore)
+const overallQuizScoreProvider = OverallQuizScoreFamily();
+
+/// See also [overallQuizScore].
+class OverallQuizScoreFamily extends Family<AsyncValue<double?>> {
+  /// See also [overallQuizScore].
+  const OverallQuizScoreFamily();
+
+  /// See also [overallQuizScore].
+  OverallQuizScoreProvider call({
+    required String quizId,
+  }) {
+    return OverallQuizScoreProvider(
+      quizId: quizId,
+    );
+  }
+
+  @override
+  OverallQuizScoreProvider getProviderOverride(
+    covariant OverallQuizScoreProvider provider,
+  ) {
+    return call(
+      quizId: provider.quizId,
+    );
+  }
+
+  static const Iterable<ProviderOrFamily>? _dependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
+
+  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
+      _allTransitiveDependencies;
+
+  @override
+  String? get name => r'overallQuizScoreProvider';
+}
+
+/// See also [overallQuizScore].
+class OverallQuizScoreProvider extends AutoDisposeFutureProvider<double?> {
+  /// See also [overallQuizScore].
+  OverallQuizScoreProvider({
+    required this.quizId,
+  }) : super.internal(
+          (ref) => overallQuizScore(
+            ref,
+            quizId: quizId,
+          ),
+          from: overallQuizScoreProvider,
+          name: r'overallQuizScoreProvider',
+          debugGetCreateSourceHash:
+              const bool.fromEnvironment('dart.vm.product')
+                  ? null
+                  : _$overallQuizScoreHash,
+          dependencies: OverallQuizScoreFamily._dependencies,
+          allTransitiveDependencies:
+              OverallQuizScoreFamily._allTransitiveDependencies,
+        );
+
+  final String quizId;
+
+  @override
+  bool operator ==(Object other) {
+    return other is OverallQuizScoreProvider && other.quizId == quizId;
+  }
+
+  @override
+  int get hashCode {
+    var hash = _SystemHash.combine(0, runtimeType.hashCode);
+    hash = _SystemHash.combine(hash, quizId.hashCode);
+
+    return _SystemHash.finish(hash);
+  }
+}
 // ignore_for_file: unnecessary_raw_strings, subtype_of_sealed_class, invalid_use_of_internal_member, do_not_use_environment, prefer_const_constructors, public_member_api_docs, avoid_private_typedef_functions

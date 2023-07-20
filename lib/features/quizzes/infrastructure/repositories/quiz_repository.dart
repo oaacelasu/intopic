@@ -6,10 +6,7 @@ import 'package:fpdart/fpdart.dart';
 import 'package:get/get.dart';
 import 'package:intopic/config/providers.dart';
 import 'package:intopic/features/common/domain/failures/failure.dart';
-import 'package:intopic/features/common/domain/values/value_abstract.dart';
 import 'package:intopic/features/quizzes/application/quiz_state_notifier.dart';
-import 'package:intopic/features/quizzes/domain/entities/question.dart';
-import 'package:intopic/features/quizzes/domain/entities/question_type.dart';
 import 'package:intopic/features/quizzes/domain/entities/quiz.dart';
 import 'package:intopic/features/quizzes/domain/entities/quiz_response.dart';
 import 'package:intopic/features/quizzes/domain/entities/quiz_submission.dart';
@@ -27,41 +24,32 @@ class QuizRepository implements IQuizRepository {
 
   @override
   Future<Either<Failure, Quiz>> getQuizDetail(String quizId) async {
-    // load quiz from .json file
-    final data = await DefaultAssetBundle.of(Get.context!).loadString('assets/mocks/quiz.json');
-    final jsonResult = jsonDecode(data) as Map<String, dynamic>;
+    Quiz quiz;
+    final isar = await ref.watch(isarPod.future);
 
-    return right(QuizDto.fromJson(jsonResult).toDomain());
+    final quizDto = await isar.quizDtoIsars.where().idEqualTo(quizId.hashCode).findFirst();
+
+
+    if(quizDto != null) {
+      quiz = quizDto.quiz.toDomain();
+    } else {
+      final data = await DefaultAssetBundle.of(Get.context!).loadString('assets/mocks/quiz.json');
+      final jsonResult = jsonDecode(data) as Map<String, dynamic>;
+      quiz = QuizDto.fromJson(jsonResult).toDomain().shuffleAndTakeLimitedQuestions();
+      await isar.writeTxn(() async {
+        await isar.quizDtoIsars.put(QuizDtoIsar(quizId.hashCode, QuizDto.fromDomain(quiz)));
+      });
+    }
+    return right(quiz);
   }
 
   @override
   Future<Either<Failure, List<Quiz>>> getTopQuizzes() async {
+    final data = await DefaultAssetBundle.of(Get.context!).loadString('assets/mocks/quiz.json');
+    final jsonResult = jsonDecode(data) as Map<String, dynamic>;
     return right(
       [
-        ...List.generate(
-          2,
-          (i) => Quiz.empty(
-            id: i.toString(),
-            title: Name('Quiz $i'),
-            imageURL: 'https://picsum.photos/200/300',
-            quizAccessFromTime: DateTime.now(),
-            quizAccessToTime: DateTime.now(),
-            isQuizActive: true,
-            questions: [
-              ...List.generate(
-                  8,
-                  (j) => Question(
-                        id: j.toString(),
-                        quizId: '$i',
-                        topicId: '1',
-                        questionType: const QuestionType.singleChoice(),
-                        question: 'What is your name?',
-                        options: ['A', 'B', 'C', 'D'],
-                        correctAnswer: 'A',
-                      ),),
-            ],
-          ),
-        ),
+        QuizDto.fromJson(jsonResult).toDomain()
       ],
     );
   }
@@ -90,6 +78,7 @@ class QuizRepository implements IQuizRepository {
           QuizSubmissionDto.fromDomain(quizSubmission),
       );
       await isar.quizResponseDtos.delete(state.quizResponse.id);
+      await isar.quizDtoIsars.delete(state.quiz.id.hashCode);
     });
     return right(quizSubmission);
   }

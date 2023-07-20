@@ -33,7 +33,7 @@ class QuestionDto with _$QuestionDto {
       id: _.id,
       quizId: _.quizId,
       topicId: _.topicId,
-      questionType: _.questionType.toString(),
+      questionType: _.questionType.toRaw(),
       question: _.question,
       options: _.options,
       correctAnswer: _.correctAnswer,

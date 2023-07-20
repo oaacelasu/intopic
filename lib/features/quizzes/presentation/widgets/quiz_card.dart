@@ -14,6 +14,8 @@ class QuizCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final item = ref.read(currentQuizCardItemProvider);
+    final score = ref.watch(overallQuizScoreProvider(quizId: item.id));
+
     return Stack(
       children: [
         Container(
@@ -37,19 +39,38 @@ class QuizCard extends ConsumerWidget {
                   ),
                 ),
                 const SizedBox(width: AppDimens.lg),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      item.title.getOrEmpty(),
-                      style: context.titleMedium.bold,
-                    ),
-                    Text(
-                      item.description,
-                      style: context.bodyMedium,
-                    ),
-                  ],
-                ).paddingSymmetric(vertical: AppDimens.md),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        item.title.getOrEmpty(),
+                        style: context.titleMedium.bold,
+                      ).paddingOnly(bottom: AppDimens.xs),
+
+                      score.whenOrNull(
+                        data: (value) {
+                          if(value == null) return const SizedBox();
+
+                          return Text(
+                            '${context.tr.score}: ${value.toStringAsFixed(2)}',
+                            style: context.bodyMedium,
+                          ).paddingOnly(bottom: AppDimens.xs);
+                        },
+                      )?? const SizedBox(),
+
+                      Expanded(
+                        child: Text(
+                          item.description,
+                          style: context.bodyMedium,
+                          maxLines: 3,
+                          overflow: TextOverflow.ellipsis,
+
+                        ),
+                      ),
+                    ],
+                  ).paddingSymmetric(vertical: AppDimens.md),
+                ),
               ],
             ),
           ),

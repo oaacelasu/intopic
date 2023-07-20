@@ -29,6 +29,7 @@ mixin _$QuizDto {
   String? get quizAccessFromTime => throw _privateConstructorUsedError;
   String? get quizAccessToTime => throw _privateConstructorUsedError;
   bool? get isQuizActive => throw _privateConstructorUsedError;
+  int? get totalQuestions => throw _privateConstructorUsedError;
   List<QuestionDto>? get questions => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -51,6 +52,7 @@ abstract class $QuizDtoCopyWith<$Res> {
       String? quizAccessFromTime,
       String? quizAccessToTime,
       bool? isQuizActive,
+      int? totalQuestions,
       List<QuestionDto>? questions});
 }
 
@@ -76,6 +78,7 @@ class _$QuizDtoCopyWithImpl<$Res, $Val extends QuizDto>
     Object? quizAccessFromTime = freezed,
     Object? quizAccessToTime = freezed,
     Object? isQuizActive = freezed,
+    Object? totalQuestions = freezed,
     Object? questions = freezed,
   }) {
     return _then(_value.copyWith(
@@ -115,6 +118,10 @@ class _$QuizDtoCopyWithImpl<$Res, $Val extends QuizDto>
           ? _value.isQuizActive
           : isQuizActive // ignore: cast_nullable_to_non_nullable
               as bool?,
+      totalQuestions: freezed == totalQuestions
+          ? _value.totalQuestions
+          : totalQuestions // ignore: cast_nullable_to_non_nullable
+              as int?,
       questions: freezed == questions
           ? _value.questions
           : questions // ignore: cast_nullable_to_non_nullable
@@ -140,6 +147,7 @@ abstract class _$$_QuizDtoCopyWith<$Res> implements $QuizDtoCopyWith<$Res> {
       String? quizAccessFromTime,
       String? quizAccessToTime,
       bool? isQuizActive,
+      int? totalQuestions,
       List<QuestionDto>? questions});
 }
 
@@ -162,6 +170,7 @@ class __$$_QuizDtoCopyWithImpl<$Res>
     Object? quizAccessFromTime = freezed,
     Object? quizAccessToTime = freezed,
     Object? isQuizActive = freezed,
+    Object? totalQuestions = freezed,
     Object? questions = freezed,
   }) {
     return _then(_$_QuizDto(
@@ -201,6 +210,10 @@ class __$$_QuizDtoCopyWithImpl<$Res>
           ? _value.isQuizActive
           : isQuizActive // ignore: cast_nullable_to_non_nullable
               as bool?,
+      totalQuestions: freezed == totalQuestions
+          ? _value.totalQuestions
+          : totalQuestions // ignore: cast_nullable_to_non_nullable
+              as int?,
       questions: freezed == questions
           ? _value._questions
           : questions // ignore: cast_nullable_to_non_nullable
@@ -211,19 +224,21 @@ class __$$_QuizDtoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_QuizDto implements _QuizDto {
+class _$_QuizDto extends _QuizDto {
   _$_QuizDto(
-      {required this.id,
-      required this.topicId,
-      required this.userId,
-      required this.title,
-      required this.description,
-      required this.imageURL,
-      required this.quizAccessFromTime,
-      required this.quizAccessToTime,
-      required this.isQuizActive,
-      required final List<QuestionDto>? questions})
-      : _questions = questions;
+      {this.id,
+      this.topicId,
+      this.userId,
+      this.title,
+      this.description,
+      this.imageURL,
+      this.quizAccessFromTime,
+      this.quizAccessToTime,
+      this.isQuizActive,
+      this.totalQuestions,
+      final List<QuestionDto>? questions})
+      : _questions = questions,
+        super._();
 
   factory _$_QuizDto.fromJson(Map<String, dynamic> json) =>
       _$$_QuizDtoFromJson(json);
@@ -246,6 +261,8 @@ class _$_QuizDto implements _QuizDto {
   final String? quizAccessToTime;
   @override
   final bool? isQuizActive;
+  @override
+  final int? totalQuestions;
   final List<QuestionDto>? _questions;
   @override
   List<QuestionDto>? get questions {
@@ -258,7 +275,7 @@ class _$_QuizDto implements _QuizDto {
 
   @override
   String toString() {
-    return 'QuizDto(id: $id, topicId: $topicId, userId: $userId, title: $title, description: $description, imageURL: $imageURL, quizAccessFromTime: $quizAccessFromTime, quizAccessToTime: $quizAccessToTime, isQuizActive: $isQuizActive, questions: $questions)';
+    return 'QuizDto(id: $id, topicId: $topicId, userId: $userId, title: $title, description: $description, imageURL: $imageURL, quizAccessFromTime: $quizAccessFromTime, quizAccessToTime: $quizAccessToTime, isQuizActive: $isQuizActive, totalQuestions: $totalQuestions, questions: $questions)';
   }
 
   @override
@@ -280,6 +297,8 @@ class _$_QuizDto implements _QuizDto {
                 other.quizAccessToTime == quizAccessToTime) &&
             (identical(other.isQuizActive, isQuizActive) ||
                 other.isQuizActive == isQuizActive) &&
+            (identical(other.totalQuestions, totalQuestions) ||
+                other.totalQuestions == totalQuestions) &&
             const DeepCollectionEquality()
                 .equals(other._questions, _questions));
   }
@@ -297,6 +316,7 @@ class _$_QuizDto implements _QuizDto {
       quizAccessFromTime,
       quizAccessToTime,
       isQuizActive,
+      totalQuestions,
       const DeepCollectionEquality().hash(_questions));
 
   @JsonKey(ignore: true)
@@ -313,18 +333,20 @@ class _$_QuizDto implements _QuizDto {
   }
 }
 
-abstract class _QuizDto implements QuizDto {
+abstract class _QuizDto extends QuizDto {
   factory _QuizDto(
-      {required final String? id,
-      required final String? topicId,
-      required final String? userId,
-      required final String? title,
-      required final String? description,
-      required final String? imageURL,
-      required final String? quizAccessFromTime,
-      required final String? quizAccessToTime,
-      required final bool? isQuizActive,
-      required final List<QuestionDto>? questions}) = _$_QuizDto;
+      {final String? id,
+      final String? topicId,
+      final String? userId,
+      final String? title,
+      final String? description,
+      final String? imageURL,
+      final String? quizAccessFromTime,
+      final String? quizAccessToTime,
+      final bool? isQuizActive,
+      final int? totalQuestions,
+      final List<QuestionDto>? questions}) = _$_QuizDto;
+  _QuizDto._() : super._();
 
   factory _QuizDto.fromJson(Map<String, dynamic> json) = _$_QuizDto.fromJson;
 
@@ -346,6 +368,8 @@ abstract class _QuizDto implements QuizDto {
   String? get quizAccessToTime;
   @override
   bool? get isQuizActive;
+  @override
+  int? get totalQuestions;
   @override
   List<QuestionDto>? get questions;
   @override

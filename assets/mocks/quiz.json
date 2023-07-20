@@ -1,5 +1,5 @@
 {
-  "id": "quiz-1",
+  "id": "495e2dca-2695-11ee-be56-0242ac120002",
   "topicId": "javascript",
   "userId": "user-1",
   "title": "JavaScript Quiz",
@@ -8,6 +8,7 @@
   "quizAccessFromTime": "2023-07-17T09:00:00Z",
   "quizAccessToTime": "2023-07-17T10:00:00Z",
   "isQuizActive": true,
+  "totalQuestions": 3,
   "questions": [
     {
       "id": "question-1",

@@ -62,10 +62,11 @@ class QuizSubmissionConfirmation extends HookConsumerWidget {
         bottomNavigationBar: BottomAppBar(
           child: PrimaryBtn(
               onPressed: () {
+                ref.invalidate(overallQuizScoreProvider);
                 Get.offAllNamed<void>(AppRoutes.home);
               },
-              label: context.tr.finish),
-        ));
+              label: context.tr.finish,),
+        ),);
   }
 }
 
@@ -104,9 +105,9 @@ class _AnswerReviewCard extends StatelessWidget {
                         activeColor: question.correctAnswerValues.contains(option) ? Colors.green : Colors.red,
                         groupValue: response.selected.contains(option),
                       ),
-                    )),
+                    ),),
               ],
-            )),
+            ),),
         ListTile(
           title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -136,7 +137,7 @@ class _AnswerReviewCard extends StatelessWidget {
                   const SizedBox(height: AppDimens.xs),
                   ...response.selected.map((option) => Html(
                         data: option,
-                      ).marginOnly(left: AppDimens.md)),
+                      ).marginOnly(left: AppDimens.md),),
                 ],
               ),
               const SizedBox(height: AppDimens.md),
@@ -155,7 +156,7 @@ class _AnswerReviewCard extends StatelessWidget {
           ),
         ),
       ],
-    ));
+    ),);
   }
 }
 

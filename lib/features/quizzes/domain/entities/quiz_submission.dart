@@ -24,3 +24,9 @@ class QuizSubmission with _$QuizSubmission {
     @Default(0) int submittedAt,
   }) = _QuizSubmissionEmpty;
 }
+
+extension QuizSubmissionX on QuizSubmission {
+  double getScore() {
+    return  (responses.fold<double>(0, (sum, response) => sum + response.score)) / questions.length;
+  }
+}
