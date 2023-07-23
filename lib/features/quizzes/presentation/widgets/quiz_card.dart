@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:intopic/config/app_constants.dart';
 import 'package:intopic/config/app_dimens.dart';
 import 'package:intopic/config/navigation.dart';
 import 'package:intopic/features/common/presentation/utils/extensions/extensions.dart';
@@ -15,6 +16,8 @@ class QuizCard extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final item = ref.read(currentQuizCardItemProvider);
     final score = ref.watch(overallQuizScoreProvider(quizId: item.id));
+
+    final imageUrl = item.imageURL.isURL ? item.imageURL : AppConstants.defaultImageUrl;
 
     return Stack(
       children: [
@@ -32,8 +35,8 @@ class QuizCard extends ConsumerWidget {
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
-                    image: const DecorationImage(
-                      image: NetworkImage('https://img.icons8.com/dusk/64/javascript.png'),
+                    image: DecorationImage(
+                      image: NetworkImage(imageUrl),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -47,25 +50,23 @@ class QuizCard extends ConsumerWidget {
                         item.title.getOrEmpty(),
                         style: context.titleMedium.bold,
                       ).paddingOnly(bottom: AppDimens.xs),
-
                       score.whenOrNull(
-                        data: (value) {
-                          if(value == null) return const SizedBox();
+                            data: (value) {
+                              if (value == null) return const SizedBox();
 
-                          return Text(
-                            '${context.tr.score}: ${value.toStringAsFixed(2)}',
-                            style: context.bodyMedium,
-                          ).paddingOnly(bottom: AppDimens.xs);
-                        },
-                      )?? const SizedBox(),
-
+                              return Text(
+                                '${context.tr.score}: ${value.toStringAsFixed(2)}',
+                                style: context.bodyMedium,
+                              ).paddingOnly(bottom: AppDimens.xs);
+                            },
+                          ) ??
+                          const SizedBox(),
                       Expanded(
                         child: Text(
                           item.description,
                           style: context.bodyMedium,
                           maxLines: 3,
                           overflow: TextOverflow.ellipsis,
-
                         ),
                       ),
                     ],

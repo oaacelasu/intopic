@@ -17,37 +17,32 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$QuizResponse {
   int get id => throw _privateConstructorUsedError;
+
   String get quizId => throw _privateConstructorUsedError;
+
   List<QuestionResponse> get responses => throw _privateConstructorUsedError;
+
   int get quizCurrentQuestionIndex => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(int id, String quizId, List<QuestionResponse> responses,
-            int quizCurrentQuestionIndex)
-        $default, {
-    required TResult Function(int id, String quizId,
-            List<QuestionResponse> responses, int quizCurrentQuestionIndex)
+    TResult Function(int id, String quizId, List<QuestionResponse> responses, int quizCurrentQuestionIndex) $default, {
+    required TResult Function(int id, String quizId, List<QuestionResponse> responses, int quizCurrentQuestionIndex)
         empty,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(int id, String quizId, List<QuestionResponse> responses,
-            int quizCurrentQuestionIndex)?
+    TResult? Function(int id, String quizId, List<QuestionResponse> responses, int quizCurrentQuestionIndex)?
         $default, {
-    TResult? Function(int id, String quizId, List<QuestionResponse> responses,
-            int quizCurrentQuestionIndex)?
-        empty,
+    TResult? Function(int id, String quizId, List<QuestionResponse> responses, int quizCurrentQuestionIndex)? empty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(int id, String quizId, List<QuestionResponse> responses,
-            int quizCurrentQuestionIndex)?
-        $default, {
-    TResult Function(int id, String quizId, List<QuestionResponse> responses,
-            int quizCurrentQuestionIndex)?
-        empty,
+    TResult Function(int id, String quizId, List<QuestionResponse> responses, int quizCurrentQuestionIndex)? $default, {
+    TResult Function(int id, String quizId, List<QuestionResponse> responses, int quizCurrentQuestionIndex)? empty,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -72,30 +67,25 @@ mixin _$QuizResponse {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $QuizResponseCopyWith<QuizResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  $QuizResponseCopyWith<QuizResponse> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $QuizResponseCopyWith<$Res> {
-  factory $QuizResponseCopyWith(
-          QuizResponse value, $Res Function(QuizResponse) then) =
+  factory $QuizResponseCopyWith(QuizResponse value, $Res Function(QuizResponse) then) =
       _$QuizResponseCopyWithImpl<$Res, QuizResponse>;
+
   @useResult
-  $Res call(
-      {int id,
-      String quizId,
-      List<QuestionResponse> responses,
-      int quizCurrentQuestionIndex});
+  $Res call({int id, String quizId, List<QuestionResponse> responses, int quizCurrentQuestionIndex});
 }
 
 /// @nodoc
-class _$QuizResponseCopyWithImpl<$Res, $Val extends QuizResponse>
-    implements $QuizResponseCopyWith<$Res> {
+class _$QuizResponseCopyWithImpl<$Res, $Val extends QuizResponse> implements $QuizResponseCopyWith<$Res> {
   _$QuizResponseCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -129,27 +119,19 @@ class _$QuizResponseCopyWithImpl<$Res, $Val extends QuizResponse>
 }
 
 /// @nodoc
-abstract class _$$_QuizResponseCopyWith<$Res>
-    implements $QuizResponseCopyWith<$Res> {
-  factory _$$_QuizResponseCopyWith(
-          _$_QuizResponse value, $Res Function(_$_QuizResponse) then) =
+abstract class _$$_QuizResponseCopyWith<$Res> implements $QuizResponseCopyWith<$Res> {
+  factory _$$_QuizResponseCopyWith(_$_QuizResponse value, $Res Function(_$_QuizResponse) then) =
       __$$_QuizResponseCopyWithImpl<$Res>;
+
   @override
   @useResult
-  $Res call(
-      {int id,
-      String quizId,
-      List<QuestionResponse> responses,
-      int quizCurrentQuestionIndex});
+  $Res call({int id, String quizId, List<QuestionResponse> responses, int quizCurrentQuestionIndex});
 }
 
 /// @nodoc
-class __$$_QuizResponseCopyWithImpl<$Res>
-    extends _$QuizResponseCopyWithImpl<$Res, _$_QuizResponse>
+class __$$_QuizResponseCopyWithImpl<$Res> extends _$QuizResponseCopyWithImpl<$Res, _$_QuizResponse>
     implements _$$_QuizResponseCopyWith<$Res> {
-  __$$_QuizResponseCopyWithImpl(
-      _$_QuizResponse _value, $Res Function(_$_QuizResponse) _then)
-      : super(_value, _then);
+  __$$_QuizResponseCopyWithImpl(_$_QuizResponse _value, $Res Function(_$_QuizResponse) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -196,6 +178,7 @@ class _$_QuizResponse extends _QuizResponse {
   @override
   final String quizId;
   final List<QuestionResponse> _responses;
+
   @override
   List<QuestionResponse> get responses {
     if (_responses is EqualUnmodifiableListView) return _responses;
@@ -218,20 +201,14 @@ class _$_QuizResponse extends _QuizResponse {
             other is _$_QuizResponse &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.quizId, quizId) || other.quizId == quizId) &&
-            const DeepCollectionEquality()
-                .equals(other._responses, _responses) &&
-            (identical(
-                    other.quizCurrentQuestionIndex, quizCurrentQuestionIndex) ||
+            const DeepCollectionEquality().equals(other._responses, _responses) &&
+            (identical(other.quizCurrentQuestionIndex, quizCurrentQuestionIndex) ||
                 other.quizCurrentQuestionIndex == quizCurrentQuestionIndex));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      quizId,
-      const DeepCollectionEquality().hash(_responses),
-      quizCurrentQuestionIndex);
+  int get hashCode =>
+      Object.hash(runtimeType, id, quizId, const DeepCollectionEquality().hash(_responses), quizCurrentQuestionIndex);
 
   @JsonKey(ignore: true)
   @override
@@ -242,11 +219,8 @@ class _$_QuizResponse extends _QuizResponse {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(int id, String quizId, List<QuestionResponse> responses,
-            int quizCurrentQuestionIndex)
-        $default, {
-    required TResult Function(int id, String quizId,
-            List<QuestionResponse> responses, int quizCurrentQuestionIndex)
+    TResult Function(int id, String quizId, List<QuestionResponse> responses, int quizCurrentQuestionIndex) $default, {
+    required TResult Function(int id, String quizId, List<QuestionResponse> responses, int quizCurrentQuestionIndex)
         empty,
   }) {
     return $default(id, quizId, responses, quizCurrentQuestionIndex);
@@ -255,12 +229,9 @@ class _$_QuizResponse extends _QuizResponse {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(int id, String quizId, List<QuestionResponse> responses,
-            int quizCurrentQuestionIndex)?
+    TResult? Function(int id, String quizId, List<QuestionResponse> responses, int quizCurrentQuestionIndex)?
         $default, {
-    TResult? Function(int id, String quizId, List<QuestionResponse> responses,
-            int quizCurrentQuestionIndex)?
-        empty,
+    TResult? Function(int id, String quizId, List<QuestionResponse> responses, int quizCurrentQuestionIndex)? empty,
   }) {
     return $default?.call(id, quizId, responses, quizCurrentQuestionIndex);
   }
@@ -268,12 +239,8 @@ class _$_QuizResponse extends _QuizResponse {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(int id, String quizId, List<QuestionResponse> responses,
-            int quizCurrentQuestionIndex)?
-        $default, {
-    TResult Function(int id, String quizId, List<QuestionResponse> responses,
-            int quizCurrentQuestionIndex)?
-        empty,
+    TResult Function(int id, String quizId, List<QuestionResponse> responses, int quizCurrentQuestionIndex)? $default, {
+    TResult Function(int id, String quizId, List<QuestionResponse> responses, int quizCurrentQuestionIndex)? empty,
     required TResult orElse(),
   }) {
     if ($default != null) {
@@ -320,43 +287,40 @@ abstract class _QuizResponse extends QuizResponse {
       required final String quizId,
       required final List<QuestionResponse> responses,
       required final int quizCurrentQuestionIndex}) = _$_QuizResponse;
+
   const _QuizResponse._() : super._();
 
   @override
   int get id;
+
   @override
   String get quizId;
+
   @override
   List<QuestionResponse> get responses;
+
   @override
   int get quizCurrentQuestionIndex;
+
   @override
   @JsonKey(ignore: true)
-  _$$_QuizResponseCopyWith<_$_QuizResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_QuizResponseCopyWith<_$_QuizResponse> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_QuizResponseEmptyCopyWith<$Res>
-    implements $QuizResponseCopyWith<$Res> {
-  factory _$$_QuizResponseEmptyCopyWith(_$_QuizResponseEmpty value,
-          $Res Function(_$_QuizResponseEmpty) then) =
+abstract class _$$_QuizResponseEmptyCopyWith<$Res> implements $QuizResponseCopyWith<$Res> {
+  factory _$$_QuizResponseEmptyCopyWith(_$_QuizResponseEmpty value, $Res Function(_$_QuizResponseEmpty) then) =
       __$$_QuizResponseEmptyCopyWithImpl<$Res>;
+
   @override
   @useResult
-  $Res call(
-      {int id,
-      String quizId,
-      List<QuestionResponse> responses,
-      int quizCurrentQuestionIndex});
+  $Res call({int id, String quizId, List<QuestionResponse> responses, int quizCurrentQuestionIndex});
 }
 
 /// @nodoc
-class __$$_QuizResponseEmptyCopyWithImpl<$Res>
-    extends _$QuizResponseCopyWithImpl<$Res, _$_QuizResponseEmpty>
+class __$$_QuizResponseEmptyCopyWithImpl<$Res> extends _$QuizResponseCopyWithImpl<$Res, _$_QuizResponseEmpty>
     implements _$$_QuizResponseEmptyCopyWith<$Res> {
-  __$$_QuizResponseEmptyCopyWithImpl(
-      _$_QuizResponseEmpty _value, $Res Function(_$_QuizResponseEmpty) _then)
+  __$$_QuizResponseEmptyCopyWithImpl(_$_QuizResponseEmpty _value, $Res Function(_$_QuizResponseEmpty) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -406,6 +370,7 @@ class _$_QuizResponseEmpty extends _QuizResponseEmpty {
   @JsonKey()
   final String quizId;
   final List<QuestionResponse> _responses;
+
   @override
   @JsonKey()
   List<QuestionResponse> get responses {
@@ -430,36 +395,26 @@ class _$_QuizResponseEmpty extends _QuizResponseEmpty {
             other is _$_QuizResponseEmpty &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.quizId, quizId) || other.quizId == quizId) &&
-            const DeepCollectionEquality()
-                .equals(other._responses, _responses) &&
-            (identical(
-                    other.quizCurrentQuestionIndex, quizCurrentQuestionIndex) ||
+            const DeepCollectionEquality().equals(other._responses, _responses) &&
+            (identical(other.quizCurrentQuestionIndex, quizCurrentQuestionIndex) ||
                 other.quizCurrentQuestionIndex == quizCurrentQuestionIndex));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      quizId,
-      const DeepCollectionEquality().hash(_responses),
-      quizCurrentQuestionIndex);
+  int get hashCode =>
+      Object.hash(runtimeType, id, quizId, const DeepCollectionEquality().hash(_responses), quizCurrentQuestionIndex);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$_QuizResponseEmptyCopyWith<_$_QuizResponseEmpty> get copyWith =>
-      __$$_QuizResponseEmptyCopyWithImpl<_$_QuizResponseEmpty>(
-          this, _$identity);
+      __$$_QuizResponseEmptyCopyWithImpl<_$_QuizResponseEmpty>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(int id, String quizId, List<QuestionResponse> responses,
-            int quizCurrentQuestionIndex)
-        $default, {
-    required TResult Function(int id, String quizId,
-            List<QuestionResponse> responses, int quizCurrentQuestionIndex)
+    TResult Function(int id, String quizId, List<QuestionResponse> responses, int quizCurrentQuestionIndex) $default, {
+    required TResult Function(int id, String quizId, List<QuestionResponse> responses, int quizCurrentQuestionIndex)
         empty,
   }) {
     return empty(id, quizId, responses, quizCurrentQuestionIndex);
@@ -468,12 +423,9 @@ class _$_QuizResponseEmpty extends _QuizResponseEmpty {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(int id, String quizId, List<QuestionResponse> responses,
-            int quizCurrentQuestionIndex)?
+    TResult? Function(int id, String quizId, List<QuestionResponse> responses, int quizCurrentQuestionIndex)?
         $default, {
-    TResult? Function(int id, String quizId, List<QuestionResponse> responses,
-            int quizCurrentQuestionIndex)?
-        empty,
+    TResult? Function(int id, String quizId, List<QuestionResponse> responses, int quizCurrentQuestionIndex)? empty,
   }) {
     return empty?.call(id, quizId, responses, quizCurrentQuestionIndex);
   }
@@ -481,12 +433,8 @@ class _$_QuizResponseEmpty extends _QuizResponseEmpty {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(int id, String quizId, List<QuestionResponse> responses,
-            int quizCurrentQuestionIndex)?
-        $default, {
-    TResult Function(int id, String quizId, List<QuestionResponse> responses,
-            int quizCurrentQuestionIndex)?
-        empty,
+    TResult Function(int id, String quizId, List<QuestionResponse> responses, int quizCurrentQuestionIndex)? $default, {
+    TResult Function(int id, String quizId, List<QuestionResponse> responses, int quizCurrentQuestionIndex)? empty,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -533,18 +481,22 @@ abstract class _QuizResponseEmpty extends QuizResponse {
       final String quizId,
       final List<QuestionResponse> responses,
       final int quizCurrentQuestionIndex}) = _$_QuizResponseEmpty;
+
   const _QuizResponseEmpty._() : super._();
 
   @override
   int get id;
+
   @override
   String get quizId;
+
   @override
   List<QuestionResponse> get responses;
+
   @override
   int get quizCurrentQuestionIndex;
+
   @override
   @JsonKey(ignore: true)
-  _$$_QuizResponseEmptyCopyWith<_$_QuizResponseEmpty> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_QuizResponseEmptyCopyWith<_$_QuizResponseEmpty> get copyWith => throw _privateConstructorUsedError;
 }

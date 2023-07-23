@@ -28,7 +28,6 @@ class QuizResponse with _$QuizResponse {
 }
 
 extension QuizResponseX on QuizResponse {
-
   bool isComplete() {
     return responses.every((element) => element.selected.isNotEmpty);
   }
@@ -65,7 +64,7 @@ extension QuizResponseX on QuizResponse {
     required Question question,
     required String selected,
   }) {
-    if(responses.any((element) => element.questionId == question.id)) {
+    if (responses.any((element) => element.questionId == question.id)) {
       return _updateSingleChoiceQuestion(question: question, selected: selected);
     } else {
       return _addSingleChoiceQuestion(question: question, selected: selected);
@@ -77,7 +76,10 @@ extension QuizResponseX on QuizResponse {
     required String selected,
   }) {
     return copyWith(
-      responses: [...responses, QuestionResponse.fromQuestion(question: question, selected: [selected])],
+      responses: [
+        ...responses,
+        QuestionResponse.fromQuestion(question: question, selected: [selected])
+      ],
     );
   }
 
@@ -87,7 +89,7 @@ extension QuizResponseX on QuizResponse {
   }) {
     return copyWith(
       responses: responses.map((e) {
-        if(e.questionId == question.id) {
+        if (e.questionId == question.id) {
           return e.updateSelected(question, [selected]);
         }
         return e;
@@ -99,7 +101,7 @@ extension QuizResponseX on QuizResponse {
     required Question question,
     required String selected,
   }) {
-    if(responses.any((element) => element.questionId == question.id)) {
+    if (responses.any((element) => element.questionId == question.id)) {
       return _updateMultipleChoiceQuestion(question: question, selected: selected);
     } else {
       return _addMultipleChoiceQuestion(question: question, selected: selected);
@@ -112,9 +114,11 @@ extension QuizResponseX on QuizResponse {
   }) {
     return copyWith(
       responses: responses.map((e) {
-        if(e.questionId == question.id) {
+        if (e.questionId == question.id) {
           final isAlreadySelected = e.selected.contains(selected);
-          final newSelected = isAlreadySelected ? e.selected.where((element) => element != selected).toList() : [...e.selected, selected];
+          final newSelected = isAlreadySelected
+              ? e.selected.where((element) => element != selected).toList()
+              : [...e.selected, selected];
           return QuestionResponse.fromQuestion(question: question, selected: newSelected);
         }
         return e;
@@ -127,7 +131,10 @@ extension QuizResponseX on QuizResponse {
     required String selected,
   }) {
     return copyWith(
-      responses: [...responses, QuestionResponse.fromQuestion(question: question, selected: [selected])],
+      responses: [
+        ...responses,
+        QuestionResponse.fromQuestion(question: question, selected: [selected])
+      ],
     );
   }
 }

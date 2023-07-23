@@ -10,10 +10,12 @@ part 'user_dto.g.dart';
 
 @freezed
 class UserDto with _$UserDto {
-  factory UserDto(
-      {@JsonKey(name: 'userId') required String? id,
-      required String? email, String? userName,
-      String? token,}) = _UserDto;
+  factory UserDto({
+    @JsonKey(name: 'userId') required String? id,
+    required String? email,
+    String? userName,
+    String? token,
+  }) = _UserDto;
 
   factory UserDto.fromDomain(User _) {
     return UserDto(

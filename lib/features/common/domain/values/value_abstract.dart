@@ -48,7 +48,7 @@ class Name extends ValueAbstract<String> {
       : value = emptyStringValue,
         dflt = '';
 
-  const Name._(this.value): dflt = '';
+  const Name._(this.value) : dflt = '';
 
   @override
   final Either<Failure, String> value;
@@ -75,7 +75,7 @@ class EmailAddress extends ValueAbstract<String> {
       : value = emptyStringValue,
         dflt = '';
 
-  const EmailAddress._(this.value): dflt = '';
+  const EmailAddress._(this.value) : dflt = '';
 
   @override
   final Either<Failure, String> value;
@@ -98,13 +98,13 @@ class Password extends ValueAbstract<String> {
       : value = emptyStringValue,
         dflt = '';
 
-  const Password._(this.value): dflt = '';
+  const Password._(this.value) : dflt = '';
 
   @override
   final Either<Failure, String> value;
   @override
   final String dflt;
 
-  static const int minLength = 6;
+  static const int minLength = 1;
   static const int maxLength = 20;
 }

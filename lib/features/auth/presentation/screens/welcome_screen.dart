@@ -14,58 +14,64 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: context.primaryColor,
-        body: SafeArea(
-          child: Column(
-            children: [
-              const SizedBox(height: AppDimens.xxlg),
-              Expanded(
-                child: Stack(
-                  alignment: Alignment.bottomCenter,
-                  children: [
-                    Column(
-                      children: [
-                        Expanded(
-                          child: Image.asset(
-                            'assets/images/welcome.png',
-                            fit: BoxFit.contain,
-                          ),
+      backgroundColor: context.primaryColor,
+      body: SafeArea(
+        child: Column(
+          children: [
+            const SizedBox(height: AppDimens.xxlg),
+            Expanded(
+              child: Stack(
+                alignment: Alignment.bottomCenter,
+                children: [
+                  Column(
+                    children: [
+                      Expanded(
+                        child: Image.asset(
+                          'assets/images/welcome.png',
+                          fit: BoxFit.contain,
                         ),
-                        const SizedBox(height: AppDimens.sm),
-                        Expanded(
-                            child: Column(
+                      ),
+                      const SizedBox(height: AppDimens.sm),
+                      Expanded(
+                        child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(context.tr.letsGetStarted,
-                                style: context.displayMedium.bold.withColor(context.onPrimaryColor),),
+                            Text(
+                              context.tr.letsGetStarted,
+                              style: context.displayMedium.bold.withColor(context.onPrimaryColor),
+                            ),
                             const SizedBox(height: AppDimens.md),
-                            Text(context.tr.welcomeDescription,
-                                style: context.titleLarge.light.withColor(context.onPrimaryColor),),
+                            Text(
+                              context.tr.welcomeDescription,
+                              style: context.titleLarge.light.withColor(context.onPrimaryColor),
+                            ),
                           ],
-                        ),)
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SecondaryBtn(
-                    label: context.tr.start,
-                    onPressed: () => Get.toNamed<void>(AppRoutes.signup),
-                  ),
-                  const SizedBox(height: AppDimens.lg),
-                  TextWithLink(
-                    text: context.tr.alreadyHaveAccount,
-                    link: context.tr.login,
-                    onPressed: () => Get.toNamed<void>(AppRoutes.login),
-                    color: context.onPrimaryColor,
+                        ),
+                      )
+                    ],
                   ),
                 ],
-              )
-            ],
-          ).marginAll(AppDimens.lg),
-        ),);
+              ),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SecondaryBtn(
+                  label: context.tr.start,
+                  onPressed: () => Get.toNamed<void>(AppRoutes.signup),
+                ),
+                const SizedBox(height: AppDimens.lg),
+                TextWithLink(
+                  text: context.tr.alreadyHaveAccount,
+                  link: context.tr.login,
+                  onPressed: () => Get.toNamed<void>(AppRoutes.login),
+                  color: context.onPrimaryColor,
+                ),
+              ],
+            )
+          ],
+        ).marginAll(AppDimens.lg),
+      ),
+    );
   }
 }

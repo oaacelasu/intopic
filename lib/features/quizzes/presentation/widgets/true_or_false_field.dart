@@ -45,7 +45,6 @@ class BooleanSelector extends ConsumerWidget {
         backgroundColor: isSelected ? selectedColor : context.surfaceVariantColor,
         padding: const EdgeInsets.symmetric(vertical: AppDimens.md),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-
       ),
       child: Text(option, style: isSelected ? context.titleSmall.bold : context.bodyMedium)
           .paddingSymmetric(horizontal: AppDimens.md),

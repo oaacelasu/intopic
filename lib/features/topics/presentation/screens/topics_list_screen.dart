@@ -25,10 +25,11 @@ class TopicsScreen extends HookConsumerWidget {
           itemCount: items.length,
           itemBuilder: (context, index) {
             return ProviderScope(
-                overrides: [
-                  currentTopicProvider.overrideWithValue(items.elementAt(index)),
-                ],
-                child: const TopicCard().marginSymmetric(vertical: AppDimens.xs),);
+              overrides: [
+                currentTopicProvider.overrideWithValue(items.elementAt(index)),
+              ],
+              child: const TopicCard().marginSymmetric(vertical: AppDimens.xs),
+            );
           },
         ),
         loading: () => const Center(child: CircularProgressIndicator()),

@@ -14,23 +14,23 @@ class QuestionType with _$QuestionType {
 
   static QuestionType parse(String value) {
     switch (value) {
-      case 'none':
-        return const QuestionType.none();
-      case 'singleChoice':
-        return const QuestionType.singleChoice();
-      case 'multipleChoice':
-        return const QuestionType.multipleChoice();
-      case 'trueFalse':
+      case 'True/False' || 'trueFalse':
         return const QuestionType.trueFalse();
+      case 'MCQs Multiple answer' || 'multipleChoice':
+        return const QuestionType.multipleChoice();
+      case 'MCQs One answer' || 'singleChoice':
+        return const QuestionType.singleChoice();
       default:
-        throw ArgumentError('Invalid question type: $value');
+        return const QuestionType.none();
     }
   }
 }
 
 extension QuestionTypeX on QuestionType {
   bool get isSingleChoice => this is _SingleChoiceQuestionType;
+
   bool get isMultipleChoice => this is _MultipleChoiceQuestionType;
+
   bool get isTrueFalse => this is _TrueFalseQuestionType;
 
   String toRaw() {

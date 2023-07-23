@@ -19,8 +19,6 @@ class SettingsScreen extends HookWidget {
   Widget build(BuildContext context) {
     final themeMode = useState(Get.theme.brightness == Brightness.dark ? ThemeMode.dark : ThemeMode.light);
 
-
-
     return Scaffold(
       appBar: AppBar(
         title: Text(context.tr.settings),
@@ -34,7 +32,7 @@ class SettingsScreen extends HookWidget {
                 onPressed: (context) {
                   Get.bottomSheet<void>(
                     Container(
-                      decoration:  BoxDecoration(
+                      decoration: BoxDecoration(
                         color: context.surfaceColor,
                         borderRadius: const BorderRadius.only(
                           topLeft: Radius.circular(10),
@@ -43,20 +41,22 @@ class SettingsScreen extends HookWidget {
                       ),
                       child: ListView(
                         shrinkWrap: true,
-                        children: languages.entries.map((e) =>
-                        ListTile(
-                          title: Text(e.value),
-                          onTap: () {
-                            Get..back<void>()
-                            ..updateLocale(Locale(e.key));
-                          },
-                        ),).toList()
-                        ,
+                        children: languages.entries
+                            .map(
+                              (e) => ListTile(
+                                title: Text(e.value),
+                                onTap: () {
+                                  Get
+                                    ..back<void>()
+                                    ..updateLocale(Locale(e.key));
+                                },
+                              ),
+                            )
+                            .toList(),
                       ),
                     ),
                     isScrollControlled: true,
                   );
-
                 },
                 leading: const Icon(Icons.language),
                 title: Text(context.tr.language),

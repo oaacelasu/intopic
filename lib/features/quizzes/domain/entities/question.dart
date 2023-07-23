@@ -29,7 +29,6 @@ class Question with _$Question {
 }
 
 extension QuestionX on Question {
-
   List<String> get correctAnswerValues {
     return correctAnswer.split(',');
   }

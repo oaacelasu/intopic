@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intopic/config/app_dimens.dart';
+import 'package:intopic/features/home/application/home_state_notifier.dart';
 import 'package:intopic/features/home/presentation/widgets/app_drawer.dart';
 import 'package:intopic/features/home/presentation/widgets/home_search_fielter.dart';
 import 'package:intopic/features/home/presentation/widgets/home_top_quizzes.dart';
@@ -15,14 +16,20 @@ class HomeScreen extends HookConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-        appBar: AppBar(),
-        body: CustomScrollView(
+      appBar: AppBar(),
+      body: RefreshIndicator(
+        onRefresh: () async {
+          ref.invalidate(homeStateNotifierProvider);
+        },
+        child: CustomScrollView(
           slivers: [
             const HomeSearchFilter().sliverBox,
             const HomeTopQuizzes().sliverBox,
             const HomeTopics().sliverBox,
           ],
         ).marginSymmetric(horizontal: AppDimens.xlg),
-        drawer: const AppDrawer(),);
+      ),
+      drawer: const AppDrawer(),
+    );
   }
 }

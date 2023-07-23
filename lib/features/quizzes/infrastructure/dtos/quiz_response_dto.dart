@@ -9,7 +9,6 @@ part 'quiz_response_dto.g.dart';
 @freezed
 @Collection(ignore: {'copyWith'})
 class QuizResponseDto with _$QuizResponseDto {
-
   factory QuizResponseDto({
     required Id id,
     required String quizId,
@@ -17,9 +16,8 @@ class QuizResponseDto with _$QuizResponseDto {
     required int quizCurrentQuestionIndex,
   }) = _QuizResponseDto;
 
+  factory QuizResponseDto.fromJson(Map<String, dynamic> json) => _$QuizResponseDtoFromJson(json);
 
-  factory QuizResponseDto.fromJson(Map<String, dynamic> json) =>
-      _$QuizResponseDtoFromJson(json);
   const QuizResponseDto._();
 
   factory QuizResponseDto.fromDomain(QuizResponse quizResponse) {
@@ -39,7 +37,6 @@ class QuizResponseDto with _$QuizResponseDto {
       quizCurrentQuestionIndex: quizCurrentQuestionIndex,
     );
   }
-
 
   @override
   // ignore: recursive_getters

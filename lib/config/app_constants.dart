@@ -19,6 +19,7 @@ class AppConstants {
   static const int zero = 0;
   static const double zeroDecimal = 0;
   static DateTime emptyDateTime = DateTime(1900);
+  static const String defaultImageUrl = 'https://img.icons8.com/3d-fluency/94/picture--v2.png';
 
   // Durations
   static const Duration splashPageDuration = Duration(seconds: 2);

@@ -11,14 +11,23 @@ class AppDrawer extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final userName = ref.watch(authStateNotifierProvider.select(
-            (value) => value.maybeWhen(orElse: () => '',
-                authenticated: (user ,_ ) => user.name.getOrEmpty(),),),);
+    final userName = ref.watch(
+      authStateNotifierProvider.select(
+        (value) => value.maybeWhen(
+          orElse: () => '',
+          authenticated: (user, _) => user.name.getOrEmpty(),
+        ),
+      ),
+    );
 
-    final userEmail = ref.watch(authStateNotifierProvider.select(
-            (value) => value.maybeWhen(orElse: () => '',
-                authenticated: (user ,_ ) => user.email.getOrEmpty(),),),);
-
+    final userEmail = ref.watch(
+      authStateNotifierProvider.select(
+        (value) => value.maybeWhen(
+          orElse: () => '',
+          authenticated: (user, _) => user.email.getOrEmpty(),
+        ),
+      ),
+    );
 
     final currentIndex = useState(0);
 
@@ -31,9 +40,9 @@ class AppDrawer extends HookConsumerWidget {
             child: FlutterLogo(),
           ),
         ),
-         NavigationDrawerDestination(icon: const Icon(Icons.home), label: Text(context.tr.home)),
-         NavigationDrawerDestination(icon: const Icon(Icons.settings), label: Text(context.tr.settings)),
-         NavigationDrawerDestination(icon: const Icon(Icons.logout), label: Text(context.tr.logout)),
+        NavigationDrawerDestination(icon: const Icon(Icons.home), label: Text(context.tr.home)),
+        NavigationDrawerDestination(icon: const Icon(Icons.settings), label: Text(context.tr.settings)),
+        NavigationDrawerDestination(icon: const Icon(Icons.logout), label: Text(context.tr.logout)),
       ],
       onDestinationSelected: (index) async {
         switch (index) {

@@ -3,7 +3,10 @@ import 'package:intopic/features/common/presentation/utils/extensions/extensions
 
 class TextWithLink extends StatelessWidget {
   const TextWithLink({
-    required this.text, required this.link, required this.onPressed, super.key,
+    required this.text,
+    required this.link,
+    required this.onPressed,
+    super.key,
     this.color,
   });
 
@@ -19,8 +22,9 @@ class TextWithLink extends StatelessWidget {
       children: [
         Text(text, style: context.titleLarge.light.withColor(color ?? context.primaryColor)),
         TextButton(
-            onPressed: onPressed,
-            child: Text(link, style: context.titleLarge.extraBold.withColor(color ?? context.primaryColor)),),
+          onPressed: onPressed,
+          child: Text(link, style: context.titleLarge.extraBold.withColor(color ?? context.primaryColor)),
+        ),
       ],
     );
   }

@@ -6,18 +6,14 @@ part of 'topic_state_notifier.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$topicStateNotifierHash() =>
-    r'867b23e9e78ef38c0fb847036cad03abeca76dda';
+String _$topicStateNotifierHash() => r'8cffa8f425f4589468a593ccc86f4517763357d8';
 
 /// See also [TopicStateNotifier].
 @ProviderFor(TopicStateNotifier)
-final topicStateNotifierProvider =
-    NotifierProvider<TopicStateNotifier, TopicState>.internal(
+final topicStateNotifierProvider = NotifierProvider<TopicStateNotifier, TopicState>.internal(
   TopicStateNotifier.new,
   name: r'topicStateNotifierProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$topicStateNotifierHash,
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product') ? null : _$topicStateNotifierHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );

@@ -1,7 +1,10 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intopic/config/app_colors.dart';
+import 'package:intopic/config/app_constants.dart';
 import 'package:intopic/config/app_dimens.dart';
 import 'package:intopic/config/navigation.dart';
 import 'package:intopic/features/common/presentation/utils/extensions/extensions.dart';
@@ -23,7 +26,7 @@ class HomeTopQuizzes extends HookConsumerWidget {
             Row(
               children: [
                 Text(
-                  context.tr.topQuizzes,
+                  context.tr.inProgress,
                   style: context.titleLarge.bold,
                 ).marginSymmetric(
                   vertical: AppDimens.lg,
@@ -44,7 +47,7 @@ class HomeTopQuizzes extends HookConsumerWidget {
               height: 150,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: value.length,
+                itemCount: min(value.length, 5),
                 itemBuilder: (context, index) {
                   return ProviderScope(
                     overrides: [
@@ -81,6 +84,7 @@ class _TopQuizCard extends ConsumerWidget {
     final item = ref.watch(currentTopQuizProvider);
     final score = ref.watch(overallQuizScoreProvider(quizId: item.id));
 
+    final imageUrl = item.imageURL.isURL ? item.imageURL : AppConstants.defaultImageUrl;
     return Container(
       width: 150,
       margin: const EdgeInsets.symmetric(horizontal: AppDimens.sm),
@@ -104,9 +108,7 @@ class _TopQuizCard extends ConsumerWidget {
                 ),
                 CircleAvatar(
                   radius: 25,
-                  foregroundImage: NetworkImage(
-                    item.imageURL,
-                  ),
+                  foregroundImage: NetworkImage(imageUrl),
                 ),
               ],
             ),
@@ -115,15 +117,16 @@ class _TopQuizCard extends ConsumerWidget {
               style: context.titleLarge.bold,
             ),
             score.whenOrNull(
-              data: (value) {
-                if(value == null) return const SizedBox();
+                  data: (value) {
+                    if (value == null) return const SizedBox();
 
-                return Text(
-                  '${context.tr.score}: ${value.toStringAsFixed(2)}',
-                  style: context.bodyMedium,
-                );
-              },
-            ) ?? const SizedBox(),
+                    return Text(
+                      '${context.tr.score}: ${value.toStringAsFixed(2)}',
+                      style: context.bodyMedium,
+                    );
+                  },
+                ) ??
+                const SizedBox(),
           ],
         ),
       ),

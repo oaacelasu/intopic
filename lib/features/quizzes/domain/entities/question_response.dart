@@ -44,7 +44,7 @@ class QuestionResponse with _$QuestionResponse {
 
   static double _getScore(Question question, List<String> selected) {
     return selected.fold<double>(0, (previousValue, element) {
-      if(question.validateAnswer(element)) {
+      if (question.validateAnswer(element)) {
         return previousValue + (100 / question.correctAnswerValues.length);
       }
       return 0;

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:intopic/config/app_constants.dart';
 import 'package:intopic/config/app_dimens.dart';
 import 'package:intopic/config/navigation.dart';
 import 'package:intopic/features/common/presentation/utils/extensions/extensions.dart';
@@ -14,6 +15,9 @@ class TopicCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final item = ref.read(currentTopicProvider);
+
+    final imageUrl = item.imageURL.isURL ? item.imageURL : AppConstants.defaultImageUrl;
+
     return Container(
       height: 150,
       margin: const EdgeInsets.symmetric(horizontal: 10),
@@ -29,8 +33,8 @@ class TopicCard extends ConsumerWidget {
               width: Get.width * 0.3,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                image: const DecorationImage(
-                  image: NetworkImage('https://img.icons8.com/dusk/64/javascript.png'),
+                image: DecorationImage(
+                  image: NetworkImage(imageUrl),
                   fit: BoxFit.cover,
                 ),
               ),

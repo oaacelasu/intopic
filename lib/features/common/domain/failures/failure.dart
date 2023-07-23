@@ -5,6 +5,7 @@ part 'failure.freezed.dart';
 @freezed
 
 /// Represents all app failures
+
 class Failure implements Exception {
 
   const Failure._();

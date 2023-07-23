@@ -6,22 +6,16 @@ part of 'quiz_state_notifier.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$quizStateNotifierHash() => r'480d2e5b0ae344f28ddf6e3fd8c26c7557cb5b30';
+String _$quizStateNotifierHash() => r'0da6b98b7682555359942add42bc18ba43673c4d';
 
 /// See also [QuizStateNotifier].
 @ProviderFor(QuizStateNotifier)
-final quizStateNotifierProvider =
-    AutoDisposeAsyncNotifierProvider<QuizStateNotifier, QuizState>.internal(
+final quizStateNotifierProvider = AutoDisposeAsyncNotifierProvider<QuizStateNotifier, QuizState>.internal(
   QuizStateNotifier.new,
   name: r'quizStateNotifierProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
-      ? null
-      : _$quizStateNotifierHash,
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product') ? null : _$quizStateNotifierHash,
   dependencies: <ProviderOrFamily>[currentQuizProvider],
-  allTransitiveDependencies: <ProviderOrFamily>{
-    currentQuizProvider,
-    ...?currentQuizProvider.allTransitiveDependencies
-  },
+  allTransitiveDependencies: <ProviderOrFamily>{currentQuizProvider, ...?currentQuizProvider.allTransitiveDependencies},
 );
 
 typedef _$QuizStateNotifier = AutoDisposeAsyncNotifier<QuizState>;

@@ -21,35 +21,33 @@ Environment _$EnvironmentFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Environment {
   String get supabaseUrl => throw _privateConstructorUsedError;
+
   String get supabaseAnonKey => throw _privateConstructorUsedError;
-  String? get supabaseAuthCallbackUrlHostname =>
-      throw _privateConstructorUsedError;
+
+  String? get supabaseAuthCallbackUrlHostname => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  $EnvironmentCopyWith<Environment> get copyWith =>
-      throw _privateConstructorUsedError;
+  $EnvironmentCopyWith<Environment> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $EnvironmentCopyWith<$Res> {
-  factory $EnvironmentCopyWith(
-          Environment value, $Res Function(Environment) then) =
+  factory $EnvironmentCopyWith(Environment value, $Res Function(Environment) then) =
       _$EnvironmentCopyWithImpl<$Res, Environment>;
+
   @useResult
-  $Res call(
-      {String supabaseUrl,
-      String supabaseAnonKey,
-      String? supabaseAuthCallbackUrlHostname});
+  $Res call({String supabaseUrl, String supabaseAnonKey, String? supabaseAuthCallbackUrlHostname});
 }
 
 /// @nodoc
-class _$EnvironmentCopyWithImpl<$Res, $Val extends Environment>
-    implements $EnvironmentCopyWith<$Res> {
+class _$EnvironmentCopyWithImpl<$Res, $Val extends Environment> implements $EnvironmentCopyWith<$Res> {
   _$EnvironmentCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -69,8 +67,7 @@ class _$EnvironmentCopyWithImpl<$Res, $Val extends Environment>
           ? _value.supabaseAnonKey
           : supabaseAnonKey // ignore: cast_nullable_to_non_nullable
               as String,
-      supabaseAuthCallbackUrlHostname: freezed ==
-              supabaseAuthCallbackUrlHostname
+      supabaseAuthCallbackUrlHostname: freezed == supabaseAuthCallbackUrlHostname
           ? _value.supabaseAuthCallbackUrlHostname
           : supabaseAuthCallbackUrlHostname // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -79,26 +76,19 @@ class _$EnvironmentCopyWithImpl<$Res, $Val extends Environment>
 }
 
 /// @nodoc
-abstract class _$$_EnvironmentCopyWith<$Res>
-    implements $EnvironmentCopyWith<$Res> {
-  factory _$$_EnvironmentCopyWith(
-          _$_Environment value, $Res Function(_$_Environment) then) =
+abstract class _$$_EnvironmentCopyWith<$Res> implements $EnvironmentCopyWith<$Res> {
+  factory _$$_EnvironmentCopyWith(_$_Environment value, $Res Function(_$_Environment) then) =
       __$$_EnvironmentCopyWithImpl<$Res>;
+
   @override
   @useResult
-  $Res call(
-      {String supabaseUrl,
-      String supabaseAnonKey,
-      String? supabaseAuthCallbackUrlHostname});
+  $Res call({String supabaseUrl, String supabaseAnonKey, String? supabaseAuthCallbackUrlHostname});
 }
 
 /// @nodoc
-class __$$_EnvironmentCopyWithImpl<$Res>
-    extends _$EnvironmentCopyWithImpl<$Res, _$_Environment>
+class __$$_EnvironmentCopyWithImpl<$Res> extends _$EnvironmentCopyWithImpl<$Res, _$_Environment>
     implements _$$_EnvironmentCopyWith<$Res> {
-  __$$_EnvironmentCopyWithImpl(
-      _$_Environment _value, $Res Function(_$_Environment) _then)
-      : super(_value, _then);
+  __$$_EnvironmentCopyWithImpl(_$_Environment _value, $Res Function(_$_Environment) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -116,8 +106,7 @@ class __$$_EnvironmentCopyWithImpl<$Res>
           ? _value.supabaseAnonKey
           : supabaseAnonKey // ignore: cast_nullable_to_non_nullable
               as String,
-      supabaseAuthCallbackUrlHostname: freezed ==
-              supabaseAuthCallbackUrlHostname
+      supabaseAuthCallbackUrlHostname: freezed == supabaseAuthCallbackUrlHostname
           ? _value.supabaseAuthCallbackUrlHostname
           : supabaseAuthCallbackUrlHostname // ignore: cast_nullable_to_non_nullable
               as String?,
@@ -129,12 +118,9 @@ class __$$_EnvironmentCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Environment implements _Environment {
   const _$_Environment(
-      {required this.supabaseUrl,
-      required this.supabaseAnonKey,
-      this.supabaseAuthCallbackUrlHostname});
+      {required this.supabaseUrl, required this.supabaseAnonKey, this.supabaseAuthCallbackUrlHostname});
 
-  factory _$_Environment.fromJson(Map<String, dynamic> json) =>
-      _$$_EnvironmentFromJson(json);
+  factory _$_Environment.fromJson(Map<String, dynamic> json) => _$$_EnvironmentFromJson(json);
 
   @override
   final String supabaseUrl;
@@ -153,20 +139,15 @@ class _$_Environment implements _Environment {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Environment &&
-            (identical(other.supabaseUrl, supabaseUrl) ||
-                other.supabaseUrl == supabaseUrl) &&
-            (identical(other.supabaseAnonKey, supabaseAnonKey) ||
-                other.supabaseAnonKey == supabaseAnonKey) &&
-            (identical(other.supabaseAuthCallbackUrlHostname,
-                    supabaseAuthCallbackUrlHostname) ||
-                other.supabaseAuthCallbackUrlHostname ==
-                    supabaseAuthCallbackUrlHostname));
+            (identical(other.supabaseUrl, supabaseUrl) || other.supabaseUrl == supabaseUrl) &&
+            (identical(other.supabaseAnonKey, supabaseAnonKey) || other.supabaseAnonKey == supabaseAnonKey) &&
+            (identical(other.supabaseAuthCallbackUrlHostname, supabaseAuthCallbackUrlHostname) ||
+                other.supabaseAuthCallbackUrlHostname == supabaseAuthCallbackUrlHostname));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, supabaseUrl, supabaseAnonKey,
-      supabaseAuthCallbackUrlHostname);
+  int get hashCode => Object.hash(runtimeType, supabaseUrl, supabaseAnonKey, supabaseAuthCallbackUrlHostname);
 
   @JsonKey(ignore: true)
   @override
@@ -188,17 +169,18 @@ abstract class _Environment implements Environment {
       required final String supabaseAnonKey,
       final String? supabaseAuthCallbackUrlHostname}) = _$_Environment;
 
-  factory _Environment.fromJson(Map<String, dynamic> json) =
-      _$_Environment.fromJson;
+  factory _Environment.fromJson(Map<String, dynamic> json) = _$_Environment.fromJson;
 
   @override
   String get supabaseUrl;
+
   @override
   String get supabaseAnonKey;
+
   @override
   String? get supabaseAuthCallbackUrlHostname;
+
   @override
   @JsonKey(ignore: true)
-  _$$_EnvironmentCopyWith<_$_Environment> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_EnvironmentCopyWith<_$_Environment> get copyWith => throw _privateConstructorUsedError;
 }

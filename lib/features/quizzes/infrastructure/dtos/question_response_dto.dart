@@ -8,13 +8,13 @@ part 'question_response_dto.g.dart';
 @freezed
 @Embedded(ignore: {'copyWith'})
 class QuestionResponseDto with _$QuestionResponseDto {
-
   factory QuestionResponseDto({
-     String? id,
-     String? questionId,
-     double? score,
-     List<String>? selected,
+    String? id,
+    String? questionId,
+    double? score,
+    List<String>? selected,
   }) = _QuestionResponseDto;
+
   const QuestionResponseDto._();
 
   factory QuestionResponseDto.fromDomain(QuestionResponse questionResponse) {
@@ -26,8 +26,7 @@ class QuestionResponseDto with _$QuestionResponseDto {
     );
   }
 
-  factory QuestionResponseDto.fromJson(Map<String, dynamic> json) =>
-      _$QuestionResponseDtoFromJson(json);
+  factory QuestionResponseDto.fromJson(Map<String, dynamic> json) => _$QuestionResponseDtoFromJson(json);
 
   QuestionResponse toDomain() {
     return QuestionResponse(

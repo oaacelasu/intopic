@@ -29,10 +29,13 @@ class AuthStateNotifier extends _$AuthStateNotifier {
 
     /// try to restore saved session
     final res = await ref.read(authRepositoryProvider).restoreSession();
-    state = await res.fold((l) async {
-      final isFirstLaunch = await ref.read(localRepositoryProvider).getIsFirstLaunch();
-      return AuthState.unauthenticated(isFirstLaunch: isFirstLaunch);
-    }, (r) => AuthState.authenticated(r, r.token),);
+    state = await res.fold(
+      (l) async {
+        final isFirstLaunch = await ref.read(localRepositoryProvider).getIsFirstLaunch();
+        return AuthState.unauthenticated(isFirstLaunch: isFirstLaunch);
+      },
+      (r) => AuthState.authenticated(r, r.token),
+    );
   }
 
   /// setTutorialCompleted
@@ -41,7 +44,7 @@ class AuthStateNotifier extends _$AuthStateNotifier {
     state = state.maybeWhen(
       unauthenticated: (isFirstLaunch) {
         Get.offAllNamed<void>(AppRoutes.welcome);
-        return const AuthState.unauthenticated(isFirstLaunch:false);
+        return const AuthState.unauthenticated(isFirstLaunch: false);
       },
       orElse: () => state,
     );
@@ -57,7 +60,9 @@ class AuthStateNotifier extends _$AuthStateNotifier {
       return;
     }
 
-    final res = await ref.read(authRepositoryProvider).signIn(email.getOrEmpty(), password.getOrEmpty(), rememberMe: rememberMe);
+    final res = await ref
+        .read(authRepositoryProvider)
+        .signIn(email.getOrEmpty(), password.getOrEmpty(), rememberMe: rememberMe);
     res.fold((l) {
       l.show();
     }, (r) {
@@ -94,6 +99,8 @@ class AuthStateNotifier extends _$AuthStateNotifier {
   /// Signs out user
   Future<void> signOut() async {
     await ref.read(authRepositoryProvider).signOut();
+    final isar = await ref.watch(isarPod.future);
+    await isar.writeTxn(isar.clear);
     state = const AuthState.unauthenticated(isFirstLaunch: false);
     await Get.offAllNamed<void>(AppRoutes.login);
   }
@@ -139,9 +146,10 @@ class AuthStateNotifier extends _$AuthStateNotifier {
       // Once signed in, return the UserCredential
       final user = await fa.FirebaseAuth.instance.signInWithCredential(credential);
       await signUp(
-          name: Name(user.user?.displayName ?? ''),
-          email: EmailAddress(user.user?.email ?? ''),
-          password: Password(user.user?.uid ?? ''),);
+        name: Name(user.user?.displayName ?? ''),
+        email: EmailAddress(user.user?.email ?? ''),
+        password: Password(user.user?.uid ?? ''),
+      );
     } catch (e) {
       await AlertError(e.toString()).show();
     }

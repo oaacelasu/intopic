@@ -10,7 +10,6 @@ import 'package:stack_trace/stack_trace.dart' as stack_trace;
 
 /// App widget
 class App extends ConsumerWidget {
-
   /// App constructor
   const App({super.key});
 

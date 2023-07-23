@@ -5,27 +5,24 @@ import 'package:intopic/features/quizzes/domain/entities/quiz.dart';
 import 'package:isar/isar.dart';
 
 part 'question_dto.freezed.dart';
-
 part 'question_dto.g.dart';
 
 @freezed
 
-/// QuestionDto class is the data transfer object for [Quiz] entity
-@Embedded(ignore: {'copyWith'})
+/// QuestionDto class is the data transfer object for [Quiz] entity @Embedded(ignore: {'copyWith'})
 class QuestionDto with _$QuestionDto {
-
   /// Default constructor for the [QuestionDto] class
   factory QuestionDto({
-     String? id,
-     String? quizId,
-     String? topicId,
-     String? questionType,
-     String? question,
-     List<String>? options,
-     String? correctAnswer,
+    @JsonKey(name: '_id') String? id,
+    String? quizId,
+    String? topicId,
+    String? questionType,
+    String? question,
+    List<String>? options,
+    String? correctAnswer,
   }) = _QuestionDto;
-  const QuestionDto._();
 
+  const QuestionDto._();
 
   /// Converts [Quiz] to [QuestionDto]
   factory QuestionDto.fromDomain(Question _) {
@@ -44,10 +41,8 @@ class QuestionDto with _$QuestionDto {
   factory QuestionDto.fromJson(Map<String, dynamic> json) => _$QuestionDtoFromJson(json);
 }
 
-
 /// Extension method to convert from [QuestionDto] to [Question]
 extension QuestionDtoX on QuestionDto {
-
   /// Converts [QuestionDto] to [Question]
   Question toDomain() {
     return Question(

@@ -21,24 +21,26 @@ QuestionResponseDto _$QuestionResponseDtoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$QuestionResponseDto {
   String? get id => throw _privateConstructorUsedError;
+
   String? get questionId => throw _privateConstructorUsedError;
+
   double? get score => throw _privateConstructorUsedError;
+
   List<String>? get selected => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  $QuestionResponseDtoCopyWith<QuestionResponseDto> get copyWith =>
-      throw _privateConstructorUsedError;
+  $QuestionResponseDtoCopyWith<QuestionResponseDto> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $QuestionResponseDtoCopyWith<$Res> {
-  factory $QuestionResponseDtoCopyWith(
-          QuestionResponseDto value, $Res Function(QuestionResponseDto) then) =
+  factory $QuestionResponseDtoCopyWith(QuestionResponseDto value, $Res Function(QuestionResponseDto) then) =
       _$QuestionResponseDtoCopyWithImpl<$Res, QuestionResponseDto>;
+
   @useResult
-  $Res call(
-      {String? id, String? questionId, double? score, List<String>? selected});
+  $Res call({String? id, String? questionId, double? score, List<String>? selected});
 }
 
 /// @nodoc
@@ -48,6 +50,7 @@ class _$QuestionResponseDtoCopyWithImpl<$Res, $Val extends QuestionResponseDto>
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -81,23 +84,19 @@ class _$QuestionResponseDtoCopyWithImpl<$Res, $Val extends QuestionResponseDto>
 }
 
 /// @nodoc
-abstract class _$$_QuestionResponseDtoCopyWith<$Res>
-    implements $QuestionResponseDtoCopyWith<$Res> {
-  factory _$$_QuestionResponseDtoCopyWith(_$_QuestionResponseDto value,
-          $Res Function(_$_QuestionResponseDto) then) =
+abstract class _$$_QuestionResponseDtoCopyWith<$Res> implements $QuestionResponseDtoCopyWith<$Res> {
+  factory _$$_QuestionResponseDtoCopyWith(_$_QuestionResponseDto value, $Res Function(_$_QuestionResponseDto) then) =
       __$$_QuestionResponseDtoCopyWithImpl<$Res>;
+
   @override
   @useResult
-  $Res call(
-      {String? id, String? questionId, double? score, List<String>? selected});
+  $Res call({String? id, String? questionId, double? score, List<String>? selected});
 }
 
 /// @nodoc
-class __$$_QuestionResponseDtoCopyWithImpl<$Res>
-    extends _$QuestionResponseDtoCopyWithImpl<$Res, _$_QuestionResponseDto>
+class __$$_QuestionResponseDtoCopyWithImpl<$Res> extends _$QuestionResponseDtoCopyWithImpl<$Res, _$_QuestionResponseDto>
     implements _$$_QuestionResponseDtoCopyWith<$Res> {
-  __$$_QuestionResponseDtoCopyWithImpl(_$_QuestionResponseDto _value,
-      $Res Function(_$_QuestionResponseDto) _then)
+  __$$_QuestionResponseDtoCopyWithImpl(_$_QuestionResponseDto _value, $Res Function(_$_QuestionResponseDto) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -132,13 +131,11 @@ class __$$_QuestionResponseDtoCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_QuestionResponseDto extends _QuestionResponseDto {
-  _$_QuestionResponseDto(
-      {this.id, this.questionId, this.score, final List<String>? selected})
+  _$_QuestionResponseDto({this.id, this.questionId, this.score, final List<String>? selected})
       : _selected = selected,
         super._();
 
-  factory _$_QuestionResponseDto.fromJson(Map<String, dynamic> json) =>
-      _$$_QuestionResponseDtoFromJson(json);
+  factory _$_QuestionResponseDto.fromJson(Map<String, dynamic> json) => _$$_QuestionResponseDtoFromJson(json);
 
   @override
   final String? id;
@@ -147,6 +144,7 @@ class _$_QuestionResponseDto extends _QuestionResponseDto {
   @override
   final double? score;
   final List<String>? _selected;
+
   @override
   List<String>? get selected {
     final value = _selected;
@@ -167,23 +165,20 @@ class _$_QuestionResponseDto extends _QuestionResponseDto {
         (other.runtimeType == runtimeType &&
             other is _$_QuestionResponseDto &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.questionId, questionId) ||
-                other.questionId == questionId) &&
+            (identical(other.questionId, questionId) || other.questionId == questionId) &&
             (identical(other.score, score) || other.score == score) &&
             const DeepCollectionEquality().equals(other._selected, _selected));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, questionId, score,
-      const DeepCollectionEquality().hash(_selected));
+  int get hashCode => Object.hash(runtimeType, id, questionId, score, const DeepCollectionEquality().hash(_selected));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$_QuestionResponseDtoCopyWith<_$_QuestionResponseDto> get copyWith =>
-      __$$_QuestionResponseDtoCopyWithImpl<_$_QuestionResponseDto>(
-          this, _$identity);
+      __$$_QuestionResponseDtoCopyWithImpl<_$_QuestionResponseDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -199,21 +194,24 @@ abstract class _QuestionResponseDto extends QuestionResponseDto {
       final String? questionId,
       final double? score,
       final List<String>? selected}) = _$_QuestionResponseDto;
+
   _QuestionResponseDto._() : super._();
 
-  factory _QuestionResponseDto.fromJson(Map<String, dynamic> json) =
-      _$_QuestionResponseDto.fromJson;
+  factory _QuestionResponseDto.fromJson(Map<String, dynamic> json) = _$_QuestionResponseDto.fromJson;
 
   @override
   String? get id;
+
   @override
   String? get questionId;
+
   @override
   double? get score;
+
   @override
   List<String>? get selected;
+
   @override
   @JsonKey(ignore: true)
-  _$$_QuestionResponseDtoCopyWith<_$_QuestionResponseDto> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_QuestionResponseDtoCopyWith<_$_QuestionResponseDto> get copyWith => throw _privateConstructorUsedError;
 }

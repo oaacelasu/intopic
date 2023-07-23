@@ -5,29 +5,27 @@ import 'package:intopic/features/quizzes/infrastructure/dtos/question_dto.dart';
 import 'package:isar/isar.dart' hide Name;
 
 part 'quiz_dto.freezed.dart';
-
 part 'quiz_dto.g.dart';
 
 @freezed
 
-/// QuizDto class is the data transfer object for [Quiz] entity
-@Embedded(ignore: {'copyWith'})
+/// QuizDto class is the data transfer object for [Quiz] entity @Embedded(ignore: {'copyWith'})
 class QuizDto with _$QuizDto {
-
   /// Default constructor for the [QuizDto] class
   factory QuizDto({
-     String? id,
-     String? topicId,
-     String? userId,
-     String? title,
-     String? description,
-     String? imageURL,
-     String? quizAccessFromTime,
-     String? quizAccessToTime,
-     bool? isQuizActive,
-     int? totalQuestions,
-     List<QuestionDto>? questions,
+    @JsonKey(name: '_id') String? id,
+    String? topicId,
+    String? userId,
+    String? title,
+    String? description,
+    String? imageURL,
+    String? quizAccessFromTime,
+    String? quizAccessToTime,
+    bool? isQuizActive,
+    int? totalQuestions,
+    List<QuestionDto>? questions,
   }) = _QuizDto;
+
   const QuizDto._();
 
   /// Converts [Quiz] to [QuizDto]
@@ -61,7 +59,6 @@ class QuizDtoIsar {
 
 /// Extension method to convert from [QuizDto] to [Quiz]
 extension QuizDtoX on QuizDto {
-
   /// Converts [QuizDto] to [Quiz]
   Quiz toDomain() {
     return Quiz(

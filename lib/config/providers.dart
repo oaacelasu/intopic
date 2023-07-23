@@ -65,6 +65,7 @@ final isarPod = FutureProvider((ref) async {
 Future<void> initializeProviders(ProviderContainer container) async {
   /// Core
   await container.read(sharedPreferencesProvider.future);
-  container..read(authStateNotifierProvider)
-  ..read(localRepositoryProvider);
+  container
+    ..read(authStateNotifierProvider)
+    ..read(localRepositoryProvider);
 }

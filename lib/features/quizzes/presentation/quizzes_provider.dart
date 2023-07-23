@@ -106,7 +106,8 @@ Future<QuizResponse> quizResponseById(QuizResponseByIdRef ref, {required String 
 }
 
 Future<QuizResponse> _createNewQuizResponse(String quizId, Isar isar) async {
-  final newQuizResponse =  QuizResponse(id: Isar.autoIncrement, quizId: quizId, responses: [], quizCurrentQuestionIndex: 0);
+  final newQuizResponse =
+      QuizResponse(id: Isar.autoIncrement, quizId: quizId, responses: [], quizCurrentQuestionIndex: 0);
   var isarQuizId = 0;
   await isar.writeTxn(() async {
     isarQuizId = await isar.quizResponseDtos.put(QuizResponseDto.fromDomain(newQuizResponse));
@@ -121,9 +122,10 @@ QuizSubmission currentQuizSubmission(CurrentQuizSubmissionRef ref) => const Quiz
 Future<double?> overallQuizScore(OverallQuizScoreRef ref, {required String quizId}) async {
   final isar = await ref.watch(isarPod.future);
 
-  final submission = await isar.quizSubmissionDtos.where().filter().quizIdEqualTo(quizId).sortBySubmittedAtDesc().findFirst();
+  final submission =
+      await isar.quizSubmissionDtos.where().filter().quizIdEqualTo(quizId).sortBySubmittedAtDesc().findFirst();
 
-  if(submission == null) {
+  if (submission == null) {
     return null;
   }
   return submission.toDomain().getScore();

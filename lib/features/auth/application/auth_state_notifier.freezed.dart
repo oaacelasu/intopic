@@ -23,6 +23,7 @@ mixin _$AuthState {
     required TResult Function(bool isFirstLaunch) unauthenticated,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
@@ -38,6 +39,7 @@ mixin _$AuthState {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
@@ -45,6 +47,7 @@ mixin _$AuthState {
     required TResult Function(_Unauthenticated value) unauthenticated,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
@@ -64,34 +67,28 @@ mixin _$AuthState {
 
 /// @nodoc
 abstract class $AuthStateCopyWith<$Res> {
-  factory $AuthStateCopyWith(AuthState value, $Res Function(AuthState) then) =
-      _$AuthStateCopyWithImpl<$Res, AuthState>;
+  factory $AuthStateCopyWith(AuthState value, $Res Function(AuthState) then) = _$AuthStateCopyWithImpl<$Res, AuthState>;
 }
 
 /// @nodoc
-class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
-    implements $AuthStateCopyWith<$Res> {
+class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState> implements $AuthStateCopyWith<$Res> {
   _$AuthStateCopyWithImpl(this._value, this._then);
 
-  // ignore: unused_field
+// ignore: unused_field
   final $Val _value;
-  // ignore: unused_field
+// ignore: unused_field
   final $Res Function($Val) _then;
 }
 
 /// @nodoc
 abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+  factory _$$_InitialCopyWith(_$_Initial value, $Res Function(_$_Initial) then) = __$$_InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res, _$_Initial>
+class __$$_InitialCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res, _$_Initial>
     implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
-      : super(_value, _then);
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then) : super(_value, _then);
 }
 
 /// @nodoc
@@ -106,8 +103,7 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+    return identical(this, other) || (other.runtimeType == runtimeType && other is _$_Initial);
   }
 
   @override
@@ -188,8 +184,7 @@ abstract class _Initial implements AuthState {
 
 /// @nodoc
 abstract class _$$_AuthenticatedCopyWith<$Res> {
-  factory _$$_AuthenticatedCopyWith(
-          _$_Authenticated value, $Res Function(_$_Authenticated) then) =
+  factory _$$_AuthenticatedCopyWith(_$_Authenticated value, $Res Function(_$_Authenticated) then) =
       __$$_AuthenticatedCopyWithImpl<$Res>;
   @useResult
   $Res call({User user, String token});
@@ -198,12 +193,9 @@ abstract class _$$_AuthenticatedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_AuthenticatedCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res, _$_Authenticated>
+class __$$_AuthenticatedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res, _$_Authenticated>
     implements _$$_AuthenticatedCopyWith<$Res> {
-  __$$_AuthenticatedCopyWithImpl(
-      _$_Authenticated _value, $Res Function(_$_Authenticated) _then)
-      : super(_value, _then);
+  __$$_AuthenticatedCopyWithImpl(_$_Authenticated _value, $Res Function(_$_Authenticated) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -335,31 +327,26 @@ class _$_Authenticated implements _Authenticated {
 }
 
 abstract class _Authenticated implements AuthState {
-  const factory _Authenticated(final User user, final String token) =
-      _$_Authenticated;
+  const factory _Authenticated(final User user, final String token) = _$_Authenticated;
 
   User get user;
   String get token;
   @JsonKey(ignore: true)
-  _$$_AuthenticatedCopyWith<_$_Authenticated> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_AuthenticatedCopyWith<_$_Authenticated> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$_UnauthenticatedCopyWith<$Res> {
-  factory _$$_UnauthenticatedCopyWith(
-          _$_Unauthenticated value, $Res Function(_$_Unauthenticated) then) =
+  factory _$$_UnauthenticatedCopyWith(_$_Unauthenticated value, $Res Function(_$_Unauthenticated) then) =
       __$$_UnauthenticatedCopyWithImpl<$Res>;
   @useResult
   $Res call({bool isFirstLaunch});
 }
 
 /// @nodoc
-class __$$_UnauthenticatedCopyWithImpl<$Res>
-    extends _$AuthStateCopyWithImpl<$Res, _$_Unauthenticated>
+class __$$_UnauthenticatedCopyWithImpl<$Res> extends _$AuthStateCopyWithImpl<$Res, _$_Unauthenticated>
     implements _$$_UnauthenticatedCopyWith<$Res> {
-  __$$_UnauthenticatedCopyWithImpl(
-      _$_Unauthenticated _value, $Res Function(_$_Unauthenticated) _then)
+  __$$_UnauthenticatedCopyWithImpl(_$_Unauthenticated _value, $Res Function(_$_Unauthenticated) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -394,8 +381,7 @@ class _$_Unauthenticated implements _Unauthenticated {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Unauthenticated &&
-            (identical(other.isFirstLaunch, isFirstLaunch) ||
-                other.isFirstLaunch == isFirstLaunch));
+            (identical(other.isFirstLaunch, isFirstLaunch) || other.isFirstLaunch == isFirstLaunch));
   }
 
   @override
@@ -477,11 +463,9 @@ class _$_Unauthenticated implements _Unauthenticated {
 }
 
 abstract class _Unauthenticated implements AuthState {
-  const factory _Unauthenticated({required final bool isFirstLaunch}) =
-      _$_Unauthenticated;
+  const factory _Unauthenticated({required final bool isFirstLaunch}) = _$_Unauthenticated;
 
   bool get isFirstLaunch;
   @JsonKey(ignore: true)
-  _$$_UnauthenticatedCopyWith<_$_Unauthenticated> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_UnauthenticatedCopyWith<_$_Unauthenticated> get copyWith => throw _privateConstructorUsedError;
 }

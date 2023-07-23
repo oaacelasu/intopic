@@ -110,6 +110,8 @@ android {
     testOptions {
         execution "ANDROIDX_TEST_ORCHESTRATOR"
     }
+    buildToolsVersion '33.0.0'
+    ndkVersion '2.1.7171670'
 }
 
 flutter {

@@ -17,12 +17,14 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$TopicState {
   Topic get topic => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(Topic topic) $default, {
     required TResult Function(Topic topic) initial,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(Topic topic)? $default, {
@@ -57,15 +59,14 @@ mixin _$TopicState {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $TopicStateCopyWith<TopicState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $TopicStateCopyWith<TopicState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $TopicStateCopyWith<$Res> {
-  factory $TopicStateCopyWith(
-          TopicState value, $Res Function(TopicState) then) =
+  factory $TopicStateCopyWith(TopicState value, $Res Function(TopicState) then) =
       _$TopicStateCopyWithImpl<$Res, TopicState>;
+
   @useResult
   $Res call({Topic topic});
 
@@ -73,12 +74,12 @@ abstract class $TopicStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TopicStateCopyWithImpl<$Res, $Val extends TopicState>
-    implements $TopicStateCopyWith<$Res> {
+class _$TopicStateCopyWithImpl<$Res, $Val extends TopicState> implements $TopicStateCopyWith<$Res> {
   _$TopicStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -105,11 +106,10 @@ class _$TopicStateCopyWithImpl<$Res, $Val extends TopicState>
 }
 
 /// @nodoc
-abstract class _$$_TopicStateCopyWith<$Res>
-    implements $TopicStateCopyWith<$Res> {
-  factory _$$_TopicStateCopyWith(
-          _$_TopicState value, $Res Function(_$_TopicState) then) =
+abstract class _$$_TopicStateCopyWith<$Res> implements $TopicStateCopyWith<$Res> {
+  factory _$$_TopicStateCopyWith(_$_TopicState value, $Res Function(_$_TopicState) then) =
       __$$_TopicStateCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({Topic topic});
@@ -119,12 +119,9 @@ abstract class _$$_TopicStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_TopicStateCopyWithImpl<$Res>
-    extends _$TopicStateCopyWithImpl<$Res, _$_TopicState>
+class __$$_TopicStateCopyWithImpl<$Res> extends _$TopicStateCopyWithImpl<$Res, _$_TopicState>
     implements _$$_TopicStateCopyWith<$Res> {
-  __$$_TopicStateCopyWithImpl(
-      _$_TopicState _value, $Res Function(_$_TopicState) _then)
-      : super(_value, _then);
+  __$$_TopicStateCopyWithImpl(_$_TopicState _value, $Res Function(_$_TopicState) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -167,8 +164,7 @@ class _$_TopicState implements _TopicState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TopicStateCopyWith<_$_TopicState> get copyWith =>
-      __$$_TopicStateCopyWithImpl<_$_TopicState>(this, _$identity);
+  _$$_TopicStateCopyWith<_$_TopicState> get copyWith => __$$_TopicStateCopyWithImpl<_$_TopicState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -238,18 +234,17 @@ abstract class _TopicState implements TopicState {
 
   @override
   Topic get topic;
+
   @override
   @JsonKey(ignore: true)
-  _$$_TopicStateCopyWith<_$_TopicState> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_TopicStateCopyWith<_$_TopicState> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_TopicStateEmptyCopyWith<$Res>
-    implements $TopicStateCopyWith<$Res> {
-  factory _$$_TopicStateEmptyCopyWith(
-          _$_TopicStateEmpty value, $Res Function(_$_TopicStateEmpty) then) =
+abstract class _$$_TopicStateEmptyCopyWith<$Res> implements $TopicStateCopyWith<$Res> {
+  factory _$$_TopicStateEmptyCopyWith(_$_TopicStateEmpty value, $Res Function(_$_TopicStateEmpty) then) =
       __$$_TopicStateEmptyCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call({Topic topic});
@@ -259,11 +254,9 @@ abstract class _$$_TopicStateEmptyCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_TopicStateEmptyCopyWithImpl<$Res>
-    extends _$TopicStateCopyWithImpl<$Res, _$_TopicStateEmpty>
+class __$$_TopicStateEmptyCopyWithImpl<$Res> extends _$TopicStateCopyWithImpl<$Res, _$_TopicStateEmpty>
     implements _$$_TopicStateEmptyCopyWith<$Res> {
-  __$$_TopicStateEmptyCopyWithImpl(
-      _$_TopicStateEmpty _value, $Res Function(_$_TopicStateEmpty) _then)
+  __$$_TopicStateEmptyCopyWithImpl(_$_TopicStateEmpty _value, $Res Function(_$_TopicStateEmpty) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -379,8 +372,8 @@ abstract class _TopicStateEmpty implements TopicState {
 
   @override
   Topic get topic;
+
   @override
   @JsonKey(ignore: true)
-  _$$_TopicStateEmptyCopyWith<_$_TopicStateEmpty> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_TopicStateEmptyCopyWith<_$_TopicStateEmpty> get copyWith => throw _privateConstructorUsedError;
 }

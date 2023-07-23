@@ -20,21 +20,21 @@ class QuizStateNotifier extends _$QuizStateNotifier {
   @override
   Future<QuizState> build() async {
     final quizId = ref.watch(currentQuizProvider).id;
-
     return _loadQuiz(quizId);
   }
 
   Future<QuizState> _loadQuiz(String id) async {
     final failureOrSuccess = await ref.read(quizRepositoryProvider).getQuizDetail(id);
     final quizResponse = await ref.read(quizResponseByIdProvider(quizId: id).future);
-    return failureOrSuccess.fold((l) => const QuizState.initial(), (r) => QuizState(quiz: r, quizResponse: quizResponse));
+    return failureOrSuccess.fold(
+        (l) => const QuizState.initial(), (r) => QuizState(quiz: r, quizResponse: quizResponse),);
   }
 
   Future<void> nextQuestion() async {
     state.whenData((value) async {
       state = const AsyncValue.loading();
       state = await AsyncValue.guard(() async {
-        if(!value.hasNextQuestion()) {
+        if (!value.hasNextQuestion()) {
           return value;
         }
         final quizResponse = value.quizResponse.moveForward();
@@ -48,7 +48,7 @@ class QuizStateNotifier extends _$QuizStateNotifier {
     state.whenData((value) async {
       state = const AsyncValue.loading();
       state = await AsyncValue.guard(() async {
-        if(!value.hasPreviousQuestion()) {
+        if (!value.hasPreviousQuestion()) {
           return value;
         }
         final quizResponse = value.quizResponse.moveBackward();
@@ -76,7 +76,7 @@ class QuizStateNotifier extends _$QuizStateNotifier {
 
   Future<void> submitQuiz() async {
     state.whenData((value) async {
-      if(!value.isComplete()) {
+      if (!value.isComplete()) {
         unawaited(AlertError(Get.context?.tr.pleaseAnswerAllQuestions ?? '').show());
       }
 
@@ -84,11 +84,10 @@ class QuizStateNotifier extends _$QuizStateNotifier {
       state = await AsyncValue.guard(() async {
         final submission = await ref.read(quizRepositoryProvider).saveQuizSubmission(value);
         submission.fold((l) {}, (r) {
-          unawaited(Get.toNamed<void>(AppRoutes.confirmation,arguments: r));
+          unawaited(Get.toNamed<void>(AppRoutes.confirmation, arguments: r));
         });
         return const QuizState.initial();
       });
     });
-
   }
 }

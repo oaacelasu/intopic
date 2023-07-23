@@ -25,7 +25,7 @@ class LoginScreen extends HookConsumerWidget {
           value: rememberEmail,
           validators: [Validators.required, Validators.email],
         ),
-        'password': ['', Validators.required, Validators.minLength(6), Validators.maxLength(20)],
+        'password': ['', Validators.required, Validators.minLength(1), Validators.maxLength(20)],
         'rememberMe': false,
       });
 
@@ -33,13 +33,16 @@ class LoginScreen extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final rememberEmail = useState<String?>(null);
 
-    useEffect(() {
-      Future.microtask(() async {
-        final optionEmail = await ref.read(authStateNotifierProvider.notifier).rememberMeEmail;
-        optionEmail.fold(() => rememberEmail.value = '', (email) => rememberEmail.value = email);
-      });
-      return null;
-    }, [],);
+    useEffect(
+      () {
+        Future.microtask(() async {
+          final optionEmail = await ref.read(authStateNotifierProvider.notifier).rememberMeEmail;
+          optionEmail.fold(() => rememberEmail.value = '', (email) => rememberEmail.value = email);
+        });
+        return null;
+      },
+      [],
+    );
 
     void onLogin(FormGroup form) {
       if (form.valid) {
@@ -64,7 +67,8 @@ class LoginScreen extends HookConsumerWidget {
                 Text(context.tr.loginHello),
               ],
             ).marginSymmetric(vertical: Get.height * 0.1),
-            if (rememberEmail.value == null) SizedBox(height: Get.height * 0.3, child: const CircularProgressIndicator()),
+            if (rememberEmail.value == null)
+              SizedBox(height: Get.height * 0.3, child: const CircularProgressIndicator()),
             if (rememberEmail.value != null)
               ReactiveFormBuilder(
                 form: () => buildForm(rememberEmail: rememberEmail.value),

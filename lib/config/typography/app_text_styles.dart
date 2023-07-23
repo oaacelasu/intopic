@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:intopic/config/typography/app_font_weight.dart';
 
 abstract class AppTextStyle {

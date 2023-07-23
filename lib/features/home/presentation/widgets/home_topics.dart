@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -43,13 +45,14 @@ class HomeTopics extends HookConsumerWidget {
             ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              itemCount: value.length,
+              itemCount: min(value.length, 2),
               itemBuilder: (context, index) {
                 return ProviderScope(
-                    overrides: [
-                      currentTopicProvider.overrideWithValue(value.elementAt(index)),
-                    ],
-                    child: const TopicCard().marginSymmetric(vertical: AppDimens.xs),);
+                  overrides: [
+                    currentTopicProvider.overrideWithValue(value.elementAt(index)),
+                  ],
+                  child: const TopicCard().marginSymmetric(vertical: AppDimens.xs),
+                );
               },
             ),
           ],

@@ -39,10 +39,10 @@ abstract class AppColors {
 
   /// Generate a random color based on the seed string
   static Color randomColor(String seed) => <int, Color>{
-    0: blue,
-    1: green,
-    2: red,
-    3: yellow,
-    4: orange,
-  }[(seed.hashCode + seed.length) % 5]!;
+        0: blue,
+        1: green,
+        2: red,
+        3: yellow,
+        4: orange,
+      }[(seed.hashCode + seed.length) % 5]!;
 }

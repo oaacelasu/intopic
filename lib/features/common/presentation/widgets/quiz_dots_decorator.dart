@@ -5,7 +5,6 @@ const EdgeInsets kDefaultSpacing = EdgeInsets.all(6);
 const ShapeBorder kDefaultShape = CircleBorder();
 
 class QuizDotsDecorator {
-
   const QuizDotsDecorator({
     this.color = Colors.grey,
     this.colors = const [],
@@ -21,6 +20,7 @@ class QuizDotsDecorator {
     this.activeShapes = const [],
     this.spacing = kDefaultSpacing,
   });
+
   /// Inactive dot color
   ///
   /// @Default `Colors.grey`

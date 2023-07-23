@@ -20,30 +20,42 @@ QuizDto _$QuizDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$QuizDto {
+  @JsonKey(name: '_id')
   String? get id => throw _privateConstructorUsedError;
+
   String? get topicId => throw _privateConstructorUsedError;
+
   String? get userId => throw _privateConstructorUsedError;
+
   String? get title => throw _privateConstructorUsedError;
+
   String? get description => throw _privateConstructorUsedError;
+
   String? get imageURL => throw _privateConstructorUsedError;
+
   String? get quizAccessFromTime => throw _privateConstructorUsedError;
+
   String? get quizAccessToTime => throw _privateConstructorUsedError;
+
   bool? get isQuizActive => throw _privateConstructorUsedError;
+
   int? get totalQuestions => throw _privateConstructorUsedError;
+
   List<QuestionDto>? get questions => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $QuizDtoCopyWith<QuizDto> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $QuizDtoCopyWith<$Res> {
-  factory $QuizDtoCopyWith(QuizDto value, $Res Function(QuizDto) then) =
-      _$QuizDtoCopyWithImpl<$Res, QuizDto>;
+  factory $QuizDtoCopyWith(QuizDto value, $Res Function(QuizDto) then) = _$QuizDtoCopyWithImpl<$Res, QuizDto>;
+
   @useResult
   $Res call(
-      {String? id,
+      {@JsonKey(name: '_id') String? id,
       String? topicId,
       String? userId,
       String? title,
@@ -57,12 +69,12 @@ abstract class $QuizDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$QuizDtoCopyWithImpl<$Res, $Val extends QuizDto>
-    implements $QuizDtoCopyWith<$Res> {
+class _$QuizDtoCopyWithImpl<$Res, $Val extends QuizDto> implements $QuizDtoCopyWith<$Res> {
   _$QuizDtoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -132,13 +144,12 @@ class _$QuizDtoCopyWithImpl<$Res, $Val extends QuizDto>
 
 /// @nodoc
 abstract class _$$_QuizDtoCopyWith<$Res> implements $QuizDtoCopyWith<$Res> {
-  factory _$$_QuizDtoCopyWith(
-          _$_QuizDto value, $Res Function(_$_QuizDto) then) =
-      __$$_QuizDtoCopyWithImpl<$Res>;
+  factory _$$_QuizDtoCopyWith(_$_QuizDto value, $Res Function(_$_QuizDto) then) = __$$_QuizDtoCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
-      {String? id,
+      {@JsonKey(name: '_id') String? id,
       String? topicId,
       String? userId,
       String? title,
@@ -152,11 +163,9 @@ abstract class _$$_QuizDtoCopyWith<$Res> implements $QuizDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_QuizDtoCopyWithImpl<$Res>
-    extends _$QuizDtoCopyWithImpl<$Res, _$_QuizDto>
+class __$$_QuizDtoCopyWithImpl<$Res> extends _$QuizDtoCopyWithImpl<$Res, _$_QuizDto>
     implements _$$_QuizDtoCopyWith<$Res> {
-  __$$_QuizDtoCopyWithImpl(_$_QuizDto _value, $Res Function(_$_QuizDto) _then)
-      : super(_value, _then);
+  __$$_QuizDtoCopyWithImpl(_$_QuizDto _value, $Res Function(_$_QuizDto) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -226,7 +235,7 @@ class __$$_QuizDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_QuizDto extends _QuizDto {
   _$_QuizDto(
-      {this.id,
+      {@JsonKey(name: '_id') this.id,
       this.topicId,
       this.userId,
       this.title,
@@ -240,10 +249,10 @@ class _$_QuizDto extends _QuizDto {
       : _questions = questions,
         super._();
 
-  factory _$_QuizDto.fromJson(Map<String, dynamic> json) =>
-      _$$_QuizDtoFromJson(json);
+  factory _$_QuizDto.fromJson(Map<String, dynamic> json) => _$$_QuizDtoFromJson(json);
 
   @override
+  @JsonKey(name: '_id')
   final String? id;
   @override
   final String? topicId;
@@ -264,6 +273,7 @@ class _$_QuizDto extends _QuizDto {
   @override
   final int? totalQuestions;
   final List<QuestionDto>? _questions;
+
   @override
   List<QuestionDto>? get questions {
     final value = _questions;
@@ -287,43 +297,25 @@ class _$_QuizDto extends _QuizDto {
             (identical(other.topicId, topicId) || other.topicId == topicId) &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            (identical(other.imageURL, imageURL) ||
-                other.imageURL == imageURL) &&
+            (identical(other.description, description) || other.description == description) &&
+            (identical(other.imageURL, imageURL) || other.imageURL == imageURL) &&
             (identical(other.quizAccessFromTime, quizAccessFromTime) ||
                 other.quizAccessFromTime == quizAccessFromTime) &&
-            (identical(other.quizAccessToTime, quizAccessToTime) ||
-                other.quizAccessToTime == quizAccessToTime) &&
-            (identical(other.isQuizActive, isQuizActive) ||
-                other.isQuizActive == isQuizActive) &&
-            (identical(other.totalQuestions, totalQuestions) ||
-                other.totalQuestions == totalQuestions) &&
-            const DeepCollectionEquality()
-                .equals(other._questions, _questions));
+            (identical(other.quizAccessToTime, quizAccessToTime) || other.quizAccessToTime == quizAccessToTime) &&
+            (identical(other.isQuizActive, isQuizActive) || other.isQuizActive == isQuizActive) &&
+            (identical(other.totalQuestions, totalQuestions) || other.totalQuestions == totalQuestions) &&
+            const DeepCollectionEquality().equals(other._questions, _questions));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      topicId,
-      userId,
-      title,
-      description,
-      imageURL,
-      quizAccessFromTime,
-      quizAccessToTime,
-      isQuizActive,
-      totalQuestions,
-      const DeepCollectionEquality().hash(_questions));
+  int get hashCode => Object.hash(runtimeType, id, topicId, userId, title, description, imageURL, quizAccessFromTime,
+      quizAccessToTime, isQuizActive, totalQuestions, const DeepCollectionEquality().hash(_questions));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_QuizDtoCopyWith<_$_QuizDto> get copyWith =>
-      __$$_QuizDtoCopyWithImpl<_$_QuizDto>(this, _$identity);
+  _$$_QuizDtoCopyWith<_$_QuizDto> get copyWith => __$$_QuizDtoCopyWithImpl<_$_QuizDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -335,7 +327,7 @@ class _$_QuizDto extends _QuizDto {
 
 abstract class _QuizDto extends QuizDto {
   factory _QuizDto(
-      {final String? id,
+      {@JsonKey(name: '_id') final String? id,
       final String? topicId,
       final String? userId,
       final String? title,
@@ -346,34 +338,46 @@ abstract class _QuizDto extends QuizDto {
       final bool? isQuizActive,
       final int? totalQuestions,
       final List<QuestionDto>? questions}) = _$_QuizDto;
+
   _QuizDto._() : super._();
 
   factory _QuizDto.fromJson(Map<String, dynamic> json) = _$_QuizDto.fromJson;
 
   @override
+  @JsonKey(name: '_id')
   String? get id;
+
   @override
   String? get topicId;
+
   @override
   String? get userId;
+
   @override
   String? get title;
+
   @override
   String? get description;
+
   @override
   String? get imageURL;
+
   @override
   String? get quizAccessFromTime;
+
   @override
   String? get quizAccessToTime;
+
   @override
   bool? get isQuizActive;
+
   @override
   int? get totalQuestions;
+
   @override
   List<QuestionDto>? get questions;
+
   @override
   @JsonKey(ignore: true)
-  _$$_QuizDtoCopyWith<_$_QuizDto> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_QuizDtoCopyWith<_$_QuizDto> get copyWith => throw _privateConstructorUsedError;
 }

@@ -41,6 +41,10 @@ class Quiz with _$Quiz {
   }
 
   Quiz shuffleAndTakeLimitedQuestions() {
+    if (totalQuestions >= questions.length || totalQuestions == 0) {
+      return copyWith();
+    }
+
     final shuffled = List<Question>.from(questions)..shuffle();
     return copyWith(
       questions: shuffled.take(totalQuestions).toList(),

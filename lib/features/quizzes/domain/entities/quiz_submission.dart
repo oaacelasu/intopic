@@ -27,6 +27,6 @@ class QuizSubmission with _$QuizSubmission {
 
 extension QuizSubmissionX on QuizSubmission {
   double getScore() {
-    return  (responses.fold<double>(0, (sum, response) => sum + response.score)) / questions.length;
+    return (responses.fold<double>(0, (sum, response) => sum + response.score)) / questions.length;
   }
 }

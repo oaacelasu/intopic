@@ -13,54 +13,60 @@ class TopicDetailScreen extends HookConsumerWidget {
     final baseTopic = Get.arguments as Topic;
     final topic = ref.watch(topicProvider(topicId: baseTopic.id));
 
+    final hasValidUrl = baseTopic.imageURL.isURL;
+
     return Scaffold(
-        body: NestedScrollView(
-      headerSliverBuilder: (context, innerBoxIsScrolled) {
-        return [
-          SliverOverlapAbsorber(
-            handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
-            sliver: SliverAppBar(
-              expandedHeight: Get.height * 0.35,
-              pinned: true,
-              title: Text(baseTopic.title.getOrEmpty()),
-              flexibleSpace: FlexibleSpaceBar(
-                background: Container(
-                  margin: const EdgeInsets.only(top: kTextTabBarHeight),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    image: const DecorationImage(
-                      image: NetworkImage('https://img.icons8.com/dusk/64/javascript.png'),
-                      fit: BoxFit.contain,
-                    ),
-                  ),
+      body: NestedScrollView(
+        headerSliverBuilder: (context, innerBoxIsScrolled) {
+          return [
+            SliverOverlapAbsorber(
+              handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
+              sliver: SliverAppBar(
+                expandedHeight: hasValidUrl ? Get.height * 0.35 : (kTextTabBarHeight + 10),
+                pinned: true,
+                title: Text(baseTopic.title.getOrEmpty()),
+                flexibleSpace: FlexibleSpaceBar(
+                  background: hasValidUrl
+                      ? Container(
+                          margin: const EdgeInsets.only(top: kTextTabBarHeight),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            image: DecorationImage(
+                              image: NetworkImage(baseTopic.imageURL),
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                        )
+                      : const SizedBox.shrink(),
                 ),
               ),
             ),
-          ),
-        ];
-      },
-      body: Builder(
-        builder: (BuildContext context) {
-          return CustomScrollView(
-            slivers: [
-              SliverOverlapInjector(
-                handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
-              ),
-              topic
-                  .when(
-                      loading: () => SizedBox(
-                            height: Get.height * 0.5,
-                            child: const Center(
-                              child: CircularProgressIndicator(),
-                            ),
-                          ),
-                      error: (error, stackTrace) => Text('Error: $error'),
-                      data: (topic) => TopicQuizzes(topic.quizzes),)
-                  .sliverBox,
-            ],
-          );
+          ];
         },
+        body: Builder(
+          builder: (BuildContext context) {
+            return CustomScrollView(
+              slivers: [
+                SliverOverlapInjector(
+                  handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
+                ),
+                topic
+                    .when(
+                      loading: () => SizedBox(
+                        height: Get.height * 0.5,
+                        child: const Center(
+                          child: CircularProgressIndicator(),
+                        ),
+                      ),
+                      error: (error, stackTrace) => Text('Error: $error'),
+                      data: (topic) => TopicQuizzes(topic.quizzes),
+                    )
+                    .sliverBox,
+              ],
+            );
+          },
+        ),
       ),
-    ),);
+    );
   }
 }

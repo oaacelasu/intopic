@@ -20,28 +20,35 @@ QuestionDto _$QuestionDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$QuestionDto {
+  @JsonKey(name: '_id')
   String? get id => throw _privateConstructorUsedError;
+
   String? get quizId => throw _privateConstructorUsedError;
+
   String? get topicId => throw _privateConstructorUsedError;
+
   String? get questionType => throw _privateConstructorUsedError;
+
   String? get question => throw _privateConstructorUsedError;
+
   List<String>? get options => throw _privateConstructorUsedError;
+
   String? get correctAnswer => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
-  $QuestionDtoCopyWith<QuestionDto> get copyWith =>
-      throw _privateConstructorUsedError;
+  $QuestionDtoCopyWith<QuestionDto> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $QuestionDtoCopyWith<$Res> {
-  factory $QuestionDtoCopyWith(
-          QuestionDto value, $Res Function(QuestionDto) then) =
+  factory $QuestionDtoCopyWith(QuestionDto value, $Res Function(QuestionDto) then) =
       _$QuestionDtoCopyWithImpl<$Res, QuestionDto>;
+
   @useResult
   $Res call(
-      {String? id,
+      {@JsonKey(name: '_id') String? id,
       String? quizId,
       String? topicId,
       String? questionType,
@@ -51,12 +58,12 @@ abstract class $QuestionDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$QuestionDtoCopyWithImpl<$Res, $Val extends QuestionDto>
-    implements $QuestionDtoCopyWith<$Res> {
+class _$QuestionDtoCopyWithImpl<$Res, $Val extends QuestionDto> implements $QuestionDtoCopyWith<$Res> {
   _$QuestionDtoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -105,15 +112,14 @@ class _$QuestionDtoCopyWithImpl<$Res, $Val extends QuestionDto>
 }
 
 /// @nodoc
-abstract class _$$_QuestionDtoCopyWith<$Res>
-    implements $QuestionDtoCopyWith<$Res> {
-  factory _$$_QuestionDtoCopyWith(
-          _$_QuestionDto value, $Res Function(_$_QuestionDto) then) =
+abstract class _$$_QuestionDtoCopyWith<$Res> implements $QuestionDtoCopyWith<$Res> {
+  factory _$$_QuestionDtoCopyWith(_$_QuestionDto value, $Res Function(_$_QuestionDto) then) =
       __$$_QuestionDtoCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
-      {String? id,
+      {@JsonKey(name: '_id') String? id,
       String? quizId,
       String? topicId,
       String? questionType,
@@ -123,12 +129,9 @@ abstract class _$$_QuestionDtoCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_QuestionDtoCopyWithImpl<$Res>
-    extends _$QuestionDtoCopyWithImpl<$Res, _$_QuestionDto>
+class __$$_QuestionDtoCopyWithImpl<$Res> extends _$QuestionDtoCopyWithImpl<$Res, _$_QuestionDto>
     implements _$$_QuestionDtoCopyWith<$Res> {
-  __$$_QuestionDtoCopyWithImpl(
-      _$_QuestionDto _value, $Res Function(_$_QuestionDto) _then)
-      : super(_value, _then);
+  __$$_QuestionDtoCopyWithImpl(_$_QuestionDto _value, $Res Function(_$_QuestionDto) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -178,7 +181,7 @@ class __$$_QuestionDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_QuestionDto extends _QuestionDto {
   _$_QuestionDto(
-      {this.id,
+      {@JsonKey(name: '_id') this.id,
       this.quizId,
       this.topicId,
       this.questionType,
@@ -188,10 +191,10 @@ class _$_QuestionDto extends _QuestionDto {
       : _options = options,
         super._();
 
-  factory _$_QuestionDto.fromJson(Map<String, dynamic> json) =>
-      _$$_QuestionDtoFromJson(json);
+  factory _$_QuestionDto.fromJson(Map<String, dynamic> json) => _$$_QuestionDtoFromJson(json);
 
   @override
+  @JsonKey(name: '_id')
   final String? id;
   @override
   final String? quizId;
@@ -202,6 +205,7 @@ class _$_QuestionDto extends _QuestionDto {
   @override
   final String? question;
   final List<String>? _options;
+
   @override
   List<String>? get options {
     final value = _options;
@@ -227,26 +231,16 @@ class _$_QuestionDto extends _QuestionDto {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.quizId, quizId) || other.quizId == quizId) &&
             (identical(other.topicId, topicId) || other.topicId == topicId) &&
-            (identical(other.questionType, questionType) ||
-                other.questionType == questionType) &&
-            (identical(other.question, question) ||
-                other.question == question) &&
+            (identical(other.questionType, questionType) || other.questionType == questionType) &&
+            (identical(other.question, question) || other.question == question) &&
             const DeepCollectionEquality().equals(other._options, _options) &&
-            (identical(other.correctAnswer, correctAnswer) ||
-                other.correctAnswer == correctAnswer));
+            (identical(other.correctAnswer, correctAnswer) || other.correctAnswer == correctAnswer));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      quizId,
-      topicId,
-      questionType,
-      question,
-      const DeepCollectionEquality().hash(_options),
-      correctAnswer);
+  int get hashCode => Object.hash(runtimeType, id, quizId, topicId, questionType, question,
+      const DeepCollectionEquality().hash(_options), correctAnswer);
 
   @JsonKey(ignore: true)
   @override
@@ -264,34 +258,41 @@ class _$_QuestionDto extends _QuestionDto {
 
 abstract class _QuestionDto extends QuestionDto {
   factory _QuestionDto(
-      {final String? id,
+      {@JsonKey(name: '_id') final String? id,
       final String? quizId,
       final String? topicId,
       final String? questionType,
       final String? question,
       final List<String>? options,
       final String? correctAnswer}) = _$_QuestionDto;
+
   _QuestionDto._() : super._();
 
-  factory _QuestionDto.fromJson(Map<String, dynamic> json) =
-      _$_QuestionDto.fromJson;
+  factory _QuestionDto.fromJson(Map<String, dynamic> json) = _$_QuestionDto.fromJson;
 
   @override
+  @JsonKey(name: '_id')
   String? get id;
+
   @override
   String? get quizId;
+
   @override
   String? get topicId;
+
   @override
   String? get questionType;
+
   @override
   String? get question;
+
   @override
   List<String>? get options;
+
   @override
   String? get correctAnswer;
+
   @override
   @JsonKey(ignore: true)
-  _$$_QuestionDtoCopyWith<_$_QuestionDto> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_QuestionDtoCopyWith<_$_QuestionDto> get copyWith => throw _privateConstructorUsedError;
 }

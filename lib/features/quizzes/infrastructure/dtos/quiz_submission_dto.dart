@@ -10,7 +10,6 @@ part 'quiz_submission_dto.g.dart';
 @freezed
 @Collection(ignore: {'copyWith'})
 class QuizSubmissionDto with _$QuizSubmissionDto {
-
   factory QuizSubmissionDto({
     required Id id,
     required String quizId,
@@ -19,9 +18,8 @@ class QuizSubmissionDto with _$QuizSubmissionDto {
     required int submittedAt,
   }) = _QuizSubmissionDto;
 
+  factory QuizSubmissionDto.fromJson(Map<String, dynamic> json) => _$QuizSubmissionDtoFromJson(json);
 
-  factory QuizSubmissionDto.fromJson(Map<String, dynamic> json) =>
-      _$QuizSubmissionDtoFromJson(json);
   const QuizSubmissionDto._();
 
   factory QuizSubmissionDto.fromDomain(QuizSubmission quizResponse) {

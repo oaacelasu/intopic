@@ -29,50 +29,53 @@ abstract class Alert {
 
   void _showSuccess() => Get.showSnackbar(
         GetSnackBar(
-            messageText: Text(
-              message,
-              style: Get.context?.bodyMedium.copyWith(color: Colors.white),
-            ),
-            snackPosition: SnackPosition.TOP,
-            borderRadius: AppDimens.md,
-            duration: AppConstants.toastDuration,
-            margin: const EdgeInsets.symmetric(horizontal: AppDimens.sm),
-            barBlur: 7,
-            backgroundColor: AppColors.green.withOpacity(0.92),
-            icon: const Icon(Icons.check_circle, color: AppColors.green),
-            dismissDirection: DismissDirection.endToStart,),
+          messageText: Text(
+            message,
+            style: Get.context?.bodyMedium.copyWith(color: Colors.white),
+          ),
+          snackPosition: SnackPosition.TOP,
+          borderRadius: AppDimens.md,
+          duration: AppConstants.toastDuration,
+          margin: const EdgeInsets.symmetric(horizontal: AppDimens.sm),
+          barBlur: 7,
+          backgroundColor: AppColors.green.withOpacity(0.92),
+          icon: const Icon(Icons.check_circle, color: AppColors.green),
+          dismissDirection: DismissDirection.endToStart,
+        ),
       );
 
   void _showInfo() => Get.showSnackbar(
         GetSnackBar(
-            messageText: Text(
-              message,
-              style: Get.context?.bodyMedium.copyWith(color: Colors.white),
-            ),
-            snackPosition: SnackPosition.TOP,
-            borderRadius: AppDimens.md,
-            duration: AppConstants.toastDuration,
-            margin: const EdgeInsets.symmetric(horizontal: AppDimens.sm),
-            barBlur: 7,
-            backgroundColor: AppColors.blue.withOpacity(0.92),
-            icon: const Icon(Icons.info, color: AppColors.blue),
-            dismissDirection: DismissDirection.endToStart,),
+          messageText: Text(
+            message,
+            style: Get.context?.bodyMedium.copyWith(color: Colors.white),
+          ),
+          snackPosition: SnackPosition.TOP,
+          borderRadius: AppDimens.md,
+          duration: AppConstants.toastDuration,
+          margin: const EdgeInsets.symmetric(horizontal: AppDimens.sm),
+          barBlur: 7,
+          backgroundColor: AppColors.blue.withOpacity(0.92),
+          icon: const Icon(Icons.info, color: AppColors.blue),
+          dismissDirection: DismissDirection.endToStart,
+        ),
       );
 
   void _showError() => Get.showSnackbar(
         GetSnackBar(
-            messageText: Text(
-              message,
-              style: Get.context?.bodyMedium.copyWith(color: Colors.white),
-            ),
-            snackPosition: SnackPosition.TOP,
-            borderRadius: AppDimens.md,
-            duration: AppConstants.toastDuration,
-            margin: const EdgeInsets.symmetric(horizontal: AppDimens.sm),
-            barBlur: 7,
-            backgroundColor: AppColors.red.withOpacity(0.92),
-            icon: const Icon(Icons.error, color: Colors.white),
-            dismissDirection: DismissDirection.endToStart,),
+          messageText: Text(
+            message,
+            style: Get.context?.bodyMedium.copyWith(color: Colors.white),
+          ),
+          snackPosition: SnackPosition.TOP,
+          borderRadius: AppDimens.md,
+          duration: AppConstants.toastDuration,
+          margin: const EdgeInsets.symmetric(horizontal: AppDimens.sm),
+          barBlur: 7,
+          backgroundColor: AppColors.red.withOpacity(0.92),
+          icon: const Icon(Icons.error, color: Colors.white),
+          dismissDirection: DismissDirection.endToStart,
+        ),
       );
 }
 

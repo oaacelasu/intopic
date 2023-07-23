@@ -17,37 +17,30 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$QuestionResponse {
   String get id => throw _privateConstructorUsedError;
+
   String get questionId => throw _privateConstructorUsedError;
+
   double get score => throw _privateConstructorUsedError;
+
   List<String> get selected => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(
-            String id, String questionId, double score, List<String> selected)
-        $default, {
-    required TResult Function(
-            String id, String questionId, double score, List<String> selected)
-        empty,
+    TResult Function(String id, String questionId, double score, List<String> selected) $default, {
+    required TResult Function(String id, String questionId, double score, List<String> selected) empty,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String id, String questionId, double score, List<String> selected)?
-        $default, {
-    TResult? Function(
-            String id, String questionId, double score, List<String> selected)?
-        empty,
+    TResult? Function(String id, String questionId, double score, List<String> selected)? $default, {
+    TResult? Function(String id, String questionId, double score, List<String> selected)? empty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String id, String questionId, double score, List<String> selected)?
-        $default, {
-    TResult Function(
-            String id, String questionId, double score, List<String> selected)?
-        empty,
+    TResult Function(String id, String questionId, double score, List<String> selected)? $default, {
+    TResult Function(String id, String questionId, double score, List<String> selected)? empty,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -72,27 +65,25 @@ mixin _$QuestionResponse {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $QuestionResponseCopyWith<QuestionResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  $QuestionResponseCopyWith<QuestionResponse> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $QuestionResponseCopyWith<$Res> {
-  factory $QuestionResponseCopyWith(
-          QuestionResponse value, $Res Function(QuestionResponse) then) =
+  factory $QuestionResponseCopyWith(QuestionResponse value, $Res Function(QuestionResponse) then) =
       _$QuestionResponseCopyWithImpl<$Res, QuestionResponse>;
+
   @useResult
-  $Res call(
-      {String id, String questionId, double score, List<String> selected});
+  $Res call({String id, String questionId, double score, List<String> selected});
 }
 
 /// @nodoc
-class _$QuestionResponseCopyWithImpl<$Res, $Val extends QuestionResponse>
-    implements $QuestionResponseCopyWith<$Res> {
+class _$QuestionResponseCopyWithImpl<$Res, $Val extends QuestionResponse> implements $QuestionResponseCopyWith<$Res> {
   _$QuestionResponseCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -126,23 +117,19 @@ class _$QuestionResponseCopyWithImpl<$Res, $Val extends QuestionResponse>
 }
 
 /// @nodoc
-abstract class _$$_QuestionResponseCopyWith<$Res>
-    implements $QuestionResponseCopyWith<$Res> {
-  factory _$$_QuestionResponseCopyWith(
-          _$_QuestionResponse value, $Res Function(_$_QuestionResponse) then) =
+abstract class _$$_QuestionResponseCopyWith<$Res> implements $QuestionResponseCopyWith<$Res> {
+  factory _$$_QuestionResponseCopyWith(_$_QuestionResponse value, $Res Function(_$_QuestionResponse) then) =
       __$$_QuestionResponseCopyWithImpl<$Res>;
+
   @override
   @useResult
-  $Res call(
-      {String id, String questionId, double score, List<String> selected});
+  $Res call({String id, String questionId, double score, List<String> selected});
 }
 
 /// @nodoc
-class __$$_QuestionResponseCopyWithImpl<$Res>
-    extends _$QuestionResponseCopyWithImpl<$Res, _$_QuestionResponse>
+class __$$_QuestionResponseCopyWithImpl<$Res> extends _$QuestionResponseCopyWithImpl<$Res, _$_QuestionResponse>
     implements _$$_QuestionResponseCopyWith<$Res> {
-  __$$_QuestionResponseCopyWithImpl(
-      _$_QuestionResponse _value, $Res Function(_$_QuestionResponse) _then)
+  __$$_QuestionResponseCopyWithImpl(_$_QuestionResponse _value, $Res Function(_$_QuestionResponse) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -178,10 +165,7 @@ class __$$_QuestionResponseCopyWithImpl<$Res>
 
 class _$_QuestionResponse extends _QuestionResponse {
   const _$_QuestionResponse(
-      {required this.id,
-      required this.questionId,
-      required this.score,
-      required final List<String> selected})
+      {required this.id, required this.questionId, required this.score, required final List<String> selected})
       : _selected = selected,
         super._();
 
@@ -192,6 +176,7 @@ class _$_QuestionResponse extends _QuestionResponse {
   @override
   final double score;
   final List<String> _selected;
+
   @override
   List<String> get selected {
     if (_selected is EqualUnmodifiableListView) return _selected;
@@ -210,15 +195,13 @@ class _$_QuestionResponse extends _QuestionResponse {
         (other.runtimeType == runtimeType &&
             other is _$_QuestionResponse &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.questionId, questionId) ||
-                other.questionId == questionId) &&
+            (identical(other.questionId, questionId) || other.questionId == questionId) &&
             (identical(other.score, score) || other.score == score) &&
             const DeepCollectionEquality().equals(other._selected, _selected));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, questionId, score,
-      const DeepCollectionEquality().hash(_selected));
+  int get hashCode => Object.hash(runtimeType, id, questionId, score, const DeepCollectionEquality().hash(_selected));
 
   @JsonKey(ignore: true)
   @override
@@ -229,12 +212,8 @@ class _$_QuestionResponse extends _QuestionResponse {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(
-            String id, String questionId, double score, List<String> selected)
-        $default, {
-    required TResult Function(
-            String id, String questionId, double score, List<String> selected)
-        empty,
+    TResult Function(String id, String questionId, double score, List<String> selected) $default, {
+    required TResult Function(String id, String questionId, double score, List<String> selected) empty,
   }) {
     return $default(id, questionId, score, selected);
   }
@@ -242,12 +221,8 @@ class _$_QuestionResponse extends _QuestionResponse {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String id, String questionId, double score, List<String> selected)?
-        $default, {
-    TResult? Function(
-            String id, String questionId, double score, List<String> selected)?
-        empty,
+    TResult? Function(String id, String questionId, double score, List<String> selected)? $default, {
+    TResult? Function(String id, String questionId, double score, List<String> selected)? empty,
   }) {
     return $default?.call(id, questionId, score, selected);
   }
@@ -255,12 +230,8 @@ class _$_QuestionResponse extends _QuestionResponse {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String id, String questionId, double score, List<String> selected)?
-        $default, {
-    TResult Function(
-            String id, String questionId, double score, List<String> selected)?
-        empty,
+    TResult Function(String id, String questionId, double score, List<String> selected)? $default, {
+    TResult Function(String id, String questionId, double score, List<String> selected)? empty,
     required TResult orElse(),
   }) {
     if ($default != null) {
@@ -307,40 +278,42 @@ abstract class _QuestionResponse extends QuestionResponse {
       required final String questionId,
       required final double score,
       required final List<String> selected}) = _$_QuestionResponse;
+
   const _QuestionResponse._() : super._();
 
   @override
   String get id;
+
   @override
   String get questionId;
+
   @override
   double get score;
+
   @override
   List<String> get selected;
+
   @override
   @JsonKey(ignore: true)
-  _$$_QuestionResponseCopyWith<_$_QuestionResponse> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_QuestionResponseCopyWith<_$_QuestionResponse> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_QuestionResponseEmptyCopyWith<$Res>
-    implements $QuestionResponseCopyWith<$Res> {
-  factory _$$_QuestionResponseEmptyCopyWith(_$_QuestionResponseEmpty value,
-          $Res Function(_$_QuestionResponseEmpty) then) =
+abstract class _$$_QuestionResponseEmptyCopyWith<$Res> implements $QuestionResponseCopyWith<$Res> {
+  factory _$$_QuestionResponseEmptyCopyWith(
+          _$_QuestionResponseEmpty value, $Res Function(_$_QuestionResponseEmpty) then) =
       __$$_QuestionResponseEmptyCopyWithImpl<$Res>;
+
   @override
   @useResult
-  $Res call(
-      {String id, String questionId, double score, List<String> selected});
+  $Res call({String id, String questionId, double score, List<String> selected});
 }
 
 /// @nodoc
 class __$$_QuestionResponseEmptyCopyWithImpl<$Res>
     extends _$QuestionResponseCopyWithImpl<$Res, _$_QuestionResponseEmpty>
     implements _$$_QuestionResponseEmptyCopyWith<$Res> {
-  __$$_QuestionResponseEmptyCopyWithImpl(_$_QuestionResponseEmpty _value,
-      $Res Function(_$_QuestionResponseEmpty) _then)
+  __$$_QuestionResponseEmptyCopyWithImpl(_$_QuestionResponseEmpty _value, $Res Function(_$_QuestionResponseEmpty) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -376,10 +349,7 @@ class __$$_QuestionResponseEmptyCopyWithImpl<$Res>
 
 class _$_QuestionResponseEmpty extends _QuestionResponseEmpty {
   const _$_QuestionResponseEmpty(
-      {this.id = '',
-      this.questionId = '',
-      this.score = 0.0,
-      final List<String> selected = const []})
+      {this.id = '', this.questionId = '', this.score = 0.0, final List<String> selected = const []})
       : _selected = selected,
         super._();
 
@@ -393,6 +363,7 @@ class _$_QuestionResponseEmpty extends _QuestionResponseEmpty {
   @JsonKey()
   final double score;
   final List<String> _selected;
+
   @override
   @JsonKey()
   List<String> get selected {
@@ -412,32 +383,25 @@ class _$_QuestionResponseEmpty extends _QuestionResponseEmpty {
         (other.runtimeType == runtimeType &&
             other is _$_QuestionResponseEmpty &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.questionId, questionId) ||
-                other.questionId == questionId) &&
+            (identical(other.questionId, questionId) || other.questionId == questionId) &&
             (identical(other.score, score) || other.score == score) &&
             const DeepCollectionEquality().equals(other._selected, _selected));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, questionId, score,
-      const DeepCollectionEquality().hash(_selected));
+  int get hashCode => Object.hash(runtimeType, id, questionId, score, const DeepCollectionEquality().hash(_selected));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$_QuestionResponseEmptyCopyWith<_$_QuestionResponseEmpty> get copyWith =>
-      __$$_QuestionResponseEmptyCopyWithImpl<_$_QuestionResponseEmpty>(
-          this, _$identity);
+      __$$_QuestionResponseEmptyCopyWithImpl<_$_QuestionResponseEmpty>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(
-            String id, String questionId, double score, List<String> selected)
-        $default, {
-    required TResult Function(
-            String id, String questionId, double score, List<String> selected)
-        empty,
+    TResult Function(String id, String questionId, double score, List<String> selected) $default, {
+    required TResult Function(String id, String questionId, double score, List<String> selected) empty,
   }) {
     return empty(id, questionId, score, selected);
   }
@@ -445,12 +409,8 @@ class _$_QuestionResponseEmpty extends _QuestionResponseEmpty {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String id, String questionId, double score, List<String> selected)?
-        $default, {
-    TResult? Function(
-            String id, String questionId, double score, List<String> selected)?
-        empty,
+    TResult? Function(String id, String questionId, double score, List<String> selected)? $default, {
+    TResult? Function(String id, String questionId, double score, List<String> selected)? empty,
   }) {
     return empty?.call(id, questionId, score, selected);
   }
@@ -458,12 +418,8 @@ class _$_QuestionResponseEmpty extends _QuestionResponseEmpty {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String id, String questionId, double score, List<String> selected)?
-        $default, {
-    TResult Function(
-            String id, String questionId, double score, List<String> selected)?
-        empty,
+    TResult Function(String id, String questionId, double score, List<String> selected)? $default, {
+    TResult Function(String id, String questionId, double score, List<String> selected)? empty,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -510,18 +466,22 @@ abstract class _QuestionResponseEmpty extends QuestionResponse {
       final String questionId,
       final double score,
       final List<String> selected}) = _$_QuestionResponseEmpty;
+
   const _QuestionResponseEmpty._() : super._();
 
   @override
   String get id;
+
   @override
   String get questionId;
+
   @override
   double get score;
+
   @override
   List<String> get selected;
+
   @override
   @JsonKey(ignore: true)
-  _$$_QuestionResponseEmptyCopyWith<_$_QuestionResponseEmpty> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_QuestionResponseEmptyCopyWith<_$_QuestionResponseEmpty> get copyWith => throw _privateConstructorUsedError;
 }

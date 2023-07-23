@@ -32,7 +32,7 @@ class TopicQuizzes extends HookConsumerWidget {
             physics: const NeverScrollableScrollPhysics(),
             itemCount: items.length,
             itemBuilder: (context, index) {
-              return  ProviderScope(
+              return ProviderScope(
                 overrides: [
                   currentQuizCardItemProvider.overrideWithValue(items[index]),
                 ],

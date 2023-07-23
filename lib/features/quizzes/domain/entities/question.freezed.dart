@@ -17,75 +17,47 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$Question {
   String get id => throw _privateConstructorUsedError;
+
   String get quizId => throw _privateConstructorUsedError;
+
   String get topicId => throw _privateConstructorUsedError;
+
   QuestionType get questionType => throw _privateConstructorUsedError;
+
   String get question => throw _privateConstructorUsedError;
+
   List<String> get options => throw _privateConstructorUsedError;
+
   String get correctAnswer => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(
-            String id,
-            String quizId,
-            String topicId,
-            QuestionType questionType,
-            String question,
-            List<String> options,
-            String correctAnswer)
+    TResult Function(String id, String quizId, String topicId, QuestionType questionType, String question,
+            List<String> options, String correctAnswer)
         $default, {
-    required TResult Function(
-            String id,
-            String quizId,
-            String topicId,
-            QuestionType questionType,
-            String question,
-            List<String> options,
-            String correctAnswer)
+    required TResult Function(String id, String quizId, String topicId, QuestionType questionType, String question,
+            List<String> options, String correctAnswer)
         empty,
   }) =>
       throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String id,
-            String quizId,
-            String topicId,
-            QuestionType questionType,
-            String question,
-            List<String> options,
-            String correctAnswer)?
+    TResult? Function(String id, String quizId, String topicId, QuestionType questionType, String question,
+            List<String> options, String correctAnswer)?
         $default, {
-    TResult? Function(
-            String id,
-            String quizId,
-            String topicId,
-            QuestionType questionType,
-            String question,
-            List<String> options,
-            String correctAnswer)?
+    TResult? Function(String id, String quizId, String topicId, QuestionType questionType, String question,
+            List<String> options, String correctAnswer)?
         empty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String id,
-            String quizId,
-            String topicId,
-            QuestionType questionType,
-            String question,
-            List<String> options,
-            String correctAnswer)?
+    TResult Function(String id, String quizId, String topicId, QuestionType questionType, String question,
+            List<String> options, String correctAnswer)?
         $default, {
-    TResult Function(
-            String id,
-            String quizId,
-            String topicId,
-            QuestionType questionType,
-            String question,
-            List<String> options,
-            String correctAnswer)?
+    TResult Function(String id, String quizId, String topicId, QuestionType questionType, String question,
+            List<String> options, String correctAnswer)?
         empty,
     required TResult orElse(),
   }) =>
@@ -111,14 +83,13 @@ mixin _$Question {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $QuestionCopyWith<Question> get copyWith =>
-      throw _privateConstructorUsedError;
+  $QuestionCopyWith<Question> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $QuestionCopyWith<$Res> {
-  factory $QuestionCopyWith(Question value, $Res Function(Question) then) =
-      _$QuestionCopyWithImpl<$Res, Question>;
+  factory $QuestionCopyWith(Question value, $Res Function(Question) then) = _$QuestionCopyWithImpl<$Res, Question>;
+
   @useResult
   $Res call(
       {String id,
@@ -133,12 +104,12 @@ abstract class $QuestionCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$QuestionCopyWithImpl<$Res, $Val extends Question>
-    implements $QuestionCopyWith<$Res> {
+class _$QuestionCopyWithImpl<$Res, $Val extends Question> implements $QuestionCopyWith<$Res> {
   _$QuestionCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
+
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -196,9 +167,8 @@ class _$QuestionCopyWithImpl<$Res, $Val extends Question>
 
 /// @nodoc
 abstract class _$$_QuestionCopyWith<$Res> implements $QuestionCopyWith<$Res> {
-  factory _$$_QuestionCopyWith(
-          _$_Question value, $Res Function(_$_Question) then) =
-      __$$_QuestionCopyWithImpl<$Res>;
+  factory _$$_QuestionCopyWith(_$_Question value, $Res Function(_$_Question) then) = __$$_QuestionCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -215,12 +185,9 @@ abstract class _$$_QuestionCopyWith<$Res> implements $QuestionCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_QuestionCopyWithImpl<$Res>
-    extends _$QuestionCopyWithImpl<$Res, _$_Question>
+class __$$_QuestionCopyWithImpl<$Res> extends _$QuestionCopyWithImpl<$Res, _$_Question>
     implements _$$_QuestionCopyWith<$Res> {
-  __$$_QuestionCopyWithImpl(
-      _$_Question _value, $Res Function(_$_Question) _then)
-      : super(_value, _then);
+  __$$_QuestionCopyWithImpl(_$_Question _value, $Res Function(_$_Question) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -291,6 +258,7 @@ class _$_Question extends _Question {
   @override
   final String question;
   final List<String> _options;
+
   @override
   List<String> get options {
     if (_options is EqualUnmodifiableListView) return _options;
@@ -314,110 +282,60 @@ class _$_Question extends _Question {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.quizId, quizId) || other.quizId == quizId) &&
             (identical(other.topicId, topicId) || other.topicId == topicId) &&
-            (identical(other.questionType, questionType) ||
-                other.questionType == questionType) &&
-            (identical(other.question, question) ||
-                other.question == question) &&
+            (identical(other.questionType, questionType) || other.questionType == questionType) &&
+            (identical(other.question, question) || other.question == question) &&
             const DeepCollectionEquality().equals(other._options, _options) &&
-            (identical(other.correctAnswer, correctAnswer) ||
-                other.correctAnswer == correctAnswer));
+            (identical(other.correctAnswer, correctAnswer) || other.correctAnswer == correctAnswer));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      quizId,
-      topicId,
-      questionType,
-      question,
-      const DeepCollectionEquality().hash(_options),
-      correctAnswer);
+  int get hashCode => Object.hash(runtimeType, id, quizId, topicId, questionType, question,
+      const DeepCollectionEquality().hash(_options), correctAnswer);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_QuestionCopyWith<_$_Question> get copyWith =>
-      __$$_QuestionCopyWithImpl<_$_Question>(this, _$identity);
+  _$$_QuestionCopyWith<_$_Question> get copyWith => __$$_QuestionCopyWithImpl<_$_Question>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(
-            String id,
-            String quizId,
-            String topicId,
-            QuestionType questionType,
-            String question,
-            List<String> options,
-            String correctAnswer)
+    TResult Function(String id, String quizId, String topicId, QuestionType questionType, String question,
+            List<String> options, String correctAnswer)
         $default, {
-    required TResult Function(
-            String id,
-            String quizId,
-            String topicId,
-            QuestionType questionType,
-            String question,
-            List<String> options,
-            String correctAnswer)
+    required TResult Function(String id, String quizId, String topicId, QuestionType questionType, String question,
+            List<String> options, String correctAnswer)
         empty,
   }) {
-    return $default(
-        id, quizId, topicId, questionType, question, options, correctAnswer);
+    return $default(id, quizId, topicId, questionType, question, options, correctAnswer);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String id,
-            String quizId,
-            String topicId,
-            QuestionType questionType,
-            String question,
-            List<String> options,
-            String correctAnswer)?
+    TResult? Function(String id, String quizId, String topicId, QuestionType questionType, String question,
+            List<String> options, String correctAnswer)?
         $default, {
-    TResult? Function(
-            String id,
-            String quizId,
-            String topicId,
-            QuestionType questionType,
-            String question,
-            List<String> options,
-            String correctAnswer)?
+    TResult? Function(String id, String quizId, String topicId, QuestionType questionType, String question,
+            List<String> options, String correctAnswer)?
         empty,
   }) {
-    return $default?.call(
-        id, quizId, topicId, questionType, question, options, correctAnswer);
+    return $default?.call(id, quizId, topicId, questionType, question, options, correctAnswer);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String id,
-            String quizId,
-            String topicId,
-            QuestionType questionType,
-            String question,
-            List<String> options,
-            String correctAnswer)?
+    TResult Function(String id, String quizId, String topicId, QuestionType questionType, String question,
+            List<String> options, String correctAnswer)?
         $default, {
-    TResult Function(
-            String id,
-            String quizId,
-            String topicId,
-            QuestionType questionType,
-            String question,
-            List<String> options,
-            String correctAnswer)?
+    TResult Function(String id, String quizId, String topicId, QuestionType questionType, String question,
+            List<String> options, String correctAnswer)?
         empty,
     required TResult orElse(),
   }) {
     if ($default != null) {
-      return $default(
-          id, quizId, topicId, questionType, question, options, correctAnswer);
+      return $default(id, quizId, topicId, questionType, question, options, correctAnswer);
     }
     return orElse();
   }
@@ -463,34 +381,40 @@ abstract class _Question extends Question {
       required final String question,
       required final List<String> options,
       required final String correctAnswer}) = _$_Question;
+
   const _Question._() : super._();
 
   @override
   String get id;
+
   @override
   String get quizId;
+
   @override
   String get topicId;
+
   @override
   QuestionType get questionType;
+
   @override
   String get question;
+
   @override
   List<String> get options;
+
   @override
   String get correctAnswer;
+
   @override
   @JsonKey(ignore: true)
-  _$$_QuestionCopyWith<_$_Question> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_QuestionCopyWith<_$_Question> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_QuestionEmptyCopyWith<$Res>
-    implements $QuestionCopyWith<$Res> {
-  factory _$$_QuestionEmptyCopyWith(
-          _$_QuestionEmpty value, $Res Function(_$_QuestionEmpty) then) =
+abstract class _$$_QuestionEmptyCopyWith<$Res> implements $QuestionCopyWith<$Res> {
+  factory _$$_QuestionEmptyCopyWith(_$_QuestionEmpty value, $Res Function(_$_QuestionEmpty) then) =
       __$$_QuestionEmptyCopyWithImpl<$Res>;
+
   @override
   @useResult
   $Res call(
@@ -507,12 +431,9 @@ abstract class _$$_QuestionEmptyCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_QuestionEmptyCopyWithImpl<$Res>
-    extends _$QuestionCopyWithImpl<$Res, _$_QuestionEmpty>
+class __$$_QuestionEmptyCopyWithImpl<$Res> extends _$QuestionCopyWithImpl<$Res, _$_QuestionEmpty>
     implements _$$_QuestionEmptyCopyWith<$Res> {
-  __$$_QuestionEmptyCopyWithImpl(
-      _$_QuestionEmpty _value, $Res Function(_$_QuestionEmpty) _then)
-      : super(_value, _then);
+  __$$_QuestionEmptyCopyWithImpl(_$_QuestionEmpty _value, $Res Function(_$_QuestionEmpty) _then) : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -588,6 +509,7 @@ class _$_QuestionEmpty extends _QuestionEmpty {
   @JsonKey()
   final String question;
   final List<String> _options;
+
   @override
   @JsonKey()
   List<String> get options {
@@ -613,25 +535,15 @@ class _$_QuestionEmpty extends _QuestionEmpty {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.quizId, quizId) || other.quizId == quizId) &&
             (identical(other.topicId, topicId) || other.topicId == topicId) &&
-            (identical(other.questionType, questionType) ||
-                other.questionType == questionType) &&
-            (identical(other.question, question) ||
-                other.question == question) &&
+            (identical(other.questionType, questionType) || other.questionType == questionType) &&
+            (identical(other.question, question) || other.question == question) &&
             const DeepCollectionEquality().equals(other._options, _options) &&
-            (identical(other.correctAnswer, correctAnswer) ||
-                other.correctAnswer == correctAnswer));
+            (identical(other.correctAnswer, correctAnswer) || other.correctAnswer == correctAnswer));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      quizId,
-      topicId,
-      questionType,
-      question,
-      const DeepCollectionEquality().hash(_options),
-      correctAnswer);
+  int get hashCode => Object.hash(runtimeType, id, quizId, topicId, questionType, question,
+      const DeepCollectionEquality().hash(_options), correctAnswer);
 
   @JsonKey(ignore: true)
   @override
@@ -642,81 +554,42 @@ class _$_QuestionEmpty extends _QuestionEmpty {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(
-            String id,
-            String quizId,
-            String topicId,
-            QuestionType questionType,
-            String question,
-            List<String> options,
-            String correctAnswer)
+    TResult Function(String id, String quizId, String topicId, QuestionType questionType, String question,
+            List<String> options, String correctAnswer)
         $default, {
-    required TResult Function(
-            String id,
-            String quizId,
-            String topicId,
-            QuestionType questionType,
-            String question,
-            List<String> options,
-            String correctAnswer)
+    required TResult Function(String id, String quizId, String topicId, QuestionType questionType, String question,
+            List<String> options, String correctAnswer)
         empty,
   }) {
-    return empty(
-        id, quizId, topicId, questionType, question, options, correctAnswer);
+    return empty(id, quizId, topicId, questionType, question, options, correctAnswer);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(
-            String id,
-            String quizId,
-            String topicId,
-            QuestionType questionType,
-            String question,
-            List<String> options,
-            String correctAnswer)?
+    TResult? Function(String id, String quizId, String topicId, QuestionType questionType, String question,
+            List<String> options, String correctAnswer)?
         $default, {
-    TResult? Function(
-            String id,
-            String quizId,
-            String topicId,
-            QuestionType questionType,
-            String question,
-            List<String> options,
-            String correctAnswer)?
+    TResult? Function(String id, String quizId, String topicId, QuestionType questionType, String question,
+            List<String> options, String correctAnswer)?
         empty,
   }) {
-    return empty?.call(
-        id, quizId, topicId, questionType, question, options, correctAnswer);
+    return empty?.call(id, quizId, topicId, questionType, question, options, correctAnswer);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(
-            String id,
-            String quizId,
-            String topicId,
-            QuestionType questionType,
-            String question,
-            List<String> options,
-            String correctAnswer)?
+    TResult Function(String id, String quizId, String topicId, QuestionType questionType, String question,
+            List<String> options, String correctAnswer)?
         $default, {
-    TResult Function(
-            String id,
-            String quizId,
-            String topicId,
-            QuestionType questionType,
-            String question,
-            List<String> options,
-            String correctAnswer)?
+    TResult Function(String id, String quizId, String topicId, QuestionType questionType, String question,
+            List<String> options, String correctAnswer)?
         empty,
     required TResult orElse(),
   }) {
     if (empty != null) {
-      return empty(
-          id, quizId, topicId, questionType, question, options, correctAnswer);
+      return empty(id, quizId, topicId, questionType, question, options, correctAnswer);
     }
     return orElse();
   }
@@ -762,24 +635,31 @@ abstract class _QuestionEmpty extends Question {
       final String question,
       final List<String> options,
       final String correctAnswer}) = _$_QuestionEmpty;
+
   const _QuestionEmpty._() : super._();
 
   @override
   String get id;
+
   @override
   String get quizId;
+
   @override
   String get topicId;
+
   @override
   QuestionType get questionType;
+
   @override
   String get question;
+
   @override
   List<String> get options;
+
   @override
   String get correctAnswer;
+
   @override
   @JsonKey(ignore: true)
-  _$$_QuestionEmptyCopyWith<_$_QuestionEmpty> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_QuestionEmptyCopyWith<_$_QuestionEmpty> get copyWith => throw _privateConstructorUsedError;
 }

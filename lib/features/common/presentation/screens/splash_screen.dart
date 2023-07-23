@@ -26,13 +26,16 @@ class SplashScreen extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    useEffect(() {
-      Future.microtask(() {
-        /// hide keyboard
-        FocusManager.instance.primaryFocus?.unfocus();
-      });
-      return null;
-    }, [],);
+    useEffect(
+      () {
+        Future.microtask(() {
+          /// hide keyboard
+          FocusManager.instance.primaryFocus?.unfocus();
+        });
+        return null;
+      },
+      [],
+    );
 
     ref.listen(authStateNotifierProvider, (previous, next) {
       next.when(

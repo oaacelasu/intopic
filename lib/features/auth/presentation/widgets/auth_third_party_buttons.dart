@@ -46,16 +46,20 @@ class AuthThirdPartyButtons extends ConsumerWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Expanded(
-                child: OutlinedButton.icon(
-                    icon: FaIcon(FontAwesomeIcons.google, color: context.primaryColor, size: AppDimens.xlg),
-                    onPressed: googleAction,
-                    label: Text(context.tr.google),),),
+              child: OutlinedButton.icon(
+                icon: FaIcon(FontAwesomeIcons.google, color: context.primaryColor, size: AppDimens.xlg),
+                onPressed: googleAction,
+                label: Text(context.tr.google),
+              ),
+            ),
             const SizedBox(width: AppDimens.lg),
             Expanded(
-                child: OutlinedButton.icon(
-                    icon: FaIcon(FontAwesomeIcons.facebook, color: context.primaryColor, size: AppDimens.xlg),
-                    onPressed: facebookAction,
-                    label: Text(context.tr.facebook),),),
+              child: OutlinedButton.icon(
+                icon: FaIcon(FontAwesomeIcons.facebook, color: context.primaryColor, size: AppDimens.xlg),
+                onPressed: facebookAction,
+                label: Text(context.tr.facebook),
+              ),
+            ),
           ],
         ),
       ],
