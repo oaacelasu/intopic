@@ -9,6 +9,7 @@ import 'package:intopic/features/common/presentation/utils/extensions/extensions
 import 'package:intopic/features/quizzes/domain/entities/quiz.dart';
 import 'package:intopic/features/quizzes/domain/entities/quiz_response.dart';
 import 'package:intopic/features/quizzes/presentation/quizzes_provider.dart';
+import 'package:intopic/features/topics/presentation/topics_provider.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'quiz_state.dart';
@@ -20,11 +21,12 @@ class QuizStateNotifier extends _$QuizStateNotifier {
   @override
   Future<QuizState> build() async {
     final quizId = ref.watch(currentQuizProvider).id;
-    return _loadQuiz(quizId);
+    final topicId = ref.watch(currentTopicProvider).id;
+    return _loadQuiz(topicId, quizId);
   }
 
-  Future<QuizState> _loadQuiz(String id) async {
-    final failureOrSuccess = await ref.read(quizRepositoryProvider).getQuizDetail(id);
+  Future<QuizState> _loadQuiz(String? topicId, String id) async {
+    final failureOrSuccess = await ref.read(quizRepositoryProvider).getQuizDetail(topicId, id);
     final quizResponse = await ref.read(quizResponseByIdProvider(quizId: id).future);
     return failureOrSuccess.fold(
         (l) => const QuizState.initial(), (r) => QuizState(quiz: r, quizResponse: quizResponse),);

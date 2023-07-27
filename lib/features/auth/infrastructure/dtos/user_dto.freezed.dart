@@ -22,34 +22,34 @@ UserDto _$UserDtoFromJson(Map<String, dynamic> json) {
 mixin _$UserDto {
   @JsonKey(name: 'userId')
   String? get id => throw _privateConstructorUsedError;
-
   String? get email => throw _privateConstructorUsedError;
-
   String? get userName => throw _privateConstructorUsedError;
-
   String? get token => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
   $UserDtoCopyWith<UserDto> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $UserDtoCopyWith<$Res> {
-  factory $UserDtoCopyWith(UserDto value, $Res Function(UserDto) then) = _$UserDtoCopyWithImpl<$Res, UserDto>;
-
+  factory $UserDtoCopyWith(UserDto value, $Res Function(UserDto) then) =
+      _$UserDtoCopyWithImpl<$Res, UserDto>;
   @useResult
-  $Res call({@JsonKey(name: 'userId') String? id, String? email, String? userName, String? token});
+  $Res call(
+      {@JsonKey(name: 'userId') String? id,
+      String? email,
+      String? userName,
+      String? token});
 }
 
 /// @nodoc
-class _$UserDtoCopyWithImpl<$Res, $Val extends UserDto> implements $UserDtoCopyWith<$Res> {
+class _$UserDtoCopyWithImpl<$Res, $Val extends UserDto>
+    implements $UserDtoCopyWith<$Res> {
   _$UserDtoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -84,17 +84,24 @@ class _$UserDtoCopyWithImpl<$Res, $Val extends UserDto> implements $UserDtoCopyW
 
 /// @nodoc
 abstract class _$$_UserDtoCopyWith<$Res> implements $UserDtoCopyWith<$Res> {
-  factory _$$_UserDtoCopyWith(_$_UserDto value, $Res Function(_$_UserDto) then) = __$$_UserDtoCopyWithImpl<$Res>;
-
+  factory _$$_UserDtoCopyWith(
+          _$_UserDto value, $Res Function(_$_UserDto) then) =
+      __$$_UserDtoCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: 'userId') String? id, String? email, String? userName, String? token});
+  $Res call(
+      {@JsonKey(name: 'userId') String? id,
+      String? email,
+      String? userName,
+      String? token});
 }
 
 /// @nodoc
-class __$$_UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res, _$_UserDto>
+class __$$_UserDtoCopyWithImpl<$Res>
+    extends _$UserDtoCopyWithImpl<$Res, _$_UserDto>
     implements _$$_UserDtoCopyWith<$Res> {
-  __$$_UserDtoCopyWithImpl(_$_UserDto _value, $Res Function(_$_UserDto) _then) : super(_value, _then);
+  __$$_UserDtoCopyWithImpl(_$_UserDto _value, $Res Function(_$_UserDto) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -128,9 +135,14 @@ class __$$_UserDtoCopyWithImpl<$Res> extends _$UserDtoCopyWithImpl<$Res, _$_User
 /// @nodoc
 @JsonSerializable()
 class _$_UserDto implements _UserDto {
-  _$_UserDto({@JsonKey(name: 'userId') required this.id, required this.email, this.userName, this.token});
+  _$_UserDto(
+      {@JsonKey(name: 'userId') required this.id,
+      required this.email,
+      this.userName,
+      this.token});
 
-  factory _$_UserDto.fromJson(Map<String, dynamic> json) => _$$_UserDtoFromJson(json);
+  factory _$_UserDto.fromJson(Map<String, dynamic> json) =>
+      _$$_UserDtoFromJson(json);
 
   @override
   @JsonKey(name: 'userId')
@@ -154,7 +166,8 @@ class _$_UserDto implements _UserDto {
             other is _$_UserDto &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.email, email) || other.email == email) &&
-            (identical(other.userName, userName) || other.userName == userName) &&
+            (identical(other.userName, userName) ||
+                other.userName == userName) &&
             (identical(other.token, token) || other.token == token));
   }
 
@@ -165,7 +178,8 @@ class _$_UserDto implements _UserDto {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserDtoCopyWith<_$_UserDto> get copyWith => __$$_UserDtoCopyWithImpl<_$_UserDto>(this, _$identity);
+  _$$_UserDtoCopyWith<_$_UserDto> get copyWith =>
+      __$$_UserDtoCopyWithImpl<_$_UserDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -187,17 +201,14 @@ abstract class _UserDto implements UserDto {
   @override
   @JsonKey(name: 'userId')
   String? get id;
-
   @override
   String? get email;
-
   @override
   String? get userName;
-
   @override
   String? get token;
-
   @override
   @JsonKey(ignore: true)
-  _$$_UserDtoCopyWith<_$_UserDto> get copyWith => throw _privateConstructorUsedError;
+  _$$_UserDtoCopyWith<_$_UserDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -10,10 +10,13 @@ String _$authStateNotifierHash() => r'f80a61897bb728f397b9256327c83b8cbb24179a';
 
 /// See also [AuthStateNotifier].
 @ProviderFor(AuthStateNotifier)
-final authStateNotifierProvider = NotifierProvider<AuthStateNotifier, AuthState>.internal(
+final authStateNotifierProvider =
+    NotifierProvider<AuthStateNotifier, AuthState>.internal(
   AuthStateNotifier.new,
   name: r'authStateNotifierProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product') ? null : _$authStateNotifierHash,
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$authStateNotifierHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );

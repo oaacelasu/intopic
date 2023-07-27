@@ -20,13 +20,11 @@ class TopicsScreen extends HookConsumerWidget {
       body: topics.when(
         data: (items) => ListView.builder(
           padding: const EdgeInsets.symmetric(horizontal: AppDimens.md),
-          shrinkWrap: true,
-          physics: const NeverScrollableScrollPhysics(),
           itemCount: items.length,
           itemBuilder: (context, index) {
             return ProviderScope(
               overrides: [
-                currentTopicProvider.overrideWithValue(items.elementAt(index)),
+                currentTopicCardItemProvider.overrideWithValue(items.elementAt(index)),
               ],
               child: const TopicCard().marginSymmetric(vertical: AppDimens.xs),
             );

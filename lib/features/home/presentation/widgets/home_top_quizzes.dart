@@ -1,13 +1,14 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:get/get.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intopic/config/app_colors.dart';
-import 'package:intopic/config/app_constants.dart';
 import 'package:intopic/config/app_dimens.dart';
 import 'package:intopic/config/navigation.dart';
 import 'package:intopic/features/common/presentation/utils/extensions/extensions.dart';
+import 'package:intopic/features/common/presentation/utils/extensions/image_extension.dart';
 import 'package:intopic/features/home/presentation/home_provider.dart';
 import 'package:intopic/features/quizzes/presentation/quizzes_provider.dart';
 
@@ -76,7 +77,7 @@ class HomeTopQuizzes extends HookConsumerWidget {
   }
 }
 
-class _TopQuizCard extends ConsumerWidget {
+class _TopQuizCard extends HookConsumerWidget {
   const _TopQuizCard();
 
   @override
@@ -84,7 +85,8 @@ class _TopQuizCard extends ConsumerWidget {
     final item = ref.watch(currentTopQuizProvider);
     final score = ref.watch(overallQuizScoreProvider(quizId: item.id));
 
-    final imageUrl = item.imageURL.isURL ? item.imageURL : AppConstants.defaultImageUrl;
+    final imageProvider = useMemoized(() => item.imageURL.imageProvider , [item.imageURL]);
+
     return Container(
       width: 150,
       margin: const EdgeInsets.symmetric(horizontal: AppDimens.sm),
@@ -94,7 +96,7 @@ class _TopQuizCard extends ConsumerWidget {
       ),
       child: InkWell(
         onTap: () {
-          Get.toNamed<void>(AppRoutes.quiz, arguments: item);
+          Get.toNamed<void>(AppRoutes.quiz, arguments: {'quiz': item});
         },
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -108,7 +110,7 @@ class _TopQuizCard extends ConsumerWidget {
                 ),
                 CircleAvatar(
                   radius: 25,
-                  foregroundImage: NetworkImage(imageUrl),
+                  foregroundImage: imageProvider,
                 ),
               ],
             ),

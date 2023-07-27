@@ -1,26 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:get/get.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intopic/config/app_constants.dart';
 import 'package:intopic/config/app_dimens.dart';
 import 'package:intopic/config/navigation.dart';
 import 'package:intopic/features/common/presentation/utils/extensions/extensions.dart';
+import 'package:intopic/features/common/presentation/utils/extensions/image_extension.dart';
 import 'package:intopic/features/topics/presentation/topics_provider.dart';
 
-class TopicCard extends ConsumerWidget {
+class TopicCard extends HookConsumerWidget {
   const TopicCard({
     super.key,
   });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final item = ref.read(currentTopicProvider);
+    final item = ref.read(currentTopicCardItemProvider);
 
-    final imageUrl = item.imageURL.isURL ? item.imageURL : AppConstants.defaultImageUrl;
+    final imageProvider = useMemoized(() => item.imageURL.imageProvider , [item.imageURL]);
 
     return Container(
       height: 150,
-      margin: const EdgeInsets.symmetric(horizontal: 10),
+      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: context.surfaceVariantColor),
       padding: const EdgeInsets.symmetric(horizontal: AppDimens.md),
       child: InkWell(
@@ -34,7 +36,7 @@ class TopicCard extends ConsumerWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 image: DecorationImage(
-                  image: NetworkImage(imageUrl),
+                  image: imageProvider,
                   fit: BoxFit.cover,
                 ),
               ),

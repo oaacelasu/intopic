@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:get/get.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:intopic/config/app_constants.dart';
 import 'package:intopic/config/app_dimens.dart';
 import 'package:intopic/config/navigation.dart';
 import 'package:intopic/features/common/presentation/utils/extensions/extensions.dart';
+import 'package:intopic/features/common/presentation/utils/extensions/image_extension.dart';
 import 'package:intopic/features/quizzes/presentation/quizzes_provider.dart';
+import 'package:intopic/features/topics/presentation/topics_provider.dart';
 
-class QuizCard extends ConsumerWidget {
+class QuizCard extends HookConsumerWidget {
   const QuizCard({
     super.key,
   });
@@ -15,9 +17,10 @@ class QuizCard extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final item = ref.read(currentQuizCardItemProvider);
+    final topic = ref.watch(currentTopicProvider);
     final score = ref.watch(overallQuizScoreProvider(quizId: item.id));
 
-    final imageUrl = item.imageURL.isURL ? item.imageURL : AppConstants.defaultImageUrl;
+    final imageProvider = useMemoized(() => item.imageURL.imageProvider , [item.imageURL]);
 
     return Stack(
       children: [
@@ -26,7 +29,7 @@ class QuizCard extends ConsumerWidget {
           decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: context.surfaceVariantColor),
           child: InkWell(
             onTap: () {
-              Get.toNamed<void>(AppRoutes.quiz, arguments: item);
+              Get.toNamed<void>(AppRoutes.quiz, arguments: {'quiz': item, 'topic': topic});
             },
             child: Row(
               children: [
@@ -36,7 +39,7 @@ class QuizCard extends ConsumerWidget {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10),
                     image: DecorationImage(
-                      image: NetworkImage(imageUrl),
+                      image: imageProvider,
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -82,7 +85,7 @@ class QuizCard extends ConsumerWidget {
           child: CircleAvatar(
             radius: 15,
             backgroundColor: Colors.white,
-            child: Text(item.questions.length.toString(), style: context.bodyMedium),
+            child: Text(item.totalQuestions.toString(), style: context.bodyMedium),
           ),
         ),
       ],

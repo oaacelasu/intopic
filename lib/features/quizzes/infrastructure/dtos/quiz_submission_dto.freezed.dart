@@ -21,28 +21,29 @@ QuizSubmissionDto _$QuizSubmissionDtoFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$QuizSubmissionDto {
   int get id => throw _privateConstructorUsedError;
-
   String get quizId => throw _privateConstructorUsedError;
-
   List<QuestionResponseDto> get responses => throw _privateConstructorUsedError;
-
   List<QuestionDto> get questions => throw _privateConstructorUsedError;
-
   int get submittedAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  $QuizSubmissionDtoCopyWith<QuizSubmissionDto> get copyWith => throw _privateConstructorUsedError;
+  $QuizSubmissionDtoCopyWith<QuizSubmissionDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $QuizSubmissionDtoCopyWith<$Res> {
-  factory $QuizSubmissionDtoCopyWith(QuizSubmissionDto value, $Res Function(QuizSubmissionDto) then) =
+  factory $QuizSubmissionDtoCopyWith(
+          QuizSubmissionDto value, $Res Function(QuizSubmissionDto) then) =
       _$QuizSubmissionDtoCopyWithImpl<$Res, QuizSubmissionDto>;
-
   @useResult
-  $Res call({int id, String quizId, List<QuestionResponseDto> responses, List<QuestionDto> questions, int submittedAt});
+  $Res call(
+      {int id,
+      String quizId,
+      List<QuestionResponseDto> responses,
+      List<QuestionDto> questions,
+      int submittedAt});
 }
 
 /// @nodoc
@@ -52,7 +53,6 @@ class _$QuizSubmissionDtoCopyWithImpl<$Res, $Val extends QuizSubmissionDto>
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -91,19 +91,27 @@ class _$QuizSubmissionDtoCopyWithImpl<$Res, $Val extends QuizSubmissionDto>
 }
 
 /// @nodoc
-abstract class _$$_QuizSubmissionDtoCopyWith<$Res> implements $QuizSubmissionDtoCopyWith<$Res> {
-  factory _$$_QuizSubmissionDtoCopyWith(_$_QuizSubmissionDto value, $Res Function(_$_QuizSubmissionDto) then) =
+abstract class _$$_QuizSubmissionDtoCopyWith<$Res>
+    implements $QuizSubmissionDtoCopyWith<$Res> {
+  factory _$$_QuizSubmissionDtoCopyWith(_$_QuizSubmissionDto value,
+          $Res Function(_$_QuizSubmissionDto) then) =
       __$$_QuizSubmissionDtoCopyWithImpl<$Res>;
-
   @override
   @useResult
-  $Res call({int id, String quizId, List<QuestionResponseDto> responses, List<QuestionDto> questions, int submittedAt});
+  $Res call(
+      {int id,
+      String quizId,
+      List<QuestionResponseDto> responses,
+      List<QuestionDto> questions,
+      int submittedAt});
 }
 
 /// @nodoc
-class __$$_QuizSubmissionDtoCopyWithImpl<$Res> extends _$QuizSubmissionDtoCopyWithImpl<$Res, _$_QuizSubmissionDto>
+class __$$_QuizSubmissionDtoCopyWithImpl<$Res>
+    extends _$QuizSubmissionDtoCopyWithImpl<$Res, _$_QuizSubmissionDto>
     implements _$$_QuizSubmissionDtoCopyWith<$Res> {
-  __$$_QuizSubmissionDtoCopyWithImpl(_$_QuizSubmissionDto _value, $Res Function(_$_QuizSubmissionDto) _then)
+  __$$_QuizSubmissionDtoCopyWithImpl(
+      _$_QuizSubmissionDto _value, $Res Function(_$_QuizSubmissionDto) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -153,14 +161,14 @@ class _$_QuizSubmissionDto extends _QuizSubmissionDto {
         _questions = questions,
         super._();
 
-  factory _$_QuizSubmissionDto.fromJson(Map<String, dynamic> json) => _$$_QuizSubmissionDtoFromJson(json);
+  factory _$_QuizSubmissionDto.fromJson(Map<String, dynamic> json) =>
+      _$$_QuizSubmissionDtoFromJson(json);
 
   @override
   final int id;
   @override
   final String quizId;
   final List<QuestionResponseDto> _responses;
-
   @override
   List<QuestionResponseDto> get responses {
     if (_responses is EqualUnmodifiableListView) return _responses;
@@ -169,7 +177,6 @@ class _$_QuizSubmissionDto extends _QuizSubmissionDto {
   }
 
   final List<QuestionDto> _questions;
-
   @override
   List<QuestionDto> get questions {
     if (_questions is EqualUnmodifiableListView) return _questions;
@@ -192,21 +199,30 @@ class _$_QuizSubmissionDto extends _QuizSubmissionDto {
             other is _$_QuizSubmissionDto &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.quizId, quizId) || other.quizId == quizId) &&
-            const DeepCollectionEquality().equals(other._responses, _responses) &&
-            const DeepCollectionEquality().equals(other._questions, _questions) &&
-            (identical(other.submittedAt, submittedAt) || other.submittedAt == submittedAt));
+            const DeepCollectionEquality()
+                .equals(other._responses, _responses) &&
+            const DeepCollectionEquality()
+                .equals(other._questions, _questions) &&
+            (identical(other.submittedAt, submittedAt) ||
+                other.submittedAt == submittedAt));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, quizId, const DeepCollectionEquality().hash(_responses),
-      const DeepCollectionEquality().hash(_questions), submittedAt);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      quizId,
+      const DeepCollectionEquality().hash(_responses),
+      const DeepCollectionEquality().hash(_questions),
+      submittedAt);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$_QuizSubmissionDtoCopyWith<_$_QuizSubmissionDto> get copyWith =>
-      __$$_QuizSubmissionDtoCopyWithImpl<_$_QuizSubmissionDto>(this, _$identity);
+      __$$_QuizSubmissionDtoCopyWithImpl<_$_QuizSubmissionDto>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -223,27 +239,23 @@ abstract class _QuizSubmissionDto extends QuizSubmissionDto {
       required final List<QuestionResponseDto> responses,
       required final List<QuestionDto> questions,
       required final int submittedAt}) = _$_QuizSubmissionDto;
-
   _QuizSubmissionDto._() : super._();
 
-  factory _QuizSubmissionDto.fromJson(Map<String, dynamic> json) = _$_QuizSubmissionDto.fromJson;
+  factory _QuizSubmissionDto.fromJson(Map<String, dynamic> json) =
+      _$_QuizSubmissionDto.fromJson;
 
   @override
   int get id;
-
   @override
   String get quizId;
-
   @override
   List<QuestionResponseDto> get responses;
-
   @override
   List<QuestionDto> get questions;
-
   @override
   int get submittedAt;
-
   @override
   @JsonKey(ignore: true)
-  _$$_QuizSubmissionDtoCopyWith<_$_QuizSubmissionDto> get copyWith => throw _privateConstructorUsedError;
+  _$$_QuizSubmissionDtoCopyWith<_$_QuizSubmissionDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }

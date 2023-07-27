@@ -1,6 +1,7 @@
 import 'dart:convert' as convert;
 import 'dart:io';
 
+import 'package:flutter/cupertino.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:http/http.dart' as http;
 import 'package:intopic/features/auth/application/auth_state_notifier.dart';
@@ -38,6 +39,11 @@ class TopicRepository implements ITopicRepository {
             .map((e) => QuizDto.fromJson(e as Map<String, dynamic>).toDomain())
             .toList();
 
+        print(jsonResponse['topics']);
+        print(jsonResponse['topics'].length);
+        print(jsonResponse['quizzes']);
+        print(jsonResponse['quizzes'].length);
+
         return right(topic.copyWith(quizzes: quizzes));
       } else {
         // If the server did not return a 200 OK response,
@@ -49,7 +55,10 @@ class TopicRepository implements ITopicRepository {
 
         return left(Failure.unprocessableEntity(message: jsonResponse['message'] as String));
       }
-    } catch (e) {
+    } catch (e, s) {
+      print(e);
+      print(s);
+      debugPrintStack(stackTrace: s);
       return left(Failure.unprocessableEntity(message: e.toString()));
     }
   }
@@ -68,10 +77,12 @@ class TopicRepository implements ITopicRepository {
       );
       if (response.statusCode == 200) {
         final jsonResponse = convert.jsonDecode(response.body) as Map<String, dynamic>;
-
         final topics = (jsonResponse['allTopics'] as List<dynamic>)
             .map((e) => TopicDto.fromJson(e as Map<String, dynamic>).toDomain())
             .toList();
+
+        print(jsonResponse['allTopics']);
+        print(jsonResponse['allTopics'].length);
         return right(topics);
       } else {
         // If the server did not return a 200 OK response,

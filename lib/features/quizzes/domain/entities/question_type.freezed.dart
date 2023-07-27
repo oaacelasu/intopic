@@ -24,7 +24,6 @@ mixin _$QuestionType {
     required TResult Function() trueFalse,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? none,
@@ -42,7 +41,6 @@ mixin _$QuestionType {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_NoneQuestionType value) none,
@@ -51,7 +49,6 @@ mixin _$QuestionType {
     required TResult Function(_TrueFalseQuestionType value) trueFalse,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_NoneQuestionType value)? none,
@@ -73,30 +70,35 @@ mixin _$QuestionType {
 
 /// @nodoc
 abstract class $QuestionTypeCopyWith<$Res> {
-  factory $QuestionTypeCopyWith(QuestionType value, $Res Function(QuestionType) then) =
+  factory $QuestionTypeCopyWith(
+          QuestionType value, $Res Function(QuestionType) then) =
       _$QuestionTypeCopyWithImpl<$Res, QuestionType>;
 }
 
 /// @nodoc
-class _$QuestionTypeCopyWithImpl<$Res, $Val extends QuestionType> implements $QuestionTypeCopyWith<$Res> {
+class _$QuestionTypeCopyWithImpl<$Res, $Val extends QuestionType>
+    implements $QuestionTypeCopyWith<$Res> {
   _$QuestionTypeCopyWithImpl(this._value, this._then);
 
-// ignore: unused_field
+  // ignore: unused_field
   final $Val _value;
-// ignore: unused_field
+  // ignore: unused_field
   final $Res Function($Val) _then;
 }
 
 /// @nodoc
 abstract class _$$_NoneQuestionTypeCopyWith<$Res> {
-  factory _$$_NoneQuestionTypeCopyWith(_$_NoneQuestionType value, $Res Function(_$_NoneQuestionType) then) =
+  factory _$$_NoneQuestionTypeCopyWith(
+          _$_NoneQuestionType value, $Res Function(_$_NoneQuestionType) then) =
       __$$_NoneQuestionTypeCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_NoneQuestionTypeCopyWithImpl<$Res> extends _$QuestionTypeCopyWithImpl<$Res, _$_NoneQuestionType>
+class __$$_NoneQuestionTypeCopyWithImpl<$Res>
+    extends _$QuestionTypeCopyWithImpl<$Res, _$_NoneQuestionType>
     implements _$$_NoneQuestionTypeCopyWith<$Res> {
-  __$$_NoneQuestionTypeCopyWithImpl(_$_NoneQuestionType _value, $Res Function(_$_NoneQuestionType) _then)
+  __$$_NoneQuestionTypeCopyWithImpl(
+      _$_NoneQuestionType _value, $Res Function(_$_NoneQuestionType) _then)
       : super(_value, _then);
 }
 
@@ -112,7 +114,8 @@ class _$_NoneQuestionType implements _NoneQuestionType {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$_NoneQuestionType);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_NoneQuestionType);
   }
 
   @override
@@ -200,7 +203,8 @@ abstract class _NoneQuestionType implements QuestionType {
 /// @nodoc
 abstract class _$$_SingleChoiceQuestionTypeCopyWith<$Res> {
   factory _$$_SingleChoiceQuestionTypeCopyWith(
-          _$_SingleChoiceQuestionType value, $Res Function(_$_SingleChoiceQuestionType) then) =
+          _$_SingleChoiceQuestionType value,
+          $Res Function(_$_SingleChoiceQuestionType) then) =
       __$$_SingleChoiceQuestionTypeCopyWithImpl<$Res>;
 }
 
@@ -208,8 +212,8 @@ abstract class _$$_SingleChoiceQuestionTypeCopyWith<$Res> {
 class __$$_SingleChoiceQuestionTypeCopyWithImpl<$Res>
     extends _$QuestionTypeCopyWithImpl<$Res, _$_SingleChoiceQuestionType>
     implements _$$_SingleChoiceQuestionTypeCopyWith<$Res> {
-  __$$_SingleChoiceQuestionTypeCopyWithImpl(
-      _$_SingleChoiceQuestionType _value, $Res Function(_$_SingleChoiceQuestionType) _then)
+  __$$_SingleChoiceQuestionTypeCopyWithImpl(_$_SingleChoiceQuestionType _value,
+      $Res Function(_$_SingleChoiceQuestionType) _then)
       : super(_value, _then);
 }
 
@@ -225,7 +229,9 @@ class _$_SingleChoiceQuestionType implements _SingleChoiceQuestionType {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$_SingleChoiceQuestionType);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_SingleChoiceQuestionType);
   }
 
   @override
@@ -313,7 +319,8 @@ abstract class _SingleChoiceQuestionType implements QuestionType {
 /// @nodoc
 abstract class _$$_MultipleChoiceQuestionTypeCopyWith<$Res> {
   factory _$$_MultipleChoiceQuestionTypeCopyWith(
-          _$_MultipleChoiceQuestionType value, $Res Function(_$_MultipleChoiceQuestionType) then) =
+          _$_MultipleChoiceQuestionType value,
+          $Res Function(_$_MultipleChoiceQuestionType) then) =
       __$$_MultipleChoiceQuestionTypeCopyWithImpl<$Res>;
 }
 
@@ -322,7 +329,8 @@ class __$$_MultipleChoiceQuestionTypeCopyWithImpl<$Res>
     extends _$QuestionTypeCopyWithImpl<$Res, _$_MultipleChoiceQuestionType>
     implements _$$_MultipleChoiceQuestionTypeCopyWith<$Res> {
   __$$_MultipleChoiceQuestionTypeCopyWithImpl(
-      _$_MultipleChoiceQuestionType _value, $Res Function(_$_MultipleChoiceQuestionType) _then)
+      _$_MultipleChoiceQuestionType _value,
+      $Res Function(_$_MultipleChoiceQuestionType) _then)
       : super(_value, _then);
 }
 
@@ -338,7 +346,9 @@ class _$_MultipleChoiceQuestionType implements _MultipleChoiceQuestionType {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$_MultipleChoiceQuestionType);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_MultipleChoiceQuestionType);
   }
 
   @override
@@ -425,15 +435,17 @@ abstract class _MultipleChoiceQuestionType implements QuestionType {
 
 /// @nodoc
 abstract class _$$_TrueFalseQuestionTypeCopyWith<$Res> {
-  factory _$$_TrueFalseQuestionTypeCopyWith(
-          _$_TrueFalseQuestionType value, $Res Function(_$_TrueFalseQuestionType) then) =
+  factory _$$_TrueFalseQuestionTypeCopyWith(_$_TrueFalseQuestionType value,
+          $Res Function(_$_TrueFalseQuestionType) then) =
       __$$_TrueFalseQuestionTypeCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_TrueFalseQuestionTypeCopyWithImpl<$Res> extends _$QuestionTypeCopyWithImpl<$Res, _$_TrueFalseQuestionType>
+class __$$_TrueFalseQuestionTypeCopyWithImpl<$Res>
+    extends _$QuestionTypeCopyWithImpl<$Res, _$_TrueFalseQuestionType>
     implements _$$_TrueFalseQuestionTypeCopyWith<$Res> {
-  __$$_TrueFalseQuestionTypeCopyWithImpl(_$_TrueFalseQuestionType _value, $Res Function(_$_TrueFalseQuestionType) _then)
+  __$$_TrueFalseQuestionTypeCopyWithImpl(_$_TrueFalseQuestionType _value,
+      $Res Function(_$_TrueFalseQuestionType) _then)
       : super(_value, _then);
 }
 
@@ -449,7 +461,8 @@ class _$_TrueFalseQuestionType implements _TrueFalseQuestionType {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other.runtimeType == runtimeType && other is _$_TrueFalseQuestionType);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_TrueFalseQuestionType);
   }
 
   @override

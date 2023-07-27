@@ -22,29 +22,23 @@ TopicDto _$TopicDtoFromJson(Map<String, dynamic> json) {
 mixin _$TopicDto {
   @JsonKey(name: '_id')
   String? get id => throw _privateConstructorUsedError;
-
   String? get userId => throw _privateConstructorUsedError;
-
   String? get title => throw _privateConstructorUsedError;
-
   String? get imageURL => throw _privateConstructorUsedError;
-
   String? get description => throw _privateConstructorUsedError;
-
   int? get noOfQuizzesAvailable => throw _privateConstructorUsedError;
-
   List<QuizDto>? get quizzes => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
   @JsonKey(ignore: true)
-  $TopicDtoCopyWith<TopicDto> get copyWith => throw _privateConstructorUsedError;
+  $TopicDtoCopyWith<TopicDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $TopicDtoCopyWith<$Res> {
-  factory $TopicDtoCopyWith(TopicDto value, $Res Function(TopicDto) then) = _$TopicDtoCopyWithImpl<$Res, TopicDto>;
-
+  factory $TopicDtoCopyWith(TopicDto value, $Res Function(TopicDto) then) =
+      _$TopicDtoCopyWithImpl<$Res, TopicDto>;
   @useResult
   $Res call(
       {@JsonKey(name: '_id') String? id,
@@ -57,12 +51,12 @@ abstract class $TopicDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TopicDtoCopyWithImpl<$Res, $Val extends TopicDto> implements $TopicDtoCopyWith<$Res> {
+class _$TopicDtoCopyWithImpl<$Res, $Val extends TopicDto>
+    implements $TopicDtoCopyWith<$Res> {
   _$TopicDtoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -112,8 +106,9 @@ class _$TopicDtoCopyWithImpl<$Res, $Val extends TopicDto> implements $TopicDtoCo
 
 /// @nodoc
 abstract class _$$_TopicDtoCopyWith<$Res> implements $TopicDtoCopyWith<$Res> {
-  factory _$$_TopicDtoCopyWith(_$_TopicDto value, $Res Function(_$_TopicDto) then) = __$$_TopicDtoCopyWithImpl<$Res>;
-
+  factory _$$_TopicDtoCopyWith(
+          _$_TopicDto value, $Res Function(_$_TopicDto) then) =
+      __$$_TopicDtoCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -127,9 +122,12 @@ abstract class _$$_TopicDtoCopyWith<$Res> implements $TopicDtoCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_TopicDtoCopyWithImpl<$Res> extends _$TopicDtoCopyWithImpl<$Res, _$_TopicDto>
+class __$$_TopicDtoCopyWithImpl<$Res>
+    extends _$TopicDtoCopyWithImpl<$Res, _$_TopicDto>
     implements _$$_TopicDtoCopyWith<$Res> {
-  __$$_TopicDtoCopyWithImpl(_$_TopicDto _value, $Res Function(_$_TopicDto) _then) : super(_value, _then);
+  __$$_TopicDtoCopyWithImpl(
+      _$_TopicDto _value, $Res Function(_$_TopicDto) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -188,7 +186,8 @@ class _$_TopicDto implements _TopicDto {
       required final List<QuizDto>? quizzes})
       : _quizzes = quizzes;
 
-  factory _$_TopicDto.fromJson(Map<String, dynamic> json) => _$$_TopicDtoFromJson(json);
+  factory _$_TopicDto.fromJson(Map<String, dynamic> json) =>
+      _$$_TopicDtoFromJson(json);
 
   @override
   @JsonKey(name: '_id')
@@ -204,7 +203,6 @@ class _$_TopicDto implements _TopicDto {
   @override
   final int? noOfQuizzesAvailable;
   final List<QuizDto>? _quizzes;
-
   @override
   List<QuizDto>? get quizzes {
     final value = _quizzes;
@@ -227,8 +225,10 @@ class _$_TopicDto implements _TopicDto {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.imageURL, imageURL) || other.imageURL == imageURL) &&
-            (identical(other.description, description) || other.description == description) &&
+            (identical(other.imageURL, imageURL) ||
+                other.imageURL == imageURL) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
             (identical(other.noOfQuizzesAvailable, noOfQuizzesAvailable) ||
                 other.noOfQuizzesAvailable == noOfQuizzesAvailable) &&
             const DeepCollectionEquality().equals(other._quizzes, _quizzes));
@@ -236,13 +236,21 @@ class _$_TopicDto implements _TopicDto {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, userId, title, imageURL, description, noOfQuizzesAvailable,
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      userId,
+      title,
+      imageURL,
+      description,
+      noOfQuizzesAvailable,
       const DeepCollectionEquality().hash(_quizzes));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TopicDtoCopyWith<_$_TopicDto> get copyWith => __$$_TopicDtoCopyWithImpl<_$_TopicDto>(this, _$identity);
+  _$$_TopicDtoCopyWith<_$_TopicDto> get copyWith =>
+      __$$_TopicDtoCopyWithImpl<_$_TopicDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -267,26 +275,20 @@ abstract class _TopicDto implements TopicDto {
   @override
   @JsonKey(name: '_id')
   String? get id;
-
   @override
   String? get userId;
-
   @override
   String? get title;
-
   @override
   String? get imageURL;
-
   @override
   String? get description;
-
   @override
   int? get noOfQuizzesAvailable;
-
   @override
   List<QuizDto>? get quizzes;
-
   @override
   @JsonKey(ignore: true)
-  _$$_TopicDtoCopyWith<_$_TopicDto> get copyWith => throw _privateConstructorUsedError;
+  _$$_TopicDtoCopyWith<_$_TopicDto> get copyWith =>
+      throw _privateConstructorUsedError;
 }

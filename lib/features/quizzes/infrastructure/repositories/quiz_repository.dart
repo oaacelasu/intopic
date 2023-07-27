@@ -1,6 +1,7 @@
 import 'dart:convert' as convert;
 import 'dart:io';
 
+import 'package:flutter/cupertino.dart';
 import 'package:fpdart/fpdart.dart';
 import 'package:http/http.dart' as http;
 import 'package:intopic/config/providers.dart';
@@ -13,6 +14,7 @@ import 'package:intopic/features/quizzes/domain/entities/quiz_submission.dart';
 import 'package:intopic/features/quizzes/domain/repositories/i_quiz_repository.dart';
 import 'package:intopic/features/quizzes/infrastructure/dtos/question_dto.dart';
 import 'package:intopic/features/quizzes/infrastructure/dtos/quiz_dto.dart';
+import 'package:intopic/features/quizzes/infrastructure/dtos/quiz_dto_isar.dart';
 import 'package:intopic/features/quizzes/infrastructure/dtos/quiz_response_dto.dart';
 import 'package:intopic/features/quizzes/infrastructure/dtos/quiz_submission_dto.dart';
 import 'package:intopic/flavors.dart';
@@ -25,7 +27,7 @@ class QuizRepository implements IQuizRepository {
   final ProviderRef<IQuizRepository> ref;
 
   @override
-  Future<Either<Failure, Quiz>> getQuizDetail(String quizId) async {
+  Future<Either<Failure, Quiz>> getQuizDetail(String? topicId, String quizId) async {
     Quiz quiz;
     final isar = await ref.watch(isarPod.future);
 
@@ -34,7 +36,7 @@ class QuizRepository implements IQuizRepository {
     if (quizDto != null) {
       quiz = quizDto.quiz.toDomain();
     } else {
-      final url = Uri.parse('${F.baseUrl}/quiz/$quizId');
+      final url = Uri.parse('${F.baseUrl}/topics/$topicId/quizzes/$quizId');
       try {
         final response = await http.get(
           url,
@@ -45,11 +47,10 @@ class QuizRepository implements IQuizRepository {
 
         if (response.statusCode == 200) {
           final jsonResponse = convert.jsonDecode(response.body) as Map<String, dynamic>;
-          var quiz = QuizDto.fromJson((jsonResponse['quiz'] as List<dynamic>)[0] as Map<String, dynamic>).toDomain();
+          var quiz = QuizDto.fromJson(jsonResponse['quiz'] as Map<String, dynamic>).toDomain();
           final questions = (jsonResponse['questions'] as List<dynamic>)
               .map((e) => QuestionDto.fromJson(e as Map<String, dynamic>).toDomain())
               .toList();
-
           quiz = quiz.copyWith(questions: questions).shuffleAndTakeLimitedQuestions();
 
           await isar.writeTxn(() async {
@@ -67,7 +68,11 @@ class QuizRepository implements IQuizRepository {
 
           return left(Failure.unprocessableEntity(message: jsonResponse['message'] as String));
         }
-      } catch (e) {
+      } catch (e, s) {
+        debugPrintStack(
+          stackTrace: s,
+          label: e.toString(),
+        );
         return left(Failure.unprocessableEntity(message: e.toString()));
       }
     }

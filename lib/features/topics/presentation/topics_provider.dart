@@ -11,4 +11,7 @@ Future<Topic> topic(TopicRef ref, {required String topicId}) async {
 }
 
 @riverpod
+Topic currentTopicCardItem(CurrentTopicCardItemRef ref) => const Topic.empty();
+
+@riverpod
 Topic currentTopic(CurrentTopicRef ref) => const Topic.empty();

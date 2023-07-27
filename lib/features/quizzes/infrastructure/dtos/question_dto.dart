@@ -9,7 +9,9 @@ part 'question_dto.g.dart';
 
 @freezed
 
-/// QuestionDto class is the data transfer object for [Quiz] entity @Embedded(ignore: {'copyWith'})
+/// QuestionDto class is the data transfer object for [Quiz] entity
+
+@Embedded(ignore: {'copyWith'})
 class QuestionDto with _$QuestionDto {
   /// Default constructor for the [QuestionDto] class
   factory QuestionDto({
@@ -19,7 +21,7 @@ class QuestionDto with _$QuestionDto {
     String? questionType,
     String? question,
     List<String>? options,
-    String? correctAnswer,
+    String? answer,
   }) = _QuestionDto;
 
   const QuestionDto._();
@@ -33,7 +35,7 @@ class QuestionDto with _$QuestionDto {
       questionType: _.questionType.toRaw(),
       question: _.question,
       options: _.options,
-      correctAnswer: _.correctAnswer,
+      answer: _.answer,
     );
   }
 
@@ -52,7 +54,7 @@ extension QuestionDtoX on QuestionDto {
       questionType: QuestionType.parse(questionType ?? ''),
       question: question ?? '',
       options: options ?? [],
-      correctAnswer: correctAnswer ?? '',
+      answer: answer ?? '',
     );
   }
 }

@@ -17,27 +17,16 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$Quiz {
   String get id => throw _privateConstructorUsedError;
-
   String get topicId => throw _privateConstructorUsedError;
-
   String get userId => throw _privateConstructorUsedError;
-
   Name get title => throw _privateConstructorUsedError;
-
   String get description => throw _privateConstructorUsedError;
-
   String get imageURL => throw _privateConstructorUsedError;
-
   DateTime? get quizAccessFromTime => throw _privateConstructorUsedError;
-
   DateTime? get quizAccessToTime => throw _privateConstructorUsedError;
-
   bool get isQuizActive => throw _privateConstructorUsedError;
-
   int get totalQuestions => throw _privateConstructorUsedError;
-
   List<Question> get questions => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
@@ -68,7 +57,6 @@ mixin _$Quiz {
         empty,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
@@ -156,8 +144,8 @@ mixin _$Quiz {
 
 /// @nodoc
 abstract class $QuizCopyWith<$Res> {
-  factory $QuizCopyWith(Quiz value, $Res Function(Quiz) then) = _$QuizCopyWithImpl<$Res, Quiz>;
-
+  factory $QuizCopyWith(Quiz value, $Res Function(Quiz) then) =
+      _$QuizCopyWithImpl<$Res, Quiz>;
   @useResult
   $Res call(
       {String id,
@@ -174,12 +162,12 @@ abstract class $QuizCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$QuizCopyWithImpl<$Res, $Val extends Quiz> implements $QuizCopyWith<$Res> {
+class _$QuizCopyWithImpl<$Res, $Val extends Quiz>
+    implements $QuizCopyWith<$Res> {
   _$QuizCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -249,8 +237,8 @@ class _$QuizCopyWithImpl<$Res, $Val extends Quiz> implements $QuizCopyWith<$Res>
 
 /// @nodoc
 abstract class _$$_QuizCopyWith<$Res> implements $QuizCopyWith<$Res> {
-  factory _$$_QuizCopyWith(_$_Quiz value, $Res Function(_$_Quiz) then) = __$$_QuizCopyWithImpl<$Res>;
-
+  factory _$$_QuizCopyWith(_$_Quiz value, $Res Function(_$_Quiz) then) =
+      __$$_QuizCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -268,8 +256,10 @@ abstract class _$$_QuizCopyWith<$Res> implements $QuizCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_QuizCopyWithImpl<$Res> extends _$QuizCopyWithImpl<$Res, _$_Quiz> implements _$$_QuizCopyWith<$Res> {
-  __$$_QuizCopyWithImpl(_$_Quiz _value, $Res Function(_$_Quiz) _then) : super(_value, _then);
+class __$$_QuizCopyWithImpl<$Res> extends _$QuizCopyWithImpl<$Res, _$_Quiz>
+    implements _$$_QuizCopyWith<$Res> {
+  __$$_QuizCopyWithImpl(_$_Quiz _value, $Res Function(_$_Quiz) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -374,7 +364,6 @@ class _$_Quiz extends _Quiz {
   @override
   final int totalQuestions;
   final List<Question> _questions;
-
   @override
   List<Question> get questions {
     if (_questions is EqualUnmodifiableListView) return _questions;
@@ -396,24 +385,42 @@ class _$_Quiz extends _Quiz {
             (identical(other.topicId, topicId) || other.topicId == topicId) &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.description, description) || other.description == description) &&
-            (identical(other.imageURL, imageURL) || other.imageURL == imageURL) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.imageURL, imageURL) ||
+                other.imageURL == imageURL) &&
             (identical(other.quizAccessFromTime, quizAccessFromTime) ||
                 other.quizAccessFromTime == quizAccessFromTime) &&
-            (identical(other.quizAccessToTime, quizAccessToTime) || other.quizAccessToTime == quizAccessToTime) &&
-            (identical(other.isQuizActive, isQuizActive) || other.isQuizActive == isQuizActive) &&
-            (identical(other.totalQuestions, totalQuestions) || other.totalQuestions == totalQuestions) &&
-            const DeepCollectionEquality().equals(other._questions, _questions));
+            (identical(other.quizAccessToTime, quizAccessToTime) ||
+                other.quizAccessToTime == quizAccessToTime) &&
+            (identical(other.isQuizActive, isQuizActive) ||
+                other.isQuizActive == isQuizActive) &&
+            (identical(other.totalQuestions, totalQuestions) ||
+                other.totalQuestions == totalQuestions) &&
+            const DeepCollectionEquality()
+                .equals(other._questions, _questions));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, topicId, userId, title, description, imageURL, quizAccessFromTime,
-      quizAccessToTime, isQuizActive, totalQuestions, const DeepCollectionEquality().hash(_questions));
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      topicId,
+      userId,
+      title,
+      description,
+      imageURL,
+      quizAccessFromTime,
+      quizAccessToTime,
+      isQuizActive,
+      totalQuestions,
+      const DeepCollectionEquality().hash(_questions));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_QuizCopyWith<_$_Quiz> get copyWith => __$$_QuizCopyWithImpl<_$_Quiz>(this, _$identity);
+  _$$_QuizCopyWith<_$_Quiz> get copyWith =>
+      __$$_QuizCopyWithImpl<_$_Quiz>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -445,8 +452,18 @@ class _$_Quiz extends _Quiz {
             List<Question> questions)
         empty,
   }) {
-    return $default(id, topicId, userId, title, description, imageURL, quizAccessFromTime, quizAccessToTime,
-        isQuizActive, totalQuestions, questions);
+    return $default(
+        id,
+        topicId,
+        userId,
+        title,
+        description,
+        imageURL,
+        quizAccessFromTime,
+        quizAccessToTime,
+        isQuizActive,
+        totalQuestions,
+        questions);
   }
 
   @override
@@ -479,8 +496,18 @@ class _$_Quiz extends _Quiz {
             List<Question> questions)?
         empty,
   }) {
-    return $default?.call(id, topicId, userId, title, description, imageURL, quizAccessFromTime, quizAccessToTime,
-        isQuizActive, totalQuestions, questions);
+    return $default?.call(
+        id,
+        topicId,
+        userId,
+        title,
+        description,
+        imageURL,
+        quizAccessFromTime,
+        quizAccessToTime,
+        isQuizActive,
+        totalQuestions,
+        questions);
   }
 
   @override
@@ -515,8 +542,18 @@ class _$_Quiz extends _Quiz {
     required TResult orElse(),
   }) {
     if ($default != null) {
-      return $default(id, topicId, userId, title, description, imageURL, quizAccessFromTime, quizAccessToTime,
-          isQuizActive, totalQuestions, questions);
+      return $default(
+          id,
+          topicId,
+          userId,
+          title,
+          description,
+          imageURL,
+          quizAccessFromTime,
+          quizAccessToTime,
+          isQuizActive,
+          totalQuestions,
+          questions);
     }
     return orElse();
   }
@@ -566,42 +603,30 @@ abstract class _Quiz extends Quiz {
       required final bool isQuizActive,
       required final int totalQuestions,
       required final List<Question> questions}) = _$_Quiz;
-
   const _Quiz._() : super._();
 
   @override
   String get id;
-
   @override
   String get topicId;
-
   @override
   String get userId;
-
   @override
   Name get title;
-
   @override
   String get description;
-
   @override
   String get imageURL;
-
   @override
   DateTime? get quizAccessFromTime;
-
   @override
   DateTime? get quizAccessToTime;
-
   @override
   bool get isQuizActive;
-
   @override
   int get totalQuestions;
-
   @override
   List<Question> get questions;
-
   @override
   @JsonKey(ignore: true)
   _$$_QuizCopyWith<_$_Quiz> get copyWith => throw _privateConstructorUsedError;
@@ -609,9 +634,9 @@ abstract class _Quiz extends Quiz {
 
 /// @nodoc
 abstract class _$$_QuizEmptyCopyWith<$Res> implements $QuizCopyWith<$Res> {
-  factory _$$_QuizEmptyCopyWith(_$_QuizEmpty value, $Res Function(_$_QuizEmpty) then) =
+  factory _$$_QuizEmptyCopyWith(
+          _$_QuizEmpty value, $Res Function(_$_QuizEmpty) then) =
       __$$_QuizEmptyCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -629,9 +654,12 @@ abstract class _$$_QuizEmptyCopyWith<$Res> implements $QuizCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_QuizEmptyCopyWithImpl<$Res> extends _$QuizCopyWithImpl<$Res, _$_QuizEmpty>
+class __$$_QuizEmptyCopyWithImpl<$Res>
+    extends _$QuizCopyWithImpl<$Res, _$_QuizEmpty>
     implements _$$_QuizEmptyCopyWith<$Res> {
-  __$$_QuizEmptyCopyWithImpl(_$_QuizEmpty _value, $Res Function(_$_QuizEmpty) _then) : super(_value, _then);
+  __$$_QuizEmptyCopyWithImpl(
+      _$_QuizEmpty _value, $Res Function(_$_QuizEmpty) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -746,7 +774,6 @@ class _$_QuizEmpty extends _QuizEmpty {
   @JsonKey()
   final int totalQuestions;
   final List<Question> _questions;
-
   @override
   @JsonKey()
   List<Question> get questions {
@@ -769,24 +796,42 @@ class _$_QuizEmpty extends _QuizEmpty {
             (identical(other.topicId, topicId) || other.topicId == topicId) &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.description, description) || other.description == description) &&
-            (identical(other.imageURL, imageURL) || other.imageURL == imageURL) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.imageURL, imageURL) ||
+                other.imageURL == imageURL) &&
             (identical(other.quizAccessFromTime, quizAccessFromTime) ||
                 other.quizAccessFromTime == quizAccessFromTime) &&
-            (identical(other.quizAccessToTime, quizAccessToTime) || other.quizAccessToTime == quizAccessToTime) &&
-            (identical(other.isQuizActive, isQuizActive) || other.isQuizActive == isQuizActive) &&
-            (identical(other.totalQuestions, totalQuestions) || other.totalQuestions == totalQuestions) &&
-            const DeepCollectionEquality().equals(other._questions, _questions));
+            (identical(other.quizAccessToTime, quizAccessToTime) ||
+                other.quizAccessToTime == quizAccessToTime) &&
+            (identical(other.isQuizActive, isQuizActive) ||
+                other.isQuizActive == isQuizActive) &&
+            (identical(other.totalQuestions, totalQuestions) ||
+                other.totalQuestions == totalQuestions) &&
+            const DeepCollectionEquality()
+                .equals(other._questions, _questions));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, topicId, userId, title, description, imageURL, quizAccessFromTime,
-      quizAccessToTime, isQuizActive, totalQuestions, const DeepCollectionEquality().hash(_questions));
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      topicId,
+      userId,
+      title,
+      description,
+      imageURL,
+      quizAccessFromTime,
+      quizAccessToTime,
+      isQuizActive,
+      totalQuestions,
+      const DeepCollectionEquality().hash(_questions));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_QuizEmptyCopyWith<_$_QuizEmpty> get copyWith => __$$_QuizEmptyCopyWithImpl<_$_QuizEmpty>(this, _$identity);
+  _$$_QuizEmptyCopyWith<_$_QuizEmpty> get copyWith =>
+      __$$_QuizEmptyCopyWithImpl<_$_QuizEmpty>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -818,8 +863,18 @@ class _$_QuizEmpty extends _QuizEmpty {
             List<Question> questions)
         empty,
   }) {
-    return empty(id, topicId, userId, title, description, imageURL, quizAccessFromTime, quizAccessToTime, isQuizActive,
-        totalQuestions, questions);
+    return empty(
+        id,
+        topicId,
+        userId,
+        title,
+        description,
+        imageURL,
+        quizAccessFromTime,
+        quizAccessToTime,
+        isQuizActive,
+        totalQuestions,
+        questions);
   }
 
   @override
@@ -852,8 +907,18 @@ class _$_QuizEmpty extends _QuizEmpty {
             List<Question> questions)?
         empty,
   }) {
-    return empty?.call(id, topicId, userId, title, description, imageURL, quizAccessFromTime, quizAccessToTime,
-        isQuizActive, totalQuestions, questions);
+    return empty?.call(
+        id,
+        topicId,
+        userId,
+        title,
+        description,
+        imageURL,
+        quizAccessFromTime,
+        quizAccessToTime,
+        isQuizActive,
+        totalQuestions,
+        questions);
   }
 
   @override
@@ -888,8 +953,18 @@ class _$_QuizEmpty extends _QuizEmpty {
     required TResult orElse(),
   }) {
     if (empty != null) {
-      return empty(id, topicId, userId, title, description, imageURL, quizAccessFromTime, quizAccessToTime,
-          isQuizActive, totalQuestions, questions);
+      return empty(
+          id,
+          topicId,
+          userId,
+          title,
+          description,
+          imageURL,
+          quizAccessFromTime,
+          quizAccessToTime,
+          isQuizActive,
+          totalQuestions,
+          questions);
     }
     return orElse();
   }
@@ -939,43 +1014,32 @@ abstract class _QuizEmpty extends Quiz {
       final bool isQuizActive,
       final int totalQuestions,
       final List<Question> questions}) = _$_QuizEmpty;
-
   const _QuizEmpty._() : super._();
 
   @override
   String get id;
-
   @override
   String get topicId;
-
   @override
   String get userId;
-
   @override
   Name get title;
-
   @override
   String get description;
-
   @override
   String get imageURL;
-
   @override
   DateTime? get quizAccessFromTime;
-
   @override
   DateTime? get quizAccessToTime;
-
   @override
   bool get isQuizActive;
-
   @override
   int get totalQuestions;
-
   @override
   List<Question> get questions;
-
   @override
   @JsonKey(ignore: true)
-  _$$_QuizEmptyCopyWith<_$_QuizEmpty> get copyWith => throw _privateConstructorUsedError;
+  _$$_QuizEmptyCopyWith<_$_QuizEmpty> get copyWith =>
+      throw _privateConstructorUsedError;
 }

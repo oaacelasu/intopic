@@ -120,8 +120,10 @@ P _questionResponseDtoDeserializeProp<P>(
   }
 }
 
-extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, QuestionResponseDto, QFilterCondition> {
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> idIsNull() {
+extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto,
+    QuestionResponseDto, QFilterCondition> {
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      idIsNull() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(const FilterCondition.isNull(
         property: r'id',
@@ -129,7 +131,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> idIsNotNull() {
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      idIsNotNull() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(const FilterCondition.isNotNull(
         property: r'id',
@@ -137,7 +140,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> idEqualTo(
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      idEqualTo(
     String? value, {
     bool caseSensitive = true,
   }) {
@@ -150,7 +154,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> idGreaterThan(
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      idGreaterThan(
     String? value, {
     bool include = false,
     bool caseSensitive = true,
@@ -165,7 +170,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> idLessThan(
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      idLessThan(
     String? value, {
     bool include = false,
     bool caseSensitive = true,
@@ -180,7 +186,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> idBetween(
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      idBetween(
     String? lower,
     String? upper, {
     bool includeLower = true,
@@ -199,7 +206,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> idStartsWith(
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      idStartsWith(
     String value, {
     bool caseSensitive = true,
   }) {
@@ -212,7 +220,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> idEndsWith(
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      idEndsWith(
     String value, {
     bool caseSensitive = true,
   }) {
@@ -225,8 +234,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> idContains(String value,
-      {bool caseSensitive = true}) {
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      idContains(String value, {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.contains(
         property: r'id',
@@ -236,8 +245,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> idMatches(String pattern,
-      {bool caseSensitive = true}) {
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      idMatches(String pattern, {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.matches(
         property: r'id',
@@ -247,7 +256,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> idIsEmpty() {
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      idIsEmpty() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.equalTo(
         property: r'id',
@@ -256,7 +266,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> idIsNotEmpty() {
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      idIsNotEmpty() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.greaterThan(
         property: r'id',
@@ -265,7 +276,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> questionIdIsNull() {
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      questionIdIsNull() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(const FilterCondition.isNull(
         property: r'questionId',
@@ -273,7 +285,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> questionIdIsNotNull() {
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      questionIdIsNotNull() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(const FilterCondition.isNotNull(
         property: r'questionId',
@@ -281,7 +294,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> questionIdEqualTo(
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      questionIdEqualTo(
     String? value, {
     bool caseSensitive = true,
   }) {
@@ -294,7 +308,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> questionIdGreaterThan(
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      questionIdGreaterThan(
     String? value, {
     bool include = false,
     bool caseSensitive = true,
@@ -309,7 +324,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> questionIdLessThan(
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      questionIdLessThan(
     String? value, {
     bool include = false,
     bool caseSensitive = true,
@@ -324,7 +340,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> questionIdBetween(
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      questionIdBetween(
     String? lower,
     String? upper, {
     bool includeLower = true,
@@ -343,7 +360,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> questionIdStartsWith(
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      questionIdStartsWith(
     String value, {
     bool caseSensitive = true,
   }) {
@@ -356,7 +374,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> questionIdEndsWith(
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      questionIdEndsWith(
     String value, {
     bool caseSensitive = true,
   }) {
@@ -369,8 +388,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> questionIdContains(String value,
-      {bool caseSensitive = true}) {
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      questionIdContains(String value, {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.contains(
         property: r'questionId',
@@ -380,8 +399,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> questionIdMatches(String pattern,
-      {bool caseSensitive = true}) {
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      questionIdMatches(String pattern, {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.matches(
         property: r'questionId',
@@ -391,7 +410,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> questionIdIsEmpty() {
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      questionIdIsEmpty() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.equalTo(
         property: r'questionId',
@@ -400,7 +420,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> questionIdIsNotEmpty() {
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      questionIdIsNotEmpty() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.greaterThan(
         property: r'questionId',
@@ -409,7 +430,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> scoreIsNull() {
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      scoreIsNull() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(const FilterCondition.isNull(
         property: r'score',
@@ -417,7 +439,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> scoreIsNotNull() {
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      scoreIsNotNull() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(const FilterCondition.isNotNull(
         property: r'score',
@@ -425,7 +448,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> scoreEqualTo(
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      scoreEqualTo(
     double? value, {
     double epsilon = Query.epsilon,
   }) {
@@ -438,7 +462,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> scoreGreaterThan(
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      scoreGreaterThan(
     double? value, {
     bool include = false,
     double epsilon = Query.epsilon,
@@ -453,7 +478,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> scoreLessThan(
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      scoreLessThan(
     double? value, {
     bool include = false,
     double epsilon = Query.epsilon,
@@ -468,7 +494,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> scoreBetween(
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      scoreBetween(
     double? lower,
     double? upper, {
     bool includeLower = true,
@@ -487,7 +514,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> selectedIsNull() {
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      selectedIsNull() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(const FilterCondition.isNull(
         property: r'selected',
@@ -495,7 +523,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> selectedIsNotNull() {
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      selectedIsNotNull() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(const FilterCondition.isNotNull(
         property: r'selected',
@@ -503,7 +532,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> selectedElementEqualTo(
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      selectedElementEqualTo(
     String value, {
     bool caseSensitive = true,
   }) {
@@ -516,7 +546,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> selectedElementGreaterThan(
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      selectedElementGreaterThan(
     String value, {
     bool include = false,
     bool caseSensitive = true,
@@ -531,7 +562,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> selectedElementLessThan(
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      selectedElementLessThan(
     String value, {
     bool include = false,
     bool caseSensitive = true,
@@ -546,7 +578,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> selectedElementBetween(
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      selectedElementBetween(
     String lower,
     String upper, {
     bool includeLower = true,
@@ -565,7 +598,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> selectedElementStartsWith(
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      selectedElementStartsWith(
     String value, {
     bool caseSensitive = true,
   }) {
@@ -578,7 +612,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> selectedElementEndsWith(
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      selectedElementEndsWith(
     String value, {
     bool caseSensitive = true,
   }) {
@@ -591,8 +626,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> selectedElementContains(String value,
-      {bool caseSensitive = true}) {
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      selectedElementContains(String value, {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.contains(
         property: r'selected',
@@ -602,8 +637,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> selectedElementMatches(String pattern,
-      {bool caseSensitive = true}) {
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      selectedElementMatches(String pattern, {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.matches(
         property: r'selected',
@@ -613,7 +648,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> selectedElementIsEmpty() {
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      selectedElementIsEmpty() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.equalTo(
         property: r'selected',
@@ -622,7 +658,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> selectedElementIsNotEmpty() {
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      selectedElementIsNotEmpty() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.greaterThan(
         property: r'selected',
@@ -631,7 +668,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> selectedLengthEqualTo(int length) {
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      selectedLengthEqualTo(int length) {
     return QueryBuilder.apply(this, (query) {
       return query.listLength(
         r'selected',
@@ -643,7 +681,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> selectedIsEmpty() {
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      selectedIsEmpty() {
     return QueryBuilder.apply(this, (query) {
       return query.listLength(
         r'selected',
@@ -655,7 +694,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> selectedIsNotEmpty() {
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      selectedIsNotEmpty() {
     return QueryBuilder.apply(this, (query) {
       return query.listLength(
         r'selected',
@@ -667,7 +707,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> selectedLengthLessThan(
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      selectedLengthLessThan(
     int length, {
     bool include = false,
   }) {
@@ -682,7 +723,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> selectedLengthGreaterThan(
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      selectedLengthGreaterThan(
     int length, {
     bool include = false,
   }) {
@@ -697,7 +739,8 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
     });
   }
 
-  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition> selectedLengthBetween(
+  QueryBuilder<QuestionResponseDto, QuestionResponseDto, QAfterFilterCondition>
+      selectedLengthBetween(
     int lower,
     int upper, {
     bool includeLower = true,
@@ -715,20 +758,27 @@ extension QuestionResponseDtoQueryFilter on QueryBuilder<QuestionResponseDto, Qu
   }
 }
 
-extension QuestionResponseDtoQueryObject on QueryBuilder<QuestionResponseDto, QuestionResponseDto, QFilterCondition> {}
+extension QuestionResponseDtoQueryObject on QueryBuilder<QuestionResponseDto,
+    QuestionResponseDto, QFilterCondition> {}
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_QuestionResponseDto _$$_QuestionResponseDtoFromJson(Map<String, dynamic> json) => _$_QuestionResponseDto(
+_$_QuestionResponseDto _$$_QuestionResponseDtoFromJson(
+        Map<String, dynamic> json) =>
+    _$_QuestionResponseDto(
       id: json['id'] as String?,
       questionId: json['questionId'] as String?,
       score: (json['score'] as num?)?.toDouble(),
-      selected: (json['selected'] as List<dynamic>?)?.map((e) => e as String).toList(),
+      selected: (json['selected'] as List<dynamic>?)
+          ?.map((e) => e as String)
+          .toList(),
     );
 
-Map<String, dynamic> _$$_QuestionResponseDtoToJson(_$_QuestionResponseDto instance) => <String, dynamic>{
+Map<String, dynamic> _$$_QuestionResponseDtoToJson(
+        _$_QuestionResponseDto instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'questionId': instance.questionId,
       'score': instance.score,

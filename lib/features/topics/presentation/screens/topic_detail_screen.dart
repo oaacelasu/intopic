@@ -1,6 +1,9 @@
+
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:get/get.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:intopic/features/common/presentation/utils/extensions/image_extension.dart';
 import 'package:intopic/features/topics/domain/entities/topic.dart';
 import 'package:intopic/features/topics/presentation/topics_provider.dart';
 import 'package:intopic/features/topics/presentation/widgets/topic_quizzes.dart';
@@ -12,8 +15,8 @@ class TopicDetailScreen extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final baseTopic = Get.arguments as Topic;
     final topic = ref.watch(topicProvider(topicId: baseTopic.id));
-
-    final hasValidUrl = baseTopic.imageURL.isURL;
+    final hasImage = baseTopic.imageURL.isNotEmpty;
+    final imageProvider = useMemoized(() => baseTopic.imageURL.imageProvider , [baseTopic.imageURL]);
 
     return Scaffold(
       body: NestedScrollView(
@@ -22,17 +25,17 @@ class TopicDetailScreen extends HookConsumerWidget {
             SliverOverlapAbsorber(
               handle: NestedScrollView.sliverOverlapAbsorberHandleFor(context),
               sliver: SliverAppBar(
-                expandedHeight: hasValidUrl ? Get.height * 0.35 : (kTextTabBarHeight + 10),
+                expandedHeight: hasImage ? Get.height * 0.35 : (kTextTabBarHeight + 10),
                 pinned: true,
                 title: Text(baseTopic.title.getOrEmpty()),
                 flexibleSpace: FlexibleSpaceBar(
-                  background: hasValidUrl
+                  background: hasImage
                       ? Container(
                           margin: const EdgeInsets.only(top: kTextTabBarHeight),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             image: DecorationImage(
-                              image: NetworkImage(baseTopic.imageURL),
+                              image: imageProvider,
                               fit: BoxFit.contain,
                             ),
                           ),

@@ -17,30 +17,32 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$User {
   String get id => throw _privateConstructorUsedError;
-
   Name get name => throw _privateConstructorUsedError;
-
   EmailAddress get email => throw _privateConstructorUsedError;
-
   String get token => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String id, Name name, EmailAddress email, String token) $default, {
-    required TResult Function(String id, Name name, EmailAddress email, String token) empty,
+    TResult Function(String id, Name name, EmailAddress email, String token)
+        $default, {
+    required TResult Function(
+            String id, Name name, EmailAddress email, String token)
+        empty,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String id, Name name, EmailAddress email, String token)? $default, {
-    TResult? Function(String id, Name name, EmailAddress email, String token)? empty,
+    TResult? Function(String id, Name name, EmailAddress email, String token)?
+        $default, {
+    TResult? Function(String id, Name name, EmailAddress email, String token)?
+        empty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String id, Name name, EmailAddress email, String token)? $default, {
-    TResult Function(String id, Name name, EmailAddress email, String token)? empty,
+    TResult Function(String id, Name name, EmailAddress email, String token)?
+        $default, {
+    TResult Function(String id, Name name, EmailAddress email, String token)?
+        empty,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -70,19 +72,19 @@ mixin _$User {
 
 /// @nodoc
 abstract class $UserCopyWith<$Res> {
-  factory $UserCopyWith(User value, $Res Function(User) then) = _$UserCopyWithImpl<$Res, User>;
-
+  factory $UserCopyWith(User value, $Res Function(User) then) =
+      _$UserCopyWithImpl<$Res, User>;
   @useResult
   $Res call({String id, Name name, EmailAddress email, String token});
 }
 
 /// @nodoc
-class _$UserCopyWithImpl<$Res, $Val extends User> implements $UserCopyWith<$Res> {
+class _$UserCopyWithImpl<$Res, $Val extends User>
+    implements $UserCopyWith<$Res> {
   _$UserCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -117,16 +119,18 @@ class _$UserCopyWithImpl<$Res, $Val extends User> implements $UserCopyWith<$Res>
 
 /// @nodoc
 abstract class _$$_UserCopyWith<$Res> implements $UserCopyWith<$Res> {
-  factory _$$_UserCopyWith(_$_User value, $Res Function(_$_User) then) = __$$_UserCopyWithImpl<$Res>;
-
+  factory _$$_UserCopyWith(_$_User value, $Res Function(_$_User) then) =
+      __$$_UserCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, Name name, EmailAddress email, String token});
 }
 
 /// @nodoc
-class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User> implements _$$_UserCopyWith<$Res> {
-  __$$_UserCopyWithImpl(_$_User _value, $Res Function(_$_User) _then) : super(_value, _then);
+class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User>
+    implements _$$_UserCopyWith<$Res> {
+  __$$_UserCopyWithImpl(_$_User _value, $Res Function(_$_User) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -160,7 +164,12 @@ class __$$_UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_User> impl
 /// @nodoc
 
 class _$_User extends _User {
-  const _$_User({required this.id, required this.name, required this.email, required this.token}) : super._();
+  const _$_User(
+      {required this.id,
+      required this.name,
+      required this.email,
+      required this.token})
+      : super._();
 
   @override
   final String id;
@@ -193,13 +202,17 @@ class _$_User extends _User {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserCopyWith<_$_User> get copyWith => __$$_UserCopyWithImpl<_$_User>(this, _$identity);
+  _$$_UserCopyWith<_$_User> get copyWith =>
+      __$$_UserCopyWithImpl<_$_User>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String id, Name name, EmailAddress email, String token) $default, {
-    required TResult Function(String id, Name name, EmailAddress email, String token) empty,
+    TResult Function(String id, Name name, EmailAddress email, String token)
+        $default, {
+    required TResult Function(
+            String id, Name name, EmailAddress email, String token)
+        empty,
   }) {
     return $default(id, name, email, token);
   }
@@ -207,8 +220,10 @@ class _$_User extends _User {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String id, Name name, EmailAddress email, String token)? $default, {
-    TResult? Function(String id, Name name, EmailAddress email, String token)? empty,
+    TResult? Function(String id, Name name, EmailAddress email, String token)?
+        $default, {
+    TResult? Function(String id, Name name, EmailAddress email, String token)?
+        empty,
   }) {
     return $default?.call(id, name, email, token);
   }
@@ -216,8 +231,10 @@ class _$_User extends _User {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String id, Name name, EmailAddress email, String token)? $default, {
-    TResult Function(String id, Name name, EmailAddress email, String token)? empty,
+    TResult Function(String id, Name name, EmailAddress email, String token)?
+        $default, {
+    TResult Function(String id, Name name, EmailAddress email, String token)?
+        empty,
     required TResult orElse(),
   }) {
     if ($default != null) {
@@ -264,21 +281,16 @@ abstract class _User extends User {
       required final Name name,
       required final EmailAddress email,
       required final String token}) = _$_User;
-
   const _User._() : super._();
 
   @override
   String get id;
-
   @override
   Name get name;
-
   @override
   EmailAddress get email;
-
   @override
   String get token;
-
   @override
   @JsonKey(ignore: true)
   _$$_UserCopyWith<_$_User> get copyWith => throw _privateConstructorUsedError;
@@ -286,18 +298,21 @@ abstract class _User extends User {
 
 /// @nodoc
 abstract class _$$_UserEmptyCopyWith<$Res> implements $UserCopyWith<$Res> {
-  factory _$$_UserEmptyCopyWith(_$_UserEmpty value, $Res Function(_$_UserEmpty) then) =
+  factory _$$_UserEmptyCopyWith(
+          _$_UserEmpty value, $Res Function(_$_UserEmpty) then) =
       __$$_UserEmptyCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({String id, Name name, EmailAddress email, String token});
 }
 
 /// @nodoc
-class __$$_UserEmptyCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_UserEmpty>
+class __$$_UserEmptyCopyWithImpl<$Res>
+    extends _$UserCopyWithImpl<$Res, _$_UserEmpty>
     implements _$$_UserEmptyCopyWith<$Res> {
-  __$$_UserEmptyCopyWithImpl(_$_UserEmpty _value, $Res Function(_$_UserEmpty) _then) : super(_value, _then);
+  __$$_UserEmptyCopyWithImpl(
+      _$_UserEmpty _value, $Res Function(_$_UserEmpty) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -332,7 +347,10 @@ class __$$_UserEmptyCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res, _$_UserE
 
 class _$_UserEmpty extends _UserEmpty {
   const _$_UserEmpty(
-      {this.id = '', this.name = const Name.empty(), this.email = const EmailAddress.empty(), this.token = ''})
+      {this.id = '',
+      this.name = const Name.empty(),
+      this.email = const EmailAddress.empty(),
+      this.token = ''})
       : super._();
 
   @override
@@ -370,13 +388,17 @@ class _$_UserEmpty extends _UserEmpty {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserEmptyCopyWith<_$_UserEmpty> get copyWith => __$$_UserEmptyCopyWithImpl<_$_UserEmpty>(this, _$identity);
+  _$$_UserEmptyCopyWith<_$_UserEmpty> get copyWith =>
+      __$$_UserEmptyCopyWithImpl<_$_UserEmpty>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String id, Name name, EmailAddress email, String token) $default, {
-    required TResult Function(String id, Name name, EmailAddress email, String token) empty,
+    TResult Function(String id, Name name, EmailAddress email, String token)
+        $default, {
+    required TResult Function(
+            String id, Name name, EmailAddress email, String token)
+        empty,
   }) {
     return empty(id, name, email, token);
   }
@@ -384,8 +406,10 @@ class _$_UserEmpty extends _UserEmpty {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String id, Name name, EmailAddress email, String token)? $default, {
-    TResult? Function(String id, Name name, EmailAddress email, String token)? empty,
+    TResult? Function(String id, Name name, EmailAddress email, String token)?
+        $default, {
+    TResult? Function(String id, Name name, EmailAddress email, String token)?
+        empty,
   }) {
     return empty?.call(id, name, email, token);
   }
@@ -393,8 +417,10 @@ class _$_UserEmpty extends _UserEmpty {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String id, Name name, EmailAddress email, String token)? $default, {
-    TResult Function(String id, Name name, EmailAddress email, String token)? empty,
+    TResult Function(String id, Name name, EmailAddress email, String token)?
+        $default, {
+    TResult Function(String id, Name name, EmailAddress email, String token)?
+        empty,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -436,24 +462,23 @@ class _$_UserEmpty extends _UserEmpty {
 }
 
 abstract class _UserEmpty extends User {
-  const factory _UserEmpty({final String id, final Name name, final EmailAddress email, final String token}) =
-      _$_UserEmpty;
-
+  const factory _UserEmpty(
+      {final String id,
+      final Name name,
+      final EmailAddress email,
+      final String token}) = _$_UserEmpty;
   const _UserEmpty._() : super._();
 
   @override
   String get id;
-
   @override
   Name get name;
-
   @override
   EmailAddress get email;
-
   @override
   String get token;
-
   @override
   @JsonKey(ignore: true)
-  _$$_UserEmptyCopyWith<_$_UserEmpty> get copyWith => throw _privateConstructorUsedError;
+  _$$_UserEmptyCopyWith<_$_UserEmpty> get copyWith =>
+      throw _privateConstructorUsedError;
 }

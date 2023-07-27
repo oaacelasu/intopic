@@ -45,11 +45,11 @@ class HomeTopics extends HookConsumerWidget {
             ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              itemCount: min(value.length, 2),
+              itemCount: min(value.length, 5),
               itemBuilder: (context, index) {
                 return ProviderScope(
                   overrides: [
-                    currentTopicProvider.overrideWithValue(value.elementAt(index)),
+                    currentTopicCardItemProvider.overrideWithValue(value.elementAt(index)),
                   ],
                   child: const TopicCard().marginSymmetric(vertical: AppDimens.xs),
                 );

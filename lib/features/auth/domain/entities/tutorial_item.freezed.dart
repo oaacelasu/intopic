@@ -17,31 +17,30 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$TutorialItem {
   String get title => throw _privateConstructorUsedError;
-
   String get description => throw _privateConstructorUsedError;
-
   String get image => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $TutorialItemCopyWith<TutorialItem> get copyWith => throw _privateConstructorUsedError;
+  $TutorialItemCopyWith<TutorialItem> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $TutorialItemCopyWith<$Res> {
-  factory $TutorialItemCopyWith(TutorialItem value, $Res Function(TutorialItem) then) =
+  factory $TutorialItemCopyWith(
+          TutorialItem value, $Res Function(TutorialItem) then) =
       _$TutorialItemCopyWithImpl<$Res, TutorialItem>;
-
   @useResult
   $Res call({String title, String description, String image});
 }
 
 /// @nodoc
-class _$TutorialItemCopyWithImpl<$Res, $Val extends TutorialItem> implements $TutorialItemCopyWith<$Res> {
+class _$TutorialItemCopyWithImpl<$Res, $Val extends TutorialItem>
+    implements $TutorialItemCopyWith<$Res> {
   _$TutorialItemCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -70,19 +69,23 @@ class _$TutorialItemCopyWithImpl<$Res, $Val extends TutorialItem> implements $Tu
 }
 
 /// @nodoc
-abstract class _$$_TutorialItemCopyWith<$Res> implements $TutorialItemCopyWith<$Res> {
-  factory _$$_TutorialItemCopyWith(_$_TutorialItem value, $Res Function(_$_TutorialItem) then) =
+abstract class _$$_TutorialItemCopyWith<$Res>
+    implements $TutorialItemCopyWith<$Res> {
+  factory _$$_TutorialItemCopyWith(
+          _$_TutorialItem value, $Res Function(_$_TutorialItem) then) =
       __$$_TutorialItemCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({String title, String description, String image});
 }
 
 /// @nodoc
-class __$$_TutorialItemCopyWithImpl<$Res> extends _$TutorialItemCopyWithImpl<$Res, _$_TutorialItem>
+class __$$_TutorialItemCopyWithImpl<$Res>
+    extends _$TutorialItemCopyWithImpl<$Res, _$_TutorialItem>
     implements _$$_TutorialItemCopyWith<$Res> {
-  __$$_TutorialItemCopyWithImpl(_$_TutorialItem _value, $Res Function(_$_TutorialItem) _then) : super(_value, _then);
+  __$$_TutorialItemCopyWithImpl(
+      _$_TutorialItem _value, $Res Function(_$_TutorialItem) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -111,7 +114,9 @@ class __$$_TutorialItemCopyWithImpl<$Res> extends _$TutorialItemCopyWithImpl<$Re
 /// @nodoc
 
 class _$_TutorialItem extends _TutorialItem {
-  const _$_TutorialItem({required this.title, required this.description, required this.image}) : super._();
+  const _$_TutorialItem(
+      {required this.title, required this.description, required this.image})
+      : super._();
 
   @override
   final String title;
@@ -131,7 +136,8 @@ class _$_TutorialItem extends _TutorialItem {
         (other.runtimeType == runtimeType &&
             other is _$_TutorialItem &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.description, description) || other.description == description) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
             (identical(other.image, image) || other.image == image));
   }
 
@@ -147,20 +153,19 @@ class _$_TutorialItem extends _TutorialItem {
 
 abstract class _TutorialItem extends TutorialItem {
   const factory _TutorialItem(
-      {required final String title, required final String description, required final String image}) = _$_TutorialItem;
-
+      {required final String title,
+      required final String description,
+      required final String image}) = _$_TutorialItem;
   const _TutorialItem._() : super._();
 
   @override
   String get title;
-
   @override
   String get description;
-
   @override
   String get image;
-
   @override
   @JsonKey(ignore: true)
-  _$$_TutorialItemCopyWith<_$_TutorialItem> get copyWith => throw _privateConstructorUsedError;
+  _$$_TutorialItemCopyWith<_$_TutorialItem> get copyWith =>
+      throw _privateConstructorUsedError;
 }

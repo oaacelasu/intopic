@@ -9,7 +9,9 @@ part 'quiz_dto.g.dart';
 
 @freezed
 
-/// QuizDto class is the data transfer object for [Quiz] entity @Embedded(ignore: {'copyWith'})
+/// QuizDto class is the data transfer object for [Quiz] entity
+
+@Embedded(ignore: {'copyWith'})
 class QuizDto with _$QuizDto {
   /// Default constructor for the [QuizDto] class
   factory QuizDto({
@@ -22,7 +24,7 @@ class QuizDto with _$QuizDto {
     String? quizAccessFromTime,
     String? quizAccessToTime,
     bool? isQuizActive,
-    int? totalQuestions,
+    String? totalQuestions,
     List<QuestionDto>? questions,
   }) = _QuizDto;
 
@@ -40,21 +42,13 @@ class QuizDto with _$QuizDto {
       quizAccessFromTime: _.quizAccessFromTime?.toIso8601String(),
       quizAccessToTime: _.quizAccessToTime?.toIso8601String(),
       isQuizActive: _.isQuizActive,
-      totalQuestions: _.totalQuestions,
+      totalQuestions: _.totalQuestions.toString(),
       questions: _.questions.map(QuestionDto.fromDomain).toList(),
     );
   }
 
   /// Creates [QuizDto] from json
   factory QuizDto.fromJson(Map<String, dynamic> json) => _$QuizDtoFromJson(json);
-}
-
-@collection
-class QuizDtoIsar {
-  QuizDtoIsar(this.id, this.quiz);
-
-  final Id id;
-  final QuizDto quiz;
 }
 
 /// Extension method to convert from [QuizDto] to [Quiz]
@@ -71,7 +65,7 @@ extension QuizDtoX on QuizDto {
       quizAccessFromTime: DateTime.tryParse(quizAccessFromTime ?? ''),
       quizAccessToTime: DateTime.tryParse(quizAccessToTime ?? ''),
       isQuizActive: isQuizActive ?? false,
-      totalQuestions: totalQuestions ?? questions?.length ?? 0,
+      totalQuestions: int.tryParse(totalQuestions??'0') ?? questions?.length ?? 0,
       questions: questions?.map((e) => e.toDomain()).toList() ?? [],
     );
   }

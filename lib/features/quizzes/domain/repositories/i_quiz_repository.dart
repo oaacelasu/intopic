@@ -8,7 +8,7 @@ import 'package:intopic/features/quizzes/domain/entities/quiz_submission.dart';
 abstract class IQuizRepository {
   Future<Either<Failure, List<Quiz>>> getTopQuizzes();
 
-  Future<Either<Failure, Quiz>> getQuizDetail(String quizId);
+  Future<Either<Failure, Quiz>> getQuizDetail(String? topicId, String quizId);
 
   Future<Either<Failure, Unit>> saveQuizResponse(QuizResponse quizResponse);
 

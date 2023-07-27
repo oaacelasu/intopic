@@ -6,20 +6,22 @@ part of 'quizzes_provider.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$currentQuizCardItemHash() => r'7c9927aa682500ba9011959decac98c3c83e7a2f';
+String _$currentQuizCardItemHash() =>
+    r'7c9927aa682500ba9011959decac98c3c83e7a2f';
 
 /// See also [currentQuizCardItem].
 @ProviderFor(currentQuizCardItem)
 final currentQuizCardItemProvider = AutoDisposeProvider<Quiz>.internal(
   currentQuizCardItem,
   name: r'currentQuizCardItemProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product') ? null : _$currentQuizCardItemHash,
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$currentQuizCardItemHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
 typedef CurrentQuizCardItemRef = AutoDisposeProviderRef<Quiz>;
-
 String _$currentQuizHash() => r'e4fc8f96a69ca6f3cfe373596ac2a892bd7ab550';
 
 /// See also [currentQuiz].
@@ -27,13 +29,13 @@ String _$currentQuizHash() => r'e4fc8f96a69ca6f3cfe373596ac2a892bd7ab550';
 final currentQuizProvider = AutoDisposeProvider<Quiz>.internal(
   currentQuiz,
   name: r'currentQuizProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product') ? null : _$currentQuizHash,
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$currentQuizHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
 typedef CurrentQuizRef = AutoDisposeProviderRef<Quiz>;
-
 String _$currentQuestionHash() => r'954a72d65b120520f296939c0843b970956f506b';
 
 /// See also [currentQuestion].
@@ -41,8 +43,13 @@ String _$currentQuestionHash() => r'954a72d65b120520f296939c0843b970956f506b';
 final currentQuestionProvider = AutoDisposeProvider<Question>.internal(
   currentQuestion,
   name: r'currentQuestionProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product') ? null : _$currentQuestionHash,
-  dependencies: <ProviderOrFamily>[currentQuizProvider, quizStateNotifierProvider],
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$currentQuestionHash,
+  dependencies: <ProviderOrFamily>[
+    currentQuizProvider,
+    quizStateNotifierProvider
+  ],
   allTransitiveDependencies: <ProviderOrFamily>{
     currentQuizProvider,
     ...?currentQuizProvider.allTransitiveDependencies,
@@ -52,7 +59,6 @@ final currentQuestionProvider = AutoDisposeProvider<Question>.internal(
 );
 
 typedef CurrentQuestionRef = AutoDisposeProviderRef<Question>;
-
 String _$selectedOptionHash() => r'0f51f47e7b587565b0709f93baac31bc8fe452ed';
 
 /// Copied from Dart SDK
@@ -114,7 +120,8 @@ class SelectedOptionFamily extends Family<bool> {
   @override
   Iterable<ProviderOrFamily>? get dependencies => _dependencies;
 
-  static final Iterable<ProviderOrFamily> _allTransitiveDependencies = <ProviderOrFamily>{
+  static final Iterable<ProviderOrFamily> _allTransitiveDependencies =
+      <ProviderOrFamily>{
     currentQuizProvider,
     ...?currentQuizProvider.allTransitiveDependencies,
     quizStateNotifierProvider,
@@ -124,7 +131,8 @@ class SelectedOptionFamily extends Family<bool> {
   };
 
   @override
-  Iterable<ProviderOrFamily>? get allTransitiveDependencies => _allTransitiveDependencies;
+  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
+      _allTransitiveDependencies;
 
   @override
   String? get name => r'selectedOptionProvider';
@@ -142,9 +150,13 @@ class SelectedOptionProvider extends AutoDisposeProvider<bool> {
           ),
           from: selectedOptionProvider,
           name: r'selectedOptionProvider',
-          debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product') ? null : _$selectedOptionHash,
+          debugGetCreateSourceHash:
+              const bool.fromEnvironment('dart.vm.product')
+                  ? null
+                  : _$selectedOptionHash,
           dependencies: SelectedOptionFamily._dependencies,
-          allTransitiveDependencies: SelectedOptionFamily._allTransitiveDependencies,
+          allTransitiveDependencies:
+              SelectedOptionFamily._allTransitiveDependencies,
         );
 
   final String option;
@@ -163,15 +175,22 @@ class SelectedOptionProvider extends AutoDisposeProvider<bool> {
   }
 }
 
-String _$currentQuestionIsAnsweredHash() => r'17e1d7c0263512fe8d173d0cbf9276f1bcff115e';
+String _$currentQuestionIsAnsweredHash() =>
+    r'17e1d7c0263512fe8d173d0cbf9276f1bcff115e';
 
 /// See also [currentQuestionIsAnswered].
 @ProviderFor(currentQuestionIsAnswered)
 final currentQuestionIsAnsweredProvider = AutoDisposeProvider<bool>.internal(
   currentQuestionIsAnswered,
   name: r'currentQuestionIsAnsweredProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product') ? null : _$currentQuestionIsAnsweredHash,
-  dependencies: <ProviderOrFamily>[currentQuizProvider, quizStateNotifierProvider, currentQuestionProvider],
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$currentQuestionIsAnsweredHash,
+  dependencies: <ProviderOrFamily>[
+    currentQuizProvider,
+    quizStateNotifierProvider,
+    currentQuestionProvider
+  ],
   allTransitiveDependencies: <ProviderOrFamily>{
     currentQuizProvider,
     ...?currentQuizProvider.allTransitiveDependencies,
@@ -183,7 +202,6 @@ final currentQuestionIsAnsweredProvider = AutoDisposeProvider<bool>.internal(
 );
 
 typedef CurrentQuestionIsAnsweredRef = AutoDisposeProviderRef<bool>;
-
 String _$questionStatusHash() => r'84c53111dee8a2e4ef98047a021e218be15ca6db';
 
 /// See also [questionStatus].
@@ -191,8 +209,13 @@ String _$questionStatusHash() => r'84c53111dee8a2e4ef98047a021e218be15ca6db';
 final questionStatusProvider = AutoDisposeProvider<QuizStateStatus>.internal(
   questionStatus,
   name: r'questionStatusProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product') ? null : _$questionStatusHash,
-  dependencies: <ProviderOrFamily>[currentQuizProvider, quizStateNotifierProvider],
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$questionStatusHash,
+  dependencies: <ProviderOrFamily>[
+    currentQuizProvider,
+    quizStateNotifierProvider
+  ],
   allTransitiveDependencies: <ProviderOrFamily>{
     currentQuizProvider,
     ...?currentQuizProvider.allTransitiveDependencies,
@@ -202,7 +225,6 @@ final questionStatusProvider = AutoDisposeProvider<QuizStateStatus>.internal(
 );
 
 typedef QuestionStatusRef = AutoDisposeProviderRef<QuizStateStatus>;
-
 String _$quizLengthHash() => r'3b6841ac5f7b3d4c26eb909f2080edd4b3e86d85';
 
 /// See also [quizLength].
@@ -210,8 +232,12 @@ String _$quizLengthHash() => r'3b6841ac5f7b3d4c26eb909f2080edd4b3e86d85';
 final quizLengthProvider = AutoDisposeProvider<int>.internal(
   quizLength,
   name: r'quizLengthProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product') ? null : _$quizLengthHash,
-  dependencies: <ProviderOrFamily>[currentQuizProvider, quizStateNotifierProvider],
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$quizLengthHash,
+  dependencies: <ProviderOrFamily>[
+    currentQuizProvider,
+    quizStateNotifierProvider
+  ],
   allTransitiveDependencies: <ProviderOrFamily>{
     currentQuizProvider,
     ...?currentQuizProvider.allTransitiveDependencies,
@@ -221,16 +247,21 @@ final quizLengthProvider = AutoDisposeProvider<int>.internal(
 );
 
 typedef QuizLengthRef = AutoDisposeProviderRef<int>;
-
-String _$currentQuestionIndexHash() => r'cfcde6893898730c17774e5805529f0c8674645c';
+String _$currentQuestionIndexHash() =>
+    r'cfcde6893898730c17774e5805529f0c8674645c';
 
 /// See also [currentQuestionIndex].
 @ProviderFor(currentQuestionIndex)
 final currentQuestionIndexProvider = AutoDisposeProvider<int>.internal(
   currentQuestionIndex,
   name: r'currentQuestionIndexProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product') ? null : _$currentQuestionIndexHash,
-  dependencies: <ProviderOrFamily>[currentQuizProvider, quizStateNotifierProvider],
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$currentQuestionIndexHash,
+  dependencies: <ProviderOrFamily>[
+    currentQuizProvider,
+    quizStateNotifierProvider
+  ],
   allTransitiveDependencies: <ProviderOrFamily>{
     currentQuizProvider,
     ...?currentQuizProvider.allTransitiveDependencies,
@@ -240,9 +271,7 @@ final currentQuestionIndexProvider = AutoDisposeProvider<int>.internal(
 );
 
 typedef CurrentQuestionIndexRef = AutoDisposeProviderRef<int>;
-
 String _$quizResponseByIdHash() => r'7db9eb00e3fe6e24a5535108836f258b21c27f44';
-
 typedef QuizResponseByIdRef = AutoDisposeFutureProviderRef<QuizResponse>;
 
 /// See also [quizResponseById].
@@ -280,7 +309,8 @@ class QuizResponseByIdFamily extends Family<AsyncValue<QuizResponse>> {
   @override
   Iterable<ProviderOrFamily>? get dependencies => _dependencies;
 
-  static final Iterable<ProviderOrFamily> _allTransitiveDependencies = <ProviderOrFamily>{
+  static final Iterable<ProviderOrFamily> _allTransitiveDependencies =
+      <ProviderOrFamily>{
     currentQuizProvider,
     ...?currentQuizProvider.allTransitiveDependencies,
     quizStateNotifierProvider,
@@ -288,7 +318,8 @@ class QuizResponseByIdFamily extends Family<AsyncValue<QuizResponse>> {
   };
 
   @override
-  Iterable<ProviderOrFamily>? get allTransitiveDependencies => _allTransitiveDependencies;
+  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
+      _allTransitiveDependencies;
 
   @override
   String? get name => r'quizResponseByIdProvider';
@@ -306,9 +337,13 @@ class QuizResponseByIdProvider extends AutoDisposeFutureProvider<QuizResponse> {
           ),
           from: quizResponseByIdProvider,
           name: r'quizResponseByIdProvider',
-          debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product') ? null : _$quizResponseByIdHash,
+          debugGetCreateSourceHash:
+              const bool.fromEnvironment('dart.vm.product')
+                  ? null
+                  : _$quizResponseByIdHash,
           dependencies: QuizResponseByIdFamily._dependencies,
-          allTransitiveDependencies: QuizResponseByIdFamily._allTransitiveDependencies,
+          allTransitiveDependencies:
+              QuizResponseByIdFamily._allTransitiveDependencies,
         );
 
   final String quizId;
@@ -327,22 +362,24 @@ class QuizResponseByIdProvider extends AutoDisposeFutureProvider<QuizResponse> {
   }
 }
 
-String _$currentQuizSubmissionHash() => r'f0de8d974b5c61ed9793aad9fd1622fd03f5b3f0';
+String _$currentQuizSubmissionHash() =>
+    r'f0de8d974b5c61ed9793aad9fd1622fd03f5b3f0';
 
 /// See also [currentQuizSubmission].
 @ProviderFor(currentQuizSubmission)
-final currentQuizSubmissionProvider = AutoDisposeProvider<QuizSubmission>.internal(
+final currentQuizSubmissionProvider =
+    AutoDisposeProvider<QuizSubmission>.internal(
   currentQuizSubmission,
   name: r'currentQuizSubmissionProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product') ? null : _$currentQuizSubmissionHash,
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$currentQuizSubmissionHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
 typedef CurrentQuizSubmissionRef = AutoDisposeProviderRef<QuizSubmission>;
-
 String _$overallQuizScoreHash() => r'ff56a515841b560a278f272e436116fb17a77cd0';
-
 typedef OverallQuizScoreRef = AutoDisposeFutureProviderRef<double?>;
 
 /// See also [overallQuizScore].
@@ -380,7 +417,8 @@ class OverallQuizScoreFamily extends Family<AsyncValue<double?>> {
   static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
 
   @override
-  Iterable<ProviderOrFamily>? get allTransitiveDependencies => _allTransitiveDependencies;
+  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
+      _allTransitiveDependencies;
 
   @override
   String? get name => r'overallQuizScoreProvider';
@@ -398,9 +436,13 @@ class OverallQuizScoreProvider extends AutoDisposeFutureProvider<double?> {
           ),
           from: overallQuizScoreProvider,
           name: r'overallQuizScoreProvider',
-          debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product') ? null : _$overallQuizScoreHash,
+          debugGetCreateSourceHash:
+              const bool.fromEnvironment('dart.vm.product')
+                  ? null
+                  : _$overallQuizScoreHash,
           dependencies: OverallQuizScoreFamily._dependencies,
-          allTransitiveDependencies: OverallQuizScoreFamily._allTransitiveDependencies,
+          allTransitiveDependencies:
+              OverallQuizScoreFamily._allTransitiveDependencies,
         );
 
   final String quizId;

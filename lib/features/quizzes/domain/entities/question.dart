@@ -12,7 +12,7 @@ class Question with _$Question {
     required QuestionType questionType,
     required String question,
     required List<String> options,
-    required String correctAnswer,
+    required String answer,
   }) = _Question;
 
   const factory Question.empty({
@@ -22,7 +22,7 @@ class Question with _$Question {
     @Default(QuestionType.singleChoice()) QuestionType questionType,
     @Default('') String question,
     @Default([]) List<String> options,
-    @Default('') String correctAnswer,
+    @Default('') String answer,
   }) = _QuestionEmpty;
 
   const Question._();
@@ -30,7 +30,7 @@ class Question with _$Question {
 
 extension QuestionX on Question {
   List<String> get correctAnswerValues {
-    return correctAnswer.split(',');
+    return answer.split(',');
   }
 
   bool validateAnswer(String option) {

@@ -13,8 +13,10 @@ import 'package:intopic/features/quizzes/presentation/quizzes_provider.dart';
 import 'package:intopic/features/quizzes/presentation/screens/quiz_list_screen.dart';
 import 'package:intopic/features/quizzes/presentation/screens/quiz_screen.dart';
 import 'package:intopic/features/quizzes/presentation/screens/quiz_submission_confirmation.dart';
+import 'package:intopic/features/topics/domain/entities/topic.dart';
 import 'package:intopic/features/topics/presentation/screens/topic_detail_screen.dart';
 import 'package:intopic/features/topics/presentation/screens/topics_list_screen.dart';
+import 'package:intopic/features/topics/presentation/topics_provider.dart';
 
 class AppRoutes {
   static const String splash = '/splash';
@@ -78,7 +80,12 @@ class AppPages {
     ),
     GetPage(
       name: AppRoutes.topicDetail,
-      page: () => const TopicDetailScreen(),
+      page: () => ProviderScope(
+        overrides: [
+          currentTopicProvider.overrideWithValue(Get.arguments as Topic),
+        ],
+        child: const TopicDetailScreen(),
+      ),
       showCupertinoParallax: false,
       transition: Transition.rightToLeft,
     ),
@@ -87,7 +94,9 @@ class AppPages {
       name: AppRoutes.quiz,
       page: () => ProviderScope(
         overrides: [
-          currentQuizProvider.overrideWithValue(Get.arguments as Quiz),
+          currentQuizProvider.overrideWithValue(Get.arguments["quiz"] as Quiz),
+          if(Get.arguments["topic"]!=null)
+            currentTopicProvider.overrideWithValue(Get.arguments["topic"] as Topic),
         ],
         child: const QuizScreen(),
       ),

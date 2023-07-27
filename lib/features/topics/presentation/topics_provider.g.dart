@@ -109,6 +109,22 @@ class TopicProvider extends AutoDisposeFutureProvider<Topic> {
   }
 }
 
+String _$currentTopicCardItemHash() =>
+    r'583d2aadd871cf16f8c8628d5b95482fd6cdafdc';
+
+/// See also [currentTopicCardItem].
+@ProviderFor(currentTopicCardItem)
+final currentTopicCardItemProvider = AutoDisposeProvider<Topic>.internal(
+  currentTopicCardItem,
+  name: r'currentTopicCardItemProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$currentTopicCardItemHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef CurrentTopicCardItemRef = AutoDisposeProviderRef<Topic>;
 String _$currentTopicHash() => r'ef6399f860bf829884b1f187b685a09931222fcf';
 
 /// See also [currentTopic].

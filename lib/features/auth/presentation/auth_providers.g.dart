@@ -13,7 +13,9 @@ String _$tutorialItemsHash() => r'281bfeabb1b1ef06c8cc0f3b656167d138089d03';
 final tutorialItemsProvider = AutoDisposeProvider<List<TutorialItem>>.internal(
   tutorialItems,
   name: r'tutorialItemsProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product') ? null : _$tutorialItemsHash,
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$tutorialItemsHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );

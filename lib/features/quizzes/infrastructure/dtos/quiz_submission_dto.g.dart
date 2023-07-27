@@ -47,7 +47,10 @@ const QuizSubmissionDtoSchema = CollectionSchema(
   idName: r'id',
   indexes: {},
   links: {},
-  embeddedSchemas: {r'QuestionResponseDto': QuestionResponseDtoSchema, r'QuestionDto': QuestionDtoSchema},
+  embeddedSchemas: {
+    r'QuestionResponseDto': QuestionResponseDtoSchema,
+    r'QuestionDto': QuestionDtoSchema
+  },
   getId: _quizSubmissionDtoGetId,
   getLinks: _quizSubmissionDtoGetLinks,
   attach: _quizSubmissionDtoAttach,
@@ -74,7 +77,8 @@ int _quizSubmissionDtoEstimateSize(
     final offsets = allOffsets[QuestionResponseDto]!;
     for (var i = 0; i < object.responses.length; i++) {
       final value = object.responses[i];
-      bytesCount += QuestionResponseDtoSchema.estimateSize(value, offsets, allOffsets);
+      bytesCount +=
+          QuestionResponseDtoSchema.estimateSize(value, offsets, allOffsets);
     }
   }
   return bytesCount;
@@ -166,13 +170,16 @@ Id _quizSubmissionDtoGetId(QuizSubmissionDto object) {
   return object.id;
 }
 
-List<IsarLinkBase<dynamic>> _quizSubmissionDtoGetLinks(QuizSubmissionDto object) {
+List<IsarLinkBase<dynamic>> _quizSubmissionDtoGetLinks(
+    QuizSubmissionDto object) {
   return [];
 }
 
-void _quizSubmissionDtoAttach(IsarCollection<dynamic> col, Id id, QuizSubmissionDto object) {}
+void _quizSubmissionDtoAttach(
+    IsarCollection<dynamic> col, Id id, QuizSubmissionDto object) {}
 
-extension QuizSubmissionDtoQueryWhereSort on QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QWhere> {
+extension QuizSubmissionDtoQueryWhereSort
+    on QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QWhere> {
   QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterWhere> anyId() {
     return QueryBuilder.apply(this, (query) {
       return query.addWhereClause(const IdWhereClause.any());
@@ -180,8 +187,10 @@ extension QuizSubmissionDtoQueryWhereSort on QueryBuilder<QuizSubmissionDto, Qui
   }
 }
 
-extension QuizSubmissionDtoQueryWhere on QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QWhereClause> {
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterWhereClause> idEqualTo(Id id) {
+extension QuizSubmissionDtoQueryWhere
+    on QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QWhereClause> {
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterWhereClause>
+      idEqualTo(Id id) {
     return QueryBuilder.apply(this, (query) {
       return query.addWhereClause(IdWhereClause.between(
         lower: id,
@@ -190,7 +199,8 @@ extension QuizSubmissionDtoQueryWhere on QueryBuilder<QuizSubmissionDto, QuizSub
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterWhereClause> idNotEqualTo(Id id) {
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterWhereClause>
+      idNotEqualTo(Id id) {
     return QueryBuilder.apply(this, (query) {
       if (query.whereSort == Sort.asc) {
         return query
@@ -212,7 +222,8 @@ extension QuizSubmissionDtoQueryWhere on QueryBuilder<QuizSubmissionDto, QuizSub
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterWhereClause> idGreaterThan(Id id, {bool include = false}) {
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterWhereClause>
+      idGreaterThan(Id id, {bool include = false}) {
     return QueryBuilder.apply(this, (query) {
       return query.addWhereClause(
         IdWhereClause.greaterThan(lower: id, includeLower: include),
@@ -220,7 +231,8 @@ extension QuizSubmissionDtoQueryWhere on QueryBuilder<QuizSubmissionDto, QuizSub
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterWhereClause> idLessThan(Id id, {bool include = false}) {
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterWhereClause>
+      idLessThan(Id id, {bool include = false}) {
     return QueryBuilder.apply(this, (query) {
       return query.addWhereClause(
         IdWhereClause.lessThan(upper: id, includeUpper: include),
@@ -228,7 +240,8 @@ extension QuizSubmissionDtoQueryWhere on QueryBuilder<QuizSubmissionDto, QuizSub
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterWhereClause> idBetween(
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterWhereClause>
+      idBetween(
     Id lowerId,
     Id upperId, {
     bool includeLower = true,
@@ -245,8 +258,10 @@ extension QuizSubmissionDtoQueryWhere on QueryBuilder<QuizSubmissionDto, QuizSub
   }
 }
 
-extension QuizSubmissionDtoQueryFilter on QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QFilterCondition> {
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition> idEqualTo(Id value) {
+extension QuizSubmissionDtoQueryFilter
+    on QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QFilterCondition> {
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      idEqualTo(Id value) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.equalTo(
         property: r'id',
@@ -255,7 +270,8 @@ extension QuizSubmissionDtoQueryFilter on QueryBuilder<QuizSubmissionDto, QuizSu
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition> idGreaterThan(
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      idGreaterThan(
     Id value, {
     bool include = false,
   }) {
@@ -268,7 +284,8 @@ extension QuizSubmissionDtoQueryFilter on QueryBuilder<QuizSubmissionDto, QuizSu
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition> idLessThan(
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      idLessThan(
     Id value, {
     bool include = false,
   }) {
@@ -281,7 +298,8 @@ extension QuizSubmissionDtoQueryFilter on QueryBuilder<QuizSubmissionDto, QuizSu
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition> idBetween(
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      idBetween(
     Id lower,
     Id upper, {
     bool includeLower = true,
@@ -298,7 +316,8 @@ extension QuizSubmissionDtoQueryFilter on QueryBuilder<QuizSubmissionDto, QuizSu
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition> questionsLengthEqualTo(int length) {
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      questionsLengthEqualTo(int length) {
     return QueryBuilder.apply(this, (query) {
       return query.listLength(
         r'questions',
@@ -310,7 +329,8 @@ extension QuizSubmissionDtoQueryFilter on QueryBuilder<QuizSubmissionDto, QuizSu
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition> questionsIsEmpty() {
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      questionsIsEmpty() {
     return QueryBuilder.apply(this, (query) {
       return query.listLength(
         r'questions',
@@ -322,7 +342,8 @@ extension QuizSubmissionDtoQueryFilter on QueryBuilder<QuizSubmissionDto, QuizSu
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition> questionsIsNotEmpty() {
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      questionsIsNotEmpty() {
     return QueryBuilder.apply(this, (query) {
       return query.listLength(
         r'questions',
@@ -334,7 +355,8 @@ extension QuizSubmissionDtoQueryFilter on QueryBuilder<QuizSubmissionDto, QuizSu
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition> questionsLengthLessThan(
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      questionsLengthLessThan(
     int length, {
     bool include = false,
   }) {
@@ -349,7 +371,8 @@ extension QuizSubmissionDtoQueryFilter on QueryBuilder<QuizSubmissionDto, QuizSu
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition> questionsLengthGreaterThan(
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      questionsLengthGreaterThan(
     int length, {
     bool include = false,
   }) {
@@ -364,7 +387,8 @@ extension QuizSubmissionDtoQueryFilter on QueryBuilder<QuizSubmissionDto, QuizSu
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition> questionsLengthBetween(
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      questionsLengthBetween(
     int lower,
     int upper, {
     bool includeLower = true,
@@ -381,7 +405,8 @@ extension QuizSubmissionDtoQueryFilter on QueryBuilder<QuizSubmissionDto, QuizSu
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition> quizIdEqualTo(
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      quizIdEqualTo(
     String value, {
     bool caseSensitive = true,
   }) {
@@ -394,7 +419,8 @@ extension QuizSubmissionDtoQueryFilter on QueryBuilder<QuizSubmissionDto, QuizSu
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition> quizIdGreaterThan(
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      quizIdGreaterThan(
     String value, {
     bool include = false,
     bool caseSensitive = true,
@@ -409,7 +435,8 @@ extension QuizSubmissionDtoQueryFilter on QueryBuilder<QuizSubmissionDto, QuizSu
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition> quizIdLessThan(
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      quizIdLessThan(
     String value, {
     bool include = false,
     bool caseSensitive = true,
@@ -424,7 +451,8 @@ extension QuizSubmissionDtoQueryFilter on QueryBuilder<QuizSubmissionDto, QuizSu
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition> quizIdBetween(
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      quizIdBetween(
     String lower,
     String upper, {
     bool includeLower = true,
@@ -443,7 +471,8 @@ extension QuizSubmissionDtoQueryFilter on QueryBuilder<QuizSubmissionDto, QuizSu
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition> quizIdStartsWith(
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      quizIdStartsWith(
     String value, {
     bool caseSensitive = true,
   }) {
@@ -456,7 +485,8 @@ extension QuizSubmissionDtoQueryFilter on QueryBuilder<QuizSubmissionDto, QuizSu
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition> quizIdEndsWith(
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      quizIdEndsWith(
     String value, {
     bool caseSensitive = true,
   }) {
@@ -469,8 +499,8 @@ extension QuizSubmissionDtoQueryFilter on QueryBuilder<QuizSubmissionDto, QuizSu
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition> quizIdContains(String value,
-      {bool caseSensitive = true}) {
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      quizIdContains(String value, {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.contains(
         property: r'quizId',
@@ -480,8 +510,8 @@ extension QuizSubmissionDtoQueryFilter on QueryBuilder<QuizSubmissionDto, QuizSu
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition> quizIdMatches(String pattern,
-      {bool caseSensitive = true}) {
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      quizIdMatches(String pattern, {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.matches(
         property: r'quizId',
@@ -491,7 +521,8 @@ extension QuizSubmissionDtoQueryFilter on QueryBuilder<QuizSubmissionDto, QuizSu
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition> quizIdIsEmpty() {
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      quizIdIsEmpty() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.equalTo(
         property: r'quizId',
@@ -500,7 +531,8 @@ extension QuizSubmissionDtoQueryFilter on QueryBuilder<QuizSubmissionDto, QuizSu
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition> quizIdIsNotEmpty() {
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      quizIdIsNotEmpty() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.greaterThan(
         property: r'quizId',
@@ -509,7 +541,8 @@ extension QuizSubmissionDtoQueryFilter on QueryBuilder<QuizSubmissionDto, QuizSu
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition> responsesLengthEqualTo(int length) {
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      responsesLengthEqualTo(int length) {
     return QueryBuilder.apply(this, (query) {
       return query.listLength(
         r'responses',
@@ -521,7 +554,8 @@ extension QuizSubmissionDtoQueryFilter on QueryBuilder<QuizSubmissionDto, QuizSu
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition> responsesIsEmpty() {
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      responsesIsEmpty() {
     return QueryBuilder.apply(this, (query) {
       return query.listLength(
         r'responses',
@@ -533,7 +567,8 @@ extension QuizSubmissionDtoQueryFilter on QueryBuilder<QuizSubmissionDto, QuizSu
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition> responsesIsNotEmpty() {
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      responsesIsNotEmpty() {
     return QueryBuilder.apply(this, (query) {
       return query.listLength(
         r'responses',
@@ -545,7 +580,8 @@ extension QuizSubmissionDtoQueryFilter on QueryBuilder<QuizSubmissionDto, QuizSu
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition> responsesLengthLessThan(
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      responsesLengthLessThan(
     int length, {
     bool include = false,
   }) {
@@ -560,7 +596,8 @@ extension QuizSubmissionDtoQueryFilter on QueryBuilder<QuizSubmissionDto, QuizSu
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition> responsesLengthGreaterThan(
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      responsesLengthGreaterThan(
     int length, {
     bool include = false,
   }) {
@@ -575,7 +612,8 @@ extension QuizSubmissionDtoQueryFilter on QueryBuilder<QuizSubmissionDto, QuizSu
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition> responsesLengthBetween(
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      responsesLengthBetween(
     int lower,
     int upper, {
     bool includeLower = true,
@@ -592,7 +630,8 @@ extension QuizSubmissionDtoQueryFilter on QueryBuilder<QuizSubmissionDto, QuizSu
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition> submittedAtEqualTo(int value) {
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      submittedAtEqualTo(int value) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.equalTo(
         property: r'submittedAt',
@@ -601,7 +640,8 @@ extension QuizSubmissionDtoQueryFilter on QueryBuilder<QuizSubmissionDto, QuizSu
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition> submittedAtGreaterThan(
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      submittedAtGreaterThan(
     int value, {
     bool include = false,
   }) {
@@ -614,7 +654,8 @@ extension QuizSubmissionDtoQueryFilter on QueryBuilder<QuizSubmissionDto, QuizSu
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition> submittedAtLessThan(
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      submittedAtLessThan(
     int value, {
     bool include = false,
   }) {
@@ -627,7 +668,8 @@ extension QuizSubmissionDtoQueryFilter on QueryBuilder<QuizSubmissionDto, QuizSu
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition> submittedAtBetween(
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      submittedAtBetween(
     int lower,
     int upper, {
     bool includeLower = true,
@@ -645,110 +687,128 @@ extension QuizSubmissionDtoQueryFilter on QueryBuilder<QuizSubmissionDto, QuizSu
   }
 }
 
-extension QuizSubmissionDtoQueryObject on QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QFilterCondition> {
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition> questionsElement(
-      FilterQuery<QuestionDto> q) {
+extension QuizSubmissionDtoQueryObject
+    on QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QFilterCondition> {
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      questionsElement(FilterQuery<QuestionDto> q) {
     return QueryBuilder.apply(this, (query) {
       return query.object(q, r'questions');
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition> responsesElement(
-      FilterQuery<QuestionResponseDto> q) {
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      responsesElement(FilterQuery<QuestionResponseDto> q) {
     return QueryBuilder.apply(this, (query) {
       return query.object(q, r'responses');
     });
   }
 }
 
-extension QuizSubmissionDtoQueryLinks on QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QFilterCondition> {}
+extension QuizSubmissionDtoQueryLinks
+    on QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QFilterCondition> {}
 
-extension QuizSubmissionDtoQuerySortBy on QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QSortBy> {
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterSortBy> sortByQuizId() {
+extension QuizSubmissionDtoQuerySortBy
+    on QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QSortBy> {
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterSortBy>
+      sortByQuizId() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'quizId', Sort.asc);
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterSortBy> sortByQuizIdDesc() {
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterSortBy>
+      sortByQuizIdDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'quizId', Sort.desc);
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterSortBy> sortBySubmittedAt() {
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterSortBy>
+      sortBySubmittedAt() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'submittedAt', Sort.asc);
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterSortBy> sortBySubmittedAtDesc() {
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterSortBy>
+      sortBySubmittedAtDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'submittedAt', Sort.desc);
     });
   }
 }
 
-extension QuizSubmissionDtoQuerySortThenBy on QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QSortThenBy> {
+extension QuizSubmissionDtoQuerySortThenBy
+    on QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QSortThenBy> {
   QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterSortBy> thenById() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'id', Sort.asc);
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterSortBy> thenByIdDesc() {
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterSortBy>
+      thenByIdDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'id', Sort.desc);
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterSortBy> thenByQuizId() {
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterSortBy>
+      thenByQuizId() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'quizId', Sort.asc);
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterSortBy> thenByQuizIdDesc() {
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterSortBy>
+      thenByQuizIdDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'quizId', Sort.desc);
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterSortBy> thenBySubmittedAt() {
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterSortBy>
+      thenBySubmittedAt() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'submittedAt', Sort.asc);
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterSortBy> thenBySubmittedAtDesc() {
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterSortBy>
+      thenBySubmittedAtDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'submittedAt', Sort.desc);
     });
   }
 }
 
-extension QuizSubmissionDtoQueryWhereDistinct on QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QDistinct> {
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QDistinct> distinctByQuizId({bool caseSensitive = true}) {
+extension QuizSubmissionDtoQueryWhereDistinct
+    on QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QDistinct> {
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QDistinct>
+      distinctByQuizId({bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
       return query.addDistinctBy(r'quizId', caseSensitive: caseSensitive);
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QDistinct> distinctBySubmittedAt() {
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QDistinct>
+      distinctBySubmittedAt() {
     return QueryBuilder.apply(this, (query) {
       return query.addDistinctBy(r'submittedAt');
     });
   }
 }
 
-extension QuizSubmissionDtoQueryProperty on QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QQueryProperty> {
+extension QuizSubmissionDtoQueryProperty
+    on QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QQueryProperty> {
   QueryBuilder<QuizSubmissionDto, int, QQueryOperations> idProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'id');
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, List<QuestionDto>, QQueryOperations> questionsProperty() {
+  QueryBuilder<QuizSubmissionDto, List<QuestionDto>, QQueryOperations>
+      questionsProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'questions');
     });
@@ -760,7 +820,8 @@ extension QuizSubmissionDtoQueryProperty on QueryBuilder<QuizSubmissionDto, Quiz
     });
   }
 
-  QueryBuilder<QuizSubmissionDto, List<QuestionResponseDto>, QQueryOperations> responsesProperty() {
+  QueryBuilder<QuizSubmissionDto, List<QuestionResponseDto>, QQueryOperations>
+      responsesProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'responses');
     });
@@ -777,18 +838,22 @@ extension QuizSubmissionDtoQueryProperty on QueryBuilder<QuizSubmissionDto, Quiz
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_QuizSubmissionDto _$$_QuizSubmissionDtoFromJson(Map<String, dynamic> json) => _$_QuizSubmissionDto(
+_$_QuizSubmissionDto _$$_QuizSubmissionDtoFromJson(Map<String, dynamic> json) =>
+    _$_QuizSubmissionDto(
       id: json['id'] as int,
       quizId: json['quizId'] as String,
       responses: (json['responses'] as List<dynamic>)
           .map((e) => QuestionResponseDto.fromJson(e as Map<String, dynamic>))
           .toList(),
-      questions:
-          (json['questions'] as List<dynamic>).map((e) => QuestionDto.fromJson(e as Map<String, dynamic>)).toList(),
+      questions: (json['questions'] as List<dynamic>)
+          .map((e) => QuestionDto.fromJson(e as Map<String, dynamic>))
+          .toList(),
       submittedAt: json['submittedAt'] as int,
     );
 
-Map<String, dynamic> _$$_QuizSubmissionDtoToJson(_$_QuizSubmissionDto instance) => <String, dynamic>{
+Map<String, dynamic> _$$_QuizSubmissionDtoToJson(
+        _$_QuizSubmissionDto instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'quizId': instance.quizId,
       'responses': instance.responses,

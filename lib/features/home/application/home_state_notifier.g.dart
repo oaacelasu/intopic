@@ -10,10 +10,13 @@ String _$homeStateNotifierHash() => r'672b91c4b253cf05be56c0710bad5f1a5ac3add9';
 
 /// See also [HomeStateNotifier].
 @ProviderFor(HomeStateNotifier)
-final homeStateNotifierProvider = AutoDisposeAsyncNotifierProvider<HomeStateNotifier, HomeState>.internal(
+final homeStateNotifierProvider =
+    AutoDisposeAsyncNotifierProvider<HomeStateNotifier, HomeState>.internal(
   HomeStateNotifier.new,
   name: r'homeStateNotifierProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product') ? null : _$homeStateNotifierHash,
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$homeStateNotifierHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );

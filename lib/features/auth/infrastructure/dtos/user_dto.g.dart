@@ -13,7 +13,8 @@ _$_UserDto _$$_UserDtoFromJson(Map<String, dynamic> json) => _$_UserDto(
       token: json['token'] as String?,
     );
 
-Map<String, dynamic> _$$_UserDtoToJson(_$_UserDto instance) => <String, dynamic>{
+Map<String, dynamic> _$$_UserDtoToJson(_$_UserDto instance) =>
+    <String, dynamic>{
       'userId': instance.id,
       'email': instance.email,
       'userName': instance.userName,

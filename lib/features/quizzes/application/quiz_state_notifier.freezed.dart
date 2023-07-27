@@ -17,16 +17,13 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$QuizState {
   Quiz get quiz => throw _privateConstructorUsedError;
-
   QuizResponse get quizResponse => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(Quiz quiz, QuizResponse quizResponse) $default, {
     required TResult Function(Quiz quiz, QuizResponse quizResponse) initial,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(Quiz quiz, QuizResponse quizResponse)? $default, {
@@ -61,28 +58,28 @@ mixin _$QuizState {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $QuizStateCopyWith<QuizState> get copyWith => throw _privateConstructorUsedError;
+  $QuizStateCopyWith<QuizState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $QuizStateCopyWith<$Res> {
-  factory $QuizStateCopyWith(QuizState value, $Res Function(QuizState) then) = _$QuizStateCopyWithImpl<$Res, QuizState>;
-
+  factory $QuizStateCopyWith(QuizState value, $Res Function(QuizState) then) =
+      _$QuizStateCopyWithImpl<$Res, QuizState>;
   @useResult
   $Res call({Quiz quiz, QuizResponse quizResponse});
 
   $QuizCopyWith<$Res> get quiz;
-
   $QuizResponseCopyWith<$Res> get quizResponse;
 }
 
 /// @nodoc
-class _$QuizStateCopyWithImpl<$Res, $Val extends QuizState> implements $QuizStateCopyWith<$Res> {
+class _$QuizStateCopyWithImpl<$Res, $Val extends QuizState>
+    implements $QuizStateCopyWith<$Res> {
   _$QuizStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -123,24 +120,26 @@ class _$QuizStateCopyWithImpl<$Res, $Val extends QuizState> implements $QuizStat
 
 /// @nodoc
 abstract class _$$_QuizStateCopyWith<$Res> implements $QuizStateCopyWith<$Res> {
-  factory _$$_QuizStateCopyWith(_$_QuizState value, $Res Function(_$_QuizState) then) =
+  factory _$$_QuizStateCopyWith(
+          _$_QuizState value, $Res Function(_$_QuizState) then) =
       __$$_QuizStateCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({Quiz quiz, QuizResponse quizResponse});
 
   @override
   $QuizCopyWith<$Res> get quiz;
-
   @override
   $QuizResponseCopyWith<$Res> get quizResponse;
 }
 
 /// @nodoc
-class __$$_QuizStateCopyWithImpl<$Res> extends _$QuizStateCopyWithImpl<$Res, _$_QuizState>
+class __$$_QuizStateCopyWithImpl<$Res>
+    extends _$QuizStateCopyWithImpl<$Res, _$_QuizState>
     implements _$$_QuizStateCopyWith<$Res> {
-  __$$_QuizStateCopyWithImpl(_$_QuizState _value, $Res Function(_$_QuizState) _then) : super(_value, _then);
+  __$$_QuizStateCopyWithImpl(
+      _$_QuizState _value, $Res Function(_$_QuizState) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -182,7 +181,8 @@ class _$_QuizState implements _QuizState {
         (other.runtimeType == runtimeType &&
             other is _$_QuizState &&
             (identical(other.quiz, quiz) || other.quiz == quiz) &&
-            (identical(other.quizResponse, quizResponse) || other.quizResponse == quizResponse));
+            (identical(other.quizResponse, quizResponse) ||
+                other.quizResponse == quizResponse));
   }
 
   @override
@@ -191,7 +191,8 @@ class _$_QuizState implements _QuizState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_QuizStateCopyWith<_$_QuizState> get copyWith => __$$_QuizStateCopyWithImpl<_$_QuizState>(this, _$identity);
+  _$$_QuizStateCopyWith<_$_QuizState> get copyWith =>
+      __$$_QuizStateCopyWithImpl<_$_QuizState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -257,39 +258,42 @@ class _$_QuizState implements _QuizState {
 }
 
 abstract class _QuizState implements QuizState {
-  const factory _QuizState({required final Quiz quiz, required final QuizResponse quizResponse}) = _$_QuizState;
+  const factory _QuizState(
+      {required final Quiz quiz,
+      required final QuizResponse quizResponse}) = _$_QuizState;
 
   @override
   Quiz get quiz;
-
   @override
   QuizResponse get quizResponse;
-
   @override
   @JsonKey(ignore: true)
-  _$$_QuizStateCopyWith<_$_QuizState> get copyWith => throw _privateConstructorUsedError;
+  _$$_QuizStateCopyWith<_$_QuizState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_QuizStateEmptyCopyWith<$Res> implements $QuizStateCopyWith<$Res> {
-  factory _$$_QuizStateEmptyCopyWith(_$_QuizStateEmpty value, $Res Function(_$_QuizStateEmpty) then) =
+abstract class _$$_QuizStateEmptyCopyWith<$Res>
+    implements $QuizStateCopyWith<$Res> {
+  factory _$$_QuizStateEmptyCopyWith(
+          _$_QuizStateEmpty value, $Res Function(_$_QuizStateEmpty) then) =
       __$$_QuizStateEmptyCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call({Quiz quiz, QuizResponse quizResponse});
 
   @override
   $QuizCopyWith<$Res> get quiz;
-
   @override
   $QuizResponseCopyWith<$Res> get quizResponse;
 }
 
 /// @nodoc
-class __$$_QuizStateEmptyCopyWithImpl<$Res> extends _$QuizStateCopyWithImpl<$Res, _$_QuizStateEmpty>
+class __$$_QuizStateEmptyCopyWithImpl<$Res>
+    extends _$QuizStateCopyWithImpl<$Res, _$_QuizStateEmpty>
     implements _$$_QuizStateEmptyCopyWith<$Res> {
-  __$$_QuizStateEmptyCopyWithImpl(_$_QuizStateEmpty _value, $Res Function(_$_QuizStateEmpty) _then)
+  __$$_QuizStateEmptyCopyWithImpl(
+      _$_QuizStateEmpty _value, $Res Function(_$_QuizStateEmpty) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -314,7 +318,9 @@ class __$$_QuizStateEmptyCopyWithImpl<$Res> extends _$QuizStateCopyWithImpl<$Res
 /// @nodoc
 
 class _$_QuizStateEmpty implements _QuizStateEmpty {
-  const _$_QuizStateEmpty({this.quiz = const Quiz.empty(), this.quizResponse = const QuizResponse.empty()});
+  const _$_QuizStateEmpty(
+      {this.quiz = const Quiz.empty(),
+      this.quizResponse = const QuizResponse.empty()});
 
   @override
   @JsonKey()
@@ -334,7 +340,8 @@ class _$_QuizStateEmpty implements _QuizStateEmpty {
         (other.runtimeType == runtimeType &&
             other is _$_QuizStateEmpty &&
             (identical(other.quiz, quiz) || other.quiz == quiz) &&
-            (identical(other.quizResponse, quizResponse) || other.quizResponse == quizResponse));
+            (identical(other.quizResponse, quizResponse) ||
+                other.quizResponse == quizResponse));
   }
 
   @override
@@ -410,15 +417,15 @@ class _$_QuizStateEmpty implements _QuizStateEmpty {
 }
 
 abstract class _QuizStateEmpty implements QuizState {
-  const factory _QuizStateEmpty({final Quiz quiz, final QuizResponse quizResponse}) = _$_QuizStateEmpty;
+  const factory _QuizStateEmpty(
+      {final Quiz quiz, final QuizResponse quizResponse}) = _$_QuizStateEmpty;
 
   @override
   Quiz get quiz;
-
   @override
   QuizResponse get quizResponse;
-
   @override
   @JsonKey(ignore: true)
-  _$$_QuizStateEmptyCopyWith<_$_QuizStateEmpty> get copyWith => throw _privateConstructorUsedError;
+  _$$_QuizStateEmptyCopyWith<_$_QuizStateEmpty> get copyWith =>
+      throw _privateConstructorUsedError;
 }

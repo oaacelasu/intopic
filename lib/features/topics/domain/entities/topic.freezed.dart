@@ -17,47 +17,45 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$Topic {
   String get id => throw _privateConstructorUsedError;
-
   String get userId => throw _privateConstructorUsedError;
-
   Name get title => throw _privateConstructorUsedError;
-
   String get imageURL => throw _privateConstructorUsedError;
-
   String get description => throw _privateConstructorUsedError;
-
   int get noOfQuizzesAvailable => throw _privateConstructorUsedError;
-
   List<Quiz> get quizzes => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String id, String userId, Name title, String imageURL, String description,
-            int noOfQuizzesAvailable, List<Quiz> quizzes)
+    TResult Function(String id, String userId, Name title, String imageURL,
+            String description, int noOfQuizzesAvailable, List<Quiz> quizzes)
         $default, {
-    required TResult Function(String id, String userId, Name title, String imageURL, String description,
-            int noOfQuizzesAvailable, List<Quiz> quizzes)
+    required TResult Function(
+            String id,
+            String userId,
+            Name title,
+            String imageURL,
+            String description,
+            int noOfQuizzesAvailable,
+            List<Quiz> quizzes)
         empty,
   }) =>
       throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String id, String userId, Name title, String imageURL, String description,
-            int noOfQuizzesAvailable, List<Quiz> quizzes)?
+    TResult? Function(String id, String userId, Name title, String imageURL,
+            String description, int noOfQuizzesAvailable, List<Quiz> quizzes)?
         $default, {
-    TResult? Function(String id, String userId, Name title, String imageURL, String description,
-            int noOfQuizzesAvailable, List<Quiz> quizzes)?
+    TResult? Function(String id, String userId, Name title, String imageURL,
+            String description, int noOfQuizzesAvailable, List<Quiz> quizzes)?
         empty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String id, String userId, Name title, String imageURL, String description,
-            int noOfQuizzesAvailable, List<Quiz> quizzes)?
+    TResult Function(String id, String userId, Name title, String imageURL,
+            String description, int noOfQuizzesAvailable, List<Quiz> quizzes)?
         $default, {
-    TResult Function(String id, String userId, Name title, String imageURL, String description,
-            int noOfQuizzesAvailable, List<Quiz> quizzes)?
+    TResult Function(String id, String userId, Name title, String imageURL,
+            String description, int noOfQuizzesAvailable, List<Quiz> quizzes)?
         empty,
     required TResult orElse(),
   }) =>
@@ -88,8 +86,8 @@ mixin _$Topic {
 
 /// @nodoc
 abstract class $TopicCopyWith<$Res> {
-  factory $TopicCopyWith(Topic value, $Res Function(Topic) then) = _$TopicCopyWithImpl<$Res, Topic>;
-
+  factory $TopicCopyWith(Topic value, $Res Function(Topic) then) =
+      _$TopicCopyWithImpl<$Res, Topic>;
   @useResult
   $Res call(
       {String id,
@@ -102,12 +100,12 @@ abstract class $TopicCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TopicCopyWithImpl<$Res, $Val extends Topic> implements $TopicCopyWith<$Res> {
+class _$TopicCopyWithImpl<$Res, $Val extends Topic>
+    implements $TopicCopyWith<$Res> {
   _$TopicCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
-
   // ignore: unused_field
   final $Res Function($Val) _then;
 
@@ -157,8 +155,8 @@ class _$TopicCopyWithImpl<$Res, $Val extends Topic> implements $TopicCopyWith<$R
 
 /// @nodoc
 abstract class _$$_TopicCopyWith<$Res> implements $TopicCopyWith<$Res> {
-  factory _$$_TopicCopyWith(_$_Topic value, $Res Function(_$_Topic) then) = __$$_TopicCopyWithImpl<$Res>;
-
+  factory _$$_TopicCopyWith(_$_Topic value, $Res Function(_$_Topic) then) =
+      __$$_TopicCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -172,8 +170,10 @@ abstract class _$$_TopicCopyWith<$Res> implements $TopicCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_TopicCopyWithImpl<$Res> extends _$TopicCopyWithImpl<$Res, _$_Topic> implements _$$_TopicCopyWith<$Res> {
-  __$$_TopicCopyWithImpl(_$_Topic _value, $Res Function(_$_Topic) _then) : super(_value, _then);
+class __$$_TopicCopyWithImpl<$Res> extends _$TopicCopyWithImpl<$Res, _$_Topic>
+    implements _$$_TopicCopyWith<$Res> {
+  __$$_TopicCopyWithImpl(_$_Topic _value, $Res Function(_$_Topic) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -246,7 +246,6 @@ class _$_Topic extends _Topic {
   @override
   final int noOfQuizzesAvailable;
   final List<Quiz> _quizzes;
-
   @override
   List<Quiz> get quizzes {
     if (_quizzes is EqualUnmodifiableListView) return _quizzes;
@@ -267,61 +266,80 @@ class _$_Topic extends _Topic {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.imageURL, imageURL) || other.imageURL == imageURL) &&
-            (identical(other.description, description) || other.description == description) &&
+            (identical(other.imageURL, imageURL) ||
+                other.imageURL == imageURL) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
             (identical(other.noOfQuizzesAvailable, noOfQuizzesAvailable) ||
                 other.noOfQuizzesAvailable == noOfQuizzesAvailable) &&
             const DeepCollectionEquality().equals(other._quizzes, _quizzes));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, userId, title, imageURL, description, noOfQuizzesAvailable,
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      userId,
+      title,
+      imageURL,
+      description,
+      noOfQuizzesAvailable,
       const DeepCollectionEquality().hash(_quizzes));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TopicCopyWith<_$_Topic> get copyWith => __$$_TopicCopyWithImpl<_$_Topic>(this, _$identity);
+  _$$_TopicCopyWith<_$_Topic> get copyWith =>
+      __$$_TopicCopyWithImpl<_$_Topic>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String id, String userId, Name title, String imageURL, String description,
-            int noOfQuizzesAvailable, List<Quiz> quizzes)
+    TResult Function(String id, String userId, Name title, String imageURL,
+            String description, int noOfQuizzesAvailable, List<Quiz> quizzes)
         $default, {
-    required TResult Function(String id, String userId, Name title, String imageURL, String description,
-            int noOfQuizzesAvailable, List<Quiz> quizzes)
+    required TResult Function(
+            String id,
+            String userId,
+            Name title,
+            String imageURL,
+            String description,
+            int noOfQuizzesAvailable,
+            List<Quiz> quizzes)
         empty,
   }) {
-    return $default(id, userId, title, imageURL, description, noOfQuizzesAvailable, quizzes);
+    return $default(id, userId, title, imageURL, description,
+        noOfQuizzesAvailable, quizzes);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String id, String userId, Name title, String imageURL, String description,
-            int noOfQuizzesAvailable, List<Quiz> quizzes)?
+    TResult? Function(String id, String userId, Name title, String imageURL,
+            String description, int noOfQuizzesAvailable, List<Quiz> quizzes)?
         $default, {
-    TResult? Function(String id, String userId, Name title, String imageURL, String description,
-            int noOfQuizzesAvailable, List<Quiz> quizzes)?
+    TResult? Function(String id, String userId, Name title, String imageURL,
+            String description, int noOfQuizzesAvailable, List<Quiz> quizzes)?
         empty,
   }) {
-    return $default?.call(id, userId, title, imageURL, description, noOfQuizzesAvailable, quizzes);
+    return $default?.call(id, userId, title, imageURL, description,
+        noOfQuizzesAvailable, quizzes);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String id, String userId, Name title, String imageURL, String description,
-            int noOfQuizzesAvailable, List<Quiz> quizzes)?
+    TResult Function(String id, String userId, Name title, String imageURL,
+            String description, int noOfQuizzesAvailable, List<Quiz> quizzes)?
         $default, {
-    TResult Function(String id, String userId, Name title, String imageURL, String description,
-            int noOfQuizzesAvailable, List<Quiz> quizzes)?
+    TResult Function(String id, String userId, Name title, String imageURL,
+            String description, int noOfQuizzesAvailable, List<Quiz> quizzes)?
         empty,
     required TResult orElse(),
   }) {
     if ($default != null) {
-      return $default(id, userId, title, imageURL, description, noOfQuizzesAvailable, quizzes);
+      return $default(id, userId, title, imageURL, description,
+          noOfQuizzesAvailable, quizzes);
     }
     return orElse();
   }
@@ -367,40 +385,33 @@ abstract class _Topic extends Topic {
       required final String description,
       required final int noOfQuizzesAvailable,
       required final List<Quiz> quizzes}) = _$_Topic;
-
   const _Topic._() : super._();
 
   @override
   String get id;
-
   @override
   String get userId;
-
   @override
   Name get title;
-
   @override
   String get imageURL;
-
   @override
   String get description;
-
   @override
   int get noOfQuizzesAvailable;
-
   @override
   List<Quiz> get quizzes;
-
   @override
   @JsonKey(ignore: true)
-  _$$_TopicCopyWith<_$_Topic> get copyWith => throw _privateConstructorUsedError;
+  _$$_TopicCopyWith<_$_Topic> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class _$$_TopicEmptyCopyWith<$Res> implements $TopicCopyWith<$Res> {
-  factory _$$_TopicEmptyCopyWith(_$_TopicEmpty value, $Res Function(_$_TopicEmpty) then) =
+  factory _$$_TopicEmptyCopyWith(
+          _$_TopicEmpty value, $Res Function(_$_TopicEmpty) then) =
       __$$_TopicEmptyCopyWithImpl<$Res>;
-
   @override
   @useResult
   $Res call(
@@ -414,9 +425,12 @@ abstract class _$$_TopicEmptyCopyWith<$Res> implements $TopicCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_TopicEmptyCopyWithImpl<$Res> extends _$TopicCopyWithImpl<$Res, _$_TopicEmpty>
+class __$$_TopicEmptyCopyWithImpl<$Res>
+    extends _$TopicCopyWithImpl<$Res, _$_TopicEmpty>
     implements _$$_TopicEmptyCopyWith<$Res> {
-  __$$_TopicEmptyCopyWithImpl(_$_TopicEmpty _value, $Res Function(_$_TopicEmpty) _then) : super(_value, _then);
+  __$$_TopicEmptyCopyWithImpl(
+      _$_TopicEmpty _value, $Res Function(_$_TopicEmpty) _then)
+      : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
@@ -495,7 +509,6 @@ class _$_TopicEmpty extends _TopicEmpty {
   @JsonKey()
   final int noOfQuizzesAvailable;
   final List<Quiz> _quizzes;
-
   @override
   @JsonKey()
   List<Quiz> get quizzes {
@@ -517,61 +530,80 @@ class _$_TopicEmpty extends _TopicEmpty {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.imageURL, imageURL) || other.imageURL == imageURL) &&
-            (identical(other.description, description) || other.description == description) &&
+            (identical(other.imageURL, imageURL) ||
+                other.imageURL == imageURL) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
             (identical(other.noOfQuizzesAvailable, noOfQuizzesAvailable) ||
                 other.noOfQuizzesAvailable == noOfQuizzesAvailable) &&
             const DeepCollectionEquality().equals(other._quizzes, _quizzes));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, userId, title, imageURL, description, noOfQuizzesAvailable,
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      userId,
+      title,
+      imageURL,
+      description,
+      noOfQuizzesAvailable,
       const DeepCollectionEquality().hash(_quizzes));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TopicEmptyCopyWith<_$_TopicEmpty> get copyWith => __$$_TopicEmptyCopyWithImpl<_$_TopicEmpty>(this, _$identity);
+  _$$_TopicEmptyCopyWith<_$_TopicEmpty> get copyWith =>
+      __$$_TopicEmptyCopyWithImpl<_$_TopicEmpty>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String id, String userId, Name title, String imageURL, String description,
-            int noOfQuizzesAvailable, List<Quiz> quizzes)
+    TResult Function(String id, String userId, Name title, String imageURL,
+            String description, int noOfQuizzesAvailable, List<Quiz> quizzes)
         $default, {
-    required TResult Function(String id, String userId, Name title, String imageURL, String description,
-            int noOfQuizzesAvailable, List<Quiz> quizzes)
+    required TResult Function(
+            String id,
+            String userId,
+            Name title,
+            String imageURL,
+            String description,
+            int noOfQuizzesAvailable,
+            List<Quiz> quizzes)
         empty,
   }) {
-    return empty(id, userId, title, imageURL, description, noOfQuizzesAvailable, quizzes);
+    return empty(id, userId, title, imageURL, description, noOfQuizzesAvailable,
+        quizzes);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String id, String userId, Name title, String imageURL, String description,
-            int noOfQuizzesAvailable, List<Quiz> quizzes)?
+    TResult? Function(String id, String userId, Name title, String imageURL,
+            String description, int noOfQuizzesAvailable, List<Quiz> quizzes)?
         $default, {
-    TResult? Function(String id, String userId, Name title, String imageURL, String description,
-            int noOfQuizzesAvailable, List<Quiz> quizzes)?
+    TResult? Function(String id, String userId, Name title, String imageURL,
+            String description, int noOfQuizzesAvailable, List<Quiz> quizzes)?
         empty,
   }) {
-    return empty?.call(id, userId, title, imageURL, description, noOfQuizzesAvailable, quizzes);
+    return empty?.call(id, userId, title, imageURL, description,
+        noOfQuizzesAvailable, quizzes);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String id, String userId, Name title, String imageURL, String description,
-            int noOfQuizzesAvailable, List<Quiz> quizzes)?
+    TResult Function(String id, String userId, Name title, String imageURL,
+            String description, int noOfQuizzesAvailable, List<Quiz> quizzes)?
         $default, {
-    TResult Function(String id, String userId, Name title, String imageURL, String description,
-            int noOfQuizzesAvailable, List<Quiz> quizzes)?
+    TResult Function(String id, String userId, Name title, String imageURL,
+            String description, int noOfQuizzesAvailable, List<Quiz> quizzes)?
         empty,
     required TResult orElse(),
   }) {
     if (empty != null) {
-      return empty(id, userId, title, imageURL, description, noOfQuizzesAvailable, quizzes);
+      return empty(id, userId, title, imageURL, description,
+          noOfQuizzesAvailable, quizzes);
     }
     return orElse();
   }
@@ -617,31 +649,24 @@ abstract class _TopicEmpty extends Topic {
       final String description,
       final int noOfQuizzesAvailable,
       final List<Quiz> quizzes}) = _$_TopicEmpty;
-
   const _TopicEmpty._() : super._();
 
   @override
   String get id;
-
   @override
   String get userId;
-
   @override
   Name get title;
-
   @override
   String get imageURL;
-
   @override
   String get description;
-
   @override
   int get noOfQuizzesAvailable;
-
   @override
   List<Quiz> get quizzes;
-
   @override
   @JsonKey(ignore: true)
-  _$$_TopicEmptyCopyWith<_$_TopicEmpty> get copyWith => throw _privateConstructorUsedError;
+  _$$_TopicEmptyCopyWith<_$_TopicEmpty> get copyWith =>
+      throw _privateConstructorUsedError;
 }
