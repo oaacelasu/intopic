@@ -18,6 +18,9 @@ class HomeStateNotifier extends _$HomeStateNotifier {
     final topics = await _getTopics();
     final topQuizzes = await _getTopQuizzes();
 
+    // sort by created date
+    topics.sort((a, b) => b.createdAt!.compareTo(a.createdAt!));
+
     return const HomeState.initial().copyWith(
       topics: topics,
       topQuizzes: topQuizzes,

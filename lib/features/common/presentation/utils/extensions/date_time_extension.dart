@@ -42,4 +42,8 @@ extension DateTimeX on DateTime {
   static set customTime(DateTime? customTime) {
     _customTime = customTime;
   }
+
+  String prettyString() {
+    return DateFormat.yMMMd().add_jm().format(this);
+  }
 }

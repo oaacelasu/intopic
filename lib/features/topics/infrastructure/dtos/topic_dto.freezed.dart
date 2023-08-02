@@ -24,10 +24,11 @@ mixin _$TopicDto {
   String? get id => throw _privateConstructorUsedError;
   String? get userId => throw _privateConstructorUsedError;
   String? get title => throw _privateConstructorUsedError;
-  String? get imageURL => throw _privateConstructorUsedError;
+  String? get image => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
   int? get noOfQuizzesAvailable => throw _privateConstructorUsedError;
   List<QuizDto>? get quizzes => throw _privateConstructorUsedError;
+  String? get createdAt => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -44,10 +45,11 @@ abstract class $TopicDtoCopyWith<$Res> {
       {@JsonKey(name: '_id') String? id,
       String? userId,
       String? title,
-      String? imageURL,
+      String? image,
       String? description,
       int? noOfQuizzesAvailable,
-      List<QuizDto>? quizzes});
+      List<QuizDto>? quizzes,
+      String? createdAt});
 }
 
 /// @nodoc
@@ -66,10 +68,11 @@ class _$TopicDtoCopyWithImpl<$Res, $Val extends TopicDto>
     Object? id = freezed,
     Object? userId = freezed,
     Object? title = freezed,
-    Object? imageURL = freezed,
+    Object? image = freezed,
     Object? description = freezed,
     Object? noOfQuizzesAvailable = freezed,
     Object? quizzes = freezed,
+    Object? createdAt = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -84,9 +87,9 @@ class _$TopicDtoCopyWithImpl<$Res, $Val extends TopicDto>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      imageURL: freezed == imageURL
-          ? _value.imageURL
-          : imageURL // ignore: cast_nullable_to_non_nullable
+      image: freezed == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
               as String?,
       description: freezed == description
           ? _value.description
@@ -100,6 +103,10 @@ class _$TopicDtoCopyWithImpl<$Res, $Val extends TopicDto>
           ? _value.quizzes
           : quizzes // ignore: cast_nullable_to_non_nullable
               as List<QuizDto>?,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -115,10 +122,11 @@ abstract class _$$_TopicDtoCopyWith<$Res> implements $TopicDtoCopyWith<$Res> {
       {@JsonKey(name: '_id') String? id,
       String? userId,
       String? title,
-      String? imageURL,
+      String? image,
       String? description,
       int? noOfQuizzesAvailable,
-      List<QuizDto>? quizzes});
+      List<QuizDto>? quizzes,
+      String? createdAt});
 }
 
 /// @nodoc
@@ -135,10 +143,11 @@ class __$$_TopicDtoCopyWithImpl<$Res>
     Object? id = freezed,
     Object? userId = freezed,
     Object? title = freezed,
-    Object? imageURL = freezed,
+    Object? image = freezed,
     Object? description = freezed,
     Object? noOfQuizzesAvailable = freezed,
     Object? quizzes = freezed,
+    Object? createdAt = freezed,
   }) {
     return _then(_$_TopicDto(
       id: freezed == id
@@ -153,9 +162,9 @@ class __$$_TopicDtoCopyWithImpl<$Res>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String?,
-      imageURL: freezed == imageURL
-          ? _value.imageURL
-          : imageURL // ignore: cast_nullable_to_non_nullable
+      image: freezed == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
               as String?,
       description: freezed == description
           ? _value.description
@@ -169,6 +178,10 @@ class __$$_TopicDtoCopyWithImpl<$Res>
           ? _value._quizzes
           : quizzes // ignore: cast_nullable_to_non_nullable
               as List<QuizDto>?,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -180,10 +193,11 @@ class _$_TopicDto implements _TopicDto {
       {@JsonKey(name: '_id') required this.id,
       required this.userId,
       required this.title,
-      required this.imageURL,
+      required this.image,
       required this.description,
       required this.noOfQuizzesAvailable,
-      required final List<QuizDto>? quizzes})
+      required final List<QuizDto>? quizzes,
+      required this.createdAt})
       : _quizzes = quizzes;
 
   factory _$_TopicDto.fromJson(Map<String, dynamic> json) =>
@@ -197,7 +211,7 @@ class _$_TopicDto implements _TopicDto {
   @override
   final String? title;
   @override
-  final String? imageURL;
+  final String? image;
   @override
   final String? description;
   @override
@@ -213,8 +227,11 @@ class _$_TopicDto implements _TopicDto {
   }
 
   @override
+  final String? createdAt;
+
+  @override
   String toString() {
-    return 'TopicDto(id: $id, userId: $userId, title: $title, imageURL: $imageURL, description: $description, noOfQuizzesAvailable: $noOfQuizzesAvailable, quizzes: $quizzes)';
+    return 'TopicDto(id: $id, userId: $userId, title: $title, image: $image, description: $description, noOfQuizzesAvailable: $noOfQuizzesAvailable, quizzes: $quizzes, createdAt: $createdAt)';
   }
 
   @override
@@ -225,13 +242,14 @@ class _$_TopicDto implements _TopicDto {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.userId, userId) || other.userId == userId) &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.imageURL, imageURL) ||
-                other.imageURL == imageURL) &&
+            (identical(other.image, image) || other.image == image) &&
             (identical(other.description, description) ||
                 other.description == description) &&
             (identical(other.noOfQuizzesAvailable, noOfQuizzesAvailable) ||
                 other.noOfQuizzesAvailable == noOfQuizzesAvailable) &&
-            const DeepCollectionEquality().equals(other._quizzes, _quizzes));
+            const DeepCollectionEquality().equals(other._quizzes, _quizzes) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt));
   }
 
   @JsonKey(ignore: true)
@@ -241,10 +259,11 @@ class _$_TopicDto implements _TopicDto {
       id,
       userId,
       title,
-      imageURL,
+      image,
       description,
       noOfQuizzesAvailable,
-      const DeepCollectionEquality().hash(_quizzes));
+      const DeepCollectionEquality().hash(_quizzes),
+      createdAt);
 
   @JsonKey(ignore: true)
   @override
@@ -265,10 +284,11 @@ abstract class _TopicDto implements TopicDto {
       {@JsonKey(name: '_id') required final String? id,
       required final String? userId,
       required final String? title,
-      required final String? imageURL,
+      required final String? image,
       required final String? description,
       required final int? noOfQuizzesAvailable,
-      required final List<QuizDto>? quizzes}) = _$_TopicDto;
+      required final List<QuizDto>? quizzes,
+      required final String? createdAt}) = _$_TopicDto;
 
   factory _TopicDto.fromJson(Map<String, dynamic> json) = _$_TopicDto.fromJson;
 
@@ -280,13 +300,15 @@ abstract class _TopicDto implements TopicDto {
   @override
   String? get title;
   @override
-  String? get imageURL;
+  String? get image;
   @override
   String? get description;
   @override
   int? get noOfQuizzesAvailable;
   @override
   List<QuizDto>? get quizzes;
+  @override
+  String? get createdAt;
   @override
   @JsonKey(ignore: true)
   _$$_TopicDtoCopyWith<_$_TopicDto> get copyWith =>

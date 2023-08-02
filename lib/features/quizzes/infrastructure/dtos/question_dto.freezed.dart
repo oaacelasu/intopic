@@ -234,8 +234,7 @@ class _$_QuestionDto extends _QuestionDto {
             (identical(other.question, question) ||
                 other.question == question) &&
             const DeepCollectionEquality().equals(other._options, _options) &&
-            (identical(other.answer, answer) ||
-                other.answer == answer));
+            (identical(other.answer, answer) || other.answer == answer));
   }
 
   @JsonKey(ignore: true)

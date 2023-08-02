@@ -28,16 +28,26 @@ const QuizSubmissionDtoSchema = CollectionSchema(
       name: r'quizId',
       type: IsarType.string,
     ),
-    r'responses': PropertySchema(
+    r'quizName': PropertySchema(
       id: 2,
+      name: r'quizName',
+      type: IsarType.string,
+    ),
+    r'responses': PropertySchema(
+      id: 3,
       name: r'responses',
       type: IsarType.objectList,
       target: r'QuestionResponseDto',
     ),
     r'submittedAt': PropertySchema(
-      id: 3,
+      id: 4,
       name: r'submittedAt',
       type: IsarType.long,
+    ),
+    r'topicId': PropertySchema(
+      id: 5,
+      name: r'topicId',
+      type: IsarType.string,
     )
   },
   estimateSize: _quizSubmissionDtoEstimateSize,
@@ -72,6 +82,7 @@ int _quizSubmissionDtoEstimateSize(
     }
   }
   bytesCount += 3 + object.quizId.length * 3;
+  bytesCount += 3 + object.quizName.length * 3;
   bytesCount += 3 + object.responses.length * 3;
   {
     final offsets = allOffsets[QuestionResponseDto]!;
@@ -81,6 +92,7 @@ int _quizSubmissionDtoEstimateSize(
           QuestionResponseDtoSchema.estimateSize(value, offsets, allOffsets);
     }
   }
+  bytesCount += 3 + object.topicId.length * 3;
   return bytesCount;
 }
 
@@ -97,13 +109,15 @@ void _quizSubmissionDtoSerialize(
     object.questions,
   );
   writer.writeString(offsets[1], object.quizId);
+  writer.writeString(offsets[2], object.quizName);
   writer.writeObjectList<QuestionResponseDto>(
-    offsets[2],
+    offsets[3],
     allOffsets,
     QuestionResponseDtoSchema.serialize,
     object.responses,
   );
-  writer.writeLong(offsets[3], object.submittedAt);
+  writer.writeLong(offsets[4], object.submittedAt);
+  writer.writeString(offsets[5], object.topicId);
 }
 
 QuizSubmissionDto _quizSubmissionDtoDeserialize(
@@ -122,14 +136,16 @@ QuizSubmissionDto _quizSubmissionDtoDeserialize(
         ) ??
         [],
     quizId: reader.readString(offsets[1]),
+    quizName: reader.readString(offsets[2]),
     responses: reader.readObjectList<QuestionResponseDto>(
-          offsets[2],
+          offsets[3],
           QuestionResponseDtoSchema.deserialize,
           allOffsets,
           QuestionResponseDto(),
         ) ??
         [],
-    submittedAt: reader.readLong(offsets[3]),
+    submittedAt: reader.readLong(offsets[4]),
+    topicId: reader.readString(offsets[5]),
   );
   return object;
 }
@@ -152,6 +168,8 @@ P _quizSubmissionDtoDeserializeProp<P>(
     case 1:
       return (reader.readString(offset)) as P;
     case 2:
+      return (reader.readString(offset)) as P;
+    case 3:
       return (reader.readObjectList<QuestionResponseDto>(
             offset,
             QuestionResponseDtoSchema.deserialize,
@@ -159,8 +177,10 @@ P _quizSubmissionDtoDeserializeProp<P>(
             QuestionResponseDto(),
           ) ??
           []) as P;
-    case 3:
+    case 4:
       return (reader.readLong(offset)) as P;
+    case 5:
+      return (reader.readString(offset)) as P;
     default:
       throw IsarError('Unknown property with id $propertyId');
   }
@@ -542,6 +562,142 @@ extension QuizSubmissionDtoQueryFilter
   }
 
   QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      quizNameEqualTo(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'quizName',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      quizNameGreaterThan(
+    String value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        include: include,
+        property: r'quizName',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      quizNameLessThan(
+    String value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.lessThan(
+        include: include,
+        property: r'quizName',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      quizNameBetween(
+    String lower,
+    String upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.between(
+        property: r'quizName',
+        lower: lower,
+        includeLower: includeLower,
+        upper: upper,
+        includeUpper: includeUpper,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      quizNameStartsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.startsWith(
+        property: r'quizName',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      quizNameEndsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.endsWith(
+        property: r'quizName',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      quizNameContains(String value, {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.contains(
+        property: r'quizName',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      quizNameMatches(String pattern, {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.matches(
+        property: r'quizName',
+        wildcard: pattern,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      quizNameIsEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'quizName',
+        value: '',
+      ));
+    });
+  }
+
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      quizNameIsNotEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        property: r'quizName',
+        value: '',
+      ));
+    });
+  }
+
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
       responsesLengthEqualTo(int length) {
     return QueryBuilder.apply(this, (query) {
       return query.listLength(
@@ -685,6 +841,142 @@ extension QuizSubmissionDtoQueryFilter
       ));
     });
   }
+
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      topicIdEqualTo(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'topicId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      topicIdGreaterThan(
+    String value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        include: include,
+        property: r'topicId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      topicIdLessThan(
+    String value, {
+    bool include = false,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.lessThan(
+        include: include,
+        property: r'topicId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      topicIdBetween(
+    String lower,
+    String upper, {
+    bool includeLower = true,
+    bool includeUpper = true,
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.between(
+        property: r'topicId',
+        lower: lower,
+        includeLower: includeLower,
+        upper: upper,
+        includeUpper: includeUpper,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      topicIdStartsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.startsWith(
+        property: r'topicId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      topicIdEndsWith(
+    String value, {
+    bool caseSensitive = true,
+  }) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.endsWith(
+        property: r'topicId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      topicIdContains(String value, {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.contains(
+        property: r'topicId',
+        value: value,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      topicIdMatches(String pattern, {bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.matches(
+        property: r'topicId',
+        wildcard: pattern,
+        caseSensitive: caseSensitive,
+      ));
+    });
+  }
+
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      topicIdIsEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.equalTo(
+        property: r'topicId',
+        value: '',
+      ));
+    });
+  }
+
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterFilterCondition>
+      topicIdIsNotEmpty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addFilterCondition(FilterCondition.greaterThan(
+        property: r'topicId',
+        value: '',
+      ));
+    });
+  }
 }
 
 extension QuizSubmissionDtoQueryObject
@@ -724,6 +1016,20 @@ extension QuizSubmissionDtoQuerySortBy
   }
 
   QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterSortBy>
+      sortByQuizName() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'quizName', Sort.asc);
+    });
+  }
+
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterSortBy>
+      sortByQuizNameDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'quizName', Sort.desc);
+    });
+  }
+
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterSortBy>
       sortBySubmittedAt() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'submittedAt', Sort.asc);
@@ -734,6 +1040,20 @@ extension QuizSubmissionDtoQuerySortBy
       sortBySubmittedAtDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'submittedAt', Sort.desc);
+    });
+  }
+
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterSortBy>
+      sortByTopicId() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'topicId', Sort.asc);
+    });
+  }
+
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterSortBy>
+      sortByTopicIdDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'topicId', Sort.desc);
     });
   }
 }
@@ -768,6 +1088,20 @@ extension QuizSubmissionDtoQuerySortThenBy
   }
 
   QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterSortBy>
+      thenByQuizName() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'quizName', Sort.asc);
+    });
+  }
+
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterSortBy>
+      thenByQuizNameDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'quizName', Sort.desc);
+    });
+  }
+
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterSortBy>
       thenBySubmittedAt() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'submittedAt', Sort.asc);
@@ -778,6 +1112,20 @@ extension QuizSubmissionDtoQuerySortThenBy
       thenBySubmittedAtDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'submittedAt', Sort.desc);
+    });
+  }
+
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterSortBy>
+      thenByTopicId() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'topicId', Sort.asc);
+    });
+  }
+
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QAfterSortBy>
+      thenByTopicIdDesc() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addSortBy(r'topicId', Sort.desc);
     });
   }
 }
@@ -792,9 +1140,23 @@ extension QuizSubmissionDtoQueryWhereDistinct
   }
 
   QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QDistinct>
+      distinctByQuizName({bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'quizName', caseSensitive: caseSensitive);
+    });
+  }
+
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QDistinct>
       distinctBySubmittedAt() {
     return QueryBuilder.apply(this, (query) {
       return query.addDistinctBy(r'submittedAt');
+    });
+  }
+
+  QueryBuilder<QuizSubmissionDto, QuizSubmissionDto, QDistinct>
+      distinctByTopicId({bool caseSensitive = true}) {
+    return QueryBuilder.apply(this, (query) {
+      return query.addDistinctBy(r'topicId', caseSensitive: caseSensitive);
     });
   }
 }
@@ -820,6 +1182,12 @@ extension QuizSubmissionDtoQueryProperty
     });
   }
 
+  QueryBuilder<QuizSubmissionDto, String, QQueryOperations> quizNameProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'quizName');
+    });
+  }
+
   QueryBuilder<QuizSubmissionDto, List<QuestionResponseDto>, QQueryOperations>
       responsesProperty() {
     return QueryBuilder.apply(this, (query) {
@@ -832,6 +1200,12 @@ extension QuizSubmissionDtoQueryProperty
       return query.addPropertyName(r'submittedAt');
     });
   }
+
+  QueryBuilder<QuizSubmissionDto, String, QQueryOperations> topicIdProperty() {
+    return QueryBuilder.apply(this, (query) {
+      return query.addPropertyName(r'topicId');
+    });
+  }
 }
 
 // **************************************************************************
@@ -842,6 +1216,8 @@ _$_QuizSubmissionDto _$$_QuizSubmissionDtoFromJson(Map<String, dynamic> json) =>
     _$_QuizSubmissionDto(
       id: json['id'] as int,
       quizId: json['quizId'] as String,
+      topicId: json['topicId'] as String,
+      quizName: json['quizName'] as String,
       responses: (json['responses'] as List<dynamic>)
           .map((e) => QuestionResponseDto.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -856,6 +1232,8 @@ Map<String, dynamic> _$$_QuizSubmissionDtoToJson(
     <String, dynamic>{
       'id': instance.id,
       'quizId': instance.quizId,
+      'topicId': instance.topicId,
+      'quizName': instance.quizName,
       'responses': instance.responses,
       'questions': instance.questions,
       'submittedAt': instance.submittedAt,

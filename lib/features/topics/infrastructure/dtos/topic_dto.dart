@@ -17,10 +17,11 @@ class TopicDto with _$TopicDto {
   factory TopicDto({ @JsonKey(name: '_id') required String? id,
     required String? userId,
     required String? title,
-    required String? imageURL,
+    required String? image,
     required String? description,
     required int? noOfQuizzesAvailable,
     required List<QuizDto>? quizzes,
+    required String? createdAt,
   }) = _TopicDto;
 
 
@@ -31,10 +32,11 @@ class TopicDto with _$TopicDto {
       id: _.id,
       userId: _.userId,
       title: _.title.getOrEmpty(),
-      imageURL: _.imageURL,
+      image: _.imageURL,
       description: _.description,
       noOfQuizzesAvailable: _.noOfQuizzesAvailable,
       quizzes: _.quizzes.map(QuizDto.fromDomain).toList(),
+      createdAt: _.createdAt.toString(),
     );
   }
 
@@ -53,10 +55,11 @@ extension TopicDtoX on TopicDto {
       id: id ?? '',
       userId: userId ?? '',
       title: Name(title),
-      imageURL: imageURL ?? '',
+      imageURL: image ?? '',
       description: description ?? '',
       noOfQuizzesAvailable: noOfQuizzesAvailable ?? 0,
       quizzes: quizzes?.map((e) => e.toDomain()).toList() ?? [],
+      createdAt: DateTime.parse(createdAt ?? ''),
     );
   }
 }

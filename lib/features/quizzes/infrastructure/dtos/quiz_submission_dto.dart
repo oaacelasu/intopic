@@ -13,6 +13,8 @@ class QuizSubmissionDto with _$QuizSubmissionDto {
   factory QuizSubmissionDto({
     required Id id,
     required String quizId,
+    required String topicId,
+    required String quizName,
     required List<QuestionResponseDto> responses,
     required List<QuestionDto> questions,
     required int submittedAt,
@@ -26,6 +28,8 @@ class QuizSubmissionDto with _$QuizSubmissionDto {
     return QuizSubmissionDto(
       id: quizResponse.id,
       quizId: quizResponse.quizId,
+      topicId: quizResponse.topicId,
+      quizName: quizResponse.quizName,
       responses: quizResponse.responses.map(QuestionResponseDto.fromDomain).toList(),
       questions: quizResponse.questions.map(QuestionDto.fromDomain).toList(),
       submittedAt: quizResponse.submittedAt,
@@ -36,6 +40,8 @@ class QuizSubmissionDto with _$QuizSubmissionDto {
     return QuizSubmission(
       id: id,
       quizId: quizId,
+      topicId: topicId,
+      quizName: quizName,
       responses: responses.map((e) => e.toDomain()).toList(),
       questions: questions.map((e) => e.toDomain()).toList(),
       submittedAt: submittedAt,

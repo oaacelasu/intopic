@@ -40,7 +40,7 @@ class QuizCard extends HookConsumerWidget {
                     borderRadius: BorderRadius.circular(10),
                     image: DecorationImage(
                       image: imageProvider,
-                      fit: BoxFit.cover,
+                      fit: BoxFit.contain,
                     ),
                   ),
                 ),

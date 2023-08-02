@@ -9,8 +9,11 @@ class QuizSubmission with _$QuizSubmission {
   const factory QuizSubmission({
     required int id,
     required String quizId,
+    required String topicId,
+    required String quizName,
     required List<QuestionResponse> responses,
     required List<Question> questions,
+
     required int submittedAt,
   }) = _QuizSubmission;
 
@@ -19,6 +22,8 @@ class QuizSubmission with _$QuizSubmission {
   const factory QuizSubmission.empty({
     @Default(0) int id,
     @Default('') String quizId,
+    @Default('') String topicId,
+    @Default('') String quizName,
     @Default([]) List<QuestionResponse> responses,
     @Default([]) List<Question> questions,
     @Default(0) int submittedAt,

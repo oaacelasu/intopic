@@ -103,6 +103,8 @@ class QuizRepository implements IQuizRepository {
     final quizSubmission = QuizSubmission(
       id: Isar.autoIncrement,
       quizId: state.quiz.id,
+      topicId: state.quiz.topicId,
+      quizName: state.quiz.title.getOrEmpty(),
       responses: state.quizResponse.responses,
       questions: state.quiz.questions,
       submittedAt: DateTime.now().millisecondsSinceEpoch,

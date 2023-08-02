@@ -18,6 +18,7 @@ class Topic with _$Topic {
     required String description,
     required int noOfQuizzesAvailable,
     required List<Quiz> quizzes,
+    required DateTime? createdAt,
   }) = _Topic;
 
 
@@ -29,6 +30,7 @@ class Topic with _$Topic {
     @Default('') String description,
     @Default(0) int noOfQuizzesAvailable,
     @Default([]) List<Quiz> quizzes,
+    @Default(null) DateTime? createdAt,
   }) = _TopicEmpty;
 
   const Topic._();

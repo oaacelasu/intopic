@@ -173,8 +173,7 @@ P _questionDtoDeserializeProp<P>(
 
 extension QuestionDtoQueryFilter
     on QueryBuilder<QuestionDto, QuestionDto, QFilterCondition> {
-  QueryBuilder<QuestionDto, QuestionDto, QAfterFilterCondition>
-      correctAnswerIsNull() {
+  QueryBuilder<QuestionDto, QuestionDto, QAfterFilterCondition> answerIsNull() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(const FilterCondition.isNull(
         property: r'answer',
@@ -183,7 +182,7 @@ extension QuestionDtoQueryFilter
   }
 
   QueryBuilder<QuestionDto, QuestionDto, QAfterFilterCondition>
-      correctAnswerIsNotNull() {
+      answerIsNotNull() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(const FilterCondition.isNotNull(
         property: r'answer',
@@ -191,8 +190,7 @@ extension QuestionDtoQueryFilter
     });
   }
 
-  QueryBuilder<QuestionDto, QuestionDto, QAfterFilterCondition>
-      correctAnswerEqualTo(
+  QueryBuilder<QuestionDto, QuestionDto, QAfterFilterCondition> answerEqualTo(
     String? value, {
     bool caseSensitive = true,
   }) {
@@ -206,7 +204,7 @@ extension QuestionDtoQueryFilter
   }
 
   QueryBuilder<QuestionDto, QuestionDto, QAfterFilterCondition>
-      correctAnswerGreaterThan(
+      answerGreaterThan(
     String? value, {
     bool include = false,
     bool caseSensitive = true,
@@ -221,8 +219,7 @@ extension QuestionDtoQueryFilter
     });
   }
 
-  QueryBuilder<QuestionDto, QuestionDto, QAfterFilterCondition>
-      correctAnswerLessThan(
+  QueryBuilder<QuestionDto, QuestionDto, QAfterFilterCondition> answerLessThan(
     String? value, {
     bool include = false,
     bool caseSensitive = true,
@@ -237,8 +234,7 @@ extension QuestionDtoQueryFilter
     });
   }
 
-  QueryBuilder<QuestionDto, QuestionDto, QAfterFilterCondition>
-      correctAnswerBetween(
+  QueryBuilder<QuestionDto, QuestionDto, QAfterFilterCondition> answerBetween(
     String? lower,
     String? upper, {
     bool includeLower = true,
@@ -258,7 +254,7 @@ extension QuestionDtoQueryFilter
   }
 
   QueryBuilder<QuestionDto, QuestionDto, QAfterFilterCondition>
-      correctAnswerStartsWith(
+      answerStartsWith(
     String value, {
     bool caseSensitive = true,
   }) {
@@ -271,8 +267,7 @@ extension QuestionDtoQueryFilter
     });
   }
 
-  QueryBuilder<QuestionDto, QuestionDto, QAfterFilterCondition>
-      correctAnswerEndsWith(
+  QueryBuilder<QuestionDto, QuestionDto, QAfterFilterCondition> answerEndsWith(
     String value, {
     bool caseSensitive = true,
   }) {
@@ -285,8 +280,9 @@ extension QuestionDtoQueryFilter
     });
   }
 
-  QueryBuilder<QuestionDto, QuestionDto, QAfterFilterCondition>
-      correctAnswerContains(String value, {bool caseSensitive = true}) {
+  QueryBuilder<QuestionDto, QuestionDto, QAfterFilterCondition> answerContains(
+      String value,
+      {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.contains(
         property: r'answer',
@@ -296,8 +292,9 @@ extension QuestionDtoQueryFilter
     });
   }
 
-  QueryBuilder<QuestionDto, QuestionDto, QAfterFilterCondition>
-      correctAnswerMatches(String pattern, {bool caseSensitive = true}) {
+  QueryBuilder<QuestionDto, QuestionDto, QAfterFilterCondition> answerMatches(
+      String pattern,
+      {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.matches(
         property: r'answer',
@@ -308,7 +305,7 @@ extension QuestionDtoQueryFilter
   }
 
   QueryBuilder<QuestionDto, QuestionDto, QAfterFilterCondition>
-      correctAnswerIsEmpty() {
+      answerIsEmpty() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.equalTo(
         property: r'answer',
@@ -318,7 +315,7 @@ extension QuestionDtoQueryFilter
   }
 
   QueryBuilder<QuestionDto, QuestionDto, QAfterFilterCondition>
-      correctAnswerIsNotEmpty() {
+      answerIsNotEmpty() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.greaterThan(
         property: r'answer',

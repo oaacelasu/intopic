@@ -460,4 +460,21 @@ class OverallQuizScoreProvider extends AutoDisposeFutureProvider<double?> {
     return _SystemHash.finish(hash);
   }
 }
+
+String _$quizSubmissionsHash() => r'87fb42bfefab4fa58b90e4041afef0ef316ac18c';
+
+/// See also [quizSubmissions].
+@ProviderFor(quizSubmissions)
+final quizSubmissionsProvider =
+    AutoDisposeFutureProvider<List<QuizSubmission>>.internal(
+  quizSubmissions,
+  name: r'quizSubmissionsProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$quizSubmissionsHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+typedef QuizSubmissionsRef = AutoDisposeFutureProviderRef<List<QuizSubmission>>;
 // ignore_for_file: unnecessary_raw_strings, subtype_of_sealed_class, invalid_use_of_internal_member, do_not_use_environment, prefer_const_constructors, public_member_api_docs, avoid_private_typedef_functions

@@ -23,10 +23,18 @@ mixin _$Topic {
   String get description => throw _privateConstructorUsedError;
   int get noOfQuizzesAvailable => throw _privateConstructorUsedError;
   List<Quiz> get quizzes => throw _privateConstructorUsedError;
+  DateTime? get createdAt => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String id, String userId, Name title, String imageURL,
-            String description, int noOfQuizzesAvailable, List<Quiz> quizzes)
+    TResult Function(
+            String id,
+            String userId,
+            Name title,
+            String imageURL,
+            String description,
+            int noOfQuizzesAvailable,
+            List<Quiz> quizzes,
+            DateTime? createdAt)
         $default, {
     required TResult Function(
             String id,
@@ -35,27 +43,56 @@ mixin _$Topic {
             String imageURL,
             String description,
             int noOfQuizzesAvailable,
-            List<Quiz> quizzes)
+            List<Quiz> quizzes,
+            DateTime? createdAt)
         empty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String id, String userId, Name title, String imageURL,
-            String description, int noOfQuizzesAvailable, List<Quiz> quizzes)?
+    TResult? Function(
+            String id,
+            String userId,
+            Name title,
+            String imageURL,
+            String description,
+            int noOfQuizzesAvailable,
+            List<Quiz> quizzes,
+            DateTime? createdAt)?
         $default, {
-    TResult? Function(String id, String userId, Name title, String imageURL,
-            String description, int noOfQuizzesAvailable, List<Quiz> quizzes)?
+    TResult? Function(
+            String id,
+            String userId,
+            Name title,
+            String imageURL,
+            String description,
+            int noOfQuizzesAvailable,
+            List<Quiz> quizzes,
+            DateTime? createdAt)?
         empty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String id, String userId, Name title, String imageURL,
-            String description, int noOfQuizzesAvailable, List<Quiz> quizzes)?
+    TResult Function(
+            String id,
+            String userId,
+            Name title,
+            String imageURL,
+            String description,
+            int noOfQuizzesAvailable,
+            List<Quiz> quizzes,
+            DateTime? createdAt)?
         $default, {
-    TResult Function(String id, String userId, Name title, String imageURL,
-            String description, int noOfQuizzesAvailable, List<Quiz> quizzes)?
+    TResult Function(
+            String id,
+            String userId,
+            Name title,
+            String imageURL,
+            String description,
+            int noOfQuizzesAvailable,
+            List<Quiz> quizzes,
+            DateTime? createdAt)?
         empty,
     required TResult orElse(),
   }) =>
@@ -96,7 +133,8 @@ abstract class $TopicCopyWith<$Res> {
       String imageURL,
       String description,
       int noOfQuizzesAvailable,
-      List<Quiz> quizzes});
+      List<Quiz> quizzes,
+      DateTime? createdAt});
 }
 
 /// @nodoc
@@ -119,6 +157,7 @@ class _$TopicCopyWithImpl<$Res, $Val extends Topic>
     Object? description = null,
     Object? noOfQuizzesAvailable = null,
     Object? quizzes = null,
+    Object? createdAt = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -149,6 +188,10 @@ class _$TopicCopyWithImpl<$Res, $Val extends Topic>
           ? _value.quizzes
           : quizzes // ignore: cast_nullable_to_non_nullable
               as List<Quiz>,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ) as $Val);
   }
 }
@@ -166,7 +209,8 @@ abstract class _$$_TopicCopyWith<$Res> implements $TopicCopyWith<$Res> {
       String imageURL,
       String description,
       int noOfQuizzesAvailable,
-      List<Quiz> quizzes});
+      List<Quiz> quizzes,
+      DateTime? createdAt});
 }
 
 /// @nodoc
@@ -185,6 +229,7 @@ class __$$_TopicCopyWithImpl<$Res> extends _$TopicCopyWithImpl<$Res, _$_Topic>
     Object? description = null,
     Object? noOfQuizzesAvailable = null,
     Object? quizzes = null,
+    Object? createdAt = freezed,
   }) {
     return _then(_$_Topic(
       id: null == id
@@ -215,6 +260,10 @@ class __$$_TopicCopyWithImpl<$Res> extends _$TopicCopyWithImpl<$Res, _$_Topic>
           ? _value._quizzes
           : quizzes // ignore: cast_nullable_to_non_nullable
               as List<Quiz>,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
@@ -229,7 +278,8 @@ class _$_Topic extends _Topic {
       required this.imageURL,
       required this.description,
       required this.noOfQuizzesAvailable,
-      required final List<Quiz> quizzes})
+      required final List<Quiz> quizzes,
+      required this.createdAt})
       : _quizzes = quizzes,
         super._();
 
@@ -254,8 +304,11 @@ class _$_Topic extends _Topic {
   }
 
   @override
+  final DateTime? createdAt;
+
+  @override
   String toString() {
-    return 'Topic(id: $id, userId: $userId, title: $title, imageURL: $imageURL, description: $description, noOfQuizzesAvailable: $noOfQuizzesAvailable, quizzes: $quizzes)';
+    return 'Topic(id: $id, userId: $userId, title: $title, imageURL: $imageURL, description: $description, noOfQuizzesAvailable: $noOfQuizzesAvailable, quizzes: $quizzes, createdAt: $createdAt)';
   }
 
   @override
@@ -272,7 +325,9 @@ class _$_Topic extends _Topic {
                 other.description == description) &&
             (identical(other.noOfQuizzesAvailable, noOfQuizzesAvailable) ||
                 other.noOfQuizzesAvailable == noOfQuizzesAvailable) &&
-            const DeepCollectionEquality().equals(other._quizzes, _quizzes));
+            const DeepCollectionEquality().equals(other._quizzes, _quizzes) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt));
   }
 
   @override
@@ -284,7 +339,8 @@ class _$_Topic extends _Topic {
       imageURL,
       description,
       noOfQuizzesAvailable,
-      const DeepCollectionEquality().hash(_quizzes));
+      const DeepCollectionEquality().hash(_quizzes),
+      createdAt);
 
   @JsonKey(ignore: true)
   @override
@@ -295,8 +351,15 @@ class _$_Topic extends _Topic {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String id, String userId, Name title, String imageURL,
-            String description, int noOfQuizzesAvailable, List<Quiz> quizzes)
+    TResult Function(
+            String id,
+            String userId,
+            Name title,
+            String imageURL,
+            String description,
+            int noOfQuizzesAvailable,
+            List<Quiz> quizzes,
+            DateTime? createdAt)
         $default, {
     required TResult Function(
             String id,
@@ -305,41 +368,70 @@ class _$_Topic extends _Topic {
             String imageURL,
             String description,
             int noOfQuizzesAvailable,
-            List<Quiz> quizzes)
+            List<Quiz> quizzes,
+            DateTime? createdAt)
         empty,
   }) {
     return $default(id, userId, title, imageURL, description,
-        noOfQuizzesAvailable, quizzes);
+        noOfQuizzesAvailable, quizzes, createdAt);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String id, String userId, Name title, String imageURL,
-            String description, int noOfQuizzesAvailable, List<Quiz> quizzes)?
+    TResult? Function(
+            String id,
+            String userId,
+            Name title,
+            String imageURL,
+            String description,
+            int noOfQuizzesAvailable,
+            List<Quiz> quizzes,
+            DateTime? createdAt)?
         $default, {
-    TResult? Function(String id, String userId, Name title, String imageURL,
-            String description, int noOfQuizzesAvailable, List<Quiz> quizzes)?
+    TResult? Function(
+            String id,
+            String userId,
+            Name title,
+            String imageURL,
+            String description,
+            int noOfQuizzesAvailable,
+            List<Quiz> quizzes,
+            DateTime? createdAt)?
         empty,
   }) {
     return $default?.call(id, userId, title, imageURL, description,
-        noOfQuizzesAvailable, quizzes);
+        noOfQuizzesAvailable, quizzes, createdAt);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String id, String userId, Name title, String imageURL,
-            String description, int noOfQuizzesAvailable, List<Quiz> quizzes)?
+    TResult Function(
+            String id,
+            String userId,
+            Name title,
+            String imageURL,
+            String description,
+            int noOfQuizzesAvailable,
+            List<Quiz> quizzes,
+            DateTime? createdAt)?
         $default, {
-    TResult Function(String id, String userId, Name title, String imageURL,
-            String description, int noOfQuizzesAvailable, List<Quiz> quizzes)?
+    TResult Function(
+            String id,
+            String userId,
+            Name title,
+            String imageURL,
+            String description,
+            int noOfQuizzesAvailable,
+            List<Quiz> quizzes,
+            DateTime? createdAt)?
         empty,
     required TResult orElse(),
   }) {
     if ($default != null) {
       return $default(id, userId, title, imageURL, description,
-          noOfQuizzesAvailable, quizzes);
+          noOfQuizzesAvailable, quizzes, createdAt);
     }
     return orElse();
   }
@@ -384,7 +476,8 @@ abstract class _Topic extends Topic {
       required final String imageURL,
       required final String description,
       required final int noOfQuizzesAvailable,
-      required final List<Quiz> quizzes}) = _$_Topic;
+      required final List<Quiz> quizzes,
+      required final DateTime? createdAt}) = _$_Topic;
   const _Topic._() : super._();
 
   @override
@@ -401,6 +494,8 @@ abstract class _Topic extends Topic {
   int get noOfQuizzesAvailable;
   @override
   List<Quiz> get quizzes;
+  @override
+  DateTime? get createdAt;
   @override
   @JsonKey(ignore: true)
   _$$_TopicCopyWith<_$_Topic> get copyWith =>
@@ -421,7 +516,8 @@ abstract class _$$_TopicEmptyCopyWith<$Res> implements $TopicCopyWith<$Res> {
       String imageURL,
       String description,
       int noOfQuizzesAvailable,
-      List<Quiz> quizzes});
+      List<Quiz> quizzes,
+      DateTime? createdAt});
 }
 
 /// @nodoc
@@ -442,6 +538,7 @@ class __$$_TopicEmptyCopyWithImpl<$Res>
     Object? description = null,
     Object? noOfQuizzesAvailable = null,
     Object? quizzes = null,
+    Object? createdAt = freezed,
   }) {
     return _then(_$_TopicEmpty(
       id: null == id
@@ -472,6 +569,10 @@ class __$$_TopicEmptyCopyWithImpl<$Res>
           ? _value._quizzes
           : quizzes // ignore: cast_nullable_to_non_nullable
               as List<Quiz>,
+      createdAt: freezed == createdAt
+          ? _value.createdAt
+          : createdAt // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
@@ -486,7 +587,8 @@ class _$_TopicEmpty extends _TopicEmpty {
       this.imageURL = '',
       this.description = '',
       this.noOfQuizzesAvailable = 0,
-      final List<Quiz> quizzes = const []})
+      final List<Quiz> quizzes = const [],
+      this.createdAt = null})
       : _quizzes = quizzes,
         super._();
 
@@ -518,8 +620,12 @@ class _$_TopicEmpty extends _TopicEmpty {
   }
 
   @override
+  @JsonKey()
+  final DateTime? createdAt;
+
+  @override
   String toString() {
-    return 'Topic.empty(id: $id, userId: $userId, title: $title, imageURL: $imageURL, description: $description, noOfQuizzesAvailable: $noOfQuizzesAvailable, quizzes: $quizzes)';
+    return 'Topic.empty(id: $id, userId: $userId, title: $title, imageURL: $imageURL, description: $description, noOfQuizzesAvailable: $noOfQuizzesAvailable, quizzes: $quizzes, createdAt: $createdAt)';
   }
 
   @override
@@ -536,7 +642,9 @@ class _$_TopicEmpty extends _TopicEmpty {
                 other.description == description) &&
             (identical(other.noOfQuizzesAvailable, noOfQuizzesAvailable) ||
                 other.noOfQuizzesAvailable == noOfQuizzesAvailable) &&
-            const DeepCollectionEquality().equals(other._quizzes, _quizzes));
+            const DeepCollectionEquality().equals(other._quizzes, _quizzes) &&
+            (identical(other.createdAt, createdAt) ||
+                other.createdAt == createdAt));
   }
 
   @override
@@ -548,7 +656,8 @@ class _$_TopicEmpty extends _TopicEmpty {
       imageURL,
       description,
       noOfQuizzesAvailable,
-      const DeepCollectionEquality().hash(_quizzes));
+      const DeepCollectionEquality().hash(_quizzes),
+      createdAt);
 
   @JsonKey(ignore: true)
   @override
@@ -559,8 +668,15 @@ class _$_TopicEmpty extends _TopicEmpty {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String id, String userId, Name title, String imageURL,
-            String description, int noOfQuizzesAvailable, List<Quiz> quizzes)
+    TResult Function(
+            String id,
+            String userId,
+            Name title,
+            String imageURL,
+            String description,
+            int noOfQuizzesAvailable,
+            List<Quiz> quizzes,
+            DateTime? createdAt)
         $default, {
     required TResult Function(
             String id,
@@ -569,41 +685,70 @@ class _$_TopicEmpty extends _TopicEmpty {
             String imageURL,
             String description,
             int noOfQuizzesAvailable,
-            List<Quiz> quizzes)
+            List<Quiz> quizzes,
+            DateTime? createdAt)
         empty,
   }) {
     return empty(id, userId, title, imageURL, description, noOfQuizzesAvailable,
-        quizzes);
+        quizzes, createdAt);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String id, String userId, Name title, String imageURL,
-            String description, int noOfQuizzesAvailable, List<Quiz> quizzes)?
+    TResult? Function(
+            String id,
+            String userId,
+            Name title,
+            String imageURL,
+            String description,
+            int noOfQuizzesAvailable,
+            List<Quiz> quizzes,
+            DateTime? createdAt)?
         $default, {
-    TResult? Function(String id, String userId, Name title, String imageURL,
-            String description, int noOfQuizzesAvailable, List<Quiz> quizzes)?
+    TResult? Function(
+            String id,
+            String userId,
+            Name title,
+            String imageURL,
+            String description,
+            int noOfQuizzesAvailable,
+            List<Quiz> quizzes,
+            DateTime? createdAt)?
         empty,
   }) {
     return empty?.call(id, userId, title, imageURL, description,
-        noOfQuizzesAvailable, quizzes);
+        noOfQuizzesAvailable, quizzes, createdAt);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String id, String userId, Name title, String imageURL,
-            String description, int noOfQuizzesAvailable, List<Quiz> quizzes)?
+    TResult Function(
+            String id,
+            String userId,
+            Name title,
+            String imageURL,
+            String description,
+            int noOfQuizzesAvailable,
+            List<Quiz> quizzes,
+            DateTime? createdAt)?
         $default, {
-    TResult Function(String id, String userId, Name title, String imageURL,
-            String description, int noOfQuizzesAvailable, List<Quiz> quizzes)?
+    TResult Function(
+            String id,
+            String userId,
+            Name title,
+            String imageURL,
+            String description,
+            int noOfQuizzesAvailable,
+            List<Quiz> quizzes,
+            DateTime? createdAt)?
         empty,
     required TResult orElse(),
   }) {
     if (empty != null) {
       return empty(id, userId, title, imageURL, description,
-          noOfQuizzesAvailable, quizzes);
+          noOfQuizzesAvailable, quizzes, createdAt);
     }
     return orElse();
   }
@@ -648,7 +793,8 @@ abstract class _TopicEmpty extends Topic {
       final String imageURL,
       final String description,
       final int noOfQuizzesAvailable,
-      final List<Quiz> quizzes}) = _$_TopicEmpty;
+      final List<Quiz> quizzes,
+      final DateTime? createdAt}) = _$_TopicEmpty;
   const _TopicEmpty._() : super._();
 
   @override
@@ -665,6 +811,8 @@ abstract class _TopicEmpty extends Topic {
   int get noOfQuizzesAvailable;
   @override
   List<Quiz> get quizzes;
+  @override
+  DateTime? get createdAt;
   @override
   @JsonKey(ignore: true)
   _$$_TopicEmptyCopyWith<_$_TopicEmpty> get copyWith =>

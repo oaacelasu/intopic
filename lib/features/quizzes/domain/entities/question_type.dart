@@ -12,7 +12,7 @@ class QuestionType with _$QuestionType {
 
   const factory QuestionType.trueFalse() = _TrueFalseQuestionType;
 
-  static QuestionType parse(String value) {
+  factory QuestionType.parse(String value) {
     switch (value) {
       case 'True/False' || 'trueFalse':
         return const QuestionType.trueFalse();

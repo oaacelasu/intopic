@@ -42,6 +42,7 @@ class AppDrawer extends HookConsumerWidget {
         ),
         NavigationDrawerDestination(icon: const Icon(Icons.home), label: Text(context.tr.home)),
         NavigationDrawerDestination(icon: const Icon(Icons.settings), label: Text(context.tr.settings)),
+        NavigationDrawerDestination(icon: const Icon(Icons.insights), label: Text(context.tr.insights)),
         NavigationDrawerDestination(icon: const Icon(Icons.logout), label: Text(context.tr.logout)),
       ],
       onDestinationSelected: (index) async {
@@ -53,6 +54,9 @@ class AppDrawer extends HookConsumerWidget {
             Get.close(1);
             await Get.toNamed<void>(AppRoutes.settings);
           case 2:
+            Get.close(1);
+            await Get.toNamed<void>(AppRoutes.insights);
+          case 3:
             await ref.read(authStateNotifierProvider.notifier).signOut();
         }
       },

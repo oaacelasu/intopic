@@ -319,8 +319,7 @@ class _$_Question extends _Question {
             (identical(other.question, question) ||
                 other.question == question) &&
             const DeepCollectionEquality().equals(other._options, _options) &&
-            (identical(other.answer, answer) ||
-                other.answer == answer));
+            (identical(other.answer, answer) || other.answer == answer));
   }
 
   @override
@@ -618,8 +617,7 @@ class _$_QuestionEmpty extends _QuestionEmpty {
             (identical(other.question, question) ||
                 other.question == question) &&
             const DeepCollectionEquality().equals(other._options, _options) &&
-            (identical(other.answer, answer) ||
-                other.answer == answer));
+            (identical(other.answer, answer) || other.answer == answer));
   }
 
   @override
@@ -661,8 +659,7 @@ class _$_QuestionEmpty extends _QuestionEmpty {
             String answer)
         empty,
   }) {
-    return empty(
-        id, quizId, topicId, questionType, question, options, answer);
+    return empty(id, quizId, topicId, questionType, question, options, answer);
   }
 
   @override

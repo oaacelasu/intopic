@@ -22,6 +22,8 @@ QuizSubmissionDto _$QuizSubmissionDtoFromJson(Map<String, dynamic> json) {
 mixin _$QuizSubmissionDto {
   int get id => throw _privateConstructorUsedError;
   String get quizId => throw _privateConstructorUsedError;
+  String get topicId => throw _privateConstructorUsedError;
+  String get quizName => throw _privateConstructorUsedError;
   List<QuestionResponseDto> get responses => throw _privateConstructorUsedError;
   List<QuestionDto> get questions => throw _privateConstructorUsedError;
   int get submittedAt => throw _privateConstructorUsedError;
@@ -41,6 +43,8 @@ abstract class $QuizSubmissionDtoCopyWith<$Res> {
   $Res call(
       {int id,
       String quizId,
+      String topicId,
+      String quizName,
       List<QuestionResponseDto> responses,
       List<QuestionDto> questions,
       int submittedAt});
@@ -61,6 +65,8 @@ class _$QuizSubmissionDtoCopyWithImpl<$Res, $Val extends QuizSubmissionDto>
   $Res call({
     Object? id = null,
     Object? quizId = null,
+    Object? topicId = null,
+    Object? quizName = null,
     Object? responses = null,
     Object? questions = null,
     Object? submittedAt = null,
@@ -73,6 +79,14 @@ class _$QuizSubmissionDtoCopyWithImpl<$Res, $Val extends QuizSubmissionDto>
       quizId: null == quizId
           ? _value.quizId
           : quizId // ignore: cast_nullable_to_non_nullable
+              as String,
+      topicId: null == topicId
+          ? _value.topicId
+          : topicId // ignore: cast_nullable_to_non_nullable
+              as String,
+      quizName: null == quizName
+          ? _value.quizName
+          : quizName // ignore: cast_nullable_to_non_nullable
               as String,
       responses: null == responses
           ? _value.responses
@@ -101,6 +115,8 @@ abstract class _$$_QuizSubmissionDtoCopyWith<$Res>
   $Res call(
       {int id,
       String quizId,
+      String topicId,
+      String quizName,
       List<QuestionResponseDto> responses,
       List<QuestionDto> questions,
       int submittedAt});
@@ -119,6 +135,8 @@ class __$$_QuizSubmissionDtoCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? quizId = null,
+    Object? topicId = null,
+    Object? quizName = null,
     Object? responses = null,
     Object? questions = null,
     Object? submittedAt = null,
@@ -131,6 +149,14 @@ class __$$_QuizSubmissionDtoCopyWithImpl<$Res>
       quizId: null == quizId
           ? _value.quizId
           : quizId // ignore: cast_nullable_to_non_nullable
+              as String,
+      topicId: null == topicId
+          ? _value.topicId
+          : topicId // ignore: cast_nullable_to_non_nullable
+              as String,
+      quizName: null == quizName
+          ? _value.quizName
+          : quizName // ignore: cast_nullable_to_non_nullable
               as String,
       responses: null == responses
           ? _value._responses
@@ -154,6 +180,8 @@ class _$_QuizSubmissionDto extends _QuizSubmissionDto {
   _$_QuizSubmissionDto(
       {required this.id,
       required this.quizId,
+      required this.topicId,
+      required this.quizName,
       required final List<QuestionResponseDto> responses,
       required final List<QuestionDto> questions,
       required this.submittedAt})
@@ -168,6 +196,10 @@ class _$_QuizSubmissionDto extends _QuizSubmissionDto {
   final int id;
   @override
   final String quizId;
+  @override
+  final String topicId;
+  @override
+  final String quizName;
   final List<QuestionResponseDto> _responses;
   @override
   List<QuestionResponseDto> get responses {
@@ -189,7 +221,7 @@ class _$_QuizSubmissionDto extends _QuizSubmissionDto {
 
   @override
   String toString() {
-    return 'QuizSubmissionDto(id: $id, quizId: $quizId, responses: $responses, questions: $questions, submittedAt: $submittedAt)';
+    return 'QuizSubmissionDto(id: $id, quizId: $quizId, topicId: $topicId, quizName: $quizName, responses: $responses, questions: $questions, submittedAt: $submittedAt)';
   }
 
   @override
@@ -199,6 +231,9 @@ class _$_QuizSubmissionDto extends _QuizSubmissionDto {
             other is _$_QuizSubmissionDto &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.quizId, quizId) || other.quizId == quizId) &&
+            (identical(other.topicId, topicId) || other.topicId == topicId) &&
+            (identical(other.quizName, quizName) ||
+                other.quizName == quizName) &&
             const DeepCollectionEquality()
                 .equals(other._responses, _responses) &&
             const DeepCollectionEquality()
@@ -213,6 +248,8 @@ class _$_QuizSubmissionDto extends _QuizSubmissionDto {
       runtimeType,
       id,
       quizId,
+      topicId,
+      quizName,
       const DeepCollectionEquality().hash(_responses),
       const DeepCollectionEquality().hash(_questions),
       submittedAt);
@@ -236,6 +273,8 @@ abstract class _QuizSubmissionDto extends QuizSubmissionDto {
   factory _QuizSubmissionDto(
       {required final int id,
       required final String quizId,
+      required final String topicId,
+      required final String quizName,
       required final List<QuestionResponseDto> responses,
       required final List<QuestionDto> questions,
       required final int submittedAt}) = _$_QuizSubmissionDto;
@@ -248,6 +287,10 @@ abstract class _QuizSubmissionDto extends QuizSubmissionDto {
   int get id;
   @override
   String get quizId;
+  @override
+  String get topicId;
+  @override
+  String get quizName;
   @override
   List<QuestionResponseDto> get responses;
   @override

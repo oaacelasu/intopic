@@ -6,6 +6,7 @@ import 'package:intopic/features/auth/presentation/screens/sign_up_screen.dart';
 import 'package:intopic/features/auth/presentation/screens/welcome_screen.dart';
 import 'package:intopic/features/common/presentation/screens/splash_screen.dart';
 import 'package:intopic/features/home/presentation/screens/home_screen.dart';
+import 'package:intopic/features/home/presentation/screens/insights_screen.dart';
 import 'package:intopic/features/home/presentation/screens/settings_screen.dart';
 import 'package:intopic/features/quizzes/domain/entities/quiz.dart';
 import 'package:intopic/features/quizzes/domain/entities/quiz_submission.dart';
@@ -31,6 +32,7 @@ class AppRoutes {
   static const String quizList = '/quizList';
   static const String confirmation = '/confirmation';
   static const String settings = '/settings';
+  static const String insights = '/insights';
 }
 
 class AppPages {
@@ -92,14 +94,18 @@ class AppPages {
     GetPage(name: AppRoutes.quizList, page: () => const QuizListScreen()),
     GetPage(
       name: AppRoutes.quiz,
-      page: () => ProviderScope(
-        overrides: [
-          currentQuizProvider.overrideWithValue(Get.arguments["quiz"] as Quiz),
-          if(Get.arguments["topic"]!=null)
-            currentTopicProvider.overrideWithValue(Get.arguments["topic"] as Topic),
-        ],
-        child: const QuizScreen(),
-      ),
+      page: () {
+        final args = Get.arguments as Map<String, dynamic>;
+        final quiz = args['quiz'] as Quiz;
+        final topic = args['topic'] as Topic?;
+        return ProviderScope(
+          overrides: [
+            currentQuizProvider.overrideWithValue(quiz),
+            if (topic != null) currentTopicProvider.overrideWithValue(topic),
+          ],
+          child: const QuizScreen(),
+        );
+      },
       showCupertinoParallax: false,
       transition: Transition.rightToLeft,
     ),
@@ -117,6 +123,12 @@ class AppPages {
     GetPage(
       name: AppRoutes.settings,
       page: () => const SettingsScreen(),
+      showCupertinoParallax: false,
+      transition: Transition.leftToRight,
+    ),
+    GetPage(
+      name: AppRoutes.insights,
+      page: () => const InsightsScreen(),
       showCupertinoParallax: false,
       transition: Transition.leftToRight,
     ),

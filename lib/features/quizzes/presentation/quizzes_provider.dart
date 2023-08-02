@@ -130,3 +130,14 @@ Future<double?> overallQuizScore(OverallQuizScoreRef ref, {required String quizI
   }
   return submission.toDomain().getScore();
 }
+
+@riverpod
+Future<List<QuizSubmission>> quizSubmissions(QuizSubmissionsRef ref) async {
+  final isar = await ref.watch(isarPod.future);
+
+  final submissions =
+      await isar.quizSubmissionDtos.where().findAll();
+
+
+  return submissions.map((e) => e.toDomain()).toList();
+}
