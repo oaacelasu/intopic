@@ -13,9 +13,7 @@ class HomeFilter extends _$HomeFilter {
   @override
   String build() => '';
 
-  // method to set the filter
-  @override
-  set state(String value) {
+  void changeQuery(String value) {
     state = value;
   }
 }
@@ -38,7 +36,7 @@ Future<List<Topic>> topics(TopicsRef ref) async {
 Future<List<Quiz>> filteredTopQuizzes(FilteredTopQuizzesRef ref) async {
   final filter = ref.watch(homeFilterProvider);
   final topQuizzes = await ref.watch(topQuizzesProvider.future);
-  if (filter.length <= 3) return topQuizzes;
+  if (filter.length <= 2) return topQuizzes;
 
   return topQuizzes.where((quiz) => quiz.title.matches(filter)).toList();
 }
@@ -47,7 +45,7 @@ Future<List<Quiz>> filteredTopQuizzes(FilteredTopQuizzesRef ref) async {
 Future<List<Topic>> filteredTopics(FilteredTopicsRef ref) async {
   final filter = ref.watch(homeFilterProvider);
   final topics = await ref.watch(topicsProvider.future);
-  if (filter.length <= 3) return topics;
+  if (filter.length <= 1) return topics;
 
   return topics.where((topic) => topic.title.matches(filter)).toList();
 }

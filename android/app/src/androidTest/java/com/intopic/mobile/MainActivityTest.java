@@ -1,6 +1,9 @@
 package com.intopic.mobile;
 
 import androidx.test.platform.app.InstrumentationRegistry;
+
+import com.example.intopic.MainActivity;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;

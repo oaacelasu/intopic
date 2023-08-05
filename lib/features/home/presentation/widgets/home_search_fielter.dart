@@ -24,7 +24,7 @@ class HomeSearchFilter extends HookConsumerWidget {
         TextField(
           controller: filterController,
           onChanged: (value) {
-            ref.read(homeFilterProvider.notifier).state = value;
+            ref.read(homeFilterProvider.notifier).changeQuery(value);
           },
           decoration: InputDecoration(
             hintText: context.tr.homeSearchPlaceholder,
@@ -37,7 +37,7 @@ class HomeSearchFilter extends HookConsumerWidget {
               child: IconButton(
                 onPressed: () {
                   filterController.clear();
-                  ref.read(homeFilterProvider.notifier).state = '';
+                  ref.read(homeFilterProvider.notifier).changeQuery('');
                 },
                 icon: const Icon(Icons.clear),
               ),

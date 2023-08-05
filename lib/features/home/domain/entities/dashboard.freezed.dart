@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'home_state_notifier.dart';
+part of 'dashboard.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,83 +15,79 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$HomeState {
+mixin _$Dashboard {
   List<Topic> get topics => throw _privateConstructorUsedError;
-  List<Quiz> get topQuizzes => throw _privateConstructorUsedError;
   int get noOfQuizzesAvailable => throw _privateConstructorUsedError;
   int get noOfTopicsAvailable => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(List<Topic> topics, List<Quiz> topQuizzes,
-            int noOfQuizzesAvailable, int noOfTopicsAvailable)
+    TResult Function(List<Topic> topics, int noOfQuizzesAvailable,
+            int noOfTopicsAvailable)
         $default, {
-    required TResult Function(List<Topic> topics, List<Quiz> topQuizzes,
-            int noOfQuizzesAvailable, int noOfTopicsAvailable)
-        initial,
+    required TResult Function(List<Topic> topics, int noOfQuizzesAvailable,
+            int noOfTopicsAvailable)
+        empty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(List<Topic> topics, List<Quiz> topQuizzes,
-            int noOfQuizzesAvailable, int noOfTopicsAvailable)?
+    TResult? Function(List<Topic> topics, int noOfQuizzesAvailable,
+            int noOfTopicsAvailable)?
         $default, {
-    TResult? Function(List<Topic> topics, List<Quiz> topQuizzes,
-            int noOfQuizzesAvailable, int noOfTopicsAvailable)?
-        initial,
+    TResult? Function(List<Topic> topics, int noOfQuizzesAvailable,
+            int noOfTopicsAvailable)?
+        empty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(List<Topic> topics, List<Quiz> topQuizzes,
-            int noOfQuizzesAvailable, int noOfTopicsAvailable)?
+    TResult Function(List<Topic> topics, int noOfQuizzesAvailable,
+            int noOfTopicsAvailable)?
         $default, {
-    TResult Function(List<Topic> topics, List<Quiz> topQuizzes,
-            int noOfQuizzesAvailable, int noOfTopicsAvailable)?
-        initial,
+    TResult Function(List<Topic> topics, int noOfQuizzesAvailable,
+            int noOfTopicsAvailable)?
+        empty,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
-    TResult Function(_HomeState value) $default, {
-    required TResult Function(_HomeStateInitial value) initial,
+    TResult Function(_Dashboard value) $default, {
+    required TResult Function(_DashboardEmpty value) empty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_HomeState value)? $default, {
-    TResult? Function(_HomeStateInitial value)? initial,
+    TResult? Function(_Dashboard value)? $default, {
+    TResult? Function(_DashboardEmpty value)? empty,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
-    TResult Function(_HomeState value)? $default, {
-    TResult Function(_HomeStateInitial value)? initial,
+    TResult Function(_Dashboard value)? $default, {
+    TResult Function(_DashboardEmpty value)? empty,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $HomeStateCopyWith<HomeState> get copyWith =>
+  $DashboardCopyWith<Dashboard> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $HomeStateCopyWith<$Res> {
-  factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
-      _$HomeStateCopyWithImpl<$Res, HomeState>;
+abstract class $DashboardCopyWith<$Res> {
+  factory $DashboardCopyWith(Dashboard value, $Res Function(Dashboard) then) =
+      _$DashboardCopyWithImpl<$Res, Dashboard>;
   @useResult
   $Res call(
-      {List<Topic> topics,
-      List<Quiz> topQuizzes,
-      int noOfQuizzesAvailable,
-      int noOfTopicsAvailable});
+      {List<Topic> topics, int noOfQuizzesAvailable, int noOfTopicsAvailable});
 }
 
 /// @nodoc
-class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
-    implements $HomeStateCopyWith<$Res> {
-  _$HomeStateCopyWithImpl(this._value, this._then);
+class _$DashboardCopyWithImpl<$Res, $Val extends Dashboard>
+    implements $DashboardCopyWith<$Res> {
+  _$DashboardCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -102,7 +98,6 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   @override
   $Res call({
     Object? topics = null,
-    Object? topQuizzes = null,
     Object? noOfQuizzesAvailable = null,
     Object? noOfTopicsAvailable = null,
   }) {
@@ -111,10 +106,6 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
           ? _value.topics
           : topics // ignore: cast_nullable_to_non_nullable
               as List<Topic>,
-      topQuizzes: null == topQuizzes
-          ? _value.topQuizzes
-          : topQuizzes // ignore: cast_nullable_to_non_nullable
-              as List<Quiz>,
       noOfQuizzesAvailable: null == noOfQuizzesAvailable
           ? _value.noOfQuizzesAvailable
           : noOfQuizzesAvailable // ignore: cast_nullable_to_non_nullable
@@ -128,44 +119,36 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
 }
 
 /// @nodoc
-abstract class _$$_HomeStateCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
-  factory _$$_HomeStateCopyWith(
-          _$_HomeState value, $Res Function(_$_HomeState) then) =
-      __$$_HomeStateCopyWithImpl<$Res>;
+abstract class _$$_DashboardCopyWith<$Res> implements $DashboardCopyWith<$Res> {
+  factory _$$_DashboardCopyWith(
+          _$_Dashboard value, $Res Function(_$_Dashboard) then) =
+      __$$_DashboardCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {List<Topic> topics,
-      List<Quiz> topQuizzes,
-      int noOfQuizzesAvailable,
-      int noOfTopicsAvailable});
+      {List<Topic> topics, int noOfQuizzesAvailable, int noOfTopicsAvailable});
 }
 
 /// @nodoc
-class __$$_HomeStateCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$_HomeState>
-    implements _$$_HomeStateCopyWith<$Res> {
-  __$$_HomeStateCopyWithImpl(
-      _$_HomeState _value, $Res Function(_$_HomeState) _then)
+class __$$_DashboardCopyWithImpl<$Res>
+    extends _$DashboardCopyWithImpl<$Res, _$_Dashboard>
+    implements _$$_DashboardCopyWith<$Res> {
+  __$$_DashboardCopyWithImpl(
+      _$_Dashboard _value, $Res Function(_$_Dashboard) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? topics = null,
-    Object? topQuizzes = null,
     Object? noOfQuizzesAvailable = null,
     Object? noOfTopicsAvailable = null,
   }) {
-    return _then(_$_HomeState(
+    return _then(_$_Dashboard(
       topics: null == topics
           ? _value._topics
           : topics // ignore: cast_nullable_to_non_nullable
               as List<Topic>,
-      topQuizzes: null == topQuizzes
-          ? _value._topQuizzes
-          : topQuizzes // ignore: cast_nullable_to_non_nullable
-              as List<Quiz>,
       noOfQuizzesAvailable: null == noOfQuizzesAvailable
           ? _value.noOfQuizzesAvailable
           : noOfQuizzesAvailable // ignore: cast_nullable_to_non_nullable
@@ -180,14 +163,13 @@ class __$$_HomeStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_HomeState implements _HomeState {
-  const _$_HomeState(
+class _$_Dashboard extends _Dashboard {
+  const _$_Dashboard(
       {required final List<Topic> topics,
-      required final List<Quiz> topQuizzes,
       required this.noOfQuizzesAvailable,
       required this.noOfTopicsAvailable})
       : _topics = topics,
-        _topQuizzes = topQuizzes;
+        super._();
 
   final List<Topic> _topics;
   @override
@@ -197,14 +179,6 @@ class _$_HomeState implements _HomeState {
     return EqualUnmodifiableListView(_topics);
   }
 
-  final List<Quiz> _topQuizzes;
-  @override
-  List<Quiz> get topQuizzes {
-    if (_topQuizzes is EqualUnmodifiableListView) return _topQuizzes;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_topQuizzes);
-  }
-
   @override
   final int noOfQuizzesAvailable;
   @override
@@ -212,17 +186,15 @@ class _$_HomeState implements _HomeState {
 
   @override
   String toString() {
-    return 'HomeState(topics: $topics, topQuizzes: $topQuizzes, noOfQuizzesAvailable: $noOfQuizzesAvailable, noOfTopicsAvailable: $noOfTopicsAvailable)';
+    return 'Dashboard(topics: $topics, noOfQuizzesAvailable: $noOfQuizzesAvailable, noOfTopicsAvailable: $noOfTopicsAvailable)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_HomeState &&
+            other is _$_Dashboard &&
             const DeepCollectionEquality().equals(other._topics, _topics) &&
-            const DeepCollectionEquality()
-                .equals(other._topQuizzes, _topQuizzes) &&
             (identical(other.noOfQuizzesAvailable, noOfQuizzesAvailable) ||
                 other.noOfQuizzesAvailable == noOfQuizzesAvailable) &&
             (identical(other.noOfTopicsAvailable, noOfTopicsAvailable) ||
@@ -233,58 +205,54 @@ class _$_HomeState implements _HomeState {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_topics),
-      const DeepCollectionEquality().hash(_topQuizzes),
       noOfQuizzesAvailable,
       noOfTopicsAvailable);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_HomeStateCopyWith<_$_HomeState> get copyWith =>
-      __$$_HomeStateCopyWithImpl<_$_HomeState>(this, _$identity);
+  _$$_DashboardCopyWith<_$_Dashboard> get copyWith =>
+      __$$_DashboardCopyWithImpl<_$_Dashboard>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(List<Topic> topics, List<Quiz> topQuizzes,
-            int noOfQuizzesAvailable, int noOfTopicsAvailable)
+    TResult Function(List<Topic> topics, int noOfQuizzesAvailable,
+            int noOfTopicsAvailable)
         $default, {
-    required TResult Function(List<Topic> topics, List<Quiz> topQuizzes,
-            int noOfQuizzesAvailable, int noOfTopicsAvailable)
-        initial,
+    required TResult Function(List<Topic> topics, int noOfQuizzesAvailable,
+            int noOfTopicsAvailable)
+        empty,
   }) {
-    return $default(
-        topics, topQuizzes, noOfQuizzesAvailable, noOfTopicsAvailable);
+    return $default(topics, noOfQuizzesAvailable, noOfTopicsAvailable);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(List<Topic> topics, List<Quiz> topQuizzes,
-            int noOfQuizzesAvailable, int noOfTopicsAvailable)?
+    TResult? Function(List<Topic> topics, int noOfQuizzesAvailable,
+            int noOfTopicsAvailable)?
         $default, {
-    TResult? Function(List<Topic> topics, List<Quiz> topQuizzes,
-            int noOfQuizzesAvailable, int noOfTopicsAvailable)?
-        initial,
+    TResult? Function(List<Topic> topics, int noOfQuizzesAvailable,
+            int noOfTopicsAvailable)?
+        empty,
   }) {
-    return $default?.call(
-        topics, topQuizzes, noOfQuizzesAvailable, noOfTopicsAvailable);
+    return $default?.call(topics, noOfQuizzesAvailable, noOfTopicsAvailable);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(List<Topic> topics, List<Quiz> topQuizzes,
-            int noOfQuizzesAvailable, int noOfTopicsAvailable)?
+    TResult Function(List<Topic> topics, int noOfQuizzesAvailable,
+            int noOfTopicsAvailable)?
         $default, {
-    TResult Function(List<Topic> topics, List<Quiz> topQuizzes,
-            int noOfQuizzesAvailable, int noOfTopicsAvailable)?
-        initial,
+    TResult Function(List<Topic> topics, int noOfQuizzesAvailable,
+            int noOfTopicsAvailable)?
+        empty,
     required TResult orElse(),
   }) {
     if ($default != null) {
-      return $default(
-          topics, topQuizzes, noOfQuizzesAvailable, noOfTopicsAvailable);
+      return $default(topics, noOfQuizzesAvailable, noOfTopicsAvailable);
     }
     return orElse();
   }
@@ -292,8 +260,8 @@ class _$_HomeState implements _HomeState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
-    TResult Function(_HomeState value) $default, {
-    required TResult Function(_HomeStateInitial value) initial,
+    TResult Function(_Dashboard value) $default, {
+    required TResult Function(_DashboardEmpty value) empty,
   }) {
     return $default(this);
   }
@@ -301,8 +269,8 @@ class _$_HomeState implements _HomeState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_HomeState value)? $default, {
-    TResult? Function(_HomeStateInitial value)? initial,
+    TResult? Function(_Dashboard value)? $default, {
+    TResult? Function(_DashboardEmpty value)? empty,
   }) {
     return $default?.call(this);
   }
@@ -310,8 +278,8 @@ class _$_HomeState implements _HomeState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
-    TResult Function(_HomeState value)? $default, {
-    TResult Function(_HomeStateInitial value)? initial,
+    TResult Function(_Dashboard value)? $default, {
+    TResult Function(_DashboardEmpty value)? empty,
     required TResult orElse(),
   }) {
     if ($default != null) {
@@ -321,67 +289,57 @@ class _$_HomeState implements _HomeState {
   }
 }
 
-abstract class _HomeState implements HomeState {
-  const factory _HomeState(
+abstract class _Dashboard extends Dashboard {
+  const factory _Dashboard(
       {required final List<Topic> topics,
-      required final List<Quiz> topQuizzes,
       required final int noOfQuizzesAvailable,
-      required final int noOfTopicsAvailable}) = _$_HomeState;
+      required final int noOfTopicsAvailable}) = _$_Dashboard;
+  const _Dashboard._() : super._();
 
   @override
   List<Topic> get topics;
-  @override
-  List<Quiz> get topQuizzes;
   @override
   int get noOfQuizzesAvailable;
   @override
   int get noOfTopicsAvailable;
   @override
   @JsonKey(ignore: true)
-  _$$_HomeStateCopyWith<_$_HomeState> get copyWith =>
+  _$$_DashboardCopyWith<_$_Dashboard> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_HomeStateInitialCopyWith<$Res>
-    implements $HomeStateCopyWith<$Res> {
-  factory _$$_HomeStateInitialCopyWith(
-          _$_HomeStateInitial value, $Res Function(_$_HomeStateInitial) then) =
-      __$$_HomeStateInitialCopyWithImpl<$Res>;
+abstract class _$$_DashboardEmptyCopyWith<$Res>
+    implements $DashboardCopyWith<$Res> {
+  factory _$$_DashboardEmptyCopyWith(
+          _$_DashboardEmpty value, $Res Function(_$_DashboardEmpty) then) =
+      __$$_DashboardEmptyCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
-      {List<Topic> topics,
-      List<Quiz> topQuizzes,
-      int noOfQuizzesAvailable,
-      int noOfTopicsAvailable});
+      {List<Topic> topics, int noOfQuizzesAvailable, int noOfTopicsAvailable});
 }
 
 /// @nodoc
-class __$$_HomeStateInitialCopyWithImpl<$Res>
-    extends _$HomeStateCopyWithImpl<$Res, _$_HomeStateInitial>
-    implements _$$_HomeStateInitialCopyWith<$Res> {
-  __$$_HomeStateInitialCopyWithImpl(
-      _$_HomeStateInitial _value, $Res Function(_$_HomeStateInitial) _then)
+class __$$_DashboardEmptyCopyWithImpl<$Res>
+    extends _$DashboardCopyWithImpl<$Res, _$_DashboardEmpty>
+    implements _$$_DashboardEmptyCopyWith<$Res> {
+  __$$_DashboardEmptyCopyWithImpl(
+      _$_DashboardEmpty _value, $Res Function(_$_DashboardEmpty) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? topics = null,
-    Object? topQuizzes = null,
     Object? noOfQuizzesAvailable = null,
     Object? noOfTopicsAvailable = null,
   }) {
-    return _then(_$_HomeStateInitial(
+    return _then(_$_DashboardEmpty(
       topics: null == topics
           ? _value._topics
           : topics // ignore: cast_nullable_to_non_nullable
               as List<Topic>,
-      topQuizzes: null == topQuizzes
-          ? _value._topQuizzes
-          : topQuizzes // ignore: cast_nullable_to_non_nullable
-              as List<Quiz>,
       noOfQuizzesAvailable: null == noOfQuizzesAvailable
           ? _value.noOfQuizzesAvailable
           : noOfQuizzesAvailable // ignore: cast_nullable_to_non_nullable
@@ -396,14 +354,13 @@ class __$$_HomeStateInitialCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_HomeStateInitial implements _HomeStateInitial {
-  const _$_HomeStateInitial(
-      {final List<Topic> topics = const <Topic>[],
-      final List<Quiz> topQuizzes = const <Quiz>[],
+class _$_DashboardEmpty extends _DashboardEmpty {
+  const _$_DashboardEmpty(
+      {final List<Topic> topics = const [],
       this.noOfQuizzesAvailable = 0,
       this.noOfTopicsAvailable = 0})
       : _topics = topics,
-        _topQuizzes = topQuizzes;
+        super._();
 
   final List<Topic> _topics;
   @override
@@ -412,15 +369,6 @@ class _$_HomeStateInitial implements _HomeStateInitial {
     if (_topics is EqualUnmodifiableListView) return _topics;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_topics);
-  }
-
-  final List<Quiz> _topQuizzes;
-  @override
-  @JsonKey()
-  List<Quiz> get topQuizzes {
-    if (_topQuizzes is EqualUnmodifiableListView) return _topQuizzes;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_topQuizzes);
   }
 
   @override
@@ -432,17 +380,15 @@ class _$_HomeStateInitial implements _HomeStateInitial {
 
   @override
   String toString() {
-    return 'HomeState.initial(topics: $topics, topQuizzes: $topQuizzes, noOfQuizzesAvailable: $noOfQuizzesAvailable, noOfTopicsAvailable: $noOfTopicsAvailable)';
+    return 'Dashboard.empty(topics: $topics, noOfQuizzesAvailable: $noOfQuizzesAvailable, noOfTopicsAvailable: $noOfTopicsAvailable)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_HomeStateInitial &&
+            other is _$_DashboardEmpty &&
             const DeepCollectionEquality().equals(other._topics, _topics) &&
-            const DeepCollectionEquality()
-                .equals(other._topQuizzes, _topQuizzes) &&
             (identical(other.noOfQuizzesAvailable, noOfQuizzesAvailable) ||
                 other.noOfQuizzesAvailable == noOfQuizzesAvailable) &&
             (identical(other.noOfTopicsAvailable, noOfTopicsAvailable) ||
@@ -453,58 +399,54 @@ class _$_HomeStateInitial implements _HomeStateInitial {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(_topics),
-      const DeepCollectionEquality().hash(_topQuizzes),
       noOfQuizzesAvailable,
       noOfTopicsAvailable);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_HomeStateInitialCopyWith<_$_HomeStateInitial> get copyWith =>
-      __$$_HomeStateInitialCopyWithImpl<_$_HomeStateInitial>(this, _$identity);
+  _$$_DashboardEmptyCopyWith<_$_DashboardEmpty> get copyWith =>
+      __$$_DashboardEmptyCopyWithImpl<_$_DashboardEmpty>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(List<Topic> topics, List<Quiz> topQuizzes,
-            int noOfQuizzesAvailable, int noOfTopicsAvailable)
+    TResult Function(List<Topic> topics, int noOfQuizzesAvailable,
+            int noOfTopicsAvailable)
         $default, {
-    required TResult Function(List<Topic> topics, List<Quiz> topQuizzes,
-            int noOfQuizzesAvailable, int noOfTopicsAvailable)
-        initial,
+    required TResult Function(List<Topic> topics, int noOfQuizzesAvailable,
+            int noOfTopicsAvailable)
+        empty,
   }) {
-    return initial(
-        topics, topQuizzes, noOfQuizzesAvailable, noOfTopicsAvailable);
+    return empty(topics, noOfQuizzesAvailable, noOfTopicsAvailable);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(List<Topic> topics, List<Quiz> topQuizzes,
-            int noOfQuizzesAvailable, int noOfTopicsAvailable)?
+    TResult? Function(List<Topic> topics, int noOfQuizzesAvailable,
+            int noOfTopicsAvailable)?
         $default, {
-    TResult? Function(List<Topic> topics, List<Quiz> topQuizzes,
-            int noOfQuizzesAvailable, int noOfTopicsAvailable)?
-        initial,
+    TResult? Function(List<Topic> topics, int noOfQuizzesAvailable,
+            int noOfTopicsAvailable)?
+        empty,
   }) {
-    return initial?.call(
-        topics, topQuizzes, noOfQuizzesAvailable, noOfTopicsAvailable);
+    return empty?.call(topics, noOfQuizzesAvailable, noOfTopicsAvailable);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(List<Topic> topics, List<Quiz> topQuizzes,
-            int noOfQuizzesAvailable, int noOfTopicsAvailable)?
+    TResult Function(List<Topic> topics, int noOfQuizzesAvailable,
+            int noOfTopicsAvailable)?
         $default, {
-    TResult Function(List<Topic> topics, List<Quiz> topQuizzes,
-            int noOfQuizzesAvailable, int noOfTopicsAvailable)?
-        initial,
+    TResult Function(List<Topic> topics, int noOfQuizzesAvailable,
+            int noOfTopicsAvailable)?
+        empty,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial(
-          topics, topQuizzes, noOfQuizzesAvailable, noOfTopicsAvailable);
+    if (empty != null) {
+      return empty(topics, noOfQuizzesAvailable, noOfTopicsAvailable);
     }
     return orElse();
   }
@@ -512,52 +454,50 @@ class _$_HomeStateInitial implements _HomeStateInitial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>(
-    TResult Function(_HomeState value) $default, {
-    required TResult Function(_HomeStateInitial value) initial,
+    TResult Function(_Dashboard value) $default, {
+    required TResult Function(_DashboardEmpty value) empty,
   }) {
-    return initial(this);
+    return empty(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>(
-    TResult? Function(_HomeState value)? $default, {
-    TResult? Function(_HomeStateInitial value)? initial,
+    TResult? Function(_Dashboard value)? $default, {
+    TResult? Function(_DashboardEmpty value)? empty,
   }) {
-    return initial?.call(this);
+    return empty?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>(
-    TResult Function(_HomeState value)? $default, {
-    TResult Function(_HomeStateInitial value)? initial,
+    TResult Function(_Dashboard value)? $default, {
+    TResult Function(_DashboardEmpty value)? empty,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial(this);
+    if (empty != null) {
+      return empty(this);
     }
     return orElse();
   }
 }
 
-abstract class _HomeStateInitial implements HomeState {
-  const factory _HomeStateInitial(
+abstract class _DashboardEmpty extends Dashboard {
+  const factory _DashboardEmpty(
       {final List<Topic> topics,
-      final List<Quiz> topQuizzes,
       final int noOfQuizzesAvailable,
-      final int noOfTopicsAvailable}) = _$_HomeStateInitial;
+      final int noOfTopicsAvailable}) = _$_DashboardEmpty;
+  const _DashboardEmpty._() : super._();
 
   @override
   List<Topic> get topics;
-  @override
-  List<Quiz> get topQuizzes;
   @override
   int get noOfQuizzesAvailable;
   @override
   int get noOfTopicsAvailable;
   @override
   @JsonKey(ignore: true)
-  _$$_HomeStateInitialCopyWith<_$_HomeStateInitial> get copyWith =>
+  _$$_DashboardEmptyCopyWith<_$_DashboardEmpty> get copyWith =>
       throw _privateConstructorUsedError;
 }

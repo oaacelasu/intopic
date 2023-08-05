@@ -63,7 +63,7 @@ dev_dependencies:
   very_good_analysis: ^5.0.0+1
   build_runner: any
   mockito: ^5.2.0
-  patrol: ^2.0.7
+  patrol: ^2.2.0
   isar_generator: *isar_version
 
 # The following section is specific to Flutter packages.
@@ -77,8 +77,10 @@ flutter:
 patrol:
   app_name: Intopic dev
   android:
+    flavor: dev
     package_name: com.intopic.mobile.dev
   ios:
+    flavor: dev
     bundle_id: com.intopic.mobile.dev
 
 global_options:

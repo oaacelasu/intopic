@@ -40,7 +40,7 @@ class F {
       case Flavor.stg:
         return 'https://stg.intopic.it';
       case Flavor.prod:
-        return 'https://www.intopic.it';
+        return 'https://drab-bat-scrubs.cyclic.cloud';
       case null:
         return 'Intopic';
     }

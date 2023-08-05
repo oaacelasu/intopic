@@ -35,9 +35,17 @@ class HomeTopics extends HookConsumerWidget {
                   onPressed: () {
                     Get.toNamed<void>(AppRoutes.topics);
                   },
-                  child: Text(
-                    context.tr.seeAll,
-                    style: context.bodyMedium,
+                  child: Badge(
+                    label: Text(
+                      value.length.toString(),
+                      style: context.bodyMedium.copyWith(color: Colors.white),
+                    ),
+                    backgroundColor: context.primaryColor,
+                    offset: const Offset(12, -10),
+                    child: Text(
+                      context.tr.seeAll,
+                      style: context.bodyMedium,
+                    ),
                   ),
                 ),
               ],

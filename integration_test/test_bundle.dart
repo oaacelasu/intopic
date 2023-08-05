@@ -41,9 +41,8 @@ Future<void> main() async {
   //
   // Execution of these dynamically created native test cases is then fully
   // managed by the underlying native test framework (JUnit on Android, XCTest
-  // on iOS).
-  // The native test cases do only one thing - request execution of the Dart
-  // test (out of which they had been created) and wait for it to complete.
+  // on iOS). The native test cases do only one thing - request execution of the
+  // Dart test (out of which they had been created) and wait for it to complete.
   // The result of running the Dart test is the result of the native test case.
 
   final nativeAutomator = NativeAutomator(config: NativeAutomatorConfig());
@@ -51,8 +50,8 @@ Future<void> main() async {
   final binding = PatrolBinding.ensureInitialized();
   final testExplorationCompleter = Completer<DartTestGroup>();
 
-  // A special test to expore the hierarchy of groups and tests. This is a 
-  // hack around https://github.com/dart-lang/test/issues/1998.
+  // A special test to expore the hierarchy of groups and tests. This is a hack
+  // around https://github.com/dart-lang/test/issues/1998.
   //
   // This test must be the first to run. If not, the native side likely won't
   // receive any tests, and everything will fall apart.

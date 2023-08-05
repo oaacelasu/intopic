@@ -6,6 +6,7 @@ import 'package:fpdart/fpdart.dart';
 import 'package:http/http.dart' as http;
 import 'package:intopic/features/auth/application/auth_state_notifier.dart';
 import 'package:intopic/features/common/domain/failures/failure.dart';
+import 'package:intopic/features/home/domain/entities/dashboard.dart';
 import 'package:intopic/features/quizzes/infrastructure/dtos/quiz_dto.dart';
 import 'package:intopic/features/topics/domain/entities/topic.dart';
 import 'package:intopic/features/topics/domain/repositories/i_topic_repository.dart';
@@ -34,7 +35,7 @@ class TopicRepository implements ITopicRepository {
       if (response.statusCode == 200) {
         final jsonResponse = convert.jsonDecode(response.body) as Map<String, dynamic>;
         final topic =
-            TopicDto.fromJson((jsonResponse['topics'] as List<dynamic>)[0] as Map<String, dynamic>).toDomain();
+            TopicDto.fromJson((jsonResponse['topic'] as List<dynamic>)[0] as Map<String, dynamic>).toDomain();
         final quizzes = (jsonResponse['quizzes'] as List<dynamic>)
             .map((e) => QuizDto.fromJson(e as Map<String, dynamic>).toDomain())
             .toList();
@@ -57,9 +58,9 @@ class TopicRepository implements ITopicRepository {
   }
 
   @override
-  Future<Either<Failure, List<Topic>>> getTopics() async {
+  Future<Either<Failure, Dashboard>> getTopics() async {
     // Make an HTTP Get request to get the topics
-    final url = Uri.parse('${F.baseUrl}/topics');
+    final url = Uri.parse('${F.baseUrl}/dashboard');
 
     try {
       final response = await http.get(
@@ -73,7 +74,15 @@ class TopicRepository implements ITopicRepository {
         final topics = (jsonResponse['allTopics'] as List<dynamic>)
             .map((e) => TopicDto.fromJson(e as Map<String, dynamic>).toDomain())
             .toList();
-        return right(topics);
+
+        final noOfQuizzesAvailable = jsonResponse['quizCount'] as int;
+        final noOfTopicsAvailable = jsonResponse['topicCount'] as int;
+
+        return right(Dashboard(
+          topics: topics,
+          noOfQuizzesAvailable: noOfQuizzesAvailable,
+          noOfTopicsAvailable: noOfTopicsAvailable,
+        ),);
       } else {
         // If the server did not return a 200 OK response,
         // then throw an exception.
