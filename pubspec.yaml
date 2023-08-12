@@ -51,6 +51,7 @@ dependencies:
   settings_ui: ^2.0.2
   flutter_html: ^3.0.0-beta.2
   path_provider: ^2.0.15
+  awesome_notifications: 0.7.4+1
 
 dev_dependencies:
   flutter_test:
@@ -65,6 +66,9 @@ dev_dependencies:
   mockito: ^5.2.0
   patrol: ^2.2.0
   isar_generator: *isar_version
+
+dependency_overrides:
+  intl: ^0.17.0
 
 # The following section is specific to Flutter packages.
 flutter:

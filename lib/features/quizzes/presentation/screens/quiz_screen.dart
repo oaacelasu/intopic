@@ -19,6 +19,7 @@ class QuizScreen extends ConsumerWidget {
     final quizState = ref.watch(quizStateNotifierProvider);
 
     return Scaffold(
+      backgroundColor: context.surfaceColor,
       appBar: AppBar(
         title: Text(
           quiz.title.getOrEmpty(),

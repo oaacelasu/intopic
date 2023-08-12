@@ -17,7 +17,7 @@ class TopicCard extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final item = ref.read(currentTopicCardItemProvider);
 
-    final imageProvider = useMemoized(() => item.imageURL.imageProvider , [item.imageURL]);
+    final imageProvider = useMemoized(() => item.imageURL.imageProvider, [item.imageURL]);
 
     return Container(
       height: 150,
@@ -55,16 +55,14 @@ class TopicCard extends HookConsumerWidget {
                 ),
                 Row(
                   children: [
-                    const CircleAvatar(
-                      backgroundColor: Colors.white,
+                    CircleAvatar(
+                      backgroundColor: context.surfaceColor,
                       radius: 15,
-                      child: Icon(Icons.play_circle_outline_rounded),
+                      child: Icon(Icons.play_circle_outline_rounded, color: context.onSurfaceColor),
                     ),
                     const SizedBox(width: AppDimens.xs),
-                    Text(
-                      item.noOfQuizzesAvailable.toString(),
-                      style: context.bodyMedium,
-                    ),
+                    Text(item.noOfQuizzesAvailable.toString(),
+                        style: context.bodyMedium.withColor(context.onSurfaceColor),),
                   ],
                 ),
               ],

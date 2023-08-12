@@ -13,6 +13,7 @@ class HomeFilter extends _$HomeFilter {
   @override
   String build() => '';
 
+  // ignore: use_setters_to_change_properties
   void changeQuery(String value) {
     state = value;
   }

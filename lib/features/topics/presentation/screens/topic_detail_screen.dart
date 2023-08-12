@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:get/get.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:intopic/features/common/presentation/utils/extensions/extensions.dart';
 import 'package:intopic/features/common/presentation/utils/extensions/image_extension.dart';
 import 'package:intopic/features/topics/domain/entities/topic.dart';
 import 'package:intopic/features/topics/presentation/topics_provider.dart';
@@ -19,6 +20,7 @@ class TopicDetailScreen extends HookConsumerWidget {
     final imageProvider = useMemoized(() => baseTopic.imageURL.imageProvider , [baseTopic.imageURL]);
 
     return Scaffold(
+      backgroundColor: context.surfaceColor,
       body: NestedScrollView(
         headerSliverBuilder: (context, innerBoxIsScrolled) {
           return [

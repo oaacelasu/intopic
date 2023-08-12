@@ -20,7 +20,7 @@ class QuizCard extends HookConsumerWidget {
     final topic = ref.watch(currentTopicProvider);
     final score = ref.watch(overallQuizScoreProvider(quizId: item.id));
 
-    final imageProvider = useMemoized(() => item.imageURL.imageProvider , [item.imageURL]);
+    final imageProvider = useMemoized(() => item.imageURL.imageProvider, [item.imageURL]);
 
     return Stack(
       children: [
@@ -36,7 +36,7 @@ class QuizCard extends HookConsumerWidget {
                 Container(
                   width: Get.width * 0.3,
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: context.surfaceVariantColor,
                     borderRadius: BorderRadius.circular(10),
                     image: DecorationImage(
                       image: imageProvider,
@@ -80,12 +80,16 @@ class QuizCard extends HookConsumerWidget {
           ),
         ).marginSymmetric(vertical: AppDimens.xs),
         Positioned(
-          top: 0,
+          top: 4,
           right: 0,
-          child: CircleAvatar(
-            radius: 15,
-            backgroundColor: Colors.white,
-            child: Text(item.totalQuestions.toString(), style: context.bodyMedium),
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: AppDimens.sm, vertical: AppDimens.xs),
+            decoration: BoxDecoration(
+              border: Border.all(color: context.onSurfaceColor),
+              borderRadius: const BorderRadius.only(topRight: Radius.circular(10), bottomLeft: Radius.circular(10)),
+              color: context.surfaceColor,
+            ),
+            child: Text(item.totalQuestions.toString(), style: context.bodyMedium.withColor(context.onSurfaceColor)),
           ),
         ),
       ],

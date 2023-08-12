@@ -40,7 +40,7 @@ class HomeTopQuizzes extends HookConsumerWidget {
                   child: Badge(
                     label: Text(
                       value.length.toString(),
-                      style: context.bodyMedium.copyWith(color: Colors.white),
+                      style: context.bodyMedium.copyWith(color: context.onPrimaryColor),
                     ),
                     backgroundColor: context.primaryColor,
                     offset: const Offset(12, -10),
@@ -93,14 +93,16 @@ class _TopQuizCard extends HookConsumerWidget {
     final item = ref.watch(currentTopQuizProvider);
     final score = ref.watch(overallQuizScoreProvider(quizId: item.id));
 
-    final imageProvider = useMemoized(() => item.imageURL.imageProvider , [item.imageURL]);
+    final imageProvider = useMemoized(() => item.imageURL.imageProvider, [item.imageURL]);
+
+    final randomColor = useMemoized(() => AppColors.randomColor(item.title.getOrEmpty()), [item.title]);
 
     return Container(
       width: 150,
       margin: const EdgeInsets.symmetric(horizontal: AppDimens.sm),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: AppColors.randomColor(item.title.getOrEmpty()).withAlpha(50),
+        color: randomColor.withAlpha(50),
       ),
       child: InkWell(
         onTap: () {
@@ -112,9 +114,9 @@ class _TopQuizCard extends HookConsumerWidget {
             Stack(
               alignment: Alignment.center,
               children: [
-                const CircleAvatar(
+                CircleAvatar(
                   radius: 35,
-                  backgroundColor: Colors.white,
+                  backgroundColor: randomColor.withAlpha(70),
                 ),
                 CircleAvatar(
                   radius: 25,

@@ -15,6 +15,7 @@ class InsightsScreen extends HookConsumerWidget {
     final submissionsAsync = ref.watch(quizSubmissionsProvider);
 
     return Scaffold(
+      backgroundColor: context.surfaceColor,
       appBar: AppBar(
         title: Text(context.tr.insights),
       ),

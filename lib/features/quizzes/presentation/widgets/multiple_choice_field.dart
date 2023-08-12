@@ -42,7 +42,7 @@ class MultipleChoiceField extends ConsumerWidget {
             const Spacer(),
             CircleAvatar(
               radius: 12,
-              backgroundColor: Colors.white,
+              backgroundColor: context.surfaceColor,
               child: Visibility(
                 visible: isSelected,
                 child: Icon(

@@ -27,6 +27,9 @@ class HomeSearchFilter extends HookConsumerWidget {
             ref.read(homeFilterProvider.notifier).changeQuery(value);
           },
           decoration: InputDecoration(
+
+            filled: true,
+            fillColor: context.surfaceColor,
             hintText: context.tr.homeSearchPlaceholder,
             prefixIcon: const Icon(Icons.search),
             border: OutlineInputBorder(

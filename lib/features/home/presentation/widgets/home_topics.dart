@@ -38,7 +38,7 @@ class HomeTopics extends HookConsumerWidget {
                   child: Badge(
                     label: Text(
                       value.length.toString(),
-                      style: context.bodyMedium.copyWith(color: Colors.white),
+                      style: context.bodyMedium.copyWith(color: context.onPrimaryColor),
                     ),
                     backgroundColor: context.primaryColor,
                     offset: const Offset(12, -10),
