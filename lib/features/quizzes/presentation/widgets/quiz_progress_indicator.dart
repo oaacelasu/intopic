@@ -27,7 +27,7 @@ class QuizProgressIndicator extends ConsumerWidget {
       width: double.infinity,
       child: QuizDotsIndicator(
         dotsCount: dotsCount,
-        position: (dotsCount * progress).round() - 1,
+        position: max(0, (dotsCount * progress).round() - 1),
         mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         decorator: QuizDotsDecorator(

@@ -89,7 +89,7 @@ class AppPages {
         child: const TopicDetailScreen(),
       ),
       showCupertinoParallax: false,
-      transition: Transition.rightToLeft,
+      transition: Transition.fadeIn,
     ),
     GetPage(name: AppRoutes.quizList, page: () => const QuizListScreen()),
     GetPage(

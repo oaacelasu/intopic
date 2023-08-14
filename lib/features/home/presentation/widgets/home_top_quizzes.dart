@@ -78,9 +78,7 @@ class HomeTopQuizzes extends HookConsumerWidget {
           ),
         );
       },
-      loading: () => const Center(
-        child: CircularProgressIndicator(),
-      ),
+      loading: () => const SizedBox.shrink(),
     );
   }
 }

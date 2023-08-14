@@ -25,7 +25,7 @@ class LoginScreen extends HookConsumerWidget {
           value: rememberEmail,
           validators: [Validators.required, Validators.email],
         ),
-        'password': ['', Validators.required, Validators.minLength(1), Validators.maxLength(20)],
+        'password': ['', Validators.required, Validators.minLength(6), Validators.maxLength(20)],
         'rememberMe': false,
       });
 
@@ -57,6 +57,7 @@ class LoginScreen extends HookConsumerWidget {
     }
 
     return Scaffold(
+      backgroundColor: context.surfaceColor,
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,

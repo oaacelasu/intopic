@@ -18,6 +18,7 @@ class EmailField extends StatelessWidget {
       decoration: InputDecoration(
         labelText: context.tr.email,
         hintText: context.tr.enterEmail,
+        fillColor: context.surfaceColor,
         helperStyle: const TextStyle(height: 0.7),
         errorStyle: const TextStyle(height: 0.7),
       ),

@@ -27,6 +27,7 @@ class PasswordField extends HookWidget {
       decoration: InputDecoration(
         labelText: context.tr.password,
         hintText: context.tr.enterPassword,
+        fillColor: context.surfaceColor,
         helperStyle: const TextStyle(height: 0.7),
         errorStyle: const TextStyle(height: 0.7),
         suffixIcon: IconButton(

@@ -30,13 +30,16 @@ class TopicCard extends HookConsumerWidget {
         },
         child: Row(
           children: [
-            Container(
-              width: Get.width * 0.3,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                image: DecorationImage(
-                  image: imageProvider,
-                  fit: BoxFit.contain,
+            Hero(
+              tag: item.id,
+              child: Container(
+                width: Get.width * 0.3,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  image: DecorationImage(
+                    image: imageProvider,
+                    fit: BoxFit.contain,
+                  ),
                 ),
               ),
             ),

@@ -6,6 +6,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intopic/config/app_dimens.dart';
 import 'package:intopic/config/navigation.dart';
 import 'package:intopic/features/common/presentation/utils/extensions/extensions.dart';
+import 'package:intopic/features/common/presentation/widgets/app_loader.dart';
 import 'package:intopic/features/home/presentation/home_provider.dart';
 import 'package:intopic/features/topics/presentation/topics_provider.dart';
 import 'package:intopic/features/topics/presentation/widgets/topic_card.dart';
@@ -75,7 +76,7 @@ class HomeTopics extends HookConsumerWidget {
         );
       },
       loading: () => const Center(
-        child: CircularProgressIndicator(),
+        child: AppLoader(),
       ),
     );
   }

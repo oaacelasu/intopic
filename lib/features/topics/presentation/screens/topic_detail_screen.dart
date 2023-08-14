@@ -32,16 +32,19 @@ class TopicDetailScreen extends HookConsumerWidget {
                 title: Text(baseTopic.title.getOrEmpty()),
                 flexibleSpace: FlexibleSpaceBar(
                   background: hasImage
-                      ? Container(
-                          margin: const EdgeInsets.only(top: kTextTabBarHeight),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            image: DecorationImage(
-                              image: imageProvider,
-                              fit: BoxFit.contain,
+                      ? Hero(
+                        tag: baseTopic.id,
+                        child: Container(
+                            margin: const EdgeInsets.only(top: kTextTabBarHeight),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              image: DecorationImage(
+                                image: imageProvider,
+                                fit: BoxFit.contain,
+                              ),
                             ),
                           ),
-                        )
+                      )
                       : const SizedBox.shrink(),
                 ),
               ),
