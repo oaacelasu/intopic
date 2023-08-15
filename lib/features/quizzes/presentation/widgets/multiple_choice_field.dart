@@ -31,15 +31,16 @@ class MultipleChoiceField extends ConsumerWidget {
         ),
         child: Row(
           children: [
-            Text(
-              option,
-              style: isSelected
-                  ? context.titleSmall.bold.withColor(
-                      context.onPrimaryColor,
-                    )
-                  : context.bodyMedium,
+            Expanded(
+              child: Text(
+                option,
+                style: isSelected
+                    ? context.titleSmall.bold.withColor(
+                        context.onPrimaryColor,
+                      )
+                    : context.bodyMedium,
+              ),
             ),
-            const Spacer(),
             CircleAvatar(
               radius: 12,
               backgroundColor: context.surfaceColor,

@@ -44,31 +44,33 @@ class TopicCard extends HookConsumerWidget {
               ),
             ),
             const SizedBox(width: AppDimens.lg),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  item.title.getOrEmpty(),
-                  style: context.headlineSmall.bold,
-                ),
-                Text(
-                  item.description,
-                  style: context.bodyMedium,
-                ),
-                Row(
-                  children: [
-                    CircleAvatar(
-                      backgroundColor: context.surfaceColor,
-                      radius: 15,
-                      child: Icon(Icons.play_circle_outline_rounded, color: context.onSurfaceColor),
-                    ),
-                    const SizedBox(width: AppDimens.xs),
-                    Text(item.noOfQuizzesAvailable.toString(),
-                        style: context.bodyMedium.withColor(context.onSurfaceColor),),
-                  ],
-                ),
-              ],
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    item.title.getOrEmpty(),
+                    style: context.headlineSmall.bold,
+                  ),
+                  Text(
+                    item.description,
+                    style: context.bodyMedium,
+                  ),
+                  Row(
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: context.surfaceColor,
+                        radius: 15,
+                        child: Icon(Icons.play_circle_outline_rounded, color: context.onSurfaceColor),
+                      ),
+                      const SizedBox(width: AppDimens.xs),
+                      Text(item.noOfQuizzesAvailable.toString(),
+                          style: context.bodyMedium.withColor(context.onSurfaceColor),),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ],
         ),

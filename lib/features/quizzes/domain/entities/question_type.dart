@@ -21,6 +21,14 @@ class QuestionType with _$QuestionType {
       case 'MCQs One answer' || 'singleChoice':
         return const QuestionType.singleChoice();
       default:
+        final raw = value.toLowerCase();
+        if (raw.contains('true') || raw.contains('false')) {
+          return const QuestionType.trueFalse();
+        } else if (raw.contains('multiple')) {
+          return const QuestionType.multipleChoice();
+        } else if (raw.contains('single')) {
+          return const QuestionType.singleChoice();
+        }
         return const QuestionType.none();
     }
   }

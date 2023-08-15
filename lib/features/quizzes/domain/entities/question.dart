@@ -30,7 +30,7 @@ class Question with _$Question {
 
 extension QuestionX on Question {
   List<String> get correctAnswerValues {
-    return answer.split(',');
+    return answer.replaceAll(', ', ' | ').split(',');
   }
 
   bool validateAnswer(String option) {
