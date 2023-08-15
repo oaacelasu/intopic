@@ -123,7 +123,7 @@ class OnBoardingScreen extends HookConsumerWidget {
               ),
             ),
           ],
-        ).marginAll(AppDimens.lg),
+        ).marginAll(AppDimens.md),
       ),
     );
   }
